@@ -11,6 +11,7 @@ My Setup & Dotfiles
   - npm
 
 WSL Setup
+---------
 ```powershell
 # Open PowerShell ( Administrator )
 
@@ -30,7 +31,8 @@ Start-Process -Filepath "$wslUpdateInstallerFilePath"
 wsl --set-default-version 2
 ```
 
-ZSH Setup
+Zsh Setup
+---------
 ```shell script
 
 # Make a new directory
@@ -47,19 +49,31 @@ ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 ```
 
 Git Setup
+---------
 ```shell script
 
 # Generate new SSH key
 email="12584890+17radf@users.noreply.github.com"
-ssh-keygen -t ed25519 -C "${email}}"
-
-# Add key to id_rsa
-eval $(ssh-agent -s)
-ssh-add ~/.ssh/id_rsa
+ssh-keygen -t ed25519 -C "${email}"
 
 # Output public key
-cat ~/.ssh/id_rsa.pub
+cat ~/.ssh/id_ed25519.pub
 
 ```
-
 - Copy the key [here](https://github.com/settings/ssh/new)
+
+Volta Setup
+-----------
+```shell script
+
+# Install Volta
+curl https://get.volta.sh | bash -s -- --skip-setup
+
+# Install Node
+volta install node@latest
+
+# Use Node
+node
+
+
+```
