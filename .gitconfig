@@ -1,0 +1,14 @@
+[user]
+	name = Raihan
+	email = 12584890+17radf@users.noreply.github.com
+[color]
+	ui = true
+[core]
+	editor = code
+	ignorecase = false
+[init]
+	defaultBranch = main
+[rerere]
+	enabled = true
+[alias]
+	change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f"
