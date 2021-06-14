@@ -35,11 +35,15 @@ Zsh Setup
 ---------
 ```shell script
 
+# Install zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # Make a new directory
 git clone git@github.com:17radf/dotfiles.git ~/dotfiles/
 
-# antibody ## WIP LATER
-curl -sfL git.io/antibody | sh -s - -b /usr/local/bin
+# Install antibody 
+curl -sfL git.io/antibody | sudo sh -s - -b /usr/local/bin
+antibody bundle < ~/dotfiles/.zsh_plugins
 
 # Hardlink dotfiles
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
@@ -74,6 +78,5 @@ volta install node@latest
 
 # Use Node
 node
-
 
 ```
