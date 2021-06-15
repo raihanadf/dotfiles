@@ -31,15 +31,33 @@ Start-Process -Filepath "$wslUpdateInstallerFilePath"
 wsl --set-default-version 2
 ```
 
-Zsh Setup
----------
+Automatic Setup Install (Experimental)
+--------------------------------------
 ```shell script
-
-# Install zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Make a new directory
 git clone git@github.com:17radf/dotfiles.git ~/dotfiles/
+
+# You can install automatically by running ./install.sh
+# or manually by following instruction below this guide
+
+# Automatic install (Experimental)
+cd ~/dotfiles
+sudo ./install.sh
+
+# Manual Install (Check below)
+
+```
+
+Manual Setup Install
+--------------------
+```shell script
+
+
+########### Zsh Setup ###########
+
+# Install zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Install antibody 
 curl -sfL git.io/antibody | sudo sh -s - -b /usr/local/bin
@@ -49,12 +67,9 @@ antibody bundle < ~/dotfiles/.zsh_plugins
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/.aliases.zsh ~/.aliases.zsh
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
+ln -sf ~/dotfiles/.p10k.zsh ~/.p10k.zsh
 
-```
-
-Git Setup
----------
-```shell script
+########### Git Setup ###########
 
 # Generate new SSH key
 email="12584890+17radf@users.noreply.github.com"
@@ -63,20 +78,14 @@ ssh-keygen -t ed25519 -C "${email}"
 # Output public key
 cat ~/.ssh/id_ed25519.pub
 
-```
-- Copy the key [here](https://github.com/settings/ssh/new)
+# Copy the key here: https://github.com/settings/ssh/new
 
-Volta Setup
------------
-```shell script
+########### Volta Setup ###########
 
 # Install Volta
 curl https://get.volta.sh | bash -s -- --skip-setup
 
 # Install Node
 volta install node@latest
-
-# Use Node
-node
 
 ```
