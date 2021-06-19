@@ -31,7 +31,7 @@ Start-Process -Filepath "$wslUpdateInstallerFilePath"
 wsl --set-default-version 2
 ```
 
-Automatic Setup Install (Experimental)
+Automatic Setup Install 
 --------------------------------------
 ```shell script
 
@@ -41,7 +41,7 @@ git clone git@github.com:17radf/dotfiles.git ~/dotfiles/
 # You can install automatically by running ./install.sh
 # or manually by following instruction below this guide
 
-# Automatic install (Experimental)
+# Automatic install 
 cd ~/dotfiles
 sudo ./install.sh
 
