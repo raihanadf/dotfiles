@@ -1,8 +1,9 @@
 # Install Volta
-echo '\nInstalling Volta...'
-# sleep 1
 curl https://get.volta.sh | bash -s -- --skip-setup
+echo '\n---Volta is installed---'
 
 # Install Node
-echo '\n---Volta is installed---'
 sleep 1
+echo '\nInstalling Latest Node...'
+sleep 1
+volta install node@latest

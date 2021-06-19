@@ -1,9 +1,6 @@
 ########## WARNING ##########
 ### THIS IS EXPERIMENTAL ###
 ############################
-### I DONT KNOW WHY IT  ####
-### INSTALLING ON /ROOT ###
-############################
 
 # Initial install
 echo '\nInstalling dependencies...\n'
@@ -16,21 +13,26 @@ sudo apt install zsh \
 # Install zsh 
 echo '\nPerforming Zsh install...\n'
 sleep 2
-sudo ./sh/install-zsh.sh
+./sh/install-zsh.sh
 
 # Install git
 echo '\nPerforming Git install...\n'
 sleep 2
-sudo ./sh/install-git.sh
+./sh/install-git.sh
 
-Install volta
+# Install volta
 echo '\nPerforming Volta install...\n'
 sleep 2
-sudo ./sh/install-volta.sh
+./sh/install-volta.sh
+sleep 2
 
 # Afterthought
-sleep 3
-sudo ./sh/afterthought.sh
+clear
+echo '***** The installation is done *****\n'
+# Output public key
+echo "\nThis is your SSH key : \n"
+cat ~/.ssh/id_ed25519.pub
+echo "\nCopy your key to Github (CTRL + M1) : https://github.com/settings/ssh/new\n"
 
 # I'm just adding the artificial seconds
 # just to see what action was performed
