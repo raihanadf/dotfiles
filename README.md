@@ -43,7 +43,7 @@ git clone git@github.com:17radf/dotfiles.git ~/dotfiles/
 
 # Automatic install 
 cd ~/dotfiles
-sudo ./install.sh
+./install.sh
 
 # Manual Install (Check below)
 

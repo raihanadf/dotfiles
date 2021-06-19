@@ -1,7 +1,3 @@
-########## WARNING ##########
-### THIS IS EXPERIMENTAL ###
-############################
-
 # Initial install
 echo '\nInstalling dependencies...\n'
 sleep 2
