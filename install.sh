@@ -11,6 +11,11 @@ echo '\nPerforming Zsh install...\n'
 sleep 2
 ./sh/install-zsh.sh
 
+# Hardlink dotfiles
+echo '\nHardlinking dotfiles...\n'
+sleep 1
+./sh/install-dotfiles.sh
+
 # Install git
 echo '\nPerforming Git install...\n'
 sleep 2
