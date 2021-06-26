@@ -1,5 +1,5 @@
-alias zshconfig="code ~/.zshrc"
-alias ohmyzsh="code ~/.oh-my-zsh"
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
 alias c="clear"
 alias q="exit"
 alias mdb="sudo service mongodb"
