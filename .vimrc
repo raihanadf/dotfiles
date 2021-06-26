@@ -8,7 +8,6 @@ set nu
 set smartcase
 set noswapfile
 set nobackup
-set undofile
 set incsearch
 
 set colorcolumn=80
