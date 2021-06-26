@@ -1,14 +1,10 @@
 My Setup & Dotfiles
 ===================
 
-- Host: Windows 10
-  - Ubuntu via WSL 2 
-- Terminal: Windows Terminal
-- Shell: zsh
-  - git
-- Node.js ([Volta](https://volta.sh))
-  - node
-  - npm
+- Windows 10 w/ Ubuntu WSL
+- Windows Terminal
+- zsh
+- [Volta](https://volta.sh)
 
 WSL Setup
 ---------
