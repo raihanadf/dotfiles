@@ -1,13 +1,5 @@
-Setup Detail
-===================
-
-- windows 10 w/ ubuntu 
-- windows terminal preview 
-- zsh
-- [volta](https://volta.sh)
-
-Install 
---------------------------------------
+install 
+-------
 ```shell script
 
 # make a new directory
@@ -18,3 +10,11 @@ cd ~/dotfiles
 ./install.sh
 
 ```
+
+setup detail
+============
+
+- windows 10 w/ ubuntu 
+- windows terminal preview 
+- zsh
+- [volta](https://volta.sh)
