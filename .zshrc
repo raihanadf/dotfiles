@@ -1,6 +1,6 @@
 # start up
 cd
-export ZSH="/home/raihan/.oh-my-zsh"
+bindkey -v
 autoload -Uz compinit 
 if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
 	compinit;
@@ -11,7 +11,6 @@ source <(antibody init)
 antibody bundle < ~/dotfiles/.zsh_plugins
 
 # imports
-source $ZSH/oh-my-zsh.sh
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
