@@ -1,7 +1,12 @@
 # start up
 cd
 export ZSH="/home/raihan/.oh-my-zsh"
-autoload -Uz compinit && compinit
+autoload -Uz compinit 
+if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
+	compinit;
+else
+	compinit -C;
+fi;
 source <(antibody init)
 antibody bundle < ~/dotfiles/.zsh_plugins
 
