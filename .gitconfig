@@ -4,7 +4,7 @@
 [color]
 	ui = true
 [core]
-	editor = code
+	editor = vim
 	ignorecase = false
 [init]
 	defaultBranch = main
