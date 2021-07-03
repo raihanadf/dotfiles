@@ -2,7 +2,13 @@
 sudo apt install zsh \
     git \
     zip \
-    unzip 
+    unzip \
+    gcc \
+    make \
+    libssl-dev \
+    libreadline-dev \
+    zlib1g-dev \
+    libsqlite3-dev
 
 # Install antibody 
 curl -sfL git.io/antibody | sudo sh -s - -b /usr/local/bin
@@ -29,10 +35,15 @@ curl https://get.volta.sh | bash -s -- --skip-setup
 # Install Node
 volta install node@latest
 
+# Install rbenv
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+
 # Afterthought
 clear
-printf '********** The installation is done **********\n'
+printf '========== The installation is done ==========\n'
+printf "\n - Please quit the terminal by typing 'exit' after the installation"
+printf "\n - To install ruby: run the ruby.sh"
 # Output public key
-printf "\nThis is your SSH key : \n"
+printf "\n - This is your SSH key: \n\n"
 cat ~/.ssh/id_ed25519.pub
-printf "\nCopy your key to Github (CTRL + Mouse1) : https://github.com/settings/ssh/new\n"
+printf "\n - Copy your key to Github (CTRL + Mouse1): https://github.com/settings/ssh/new\n"
