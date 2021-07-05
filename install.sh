@@ -38,6 +38,14 @@ volta install node@latest
 # Install rbenv
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 
+# Intall ruby build plugin
+mkdir -p "$(rbenv root)"/plugins
+git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+
+# Install ruby
+rbenv install 2.7.2 --verbose
+rbenv global 2.7.2
+
 # Afterthought
 clear
 printf '========== The installation is done ==========\n'
