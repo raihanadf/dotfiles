@@ -8,7 +8,10 @@ sudo apt install zsh \
     libssl-dev \
     libreadline-dev \
     zlib1g-dev \
-    libsqlite3-dev
+    libsqlite3-dev \
+    vim \
+    neovim \
+    tmux \
 
 # Install antibody 
 curl -sfL git.io/antibody | sudo sh -s - -b /usr/local/bin
