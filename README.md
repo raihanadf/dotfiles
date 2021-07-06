@@ -15,7 +15,7 @@ setup detail
 ============
 
 - windows 10 w/ ubuntu 
-- alacritty
+- windows terminal
 - zsh
 - [antibody](https://getantibody.github.io)
 - [volta](https://volta.sh)
