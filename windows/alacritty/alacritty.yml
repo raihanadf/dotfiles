@@ -1,0 +1,39 @@
+shell:
+ program: "C:\\Windows\\System32\\wsl.exe"
+ title: Terminal
+
+
+font:
+ # The normal (roman) font face to use.
+  normal:
+    family: Fira Code
+    style: Regular
+
+  # The bold font face
+  bold:
+    family: Fira Code 
+    style: Bold
+
+  # The italic font face
+  italic:
+    family: Fira Code
+    style: Regular Italic
+
+  # Point size of the font
+  size: 12.0
+
+window:
+  dimensions:
+      columns: 60
+      lines: 20
+  padding:
+      x: 16
+      y: 16
+  dynamic_padding: false
+
+  dynamic_title: false
+  decorations: full
+  title: Terminal
+
+background_opacity: 0.8
+draw_bold_text_with_bright_colors: true
