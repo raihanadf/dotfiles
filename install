@@ -14,4 +14,10 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
 
-./prerequisites
+read -p "install prerequisites? (y/N)" -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    ./config/prerequisites
+fi
+
+echo 

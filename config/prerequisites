@@ -1,4 +1,4 @@
-# Initial install
+# initial install
 sudo apt install zsh \
     git \
     zip \
@@ -13,48 +13,40 @@ sudo apt install zsh \
     neovim \
     tmux \
 
-# Install antibody 
+# install antibody 
 curl -sfL git.io/antibody | sudo sh -s - -b /usr/local/bin
 antibody bundle < ~/dotfiles/.zsh_plugins
 
-# Install Vim plugin manager
+# install vim plugin manager
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# Hardlink dotfiles
-ln -sf ~/dotfiles/.zshrc ~/.zshrc
-ln -sf ~/dotfiles/.aliases.zsh ~/.aliases.zsh
-ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
-ln -sf ~/dotfiles/.p10k.zsh ~/.p10k.zsh
-ln -sf ~/dotfiles/.vimrc ~/.vimrc
-
-# Install git
+# install git
 read -p 'Input your email: ' email
 ssh-keygen -t ed25519 -C "${email}"
 
-# Install volta
+# install volta
 curl https://get.volta.sh | bash -s -- --skip-setup
 
-# Install Node
+# install Node
 volta install node@latest
 
-# Install rbenv
+# install rbenv
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 
-# Intall ruby build plugin
+# intall ruby build plugin
 mkdir -p "$(rbenv root)"/plugins
 git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 
-# Install ruby
+# install ruby
 rbenv install 2.7.2 --verbose
 rbenv global 2.7.2
 
-# Afterthought
+# afterthought
 clear
 printf '========== The installation is done ==========\n'
 printf "\n - Please quit the terminal by typing 'exit' after the installation"
-printf "\n - To install ruby: run the ruby.sh"
-# Output public key
+# output public key
 printf "\n - This is your SSH key: \n\n"
 cat ~/.ssh/id_ed25519.pub
 printf "\n - Copy your key to Github (CTRL + Mouse1): https://github.com/settings/ssh/new\n"
