@@ -3,11 +3,11 @@ install
 ```shell script
 
 # make a new directory
-git clone git@github.com:17radf/dotfiles.git ~/dotfiles/
+git clone git@github.com:17radf/dotfiles.git ~/.dotfiles/
 
 # install 
-cd ~/dotfiles
-./install.sh
+cd ~/.dotfiles
+./install
 
 ```
 
