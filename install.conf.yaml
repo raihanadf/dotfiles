@@ -1,0 +1,24 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~']
+
+- link:
+    #files 
+    ~/.vimrc: .vimrc 
+    ~/.zshrc: .zshrc
+    ~/.p10k.zsh: .p10k.zsh
+    ~/.gitconfig: .gitconfig
+    ~/.aliases.zsh: .aliases.zsh
+
+    #folder
+    ~/.config/nvim:
+      create: true
+      path: config/nvim
+      force: true
+  
+
+
+#in case if you forget, it needed 4 spaces or 2 tabs
