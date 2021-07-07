@@ -12,7 +12,7 @@ fi;
 
 # antibody
 source <(antibody init)
-antibody bundle < ~/dotfiles/.zsh_plugins
+antibody bundle < ~/.dotfiles/.zsh_plugins
 
 # imports
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
