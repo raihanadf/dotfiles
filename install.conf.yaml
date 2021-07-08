@@ -7,7 +7,7 @@
 
 - link:
     #files 
-    ~/.vimrc: .vimrc 
+    ~/.vimrc: config/nvim/init.vim
     ~/.zshrc: .zshrc
     ~/.p10k.zsh: .p10k.zsh
     ~/.gitconfig: .gitconfig
@@ -18,7 +18,12 @@
       create: true
       path: config/nvim
       force: true
+
+    ~/.vim:
+      create: true
+      path: config/nvim
+      force: true
   
-
-
 #in case if you forget, it needed 4 spaces or 2 tabs
+
+

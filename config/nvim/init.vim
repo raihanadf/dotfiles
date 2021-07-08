@@ -21,8 +21,8 @@ Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 " Initialize plugin system
 call plug#end()
 
-inoremap jk <ESC>
-nmap <C-n> :NERDTreeToggle<CR>
+inoremap kj <ESC>
+nmap <S-h> :NERDTreeToggle<CR>
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
 
@@ -222,3 +222,5 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>S
+noremap <S-j> :tabprevious<CR>
+noremap <S-k> :tabnext<CR>
