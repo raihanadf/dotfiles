@@ -11,7 +11,7 @@
     ~/.zshrc: .zshrc
     ~/.p10k.zsh: .p10k.zsh
     ~/.gitconfig: .gitconfig
-    ~/.aliases.zsh: .aliases.zsh
+    ~/.zsh_aliases: .zsh_aliases
 
     #folder
     ~/.config/nvim:
