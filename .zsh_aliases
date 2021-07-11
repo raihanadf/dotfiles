@@ -10,7 +10,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias towin="cd /mnt/c/Users/${whoami}"
+alias towin="cd /mnt/c/Users/$(whoami)/"
 
 # listing
 alias ls='ls --color=auto'
