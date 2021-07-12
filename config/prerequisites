@@ -10,6 +10,11 @@ sudo apt install zsh \
     neovim \
     tmux \
 
+# change shell to zsh
+printf "\nChange shell to zsh\n";
+chsh -s $(which zsh)
+echo 
+
 # install antibody 
 curl -sfL git.io/antibody | sudo sh -s - -b /usr/local/bin
 antibody bundle < ~/dotfiles/.zsh_plugins
@@ -19,7 +24,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # install git
-if [ -f "~/.ssh/id_ed25519.pub" ]; then
+if [ ! -f "/home/$(whoami)/.ssh/id_ed25519.pub" ]; then
   read -p 'Input your email: ' email
   ssh-keygen -t ed25519 -C "${email}"
 fi
