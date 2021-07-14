@@ -1,6 +1,3 @@
-# theme
-romkatv/powerlevel10k
-
 # plugins
 robbyrussell/oh-my-zsh path:lib/git.zsh
 robbyrussell/oh-my-zsh path:plugins/git

@@ -10,15 +10,14 @@ else
 	compinit -C;
 fi;
 
+# starship
+eval "$(starship init zsh)"
+
 # antibody
 source <(antibody init)
 antibody bundle < ~/.dotfiles/.zsh_plugins
 
 # imports
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
 
 # volta
