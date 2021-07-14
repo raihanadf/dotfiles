@@ -9,9 +9,9 @@
     #files 
     ~/.vimrc: config/nvim/init.vim
     ~/.zshrc: .zshrc
-    ~/.p10k.zsh: .p10k.zsh
     ~/.gitconfig: .gitconfig
     ~/.zsh_aliases: .zsh_aliases
+    ~/.tmux.conf: .tmux.conf
 
     #folder
     ~/.config/nvim:
