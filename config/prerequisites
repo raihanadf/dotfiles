@@ -19,9 +19,12 @@ echo
 curl -sfL git.io/antibody | sudo sh -s - -b /usr/local/bin
 antibody bundle < ~/dotfiles/.zsh_plugins
 
-# install vim plugin manager
+# install nvim plugin manager
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# install tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # install git
 if [ ! -f "/home/$(whoami)/.ssh/id_ed25519.pub" ]; then
