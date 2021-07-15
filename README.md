@@ -20,3 +20,5 @@ setup detail
 - [antibody](https://getantibody.github.io)
 - [volta](https://volta.sh)
 - [rbenv](https://rbenv.org/)
+
+![win](https://github.com/17radf/dotfiles/blob/master/win.png)
