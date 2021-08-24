@@ -1,5 +1,7 @@
 # doing something
 alias zshconfig="nvim ~/.zshrc"
+alias zshalias="nvim ~/.zsh_aliases"
+alias vim="nvim"
 alias c="clear"
 alias q="exit"
 alias mdb="sudo service mongodb"
@@ -14,7 +16,7 @@ alias towin="cd /mnt/c/Users/$(whoami)/"
 
 # listing
 alias ls='ls --color=auto'
-alias ll='ls -la'
+alias la='ls -la'
 alias l='ls -d .* --color=auto'
 
 

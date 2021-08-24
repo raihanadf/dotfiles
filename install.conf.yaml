@@ -7,22 +7,23 @@
 
 - link:
     #files 
-    ~/.vimrc: config/nvim/init.vim
+    #~/.vimrc: config/nvim/init.vim
     ~/.zshrc: .zshrc
+    ~/.p10k.zsh: .p10k.zsh
     ~/.gitconfig: .gitconfig
     ~/.zsh_aliases: .zsh_aliases
     ~/.tmux.conf: .tmux.conf
 
     #folder
-    ~/.config/nvim:
-      create: true
-      path: config/nvim
-      force: true
+    #~/.config/nvim:
+    #  create: true
+    #  path: config/nvim
+    #  force: true
 
-    ~/.vim:
-      create: true
-      path: config/nvim
-      force: true
+    #~/.vim:
+    #  create: true
+    #  path: config/nvim
+    #  force: true
   
 #in case if you forget, it needed 4 spaces or 2 tabs
 
