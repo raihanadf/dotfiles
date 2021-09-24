@@ -1,0 +1,103 @@
+[global]
+    ### Display ###
+    monitor = 0
+    follow = mouse
+    geometry = "320x50-30+20"
+    progress_bar = true
+    progress_bar_height = 10
+    progress_bar_frame_width = 2
+    progress_bar_min_width = 0
+    progress_bar_max_width = 320
+    indicate_hidden = yes
+    shrink = no
+    transparency = 30
+    notification_height = 60
+    separator_height = 10
+    padding = 12
+    horizontal_padding = 8
+    text_icon_padding = 12
+    frame_width = 2
+    frame_color = "#2E2E2E"
+    separator_color = frame
+    sort = yes
+    idle_threshold = 120
+
+    ### Text ###
+    font = "FiraCode Nerd Font" 11
+    line_height = 0
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 300
+    word_wrap = yes
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+
+    ### Icons ###
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 48
+    # Fix : https://github.com/dunst-project/dunst/pull/864
+    icon_path = /usr/share/icons/gnome/48x48/actions/:/usr/share/icons/gnome/48x48/apps/:/usr/share/icons/gnome/48x48/devices/:/usr/share/icons/gnome/48x48/emblems/:/usr/share/icons/gnome/48x48/emotes/:/usr/share/icons/gnome/48x48/mimetypes/:/usr/share/icons/Paper/48x48/actions:/usr/share/icons/Paper/48x48/apps:/usr/share/icons/Paper/48x48/categories:/usr/share/icons/Paper/48x48/devices:/usr/share/icons/Paper/48x48/emblems:/usr/share/icons/Paper/48x48/emotes:/usr/share/icons/Paper/48x48/mimetypes:/usr/share/icons/Paper/48x48/notifications:/usr/share/icons/Paper/48x48/places:/usr/share/icons/Paper/48x48/status:/usr/share/icons/Paper/48x48/web:/usr/share/icons/Paper/24x24/actions:/usr/share/icons/Paper/24x24/apps:/usr/share/icons/Paper/24x24/categories:/usr/share/icons/Paper/24x24/devices:/usr/share/icons/Paper/24x24/emblems:/usr/share/icons/Paper/24x24/emotes:/usr/share/icons/Paper/24x24/mimetypes:/usr/share/icons/Paper/24x24/notifications:/usr/share/icons/Paper/24x24/places:/usr/share/icons/Paper/24x24/status:/usr/share/icons/Paper/24x24/web
+
+    ### History ###
+    sticky_history = timeout
+    history_length = 10
+
+    ### Misc/Advanced ###
+    dmenu = "/usr/bin/wofi -d dunst"
+    browser = "/usr/bin/xdg-open"
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    startup_notification = true
+    verbosity = mesg
+    corner_radius = 0
+    ignore_dbusclose = false
+
+    ### Wayland ###
+    layer = overlay
+    force_xwayland = false
+
+    ### Legacy
+    force_xinerama = false
+
+    ### Mouse ###
+    mouse_left_click = close_current
+    mouse_middle_click = close_all
+    mouse_right_click = do_action, close_current
+
+[experimental]
+    per_monitor_dpi = true
+
+[urgency_low]
+    background = "#2E2E2E"
+    foreground = "#AAAAAA"
+    highlight = "#999999"
+    timeout = 6
+
+[urgency_normal]
+    background = "#2E2E2E"
+    foreground = "#DDDDDD"
+    highlight = "#999999"
+    timeout = 8
+
+[urgency_critical]
+    background = "#FFFFFF"
+    foreground = "#000000"
+    frame_color = "#FF0000"
+    timeout = 0
+
+# Custom Rules
+[fullscreen_delay_everything]
+    fullscreen = pushback
+[fullscreen_show_critical]
+    msg_urgency = critical
+    fullscreen = show
+
+# vim: ft=cfg
+
