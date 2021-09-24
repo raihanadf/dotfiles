@@ -6,19 +6,49 @@
 - clean: ['~']
 
 - link:
-    #files 
-    #~/.vimrc: config/nvim/init.vim
+    # files 
+    ~/.vimrc: config/nvim/init.vim
     ~/.zshrc: .zshrc
     ~/.p10k.zsh: .p10k.zsh
     ~/.gitconfig: .gitconfig
     ~/.zsh_aliases: .zsh_aliases
     ~/.tmux.conf: .tmux.conf
 
-    #folder
-    #~/.config/nvim:
-    #  create: true
-    #  path: config/nvim
-    #  force: true
+    # i3
+    ~/.config/i3:
+      create: true
+      path: config/i3
+      force: true
+
+    # kitty
+    ~/.config/kitty:
+      create: true
+      path: config/kitty
+      force: true
+
+    # nvim
+    ~/.config/nvim:
+      create: true
+      path: config/nvim
+      force: true
+
+    # spotify-tui
+    ~/.config/spotify-tui:
+      create: true
+      path: config/spotify-tui
+
+    # rofi
+    ~/.config/rofi:
+      create: true
+      path: config/rofi
+      force: true
+
+    # picom
+    ~/.config/picom:
+      create: true
+      path: config/picom
+      force: true
+
 
     #~/.vim:
     #  create: true
