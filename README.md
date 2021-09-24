@@ -15,9 +15,7 @@ cd ~/.dotfiles
 setup detail
 ============
 
-- windows 10 pro
-- windows terminal prev w/ zsh
+- arch linux
+- kitty w/ zsh
 - [antibody](https://getantibody.github.io)
-- [volta](https://volta.sh)
-- [rbenv](https://rbenv.org/)
 - and some more...
