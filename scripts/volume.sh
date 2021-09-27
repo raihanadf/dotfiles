@@ -4,6 +4,7 @@
 # - pamixer
 # - pactl
 # - ePapirus (icon)
+
 msgID="92374" # Arbitrary, can be anything
 iconPath="/usr/share/icons/ePapirus/48x48/status"
 
@@ -26,7 +27,7 @@ volume="$(pamixer --get-volume)"
 
 if [ "$isMuted" = "false" ]; then
   if [ "$volume" -gt "100" ]; then
-    dunstify "Volume $volume%" -h int:value:"$volume" -h string:fgcolor:#ff4444 -h string:frcolor:#ff4444 -i $iconPath/notification-audio-volume-high.svg -r $msgID
+    dunstify "Volume $volume%" -h int:value:"$volume" -h string:fgcolor:#ff4444 -h string:frcolor:#ba0606 -i $iconPath/notification-audio-volume-high.svg -r $msgID
   elif [ "$volume" -gt "65" ]; then
     dunstify "Volume $volume%" -h int:value:"$volume" -i $iconPath/notification-audio-volume-high.svg -r $msgID
   elif [ "$volume" -gt "20" ]; then
@@ -41,5 +42,3 @@ else
 fi
 
 canberra-gtk-play -i audio-volume-change -d "changeVolume"
-
-
