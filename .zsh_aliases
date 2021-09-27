@@ -2,9 +2,12 @@
 alias zshconfig="nvim ~/.zshrc"
 alias zshalias="nvim ~/.zsh_aliases"
 alias open="xdg-open"
-alias vim="nvim"
 alias c="clear"
 alias q="exit"
+
+# replace with better app
+alias vim="nvim"
+alias cat="bat"
 
 # moving directories
 alias ..="cd .."
@@ -22,3 +25,8 @@ alias wifi='nmtui'
 
 # some programming thingy
 alias mdb="sudo service mongodb"
+
+# optimus manager
+alias opma="optimus-manager"
+alias opmas="optimus-manager --switch"
+alias opmast="optimus-manager --status"
