@@ -1,9 +1,9 @@
 
 * {
-    background-color:      #1b1f27;
-    border-color:          #3f4859;
-    text-color:            #ffffff;
-    font:            "Sarasa Mono K Bold 11";
+    background-color:      #011211;
+    border-color:          #006660;
+    text-color:            #ADD8E6;
+    font:            "CaskaydiaCove NF 11";
 }
 
 window {
@@ -13,6 +13,7 @@ window {
     padding:    4px;
     children:   [ horibox ];
     border: 2px solid;
+    margin: 5px;
 }
 
 horibox {
@@ -32,8 +33,9 @@ entry {
 }
 
 element {
-    padding: 2px 5px;
+    padding: 2px 8px;
 }
+
 element selected {
     color: #a8bbef;
 }
