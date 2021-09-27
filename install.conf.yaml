@@ -49,6 +49,29 @@
       path: config/picom
       force: true
 
+    # dunst
+    ~/.config/dunst:
+      create: true
+      path: config/dunst
+      force: true
+
+    # zathura
+    ~/.config/zathura:
+      create: true
+      path: config/zathura
+      force: true
+
+    # polybar
+    ~/.config/polybar:
+      create: true
+      path: config/polybar
+      force: true
+
+    # zathura
+    ~/.config/zathura:
+      create: true
+      path: config/ranger
+      force: true
 
     #~/.vim:
     #  create: true
