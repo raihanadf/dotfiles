@@ -9,12 +9,16 @@ set expandtab
 set cindent
 set tabstop=2
 set shiftwidth=2
+set encoding=UTF-8
 
 call plug#begin('~/.vim/plugged')
 
 " general
 
 Plug 'morhetz/gruvbox'
+Plug 'ghifarit53/tokyonight-vim'
+
+Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
@@ -25,7 +29,12 @@ Plug 'neoclide/coc.nvim'
 
 call plug#end()
 
-colorscheme gruvbox
+set termguicolors
+
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
+
+colorscheme tokyonight
 
 " ========== Plugins ==========
 
