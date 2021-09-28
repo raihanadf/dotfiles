@@ -2,7 +2,7 @@
     ### Display ###
     monitor = 0
     follow = mouse
-    geometry = "430x30-5+5"
+    geometry = "430x30-5+35"
     progress_bar = true
     progress_bar_height = 10
     progress_bar_frame_width = 2
@@ -10,7 +10,7 @@
     progress_bar_max_width = 390
     indicate_hidden = yes
     shrink = yes
-    transparency = 5
+    transparency = 20
     notification_height = 60
     separator_height = 5
     padding = 18
