@@ -2,7 +2,12 @@
 
 # ========= Initial ==========
 
+# mouse
 focus_follows_mouse no
+exec xinput set-prop 17 322 1
+exec xinput set-prop 17 344 1
+
+# necessary apps
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id picom
 exec_always --no-startup-id udiskie &
@@ -49,62 +54,83 @@ font pango: CaskaydiaCove NF 10
 
 # ========== Binding ==========
 
+# Alt-tab like behaviour
+bindsym $mod+Tab workspace back_and_forth
+
 # Audio
 bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.dotfiles/scripts/volume.sh up
 bindsym XF86AudioLowerVolume exec --no-startup-id ~/.dotfiles/scripts/volume.sh down
 bindsym XF86AudioMute exec --no-startup-id ~/.dotfiles/scripts/volume.sh mute
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE @ toggle
+
 # Brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id ~/.dotfiles/scripts/backlight.sh up
 bindsym XF86MonBrightnessDown exec --no-startup-id ~/.dotfiles/scripts/backlight.sh down
+
 # Screenshot
 bindsym Print exec --no-startup-id flameshot gui
+
 # Floating Modifier to Move Window
 floating_modifier $mod
+
 # Terminal
 bindsym $mod+Return exec kitty
+
 # Kill Window
 bindsym $mod+Shift+q kill
+
 # Program Launcher / Menu
 #bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+d exec "rofi -modi drun,run -show drun"
+
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 # Change Focus
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
+
 # Change Focus but with arrow keys
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
+
 # Move Focused Window
 bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
+
 # Move Focused Window but with arrow keys
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
+
 # Split Horizontal
 bindsym $mod+b split h
+
 # Split Vertical
 bindsym $mod+v split v
+
 # Enter Fullscreen
 bindsym $mod+f fullscreen toggle
+
 # Change Container Layout
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
+
 # Toggle Floating
 bindsym $mod+Shift+space floating toggle
+
 # Toggle Focus between Tiling or Floating
 bindsym $mod+space focus mode_toggle
+
 # Focus to parent container
 bindsym $mod+a focus parent
+
 # Focus to child container
 #bindsym $mod+d focus child
 
@@ -211,19 +237,35 @@ for_window [class="jetbrains-studio"] move to workspace $ws3
 # // code
 for_window [class="(?i)code"] move to workspace $ws3
 
+# // netbeans
+for_window [class="(?i)netbeans"] move to workspace $ws3
+
 # ===== workspace 4 =====
 
-# discord
+# // discord
 for_window [class="discord"] move to workspace $ws4
 
-# spotify
+# // spotify
 for_window [class="(?i)spotify"] move to workspace $ws4
 
 # ===== workspace 5 =====
-# zoom
+# // zoom
 
 for_window [class="zoom"] floating enable
 for_window [class="zoom"] move to workspace $ws5
 
-# ===== workspace 6 and so on =====
+# ===== workspace 6 =====
 #
+# ===== workspace 7 =====
+#
+# ===== workspace 8 =====
+#
+# ===== workspace 9 =====
+
+# // steam
+for_window [class="(?i)steam"] move to workspace $ws9
+
+# ===== workspace 10 =====
+
+# set every window to floating mode
+for_window [workspace="10"] floating enable
