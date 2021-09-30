@@ -25,6 +25,11 @@ alias wifi='nmtui'
 
 # some programming thingy
 alias mdb="sudo service mongodb"
+alias lamppstart="sudo /opt/lampp/lampp start"
+alias lamppstatus="sudo /opt/lampp/lampp status"
+alias lamppstop="sudo /opt/lampp/lampp stop"
+alias lampprestart="sudo /opt/lampp/lampp restart"
+alias lamppsql="sudo /opt/lampp/bin/mysql"
 
 # optimus manager
 alias opma="optimus-manager"

@@ -9,8 +9,6 @@ HISTFILE=~/.zsh_hist
 HISTSIZE=1000
 SAVEHIST=2000
 
-# vim keybind & misc
-bindkey -v
 unsetopt beep
 
 # compinit
@@ -36,4 +34,6 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-wmname compiz
+
+# Disable the cursor style feature
+ZVM_CURSOR_STYLE_ENABLED=false
