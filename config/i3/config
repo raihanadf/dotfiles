@@ -10,9 +10,9 @@ focus_follows_mouse no
 # necessary apps
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id picom
-exec_always --no-startup-id udiskie &
-exec_always --no-startup-id redshift -P -O 5000K
+exec --no-startup-id redshift -P -O 5000K
 exec --no-startup-id dunst
+exec ~/.dotfiles/scripts/udiskie.sh
 #exec --no-startup-id nm-applet
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
