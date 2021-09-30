@@ -1,9 +1,9 @@
 
 * {
-    background-color:      #011211;
-    border-color:          #006660;
-    text-color:            #ADD8E6;
-    font:            "CaskaydiaCove NF 11";
+    background-color:      #272727;
+    border-color:          #83a597;
+    text-color:            #83a597;
+    font:            "CaskaydiaCove NF 12";
 }
 
 window {

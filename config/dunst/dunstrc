@@ -2,7 +2,7 @@
     ### Display ###
     monitor = 0
     follow = mouse
-    geometry = "430x30-5+35"
+    geometry = "430x30-5+45"
     progress_bar = true
     progress_bar_height = 10
     progress_bar_frame_width = 2
@@ -10,14 +10,14 @@
     progress_bar_max_width = 390
     indicate_hidden = yes
     shrink = yes
-    transparency = 20
+    transparency = 10
     notification_height = 60
     separator_height = 5
     padding = 18
     horizontal_padding = 18
     text_icon_padding = 18
     frame_width = 2
-    frame_color = "#ADD8E6"
+    frame_color = "#83a597"
     separator_color = frame
     sort = yes
     idle_threshold = 120
@@ -71,13 +71,13 @@
     per_monitor_dpi = true
 
 [urgency_low]
-    background = "#011211"
+    background = "#272727"
     foreground = "#ADD8E6"
     highlight = "#999999"
     timeout = 6
 
 [urgency_normal]
-    background = "#011211"
+    background = "#272727"
     foreground = "#ADD8E6"
     highlight = "#999999"
     timeout = 8

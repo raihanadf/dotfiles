@@ -4,13 +4,14 @@
 
 # mouse
 focus_follows_mouse no
-exec xinput set-prop 17 322 1
-exec xinput set-prop 17 344 1
+#exec_always xinput --no-startup-id set-prop 17 322 1
+#exec_always xinput --no-startup-id set-prop 17 344 1
 
 # necessary apps
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id picom
 exec_always --no-startup-id udiskie &
+exec_always --no-startup-id redshift -P -O 5000K
 exec --no-startup-id dunst
 #exec --no-startup-id nm-applet
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
@@ -20,12 +21,13 @@ set $refresh_i3status killall -SIGUSR1 i3status
 
 # ========== Border / Gaps ==========
  
-default_border pixel 2
-gaps inner 5
+default_border pixel 1
+set $gaps 5
+gaps inner $gaps
 
 # ========== Colors ==========
 
-set $cl_high #006660
+set $cl_high #83a597
 set $cl_indi #d9d8d8
 set $cl_back #011211
 set $cl_fore #ADD8E6
@@ -205,6 +207,9 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+bindsym $mod+g        gaps inner current plus 5
+bindsym $mod+Shift+g  gaps inner current minus 5
+bindsym $mod+Control+g  gaps inner current set $gaps
 
 # ========== i3's Bar ==========
 
@@ -264,6 +269,7 @@ for_window [class="zoom"] move to workspace $ws5
 
 # // steam
 for_window [class="(?i)steam"] move to workspace $ws9
+for_window [workspace="9"] floating enable
 
 # ===== workspace 10 =====
 

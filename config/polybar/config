@@ -1,9 +1,9 @@
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #aa011211
-background-alt = #444
+background = #aa272727
+;background-alt = #444
 ;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
+;foreground = #dfdfdf
 foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
@@ -12,37 +12,37 @@ alert = #bd2c40
 [bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 25
+height = 30
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 2.0
-fixed-center = false
+fixed-center = true
 ;bottom = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 4
+line-size = 0
 line-color = #f00
 
-border-size = 4
+border-size = 5
 border-color = #00000000
 
 padding-left = 0
 padding-right = 0
 
-module-margin-left = 0
-module-margin-right = 1
+module-margin-left = 1
+module-margin-right = 0
 
-font-0 = "CaskaydiaCove NF:size=12;2"
-font-1 = "FontAwesome:size=11;3"
-font-2 = "Material Icons:size=11;3"
+font-0 = "Cascadia Code:size=12;2"
+font-1 = "CaskaydiaCove NF:size=17;4"
+font-2 = "Material Icons:size=11;2"
 
 modules-left = i3 
-modules-center = mpd
-modules-right = music alsa network eth battery temperature date powermenu
+modules-center = xwindow
+modules-right = network alsa eth battery date powermenu
 
-tray-position = right
+tray-position = left
 tray-padding = 2
 
 ;wm-restack = generic
@@ -110,7 +110,7 @@ label-mode-background = ${colors.primary}
 label-focused = %name%
 label-focused-background = ${colors.background-alt}
 label-focused-padding = 2
-label-focused-foreground = #ADD8E6
+label-focused-foreground = #83a597
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
@@ -134,7 +134,7 @@ label-urgent-padding = 2
 type = internal/network
 interface = wlo1
 interval = 1.0
-label-connected = " %downspeed%"
+label-connected = " %downspeed%"
 label-disconnected = disconnected
 #label-connected-background = #FF0000
 
@@ -177,10 +177,9 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = ""
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
-label = %percentage:2%%
+label =  %percentage%%
 
 [module/memory]
 type = internal/memory
@@ -273,12 +272,12 @@ type = internal/date
 interval = 5
 
 date =
-date-alt = " %Y-%m-%d"
+date-alt = "%Y-%m-%d"
 
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
+format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 
 label = %date% %time%
@@ -315,37 +314,84 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 [module/alsa]
 type = internal/alsa
 
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
-label-volume-foreground = ${root.foreground}
+; Soundcard to be used
+; Usually in the format hw:# where # is the card number
+; You can find the different card numbers in `/proc/asound/cards`
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
 
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
+; Name of the master, speaker and headphone mixers
+; Use the following command to list available mixer controls:
+; $ amixer scontrols | sed -nr "s/.*'([[:alnum:]]+)'.*/\1/p"
+; If master, speaker or headphone-soundcard isn't the default, 
+; use `amixer -c # scontrols` instead where # is the number 
+; of the master, speaker or headphone soundcard respectively
+;
+; Default: Master
+master-mixer = Master
 
-bar-volume-width = 5
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #55aa55
-bar-volume-foreground-6 = #55aa55
-bar-volume-foreground-7 = #55aa55
-bar-volume-foreground-8 = #55aa55
-bar-volume-foreground-9 = #55aa55
-bar-volume-foreground-10 = #55aa55
-bar-volume-foreground-11 = #f5a70a
-bar-volume-foreground-12 = #ff5555
+; Optionally define speaker and headphone mixers
+; Default: none
+;;speaker-mixer = Speaker
+; Default: none
+;;headphone-mixer = Headphone
 
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+; NOTE: This is required if headphone_mixer is defined
+; Use the following command to list available device controls
+; $ amixer controls | sed -r "/CARD/\!d; s/.*=([0-9]+).*name='([^']+)'.*/printf '%3.0f: %s\n' '\1' '\2'/e" | sort
+; You may also need to use `amixer -c # controls` as above for the mixer names
+; Default: none
+;;headphone-id = 9
+
+; Use volume mapping (similar to amixer -M and alsamixer), where the increase in volume is linear to the ear
+; Default: false
+;;mapped = true
+
+; Interval for volume increase/decrease (in percent points)
+; Default: 5
+interval = 5
+
+; Available tags:
+;   <label-volume> (default)
+;   <ramp-volume>
+;   <bar-volume>
+format-volume = <ramp-volume> <label-volume>
+format-volume-background = ${color.shade6}
+format-volume-padding = 1
+
+; Available tags:
+;   <label-muted> (default)
+;   <ramp-volume>
+;   <bar-volume>
+format-muted = <label-muted>
+format-muted-prefix = 
+format-muted-prefix-font = 2
+format-muted-background = ${color.shade6}
+format-muted-padding = 2
+
+; Available tokens:
+;   %percentage% (default)
+label-volume = %percentage%%
+
+; Available tokens:
+;   %percentage% (default
+label-muted = " Muted"
+label-muted-foreground = ${color.foreground}
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-font = 2
+
+; If defined, it will replace <ramp-volume> when
+; headphones are plugged in to `headphone_control_numid`
+; If undefined, <ramp-volume> will be used for both
+; Only applies if <ramp-volume> is used
+ramp-headphones-0 = 
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/battery]
 type = internal/battery
@@ -359,12 +405,12 @@ time-format = %I:%M
 format-charging = <animation-charging> <label-charging>
 format-charging-background = ${color.shade5}
 format-charging-foreground = ${color.modulefg}
-format-charging-padding = 1
+format-charging-padding = 0
 
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-background = ${color.shade5}
 format-discharging-foreground = ${color.modulefg}
-format-discharging-padding = 1
+format-discharging-padding = 0
 
 label-charging = %percentage%%
 label-discharging = %percentage%%
@@ -372,7 +418,7 @@ label-discharging = %percentage%%
 label-full = Charged
 label-full-background = ${color.shade5}
 label-full-foreground = ${color.modulefg}
-label-full-padding = 1
+label-full-padding = 0
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -387,7 +433,7 @@ animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-5 = 
 
-animation-charging-framerate = 750
+animation-charging-framerate = 550
 
 
 [module/temperature]
