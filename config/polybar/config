@@ -1,3 +1,16 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;==========================================================
+
 [colors]
 ;background = ${xrdb:color0:#222}
 background = #aa272727
@@ -35,12 +48,12 @@ module-margin-left = 1
 module-margin-right = 0
 
 font-0 = "Cascadia Code:size=12;2"
-font-1 = "CaskaydiaCove NF:size=17;4"
+font-1 = "CaskaydiaCove NF:size=20;4"
 font-2 = "Material Icons:size=11;2"
 
 modules-left = i3 
-modules-center = xwindow
-modules-right = network alsa eth battery date powermenu
+modules-center = 
+modules-right = music updates wlan alsa eth battery date powermenu
 
 tray-position = left
 tray-padding = 2
@@ -103,7 +116,7 @@ strip-wsnumbers = true
 ;pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-foreground = #000
+label-mode-foreground = #a89983
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
@@ -235,12 +248,7 @@ label-disconnected-foreground = #66ffffff
 ;label-packetloss-foreground = #eefafafa
 
 ; Only applies if <ramp-signal> is used
-ramp-signal-0 = 😱
-ramp-signal-1 = 😠
-ramp-signal-2 = 😒
-ramp-signal-3 = 😊
-ramp-signal-4 = 😃
-ramp-signal-5 = 😈
+ramp-signal-0 = 
 
 ; Only applies if <animation-packetloss> is used
 animation-packetloss-0 = ⚠
@@ -313,84 +321,27 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/alsa]
 type = internal/alsa
-
-; Soundcard to be used
-; Usually in the format hw:# where # is the card number
-; You can find the different card numbers in `/proc/asound/cards`
 master-soundcard = default
 speaker-soundcard = default
 headphone-soundcard = default
-
-; Name of the master, speaker and headphone mixers
-; Use the following command to list available mixer controls:
-; $ amixer scontrols | sed -nr "s/.*'([[:alnum:]]+)'.*/\1/p"
-; If master, speaker or headphone-soundcard isn't the default, 
-; use `amixer -c # scontrols` instead where # is the number 
-; of the master, speaker or headphone soundcard respectively
-;
-; Default: Master
 master-mixer = Master
-
-; Optionally define speaker and headphone mixers
-; Default: none
-;;speaker-mixer = Speaker
-; Default: none
-;;headphone-mixer = Headphone
-
-; NOTE: This is required if headphone_mixer is defined
-; Use the following command to list available device controls
-; $ amixer controls | sed -r "/CARD/\!d; s/.*=([0-9]+).*name='([^']+)'.*/printf '%3.0f: %s\n' '\1' '\2'/e" | sort
-; You may also need to use `amixer -c # controls` as above for the mixer names
-; Default: none
-;;headphone-id = 9
-
-; Use volume mapping (similar to amixer -M and alsamixer), where the increase in volume is linear to the ear
-; Default: false
-;;mapped = true
-
-; Interval for volume increase/decrease (in percent points)
-; Default: 5
 interval = 5
-
-; Available tags:
-;   <label-volume> (default)
-;   <ramp-volume>
-;   <bar-volume>
 format-volume = <ramp-volume> <label-volume>
 format-volume-background = ${color.shade6}
 format-volume-padding = 1
-
-; Available tags:
-;   <label-muted> (default)
-;   <ramp-volume>
-;   <bar-volume>
 format-muted = <label-muted>
 format-muted-prefix = 
 format-muted-prefix-font = 2
 format-muted-background = ${color.shade6}
 format-muted-padding = 2
-
-; Available tokens:
-;   %percentage% (default)
 label-volume = %percentage%%
-
-; Available tokens:
-;   %percentage% (default
 label-muted = " Muted"
 label-muted-foreground = ${color.foreground}
-
-; Only applies if <ramp-volume> is used
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-font = 2
-
-; If defined, it will replace <ramp-volume> when
-; headphones are plugged in to `headphone_control_numid`
-; If undefined, <ramp-volume> will be used for both
-; Only applies if <ramp-volume> is used
 ramp-headphones-0 = 
-
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/battery]
@@ -469,12 +420,12 @@ menu-2-0-exec = systemctl poweroff
 menu-2-1 = back
 menu-2-1-exec = menu-open-0
 
-format-spacing = 1 
+format-spacing = 1
 format-background = ${color.shade1}
-format-foreground = ${color.modulefg}
+format-foreground = #83a597
 format-padding = 1
 
-label-open = 
+label-open = 
 label-close = 
 label-separator = |
 
@@ -482,8 +433,21 @@ label-separator = |
 type = custom/script
 interval = 1
 
-label = %output:0:55:...%
-exec = ~/.config/polybar/music
+label = %output:0:40:...%
+label-padding = 1
+label-foreground = #b8ba25
+
+exec = ~/.config/polybar/scripts/music
+
+[module/updates]
+type = custom/script
+interval = 3600
+format = <label>
+format-prefix = " "
+format-foreground = ${colors.foreground-bg}
+format-padding = 1
+
+exec = ~/.config/polybar/scripts/updates
 
 [settings]
 screenchange-reload = true
@@ -497,4 +461,4 @@ screenchange-reload = true
 margin-top = 5
 margin-bottom = 5
 
-; vim:ft=dosini
+;vim:ft=dosini
