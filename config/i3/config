@@ -12,7 +12,7 @@ exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id picom
 exec --no-startup-id redshift -P -O 5000K
 exec --no-startup-id dunst
-exec ~/.dotfiles/scripts/udiskie.sh
+exec --no-startup-id ~/.dotfiles/scripts/udiskie.sh
 #exec --no-startup-id nm-applet
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -21,7 +21,7 @@ set $refresh_i3status killall -SIGUSR1 i3status
 
 # ========== Border / Gaps ==========
  
-default_border pixel 1
+default_border pixel 2
 set $gaps 5
 gaps inner $gaps
 
