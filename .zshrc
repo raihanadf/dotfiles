@@ -1,8 +1,10 @@
-# Created by newuser for 5.8
+# Created by raihan for 5.8
+
 #  start up
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+eval "$(starship init zsh)"
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  #source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
 
 # history
 HISTFILE=~/.zsh_hist
@@ -24,7 +26,7 @@ source <(antibody init)
 antibody bundle < ~/.dotfiles/.zsh_plugins
 
 # imports
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
 
 # volta

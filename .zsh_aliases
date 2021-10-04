@@ -1,4 +1,5 @@
 # doing something
+alias pls='sudo $(fc -ln -1)'
 alias zshconfig="nvim ~/.zshrc"
 alias zshalias="nvim ~/.zsh_aliases"
 alias open="xdg-open"
@@ -26,7 +27,7 @@ alias wifi='nmtui'
 # some programming thingy
 alias mdb="sudo service mongodb"
 alias lamppstart="sudo /opt/lampp/lampp start"
-alias lamppstatus="sudo /opt/lampp/lampp status"
+alias lamppst="sudo /opt/lampp/lampp status"
 alias lamppstop="sudo /opt/lampp/lampp stop"
 alias lampprestart="sudo /opt/lampp/lampp restart"
 alias lamppsql="sudo /opt/lampp/bin/mysql"
