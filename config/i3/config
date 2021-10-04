@@ -21,7 +21,7 @@ set $refresh_i3status killall -SIGUSR1 i3status
 
 # ========== Border / Gaps ==========
  
-default_border pixel 2
+default_border pixel 0
 set $gaps 5
 gaps inner $gaps
 
@@ -30,8 +30,8 @@ gaps inner $gaps
 set $cl_high #83a597
 set $cl_indi #d9d8d8
 set $cl_back #011211
-set $cl_fore #ADD8E6
-set $cl_urge #ee2e24
+set $cl_fore #928373
+set $cl_urge #d79920
 
 #sections               border   backgr   text     indi     childborder
 client.focused          $cl_high $cl_back $cl_high $cl_high $cl_high
