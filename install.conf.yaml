@@ -67,12 +67,6 @@
       path: config/polybar
       force: true
 
-    # zathura
-    ~/.config/zathura:
-      create: true
-      path: config/ranger
-      force: true
-
     #~/.vim:
     #  create: true
     #  path: config/nvim
