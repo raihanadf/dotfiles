@@ -1,4 +1,4 @@
-;==========================================================
+;=========================================================
 ;
 ;
 ;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
@@ -16,19 +16,20 @@
 background = #aa272727
 ;background-alt = #444
 ;foreground = ${xrdb:color7:#222}
-;foreground = #dfdfdf
-foreground-alt = #555
-primary = #ffb52a
+foreground = #ebdbb2
+;foreground-alt = #555
+primary = #448488
 secondary = #e60053
 alert = #bd2c40
 
 [bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 30
-;offset-x = 1%
+height = 40
+;offset-x = 2%
 ;offset-y = 1%
-radius = 2.0
+;override-redirect = true
+radius = 5.0
 fixed-center = true
 ;bottom = true
 
@@ -48,14 +49,15 @@ module-margin-left = 1
 module-margin-right = 0
 
 font-0 = "Cascadia Code:size=12;2"
-font-1 = "CaskaydiaCove NF:size=20;4"
-font-2 = "Material Icons:size=11;2"
+font-1 = "Noto Sans CJK JP:size=12;2"
+font-2 = "CaskaydiaCove NF:size=20;4"
+font-3 = "Material Icons:size=11;2"
 
 modules-left = i3 
-modules-center = 
-modules-right = music updates wlan alsa eth battery date powermenu
+modules-center = music
+modules-right = wlan alsa eth battery date powermenu
 
-tray-position = left
+tray-position = right
 tray-padding = 2
 
 ;wm-restack = generic
@@ -237,7 +239,7 @@ format-packetloss = <animation-packetloss> <label-connected>
 
 ; Default: %ifname% %local_ip%
 label-connected = %essid%
-label-connected-foreground = #eefafafa
+label-connected-foreground = ${color.foreground}
 
 ; Default: (none)
 label-disconnected = not connected
@@ -384,7 +386,7 @@ animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-5 = 
 
-animation-charging-framerate = 550
+animation-charging-framerate = 950
 
 
 [module/temperature]
@@ -435,19 +437,9 @@ interval = 1
 
 label = %output:0:40:...%
 label-padding = 1
-label-foreground = #b8ba25
+label-foreground = #989719
 
 exec = ~/.config/polybar/scripts/music
-
-[module/updates]
-type = custom/script
-interval = 3600
-format = <label>
-format-prefix = " "
-format-foreground = ${colors.foreground-bg}
-format-padding = 1
-
-exec = ~/.config/polybar/scripts/updates
 
 [settings]
 screenchange-reload = true
