@@ -1,7 +1,7 @@
 
 * {
     background-color:      #272727;
-    border-color:          #83a597;
+    /*border-color:          #83a597;*/
     text-color:            #83a597;
     font:            "CaskaydiaCove NF 12";
 }
@@ -13,6 +13,7 @@ window {
     padding:    4px;
     children:   [ horibox ];
     border: 2px solid;
+    border-radius: 5px;
     margin: 5px;
 }
 

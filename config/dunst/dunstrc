@@ -2,7 +2,7 @@
     ### Display ###
     monitor = 0
     follow = mouse
-    geometry = "430x30-5+55"
+    geometry = "430x30-5+50"
     progress_bar = true
     progress_bar_height = 20
     progress_bar_frame_width = 2

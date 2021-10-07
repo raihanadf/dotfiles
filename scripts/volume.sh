@@ -10,11 +10,11 @@ iconPath="/usr/share/icons/ePapirus/48x48/status"
 
 case "$1" in
   "up")
-    pactl set-sink-volume @DEFAULT_SINK@ +5%
+    pactl set-sink-volume @DEFAULT_SINK@ +4%
     ;;
 
   "down")
-    pactl set-sink-volume @DEFAULT_SINK@ -5%
+    pactl set-sink-volume @DEFAULT_SINK@ -4%
     ;;
 
   "mute")

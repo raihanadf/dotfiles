@@ -13,7 +13,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #aa272727
+background = #dd272727
 ;background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #ebdbb2
@@ -25,7 +25,7 @@ alert = #bd2c40
 [bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 40
+height = 35
 ;offset-x = 2%
 ;offset-y = 1%
 ;override-redirect = true
@@ -54,8 +54,8 @@ font-2 = "CaskaydiaCove NF:size=20;4"
 font-3 = "Material Icons:size=11;2"
 
 modules-left = i3 
-modules-center = music
-modules-right = wlan alsa eth battery date powermenu
+modules-center = date
+modules-right = wlan alsa eth battery powermenu
 
 tray-position = right
 tray-padding = 2
@@ -281,7 +281,7 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date =
+date = 
 date-alt = "%Y-%m-%d"
 
 time = %H:%M
@@ -447,7 +447,7 @@ screenchange-reload = true
 ;compositing-background = screen
 ;compositing-foreground = source
 ;compositing-border = over
-;pseudo-transparency = false
+pseudo-transparency = true
 
 [global/wm]
 margin-top = 5
