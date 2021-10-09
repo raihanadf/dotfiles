@@ -1,12 +1,11 @@
 #!/bin/bash
 
-# Dependencies
+# needed :
 # - pamixer
 # - pactl
-# - ePapirus (icon)
 
-msgID="92374" # Arbitrary, can be anything
-iconPath="/usr/share/icons/ePapirus/48x48/status"
+msgID="100" # Arbitrary, can be anything
+iconPath="/home/raihan/.dotfiles/scripts/cat"
 
 case "$1" in
   "up")
@@ -27,18 +26,17 @@ volume="$(pamixer --get-volume)"
 
 if [ "$isMuted" = "false" ]; then
   if [ "$volume" -gt "100" ]; then
-    dunstify "Volume $volume%" -h int:value:"$volume" -h string:fgcolor:#ff4444 -h string:frcolor:#ba0606 -i $iconPath/notification-audio-volume-high.svg -r $msgID
+    dunstify "Sound" "Volume: [ $volume%]" -h int:value:"$volume" -h string:fgcolor:#ff4444 -h string:frcolor:#ba0606 -i $iconPath/audio-volume-overamplified-symbolic.svg -r $msgID
   elif [ "$volume" -gt "65" ]; then
-    dunstify "Volume $volume%" -h int:value:"$volume" -i $iconPath/notification-audio-volume-high.svg -r $msgID
+    dunstify "Sound" "Volume: [ $volume%]" -h int:value:"$volume" -h string:fgcolor:#989719 -i $iconPath/audio-volume-high-symbolic.svg -r $msgID
   elif [ "$volume" -gt "20" ]; then
-    dunstify "Volume $volume%" -h int:value:"$volume" -i $iconPath/notification-audio-volume-medium.svg -r $msgID
+    dunstify "Sound" "Volume: [ $volume%]" -h int:value:"$volume" -h string:fgcolor:#989719 -i $iconPath/audio-volume-medium-symbolic.svg -r $msgID
   elif [ "$volume" -gt "0" ]; then
-    dunstify "Volume $volume%" -h int:value:"$volume" -i $iconPath/notification-audio-volume-low.svg -r $msgID
+    dunstify "Sound" "Volume: [ $volume%]" -h int:value:"$volume" -h string:fgcolor:#989719 -i $iconPath/audio-volume-low-symbolic.svg -r $msgID
   elif [ "$volume" == "0" ]; then
-    dunstify "Volume Muted" -i $iconPath/notification-audio-volume-muted.svg -r $msgID
+    dunstify "Volume Muted" -h string:fgcolor:#989719 -i $iconPath/audio-volume-muted-symbolic.svg -r $msgID
   fi
 else
-  dunstify "Volume Muted" -i $iconPath/notification-audio-volume-muted.svg -r $msgID
+  dunstify "Volume Muted" -h string:fgcolor:#989719 -i $iconPath/audio-volume-mute.png -r $msgID
 fi
 
-canberra-gtk-play -i audio-volume-change -d "changeVolume"

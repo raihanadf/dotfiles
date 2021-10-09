@@ -1,11 +1,10 @@
 #!/bin/bash
 
-# Dependencies
+# needed
 # - brightnessctl
-# - ePapirus (icon)
 
 msgID="92375" # Arbitrary, can be anything
-iconPath="/usr/share/icons/ePapirus/48x48/status"
+iconPath="/home/raihan/.dotfiles/scripts/cat"
 
 case "$1" in
   "up")
@@ -19,16 +18,15 @@ esac
 
 value="$(brightnessctl -m | awk -F, '{print $4}' | tr -d %)"
 
-if [ "$value" -gt "90" ]; then
-  dunstify "Brightness $value%" -h int:value:"$value" -i $iconPath/notification-display-brightness-full.svg -r $msgID
+if [ "$value" -gt "80" ]; then
+  dunstify "Brightness" "Value: [$value%]" -h int:value:"$value" -i $iconPath/brightness_7.png -r $msgID
 elif [ "$value" -gt "65" ]; then
-  dunstify "Brightness $value%" -h int:value:"$value" -i $iconPath/notification-display-brightness-high.svg -r $msgID
+  dunstify "Brightness" "Value: [$value%]" -h int:value:"$value" -i $iconPath/brightness_5.png -r $msgID
 elif [ "$value" -gt "30" ]; then
-  dunstify "Brightness $value%" -h int:value:"$value" -i $iconPath/notification-display-brightness-medium.svg -r $msgID
+  dunstify "Brightness" "Value: [$value%]" -h int:value:"$value" -i $iconPath/brightness_3.png -r $msgID
 elif [ "$value" -gt "0" ]; then
-  dunstify "Brightness $value%" -h int:value:"$value" -i $iconPath/notification-display-brightness-low.svg -r $msgID
+  dunstify "Brightness" "Value: [$value%]" -h int:value:"$value" -i $iconPath/brightness_1.png -r $msgID
 elif [ "$value" == "0" ]; then
-  dunstify "Brightness $value%" -h int:value:"$value" -i $iconPath/notification-display-brightness-off.svg -r $msgID
+  dunstify "Brightness" "Value: [$value%]" -h int:value:"$value" -i $iconPath/notification-display-brightness-off.svg -r $msgID
 fi
-
 
