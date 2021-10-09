@@ -10,7 +10,7 @@ focus_follows_mouse no
 # necessary apps
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id picom
-exec --no-startup-id redshift -P -O 5000K
+exec --no-startup-id redshift -P -O 6000K
 exec --no-startup-id dunst
 exec --no-startup-id ~/.dotfiles/scripts/udiskie.sh
 #exec --no-startup-id nm-applet
@@ -70,7 +70,11 @@ bindsym XF86MonBrightnessUp exec --no-startup-id ~/.dotfiles/scripts/backlight.s
 bindsym XF86MonBrightnessDown exec --no-startup-id ~/.dotfiles/scripts/backlight.sh down
 
 # Screenshot
-bindsym Print exec --no-startup-id flameshot gui
+bindsym Print exec --no-startup-id flameshot full -p ~/Pictures/Screenshots
+bindsym $mod+u --release exec --no-startup-id flameshot gui -p ~/Pictures/Screenshots
+
+# Kill some fuckers
+bindsym $mod+Ctrl+x --release exec --no-startup-id notify-send "IT'S XKILL BOIS!!!" "Select a dumb app to kill" -i dialog-error && xkill
 
 # Floating Modifier to Move Window
 floating_modifier $mod
@@ -220,30 +224,33 @@ bindsym $mod+Control+g  gaps inner current set $gaps
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # ========== App's Workspace ==========
+for_window [urgent=latest] focus
+for_window[window_role="Dialog*"] focus
 
 # ===== workspace 1 ( terminal )=====
 #
 # well idk
 #
-# ===== workspace 2 ( browser )=====
-
-# // firefox
-for_window [class="firefox"] move to workspace $ws2
-
-# // browser pop-ups
-for_window [window_role="pop-up"] floating enable
-
-# ===== workspace 3 ( development )=====
+# ===== workspace 2 ( dev )=====
 
 # // android studio
 for_window [class="jetbrains-studio" title="^win\d+$"] focus
 for_window [class="jetbrains-studio"] move to workspace $ws3
 
 # // code
-for_window [class="(?i)code"] move to workspace $ws3
+for_window [class="(?i)code"] move to workspace $ws2
 
 # // netbeans
-for_window [class="(?i)netbeans"] move to workspace $ws3
+for_window [class="(?i)netbeans"] move to workspace $ws2
+
+# // browser pop-ups
+for_window [window_role="pop-up"] floating enable
+
+# ===== workspace 3 ( browser )=====
+
+# // firefox
+for_window [class="firefox"] move to workspace $ws3
+
 
 # ===== workspace 4 =====
 
@@ -275,3 +282,4 @@ for_window [workspace="9"] floating enable
 
 # set every window to floating mode
 for_window [workspace="10"] floating enable
+
