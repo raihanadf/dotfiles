@@ -8,7 +8,6 @@ configuration {
     separator-style: 				"beam";
     hide-scrollbar: 				true;
     scroll-method: 					0;
-    window-format: 					"[{w}] ··· {c} ···   {t}";
     click-to-exit: 					true;
     show-match: 					false;
     combi-hide-mode-prefix: 		false;
@@ -16,8 +15,73 @@ configuration {
     display-windowcd: 				"Windowcd";
     display-run: 					"Commands";
     display-ssh: 					"Ssh";
-    display-drun: 					" start   ";
+    display-drun: 					" start ";
     display-combi: 					"Combi";
 }
 
-@theme "/home/raihan/.config/rofi/themes/dmenu.rasi"
+* {
+    /* Theme settings */
+    highlight: bold italic;
+    scrollbar: true;
+    font: "Cascadia Code 14";
+
+    /* Gruvbox dark colors */
+    gruvbox-dark-bg0-hard:     #1d2021;
+    gruvbox-dark-bg0:          #282828;
+    gruvbox-dark-bg2:          #504945;
+    gruvbox-dark-fg0:          #fbf1c7;
+    gruvbox-dark-fg1:          #ebdbb2;
+    gruvbox-dark-red-dark:     #cc241d;
+    gruvbox-dark-red-light:    #fb4934;
+    gruvbox-dark-yellow-dark:  #d79921;
+    gruvbox-dark-yellow-light: #fabd2f;
+    gruvbox-dark-gray:         #a89984;
+
+    /* Theme colors */
+    background:                  @gruvbox-dark-bg0-hard;
+    background-color:            @background;
+    foreground:                  @gruvbox-dark-fg1;
+    border-color:                @gruvbox-dark-gray;
+    separatorcolor:              @border-color;
+    scrollbar-handle:            @border-color;
+
+    normal-background:           @background;
+    normal-foreground:           @foreground;
+    alternate-normal-background: @gruvbox-dark-bg0;
+    alternate-normal-foreground: @foreground;
+    selected-normal-background:  @gruvbox-dark-bg2;
+    selected-normal-foreground:  @gruvbox-dark-fg0;
+
+    active-background:           @gruvbox-dark-yellow-dark;
+    active-foreground:           @background;
+    alternate-active-background: @active-background;
+    alternate-active-foreground: @active-foreground;
+    selected-active-background:  @gruvbox-dark-yellow-light;
+    selected-active-foreground:  @active-foreground;
+
+    urgent-background:           @gruvbox-dark-red-dark;
+    urgent-foreground:           @background;
+    alternate-urgent-background: @urgent-background;
+    alternate-urgent-foreground: @urgent-foreground;
+    selected-urgent-background:  @gruvbox-dark-red-light;
+    selected-urgent-foreground:  @urgent-foreground;
+}
+
+window {
+    width: 30%;
+    padding:    4px;
+    border: 2px solid;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+element {
+    padding: 2px 8px;
+}
+
+element selected {
+    color: #a8bbef;
+}
+
+
+
