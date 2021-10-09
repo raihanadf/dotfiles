@@ -13,7 +13,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #dd272727
+background = #ee272727
 ;background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #ebdbb2
@@ -25,7 +25,7 @@ alert = #bd2c40
 [bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 35
+height = 40
 ;offset-x = 2%
 ;offset-y = 1%
 ;override-redirect = true
@@ -46,16 +46,18 @@ padding-left = 0
 padding-right = 0
 
 module-margin-left = 1
-module-margin-right = 0
+module-margin-right = 1
 
 font-0 = "Cascadia Code:size=12;2"
-font-1 = "Noto Sans CJK JP:size=12;2"
-font-2 = "CaskaydiaCove NF:size=20;4"
-font-3 = "Material Icons:size=11;2"
+font-1 = siji:pixelsize=10;1
+font-2 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-3 = "Noto Sans CJK JP:size=12;2"
+font-4 = "CaskaydiaCove NF:size=20;4"
+font-5 = "Material Icons:size=11;2"
 
-modules-left = i3 
+modules-left = i3 xwindow
 modules-center = date
-modules-right = wlan alsa eth battery powermenu
+modules-right = wlan eth pulseaudio battery powermenu
 
 tray-position = right
 tray-padding = 2
@@ -199,7 +201,7 @@ label =  %percentage%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label = %percentage_used%%
@@ -284,7 +286,7 @@ interval = 5
 date = 
 date-alt = "%Y-%m-%d"
 
-time = %H:%M
+time = It's %A! - %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
