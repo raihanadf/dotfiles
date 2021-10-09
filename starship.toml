@@ -1,0 +1,25 @@
+add_newline = false
+
+[line_break]
+disabled = false
+
+[character]                            
+success_symbol = "[](bold green)"    
+error_symbol = "[](bold red)"
+vicmd_symbol = "[](bold blue)"
+
+[username]
+style_user = "white bold"
+style_root = "black bold"
+format = "[raihan]($style) "
+disabled = false
+show_always = true
+
+[package]
+disabled = true
+
+[directory]
+read_only = "  "
+style = "bold blue"
+truncation_length = 2
+truncation_symbol = "./"
