@@ -22,7 +22,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # ========== Border / Gaps ==========
  
 default_border pixel 0
-set $gaps 5
+set $gaps 10
 gaps inner $gaps
 
 # ========== Colors ==========
@@ -141,16 +141,16 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # ========== Workspace ==========
-set $ws1 "1:I"
-set $ws2 "2:II"
-set $ws3 "3:III"
-set $ws4 "4:IV"
-set $ws5 "5:V"
-set $ws6 "6:VI"
-set $ws7 "7:VII"
-set $ws8 "8:VIII"
-set $ws9 "9:IX"
-set $ws10 "10:X"
+set $ws1 "1:1/term"
+set $ws2 "2:2/dev"
+set $ws3 "3:3/www"
+set $ws4 "4:4/music"
+set $ws5 "5:5/zoom"
+set $ws6 "6:6/fun"
+set $ws7 "7:7/??"
+set $ws8 "8:8/???"
+set $ws9 "9:9/games"
+set $ws10 "10:10/float"
 
 # Switch to Workspaces
 bindsym $mod+1 workspace number $ws1
@@ -198,6 +198,11 @@ mode "resize" {
         bindsym $up resize shrink height 10 px or 10 ppt
         bindsym $right resize grow width 10 px or 10 ppt
 
+        bindsym Shift + $left resize shrink width 50 px or 50 ppt
+        bindsym Shift + $down resize grow height 50 px or 50 ppt
+        bindsym Shift + $up resize shrink height 50 px or 50 ppt
+        bindsym Shift + $right resize grow width 50 px or 50 ppt
+
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
@@ -234,8 +239,8 @@ for_window[window_role="Dialog*"] focus
 # ===== workspace 2 ( dev )=====
 
 # // android studio
-for_window [class="jetbrains-studio" title="^win\d+$"] focus
-for_window [class="jetbrains-studio"] move to workspace $ws3
+for_window [class="jetbrains-*" title="^win\d+$"] focus
+for_window [class="jetbrains-*"] move to workspace $ws2
 
 # // code
 for_window [class="(?i)code"] move to workspace $ws2
