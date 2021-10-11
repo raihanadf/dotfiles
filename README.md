@@ -1,5 +1,6 @@
 install 
--------
+=======
+
 ```shell script
 
 # first setup the ssh key for github
@@ -12,10 +13,12 @@ cd ~/.dotfiles
 
 ```
 
-setup detail
-============
+setup details
+=============
 
+![arch](https://github.com/17radf/dotfiles/blob/master/arch-0.png)
+![arch](https://github.com/17radf/dotfiles/blob/master/arch-1.png)
 - arch linux
 - kitty w/ zsh
-- [antibody](https://getantibody.github.io)
-- and some more...
+- i3-gaps, polybar, rofi, etc
+- nvim 
