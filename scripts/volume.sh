@@ -6,6 +6,7 @@
 
 msgID="100" # Arbitrary, can be anything
 iconPath="/home/raihan/.dotfiles/scripts/cat"
+message=""
 
 case "$1" in
   "up")
@@ -27,9 +28,9 @@ volume="$(pamixer --get-volume)"
 if [ "$isMuted" = "false" ]; then
   if [ "$volume" -gt "100" ]; then
     dunstify "Sound" "Volume: [ $volume%]" -h int:value:"$volume" -h string:fgcolor:#ff4444 -h string:frcolor:#ba0606 -i $iconPath/audio-volume-overamplified-symbolic.svg -r $msgID
-  elif [ "$volume" -gt "65" ]; then
+  elif [ "$volume" -gt "75" ]; then
     dunstify "Sound" "Volume: [ $volume%]" -h int:value:"$volume" -h string:fgcolor:#989719 -i $iconPath/audio-volume-high-symbolic.svg -r $msgID
-  elif [ "$volume" -gt "20" ]; then
+  elif [ "$volume" -gt "40" ]; then
     dunstify "Sound" "Volume: [ $volume%]" -h int:value:"$volume" -h string:fgcolor:#989719 -i $iconPath/audio-volume-medium-symbolic.svg -r $msgID
   elif [ "$volume" -gt "0" ]; then
     dunstify "Sound" "Volume: [ $volume%]" -h int:value:"$volume" -h string:fgcolor:#989719 -i $iconPath/audio-volume-low-symbolic.svg -r $msgID

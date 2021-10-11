@@ -1,7 +1,7 @@
 [global]
     monitor = 0
     follow = mouse
-    geometry = "600x30-10+60"
+    geometry = "450x30-20+50"
 
     progress_bar = true
     progress_bar_height = 15
@@ -79,8 +79,8 @@
     timeout = 8
 
 [frame]
-    width = 2
-    color = "#928373"
+    width = 3
+    color = "#484848"
 
 [urgency_critical]
     background = "#FFFFFF"
