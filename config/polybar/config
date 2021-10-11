@@ -1,19 +1,13 @@
-;=========================================================
-;
-;
-;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
-;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
-;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
-;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
-;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
-;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-;
-;
-;==========================================================
+;            _ _                 _                        __ _       
+;  _ __ __ _(_) |__   __ _ _ __ ( )___    ___ ___  _ __  / _(_) __ _ 
+; | '__/ _` | | '_ \ / _` | '_ \|// __|  / __/ _ \| '_ \| |_| |/ _` |
+; | | | (_| | | | | | (_| | | | | \__ \ | (_| (_) | | | |  _| | (_| |
+; |_|  \__,_|_|_| |_|\__,_|_| |_| |___/  \___\___/|_| |_|_| |_|\__, |
+;                                                              |___/
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #ee272727
+background = #ee252525
 ;background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #ebdbb2
@@ -25,11 +19,11 @@ alert = #bd2c40
 [bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 40
+height = 30
 ;offset-x = 2%
 ;offset-y = 1%
 ;override-redirect = true
-radius = 5.0
+;radius = 5.0
 fixed-center = true
 ;bottom = true
 
@@ -39,28 +33,28 @@ foreground = ${colors.foreground}
 line-size = 0
 line-color = #f00
 
-border-size = 5
-border-color = #00000000
+;border-size = 5
+;border-color = #00000000
 
 padding-left = 0
-padding-right = 0
+padding-right = 2
 
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = "Cascadia Code:size=12;2"
-font-1 = siji:pixelsize=10;1
-font-2 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-3 = "Noto Sans CJK JP:size=12;2"
-font-4 = "CaskaydiaCove NF:size=20;4"
-font-5 = "Material Icons:size=11;2"
+font-0 = "Cascadia Code:size=11;2"
+font-1 = "CaskaydiaCove NF:size=20;4"
+font-2 = "Material Icons:size=11;2"
+font-3 = "unifont:fontformat=truetype:size=12:antialias=false;0"
+font-4 = "Noto Sans CJK JP:size=11;2"
+font-5 = "siji:pixelsize=11;1"
 
-modules-left = i3 xwindow
+modules-left = i3 
 modules-center = date
-modules-right = wlan eth pulseaudio battery powermenu
+modules-right = wlan eth alsa battery powermenu
 
 tray-position = right
-tray-padding = 2
+tray-padding = 0
 
 ;wm-restack = generic
 ;wm-restack = bspwm
@@ -82,22 +76,6 @@ enable-ipc = true
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
-
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
-
-label-layout = %layout%
-label-layout-underline = ${colors.secondary}
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
 
 [module/filesystem]
 type = internal/fs
@@ -132,6 +110,7 @@ label-focused-foreground = #83a597
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
 label-unfocused-padding = 2
+label-unfocused-foreground = #a89983
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
@@ -240,8 +219,9 @@ format-packetloss = <animation-packetloss> <label-connected>
 ;   %linkspeed% [wired]
 
 ; Default: %ifname% %local_ip%
-label-connected = %essid%
+label-connected = %{A1:nm-connection-editor:}%local_ip%%{A}
 label-connected-foreground = ${color.foreground}
+label-exec = nm-connection-editor
 
 ; Default: (none)
 label-disconnected = not connected
@@ -261,7 +241,6 @@ animation-packetloss-1 = 📶
 animation-packetloss-1-foreground = #000000
 ; Framerate in milliseconds
 animation-packetloss-framerate = 500
-
 
 [module/eth]
 type = internal/network
@@ -332,27 +311,26 @@ master-mixer = Master
 interval = 5
 format-volume = <ramp-volume> <label-volume>
 format-volume-background = ${color.shade6}
-format-volume-padding = 1
+format-volume-padding = 0
 format-muted = <label-muted>
 format-muted-prefix = 
 format-muted-prefix-font = 2
 format-muted-background = ${color.shade6}
-format-muted-padding = 2
+format-muted-padding = 0
 label-volume = %percentage%%
 label-muted = " Muted"
-label-muted-foreground = ${color.foreground}
+label-muted-foreground = #a89983
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-font = 2
 ramp-headphones-0 = 
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/battery]
 type = internal/battery
 battery = BAT1
 adapter = ADP1
-full-at = 98
+full-at = 78
 
 poll-interval = 2
 time-format = %I:%M
@@ -367,12 +345,12 @@ format-discharging-background = ${color.shade5}
 format-discharging-foreground = ${color.modulefg}
 format-discharging-padding = 0
 
-label-charging = %percentage%%
+label-charging = %percentage%%]
 label-discharging = %percentage%%
 
-label-full = Charged
+label-full = [CHARGED]
 label-full-background = ${color.shade5}
-label-full-foreground = ${color.modulefg}
+label-full-foreground = #b8ba25
 label-full-padding = 0
 
 ramp-capacity-0 = 
@@ -381,14 +359,12 @@ ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-5 = 
+animation-charging-0 = [%{F#989719}Ch%{F-}arging:
+animation-charging-1 = [Ch%{F#839819}ar%{F-}ging:
+animation-charging-2 = [Char%{F#6e9819}gi%{F-}ng:
+animation-charging-3 = [Chargi%{F#5d9819}ng%{F-}:
 
-animation-charging-framerate = 950
+animation-charging-framerate = 1000
 
 
 [module/temperature]
@@ -427,7 +403,7 @@ menu-2-1-exec = menu-open-0
 format-spacing = 1
 format-background = ${color.shade1}
 format-foreground = #83a597
-format-padding = 1
+format-padding = 0
 
 label-open = 
 label-close = 
@@ -438,7 +414,6 @@ type = custom/script
 interval = 1
 
 label = %output:0:40:...%
-label-padding = 1
 label-foreground = #989719
 
 exec = ~/.config/polybar/scripts/music
