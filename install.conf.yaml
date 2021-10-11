@@ -8,11 +8,12 @@
 - link:
     # files 
     ~/.vimrc: config/nvim/init.vim
-    ~/.zshrc: .zshrc
-    ~/.p10k.zsh: .p10k.zsh
-    ~/.gitconfig: .gitconfig
-    ~/.zsh_aliases: .zsh_aliases
-    ~/.tmux.conf: .tmux.conf
+    ~/.config/starship.toml: config/starship.toml
+    ~/.zshrc: dots/.zshrc
+    ~/.p10k.zsh: dots/.p10k.zsh
+    ~/.gitconfig: dots/.gitconfig
+    ~/.zsh_aliases: dots/.zsh_aliases
+    ~/.tmux.conf: dots/.tmux.conf
 
     # i3
     ~/.config/i3:

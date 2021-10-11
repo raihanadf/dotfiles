@@ -23,7 +23,7 @@ fi;
 
 # antibody
 source <(antibody init)
-antibody bundle < ~/.dotfiles/.zsh_plugins
+antibody bundle < ~/.dotfiles/dots/.zsh_plugins
 
 # imports
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
