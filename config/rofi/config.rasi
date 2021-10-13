@@ -1,28 +1,17 @@
 configuration {
-    bw: 							0;
-    location: 					    0;
-    padding: 						0;
-    fixed-num-lines: 				true;
     show-icons: 					true;
     sidebar-mode: 					true;
-    separator-style: 				"beam";
-    hide-scrollbar: 				true;
-    scroll-method: 					0;
+    separator-style: 				"none";
     click-to-exit: 					true;
     show-match: 					false;
     combi-hide-mode-prefix: 		false;
-    display-window: 				"Window";
-    display-windowcd: 				"Windowcd";
-    display-run: 					"Commands";
-    display-ssh: 					"Ssh";
+    display-run: 					"commands";
     display-drun: 					" start ";
-    display-combi: 					"Combi";
 }
 
 * {
     /* Theme settings */
-    highlight: bold italic;
-    scrollbar: true;
+    highlight: bold;
     font: "Cascadia Code 14";
 
     /* Gruvbox dark colors */
@@ -69,8 +58,8 @@ configuration {
 
 window {
     width: 30%;
-    padding:    4px;
-    border: 2px solid;
+    padding:    30px;
+    border: 0;
     border-radius: 5px;
     margin: 5px;
 }
@@ -82,6 +71,4 @@ element {
 element selected {
     color: #a8bbef;
 }
-
-
 
