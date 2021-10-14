@@ -37,5 +37,8 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# Disable the cursor style feature
+# disable the cursor style feature
 ZVM_CURSOR_STYLE_ENABLED=false
+
+# windows title
+precmd () {print -Pn "\e]0;%~\a"}

@@ -36,3 +36,7 @@ alias lamppsql="sudo /opt/lampp/bin/mysql"
 alias opma="optimus-manager"
 alias opmas="optimus-manager --switch"
 alias opmast="optimus-manager --status"
+
+# bitchy turbo (good tho)
+alias onturbo="echo 0 | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+alias offturbo="echo 1 | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
