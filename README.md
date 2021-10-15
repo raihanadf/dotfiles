@@ -21,7 +21,4 @@ setup details
 - i3-gaps, polybar, rofi, etc
 - nvim 
 
-screenshots
-===========
-![arch](https://github.com/17radf/dotfiles/blob/master/config/screenshot-0.png)
-![arch](https://github.com/17radf/dotfiles/blob/master/config/screenshot-1.png)
+![arch](https://github.com/17radf/dotfiles/blob/master/config/screenshot.png)
