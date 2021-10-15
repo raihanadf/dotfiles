@@ -7,7 +7,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #ee252525
+background = #dd252525
 ;background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #ebdbb2
@@ -36,7 +36,7 @@ line-color = #f00
 ;border-size = 5
 ;border-color = #00000000
 
-padding-left = 0
+padding-left = 2
 padding-right = 2
 
 module-margin-left = 1
@@ -49,12 +49,12 @@ font-3 = "unifont:fontformat=truetype:size=12:antialias=false;0"
 font-4 = "Noto Sans CJK JP:size=11;2"
 font-5 = "siji:pixelsize=11;1"
 
-modules-left = i3 
-modules-center = date
+modules-left = i3 xwindow
+modules-center = date 
 modules-right = wlan eth alsa battery powermenu
 
-tray-position = right
-tray-padding = 0
+tray-position = none
+tray-padding = 2
 
 ;wm-restack = generic
 ;wm-restack = bspwm
@@ -75,7 +75,8 @@ enable-ipc = true
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label = [%title:0:30:...%]
+label-foreground = #83a597
 
 [module/filesystem]
 type = internal/fs
@@ -97,19 +98,19 @@ strip-wsnumbers = true
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
-label-mode-padding = 2
+label-mode-padding = 1
 label-mode-foreground = #a89983
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %name%
 label-focused-background = ${colors.background-alt}
-label-focused-padding = 2
-label-focused-foreground = #83a597
+label-focused-padding = 1
+label-focused-foreground = #ebdbb2
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
-label-unfocused-padding = 2
+label-unfocused-padding = 1
 label-unfocused-foreground = #a89983
 
 ; visible = Active workspace on unfocused monitor
@@ -224,7 +225,7 @@ label-connected-foreground = ${color.foreground}
 label-exec = nm-connection-editor
 
 ; Default: (none)
-label-disconnected = not connected
+label-disconnected = connectedn't
 label-disconnected-foreground = #66ffffff
 
 ; Default: (none)
@@ -265,7 +266,7 @@ interval = 5
 date = 
 date-alt = "%Y-%m-%d"
 
-time = It's %A! - %H:%M
+time = It's %A! — %H:%M 
 time-alt = %H:%M:%S
 
 format-prefix = 
@@ -309,7 +310,8 @@ speaker-soundcard = default
 headphone-soundcard = default
 master-mixer = Master
 interval = 5
-format-volume = <ramp-volume> <label-volume>
+
+format-volume = <ramp-volume>
 format-volume-background = ${color.shade6}
 format-volume-padding = 0
 format-muted = <label-muted>
@@ -317,9 +319,11 @@ format-muted-prefix = 
 format-muted-prefix-font = 2
 format-muted-background = ${color.shade6}
 format-muted-padding = 0
+
 label-volume = %percentage%%
 label-muted = " Muted"
 label-muted-foreground = #a89983
+
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
@@ -330,7 +334,7 @@ ramp-headphones-0 = 
 type = internal/battery
 battery = BAT1
 adapter = ADP1
-full-at = 78
+full-at = 90
 
 poll-interval = 2
 time-format = %I:%M
@@ -346,25 +350,28 @@ format-discharging-foreground = ${color.modulefg}
 format-discharging-padding = 0
 
 label-charging = %percentage%%]
-label-discharging = %percentage%%
+label-discharging = 
 
-label-full = [CHARGED]
+label-full = [%{F#989719}CHARGED%{F-}]
 label-full-background = ${color.shade5}
-label-full-foreground = #b8ba25
+label-full-foreground = $(color.modulefg)
 label-full-padding = 0
 
 ramp-capacity-0 = 
+ramp-capacity-0-foreground = #fb4833
 ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
 
 animation-charging-0 = [%{F#989719}Ch%{F-}arging:
-animation-charging-1 = [Ch%{F#839819}ar%{F-}ging:
-animation-charging-2 = [Char%{F#6e9819}gi%{F-}ng:
-animation-charging-3 = [Chargi%{F#5d9819}ng%{F-}:
+animation-charging-1 = [Ch%{F#989719}ar%{F-}ging:
+animation-charging-2 = [Char%{F#989719}gi%{F-}ng:
+animation-charging-3 = [Chargi%{F#989719}ng%{F-}:
+animation-charging-4 = [Char%{F#989719}gi%{F-}ng:
+animation-charging-5 = [Ch%{F#989719}ar%{F-}ging:
 
-animation-charging-framerate = 1000
+animation-charging-framerate = 500
 
 
 [module/temperature]

@@ -50,9 +50,9 @@ set $up k
 set $right l
 
 # ========== Fonts ==========
+
 #font pango:monospace 8
 font pango: CaskaydiaCove NF 10
-
 
 # ========== Binding ==========
 
@@ -88,8 +88,8 @@ bindsym $mod+Shift+q kill
 # Program Launcher / Menu
 #bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+d exec "rofi -modi drun,run -show drun"
-
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
+
 # Change Focus
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
@@ -141,12 +141,12 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # ========== Workspace ==========
-set $ws1 "1:1/term"
+set $ws1 "1:1/home"
 set $ws2 "2:2/dev"
 set $ws3 "3:3/www"
 set $ws4 "4:4/music"
-set $ws5 "5:5/zoom"
-set $ws6 "6:6/fun"
+set $ws5 "5:5/comm"
+set $ws6 "6:6/?"
 set $ws7 "7:7/??"
 set $ws8 "8:8/???"
 set $ws9 "9:9/games"
@@ -245,6 +245,9 @@ for_window [class="jetbrains-*"] move to workspace $ws2
 # // code
 for_window [class="(?i)code"] move to workspace $ws2
 
+# // blender
+for_window [class="(?i)blender"] move to workspace $ws2
+
 # // netbeans
 for_window [class="(?i)netbeans"] move to workspace $ws2
 
@@ -259,17 +262,18 @@ for_window [class="firefox"] move to workspace $ws3
 
 # ===== workspace 4 =====
 
-# // discord
-for_window [class="discord"] move to workspace $ws4
-
 # // spotify
 for_window [class="(?i)spotify"] move to workspace $ws4
 
 # ===== workspace 5 =====
-# // zoom
 
+# // zoom
 for_window [class="zoom"] floating enable
 for_window [class="zoom"] move to workspace $ws5
+
+# // discord
+for_window [class="discord"] move to workspace $ws5
+
 
 # ===== workspace 6 =====
 #
