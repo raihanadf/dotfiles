@@ -1,5 +1,5 @@
 # theme
-#romkatv/powerlevel10k
+romkatv/powerlevel10k
 
 # vim bindkey (better than default)
 jeffreytse/zsh-vi-mode
