@@ -23,10 +23,10 @@ fi;
 
 # antibody
 source <(antibody init)
-antibody bundle < ~/.dotfiles/dots/.zsh_plugins
+antibody bundle < ~/.dotfiles/dots/zsh_plugins
 
 # imports
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ~/.dotfiles/dots/p10k.zsh ]] || source ~/.dotfiles/dots/p10k.zsh
 [ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
 
 # volta
@@ -42,3 +42,4 @@ ZVM_CURSOR_STYLE_ENABLED=false
 
 # windows title
 precmd () {print -Pn "\e]0;%~\a"}
+

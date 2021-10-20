@@ -7,6 +7,9 @@ jeffreytse/zsh-vi-mode
 # plugins
 robbyrussell/oh-my-zsh path:lib/git.zsh
 robbyrussell/oh-my-zsh path:plugins/git
+
 zsh-users/zsh-autosuggestions
 qoomon/zsh-lazyload
 zdharma/fast-syntax-highlighting
+
+#supercrabtree/k

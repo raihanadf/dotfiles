@@ -9,11 +9,11 @@
     # files 
     ~/.vimrc: config/nvim/init.vim
     ~/.config/starship.toml: config/starship.toml
-    ~/.zshrc: dots/.zshrc
-    ~/.p10k.zsh: dots/.p10k.zsh
-    ~/.gitconfig: dots/.gitconfig
-    ~/.zsh_aliases: dots/.zsh_aliases
-    ~/.tmux.conf: dots/.tmux.conf
+    ~/.zshrc: dots/zshrc
+    ~/.p10k.zsh: dots/p10k.zsh
+    ~/.gitconfig: dots/gitconfig
+    ~/.zsh_aliases: dots/zsh_aliases
+    ~/.tmux.conf: dots/tmux.conf
 
     # i3
     ~/.config/i3:
