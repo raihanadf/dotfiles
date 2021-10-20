@@ -10,12 +10,15 @@ set cindent
 set tabstop=2
 set shiftwidth=2
 set encoding=UTF-8
+set clipboard+=unnamedplus
+filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
 
 " general
 
 Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
@@ -28,11 +31,14 @@ Plug 'mhinz/vim-startify'
 Plug 'neoclide/coc.nvim'
 Plug 'joeytwiddle/sexy_scroller.vim'
 
+" tex
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+
 call plug#end()
 
 set termguicolors
 
-colorscheme gruvbox
+colorscheme gruvbox-material
 
 " ========== Plugins ==========
 
@@ -46,6 +52,7 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 " Open the existing NERDTree on each new tab.
 autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+:let g:NERDTreeWinSize=20
 
 
 " Airline
@@ -60,6 +67,10 @@ let g:coc_global_extensions = [
   \ 'coc-prettier', 
   \ 'coc-json', 
   \ ]
+
+" Tex
+let g:livepreview_previewer = 'zathura'
+
 
 " ========== Keymapping ==========
 
