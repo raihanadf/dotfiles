@@ -7,7 +7,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #dd252525
+background = #cc252525
 ;background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #ebdbb2
@@ -42,16 +42,16 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = "Cascadia Code:size=11;2"
+font-0 = "Cascadia Code:size=12;2"
 font-1 = "CaskaydiaCove NF:size=20;4"
 font-2 = "Material Icons:size=11;2"
 font-3 = "unifont:fontformat=truetype:size=12:antialias=false;0"
-font-4 = "Noto Sans CJK JP:size=11;2"
-font-5 = "siji:pixelsize=11;1"
+font-4 = "Noto Sans CJK JP:size=12;2"
+font-5 = "siji:pixelsize=12;1"
 
-modules-left = i3 xwindow
+modules-left = powermenu i3 xwindow
 modules-center = date 
-modules-right = wlan eth alsa battery powermenu
+modules-right = wlan eth alsa battery 
 
 tray-position = none
 tray-padding = 2
@@ -122,7 +122,7 @@ label-visible-padding = ${self.label-focused-padding}
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
 ; Separator in between workspaces
 ;label-separator = |
@@ -220,7 +220,7 @@ format-packetloss = <animation-packetloss> <label-connected>
 ;   %linkspeed% [wired]
 
 ; Default: %ifname% %local_ip%
-label-connected = %{A1:nm-connection-editor:}%local_ip%%{A}
+label-connected = %{A1:networkmanager_dmenu:}%local_ip%%{A}
 label-connected-foreground = ${color.foreground}
 label-exec = nm-connection-editor
 
@@ -266,7 +266,7 @@ interval = 5
 date = 
 date-alt = "%Y-%m-%d"
 
-time = It's %A! — %H:%M 
+time = %a %e %b %I:%M %p 
 time-alt = %H:%M:%S
 
 format-prefix = 
@@ -413,7 +413,7 @@ format-foreground = #83a597
 format-padding = 0
 
 label-open = 
-label-close = 
+label-close = 
 label-separator = |
 
 [module/music]
