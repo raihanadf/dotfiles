@@ -69,6 +69,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86MonBrightnessUp exec --no-startup-id ~/.dotfiles/scripts/backlight.sh up
 bindsym XF86MonBrightnessDown exec --no-startup-id ~/.dotfiles/scripts/backlight.sh down
 
+# Network
+bindsym $mod+n exec --no-startup-id networkmanager_dmenu
+
 # Screenshot
 bindsym Print exec --no-startup-id flameshot full -p ~/Pictures/Screenshots
 bindsym $mod+u --release exec --no-startup-id flameshot gui -p ~/Pictures/Screenshots
@@ -258,6 +261,9 @@ for_window [window_role="pop-up"] floating enable
 
 # // firefox
 for_window [class="firefox"] move to workspace $ws3
+
+# // chrome
+for_window [class="(?i)google-*"] move to workspace $ws3
 
 
 # ===== workspace 4 =====

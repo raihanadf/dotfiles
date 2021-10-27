@@ -334,7 +334,7 @@ ramp-headphones-0 = 
 type = internal/battery
 battery = BAT1
 adapter = ADP1
-full-at = 90
+full-at = 100
 
 poll-interval = 2
 time-format = %I:%M
@@ -360,6 +360,7 @@ label-full-padding = 0
 ramp-capacity-0 = 
 ramp-capacity-0-foreground = #fb4833
 ramp-capacity-1 = 
+ramp-capacity-1-foreground = #fb4833
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
