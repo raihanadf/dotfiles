@@ -40,7 +40,7 @@
     progress_bar_height = 15
 
     # Set the frame width of the progress bar
-    progress_bar_frame_width = 2
+    progress_bar_frame_width = 3
 
     # Set the minimum width for the progress bar
     progress_bar_min_width = 150
@@ -77,7 +77,7 @@
     frame_width = 3
 
     # Defines color of the frame around the notification window.
-    frame_color = "#aaaaaa"
+    frame_color = "#484848"
 
     # Define a color for the separator.
     # possible values are:
@@ -132,7 +132,7 @@
     // Icons 
     icon_position = left
     min_icon_size = 64
-    max_icon_size = 72
+    max_icon_size = 78
 
     # Paths to default icons.
     icon_path = /usr/share/icons/Papirus/16x16/status/:/usr/share/icons/Papirus/16x16/devices/
@@ -164,7 +164,7 @@
     class = Dunst
 
     # corner radius
-    corner_radius = 10
+    corner_radius = 0
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this

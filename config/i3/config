@@ -76,6 +76,10 @@ bindsym $mod+n exec --no-startup-id networkmanager_dmenu
 bindsym Print exec --no-startup-id flameshot full -p ~/Pictures/Screenshots
 bindsym $mod+u --release exec --no-startup-id flameshot gui -p ~/Pictures/Screenshots
 
+# Wallpaper
+set $wpfolder ~/Pictures/Wallpapers
+bindsym $mod+Shift+semicolon exec --no-startup-id nitrogen $wpfolder || notify-send "Theres no 'Wallpapers' folder in Pictures"
+
 # Kill some fuckers
 bindsym $mod+Ctrl+x --release exec --no-startup-id notify-send "IT'S XKILL BOIS!!!" "Select a dumb app to kill" -i dialog-error && xkill
 
