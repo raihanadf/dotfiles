@@ -1,5 +1,5 @@
 configuration {
-	font:							"CaskaydiaCove NF 12";
+	font:							"CaskaydiaCove NF 14";
   show-icons:                     true;
 	icon-theme: 					"Papirus";
   display-drun: 					"";

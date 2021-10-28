@@ -1,74 +1,98 @@
 configuration {
-    show-icons: 					true;
-    sidebar-mode: 					true;
-    separator-style: 				"none";
-    click-to-exit: 					true;
-    show-match: 					false;
-    combi-hide-mode-prefix: 		false;
-    display-run: 					"commands";
-    display-drun: 					" start ";
+  modi: "drun";
+  font: "Cascadia Mono 14";
+  show-icons: true;
+  display-drun: "";
+  drun-display-format: "{name}";
+  sidebar-mode: false;
 }
 
+@theme "/dev/null"
+
 * {
-    /* Theme settings */
-    highlight: bold;
-    font: "Cascadia Code 14";
-
-    /* Gruvbox dark colors */
-    gruvbox-dark-bg0-hard:     #1d2021;
-    gruvbox-dark-bg0:          #282828;
-    gruvbox-dark-bg2:          #504945;
-    gruvbox-dark-fg0:          #fbf1c7;
-    gruvbox-dark-fg1:          #ebdbb2;
-    gruvbox-dark-red-dark:     #cc241d;
-    gruvbox-dark-red-light:    #fb4934;
-    gruvbox-dark-yellow-dark:  #d79921;
-    gruvbox-dark-yellow-light: #fabd2f;
-    gruvbox-dark-gray:         #a89984;
-
-    /* Theme colors */
-    background:                  @gruvbox-dark-bg0-hard;
-    background-color:            @background;
-    foreground:                  @gruvbox-dark-fg1;
-    border-color:                @gruvbox-dark-gray;
-    separatorcolor:              @border-color;
-    scrollbar-handle:            @border-color;
-
-    normal-background:           @background;
-    normal-foreground:           @foreground;
-    alternate-normal-background: @gruvbox-dark-bg0;
-    alternate-normal-foreground: @foreground;
-    selected-normal-background:  @gruvbox-dark-bg2;
-    selected-normal-foreground:  @gruvbox-dark-fg0;
-
-    active-background:           @gruvbox-dark-yellow-dark;
-    active-foreground:           @background;
-    alternate-active-background: @active-background;
-    alternate-active-foreground: @active-foreground;
-    selected-active-background:  @gruvbox-dark-yellow-light;
-    selected-active-foreground:  @active-foreground;
-
-    urgent-background:           @gruvbox-dark-red-dark;
-    urgent-foreground:           @background;
-    alternate-urgent-background: @urgent-background;
-    alternate-urgent-foreground: @urgent-foreground;
-    selected-urgent-background:  @gruvbox-dark-red-light;
-    selected-urgent-foreground:  @urgent-foreground;
+  al:   #00000000;
+  bg:   #272727FF;
+  bga:  #383838FF;
+  fga:  #CACACAFF;
+  fg:   #CACACAFF;
+  al: #1f1f1f;
+  background-color: @bg;
+  text-color: @fg;
 }
 
 window {
-    width: 30%;
-    padding:    30px;
-    border: 0;
-    border-radius: 5px;
-    margin: 5px;
+  border:             4px 4px 4px 4px;
+  border-color:                   @bga;
+  border-radius: 10px;
+  width: 50%;
+  padding: 10px;
+}
+
+prompt {
+  background-color: @al;
+  enabled: true;
+  padding: 0.5% 10px 0% -0.5%;
+}
+
+entry {
+  background-color: @al;
+  placeholder-color: @fg;
+  expand: true;
+  horizontal-align: 0;
+  padding: 0.15% 0% 0% 0%;
+}
+
+inputbar {
+  children: [ prompt, entry ];
+  background-color: @al;
+  expand: false;
+  border-radius: 10px;
+  margin: 0%;
+  padding: 10px;
+}
+
+listview {
+  columns: 4;
+  lines: 3;
+  spacing: 0%;
+  cycle: false;
+  dynamic: true;
+  layout: vertical;
+}
+
+mainbox {
+  border-radius: 0%;
+  children: [ inputbar, listview ];
+  spacing: 2%;
+  padding: 2% 1% 2% 1%;
 }
 
 element {
-    padding: 2px 8px;
+  orientation: vertical;
+  border-radius: 0%;
+  padding: 2% 0% 2% 0%;
+}
+
+element-icon {
+  size: 48px;
+  border: 0px;
+  horizontal-align: 0.5;
+}
+
+element-text {
+  expand: true;
+  horizontal-align: 0.5;
+  vertical-align: 0.5;
+  margin: 0.5% 0.5% -0.5% 0.5%;
+}
+
+element-text, element-icon {
+  background-color: inherit;
+  text-color: inherit;
 }
 
 element selected {
-    color: #a8bbef;
+  background-color: @al;
+  border-radius: 10px;
 }
 
