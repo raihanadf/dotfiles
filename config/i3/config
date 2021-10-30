@@ -148,16 +148,16 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # ========== Workspace ==========
-set $ws1 "1:1/home"
-set $ws2 "2:2/dev"
-set $ws3 "3:3/www"
-set $ws4 "4:4/music"
-set $ws5 "5:5/comm"
-set $ws6 "6:6/?"
-set $ws7 "7:7/??"
-set $ws8 "8:8/???"
-set $ws9 "9:9/games"
-set $ws10 "10:10/float"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 
 # Switch to Workspaces
 bindsym $mod+1 workspace number $ws1

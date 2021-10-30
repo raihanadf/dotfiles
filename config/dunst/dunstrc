@@ -21,7 +21,7 @@
     origin = top-right
 
     # Offset from the origin
-    offset = 20x50
+    offset = 20x20
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -164,7 +164,7 @@
     class = Dunst
 
     # corner radius
-    corner_radius = 0
+    corner_radius = 5
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
@@ -174,13 +174,13 @@
 
     # your notifs stuff
     [urgency_low]
-        background = "#272727"
+        background = "#151515"
         foreground = "#ebdbb2"
         highlight = "#50fa7b"
         timeout = 6
 
     [urgency_normal]
-        background = "#272727"
+        background = "#151515"
         foreground = "#ebdbb2"
         highlight = "#50fa7b"
         timeout = 8

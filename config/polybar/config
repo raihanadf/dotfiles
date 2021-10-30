@@ -7,7 +7,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #dd252525
+background = #cc151515
 ;background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #ebdbb2
@@ -25,7 +25,7 @@ height = 30
 ;override-redirect = true
 ;radius = 5.0
 fixed-center = true
-;bottom = true
+bottom = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -49,8 +49,8 @@ font-3 = "unifont:fontformat=truetype:size=12:antialias=false;0"
 font-4 = "Noto Sans CJK JP:size=12;2"
 font-5 = "siji:pixelsize=12;1"
 
-modules-left = powermenu i3 xwindow
-modules-center = date
+modules-left = powermenu date
+modules-center = i3 
 modules-right = wlan eth alsa battery 
 
 tray-position = none
@@ -357,20 +357,20 @@ label-full-background = ${color.shade5}
 label-full-foreground = $(color.modulefg)
 label-full-padding = 0
 
-ramp-capacity-0 = [dead]
-ramp-capacity-0-foreground = #fb4833
-ramp-capacity-1 = [dying]
-ramp-capacity-1-foreground = #fb4833
+ramp-capacity-0 = [dying]
+ramp-capacity-0-foreground = #ff6e6e
+ramp-capacity-1 = [sick]
+ramp-capacity-1-foreground = #f1fa8c
 ramp-capacity-2 = [normal]
 ramp-capacity-3 = [normal]
 ramp-capacity-4 = [FULL]
 
-animation-charging-0 = [%{F#989719}ch%{F-}arging:
-animation-charging-1 = [ch%{F#989719}ar%{F-}ging:
-animation-charging-2 = [char%{F#989719}gi%{F-}ng:
-animation-charging-3 = [chargi%{F#989719}ng%{F-}:
-animation-charging-4 = [char%{F#989719}gi%{F-}ng:
-animation-charging-5 = [ch%{F#989719}ar%{F-}ging:
+animation-charging-0 = [%{F#69ff94}ch%{F-}arging:
+animation-charging-1 = [ch%{F#69ff94}ar%{F-}ging:
+animation-charging-2 = [char%{F#69ff94}gi%{F-}ng:
+animation-charging-3 = [chargi%{F#69ff94}ng%{F-}:
+animation-charging-4 = [char%{F#69ff94}gi%{F-}ng:
+animation-charging-5 = [ch%{F#69ff94}ar%{F-}ging:
 
 animation-charging-framerate = 500
 

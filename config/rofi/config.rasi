@@ -11,7 +11,7 @@ configuration {
 
 * {
   al:   #00000000;
-  bg:   #272727FF;
+  bg:   #151515ff;
   bga:  #383838FF;
   fga:  #CACACAFF;
   fg:   #CACACAFF;
@@ -23,7 +23,7 @@ configuration {
 window {
   border:             4px 4px 4px 4px;
   border-color:                   @bga;
-  border-radius: 10px;
+  border-radius: 5px;
   width: 50%;
   padding: 10px;
 }
@@ -46,7 +46,7 @@ inputbar {
   children: [ prompt, entry ];
   background-color: @al;
   expand: false;
-  border-radius: 10px;
+  border-radius: 5px;
   margin: 0%;
   padding: 10px;
 }
@@ -93,6 +93,6 @@ element-text, element-icon {
 
 element selected {
   background-color: @al;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
