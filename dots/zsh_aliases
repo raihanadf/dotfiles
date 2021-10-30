@@ -23,9 +23,20 @@ alias .....="cd ../../../.."
 # listing (using k cuz better)
 # it's slower but you can always
 # disable it anyway on plugin file
-alias ls='betterls'
-alias la='betterla'
-alias l='betterl'
+checkk() {
+  ! command -v k &> /dev/null
+}
+if checkk
+  then
+    alias ls='ls --color=auto'
+    alias la='ls -la --color=auto'
+    alias l='ls -d .* --color=auto'
+  else
+    alias ls="k --no-vcs" 
+    alias la="k -d .*" 
+    alias l="k k -A" 
+  fi
+alias lsimg=$'for f (*.(jpeg|jpg|gif|png)) {printf $f;php -r "print_r(getimagesize(\'$f\'));" |grep -w width |sed \'s/ .3] =>//\'}'
 
 # network
 alias wifi='nmtui'
@@ -52,34 +63,3 @@ alias offturbo="echo 1 | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
 # make dir and then cd into it
 mkcd () { mkdir -p -- "$1" && cd -P -- "$1" }
 
-# check if there's k command
-checkk() {
-  ! command -v k &> /dev/null
-}
-# self explanatory //
-betterls() { 
-  if checkk
-    then
-      command ls --color=auto
-    else
-      k --no-vcs
-    fi
-}
-betterla() { 
-  if checkk
-    then
-      command ls -la --color=auto
-    else
-      k -d .* 
-    fi
-}
-betterl() { 
-  if checkk
-    then
-      command ls -d .* --color=auto
-    else
-      k -A 
-    fi
-}
-# //
-# 
