@@ -21,7 +21,7 @@
     origin = top-right
 
     # Offset from the origin
-    offset = 20x20
+    offset = 20x50
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -186,8 +186,8 @@
         timeout = 8
 
     [urgency_critical]
-        background = "#FFFFFF"
-        foreground = "#000000"
+        background = "#252525"
+        foreground = "#ebdbb2"
         frame_color = "#FF0000"
         timeout = 0
 
