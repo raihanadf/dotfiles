@@ -10,6 +10,6 @@ robbyrussell/oh-my-zsh path:plugins/git
 
 zsh-users/zsh-autosuggestions
 qoomon/zsh-lazyload
-zdharma/fast-syntax-highlighting
+zdharma-continuum/fast-syntax-highlighting
 
 #supercrabtree/k

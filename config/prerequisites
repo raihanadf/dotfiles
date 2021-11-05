@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # initial install
-sudo pacman -Syyuu zsh neovim bat openssh base-devel pulseaudio
+sudo pacman -Syyuu zsh neovim bat openssh base-devel pulseaudio pamixer lxapperance brightnessctl ranger intel-ucode intel-undervolt redshift flameshot alsa-utils alsa-plugins alsa-lib
 
 # install antibody 
 curl -sfL git.io/antibody | sudo sh -s - -b /usr/local/bin
@@ -11,6 +11,9 @@ antibody bundle < ~/.dotfiles/dots/zsh_plugins
 git clone https://aur.archlinux.org/paru.git && cd paru
 makepkg -si
 cd .. && rm -rf paru
+
+paru polybar
+paru auto-cpufreq
 
 # install nvim plugin manager
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
