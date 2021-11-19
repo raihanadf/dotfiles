@@ -25,7 +25,7 @@ height = 30
 ;override-redirect = true
 ;radius = 5.0
 fixed-center = true
-;bottom = true
+bottom = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -49,7 +49,7 @@ font-3 = "unifont:fontformat=truetype:size=12:antialias=false;0"
 font-4 = "Noto Sans CJK JP:size=12;2"
 font-5 = "siji:pixelsize=12;1"
 
-modules-left = powermenu date
+modules-left = powermenu date 
 modules-center = i3 
 modules-right = wlan eth alsa battery 
 
@@ -377,14 +377,14 @@ animation-charging-framerate = 500
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 1
+thermal-zone = 2
 warn-temperature = 70
 
 format = <label>
 format-warn = <label-warn>
 
-label = %temperature-c%
-label-warn = %temperature-c%
+label = [%temperature-c%]
+label-warn = [%temperature-c%]
 label-warn-foreground = ${colors.secondary}
 
 
@@ -414,7 +414,7 @@ format-foreground = #83a597
 format-padding = 0
 
 label-open = 
-label-close = 
+label-close = 
 label-separator = |
 
 [module/music]

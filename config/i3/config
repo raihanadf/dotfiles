@@ -4,8 +4,8 @@
 
 # mouse
 focus_follows_mouse no
-#exec_always xinput --no-startup-id set-prop 17 322 1
-#exec_always xinput --no-startup-id set-prop 17 344 1
+exec_always --no-startup-id xinput set-prop 14 325 1
+exec_always --no-startup-id xinput set-prop 14 345 1
 
 # necessary apps
 exec_always --no-startup-id nitrogen --restore
@@ -64,10 +64,16 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.dotfiles/scripts/volume.sh 
 bindsym XF86AudioLowerVolume exec --no-startup-id ~/.dotfiles/scripts/volume.sh down
 bindsym XF86AudioMute exec --no-startup-id ~/.dotfiles/scripts/volume.sh mute
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE @ toggle
+# Audio but w/ super key
+bindsym $mod+Control+apostrophe exec --no-startup-id ~/.dotfiles/scripts/volume.sh up
+bindsym $mod+Control+semicolon exec --no-startup-id ~/.dotfiles/scripts/volume.sh down
 
 # Brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id ~/.dotfiles/scripts/backlight.sh up
 bindsym XF86MonBrightnessDown exec --no-startup-id ~/.dotfiles/scripts/backlight.sh down
+# Brightness but w/ super key
+bindsym $mod+Control+slash exec --no-startup-id ~/.dotfiles/scripts/backlight.sh up
+bindsym $mod+Control+period exec --no-startup-id ~/.dotfiles/scripts/backlight.sh down
 
 # Network
 bindsym $mod+n exec --no-startup-id networkmanager_dmenu
@@ -148,16 +154,16 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # ========== Workspace ==========
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
+set $ws1 "1:term"
+set $ws2 "2:dev"
+set $ws3 "3:web"
+set $ws4 "4:media"
+set $ws5 "5:zoom"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+set $ws10 "10:float"
 
 # Switch to Workspaces
 bindsym $mod+1 workspace number $ws1

@@ -68,6 +68,18 @@
       path: config/polybar
       force: true
 
+    # nm dmenu
+    ~/.config/networkmanager-dmenu:
+      create: true
+      path: config/networkmanager-dmenu
+      force: true
+
+    # ranger
+    ~/.config/ranger:
+      create: true
+      path: config/ranger
+      force: true
+
     #~/.vim:
     #  create: true
     #  path: config/nvim

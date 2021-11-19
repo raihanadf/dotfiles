@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
+sudo timedatectl set-local-rtp 1
 
 # initial install
-sudo pacman -Syyuu zsh neovim bat openssh base-devel pulseaudio pamixer lxapperance brightnessctl ranger intel-ucode intel-undervolt redshift flameshot alsa-utils alsa-plugins alsa-lib
+sudo pacman -Syyuu zsh neovim bat openssh base-devel pulseaudio pamixer lxappearance brightnessctl ranger intel-ucode intel-undervolt redshift flameshot alsa-utils alsa-plugins alsa-lib lxrandr-gtk3
 
 # install antibody 
 curl -sfL git.io/antibody | sudo sh -s - -b /usr/local/bin

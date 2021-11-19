@@ -10,11 +10,11 @@ message=""
 
 case "$1" in
   "up")
-    pactl set-sink-volume @DEFAULT_SINK@ +4%
+    pactl set-sink-volume @DEFAULT_SINK@ +2%
     ;;
 
   "down")
-    pactl set-sink-volume @DEFAULT_SINK@ -4%
+    pactl set-sink-volume @DEFAULT_SINK@ -2%
     ;;
 
   "mute")
