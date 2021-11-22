@@ -13,6 +13,7 @@ exec_always --no-startup-id picom
 exec --no-startup-id redshift -P -O 6000K
 exec --no-startup-id dunst
 exec --no-startup-id ~/.dotfiles/scripts/udiskie.sh
+exec --no-startup-id ~/.dotfiles/scripts/batteryCheck.sh
 #exec --no-startup-id nm-applet
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -57,7 +58,7 @@ font pango: CaskaydiaCove NF 10
 # ========== Binding ==========
 
 # Alt-tab like behaviour
-bindsym $mod+Tab workspace back_and_forth
+bindsym Mod1+Tab workspace back_and_forth
 
 # Audio
 bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.dotfiles/scripts/volume.sh up
