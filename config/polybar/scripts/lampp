@@ -1,0 +1,8 @@
+#!/bin/bash
+
+status=$(ps -aux | grep -c /opt/lampp)
+if [[ $status > "1" ]]; then
+  echo "⬤"
+else
+  echo "%{F#a89983}⬤%{F-}"
+fi

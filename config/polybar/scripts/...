@@ -1,0 +1,14 @@
+#!/bin/bash
+
+battery="$(cat /sys/class/power_supply/BAT1/capacity)"
+
+while true
+do
+  if [[ $battery = "40" ]]; then
+      dunstify "ur battery is low bitch" "it is now $battery%" -h string:fgcolor:#ff4444 -h string:frcolor:#ba0606
+  else
+      echo ""
+  fi
+
+  sleep 30
+done

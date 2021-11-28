@@ -25,7 +25,7 @@ height = 30
 ;override-redirect = true
 ;radius = 5.0
 fixed-center = true
-bottom = true
+;bottom = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -49,9 +49,9 @@ font-3 = "unifont:fontformat=truetype:size=12:antialias=false;0"
 font-4 = "Noto Sans CJK JP:size=12;2"
 font-5 = "siji:pixelsize=12;1"
 
-modules-left = powermenu date 
+modules-left = date lampp term music 
 modules-center = i3 
-modules-right = wlan eth alsa battery 
+modules-right = wlan eth alsa battery powermenu 
 
 tray-position = none
 tray-padding = 2
@@ -410,7 +410,7 @@ menu-2-1-exec = menu-open-0
 
 format-spacing = 1
 format-background = ${color.shade1}
-format-foreground = #83a597
+format-foreground = #1793d1
 format-padding = 0
 
 label-open = 
@@ -421,10 +421,28 @@ label-separator = |
 type = custom/script
 interval = 1
 
-label = %output:0:40:...%
-label-foreground = #989719
+label = %output:0:30:...%
+label-foreground = #1ed760
 
 exec = ~/.config/polybar/scripts/music
+
+[module/lampp]
+type = custom/script
+interval = 10
+
+label = %output:0:35:...%
+label-foreground = #ff7800
+
+exec = ~/.config/polybar/scripts/lampp
+
+[module/term]
+type = custom/script
+interval = 10
+
+label = %output:0:35:...%
+label-foreground = #753188
+
+exec = ~/.config/polybar/scripts/term
 
 [settings]
 screenchange-reload = true
