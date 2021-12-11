@@ -33,6 +33,10 @@ antibody bundle < ~/.dotfiles/dots/zsh_plugins
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
+# laravel
+export LARAVEL_HOME="$HOME/.config/composer/vendor"
+export PATH="$LARAVEL_HOME/bin:$PATH"
+
 # ruby
 #export PATH="$HOME/.rbenv/bin:$PATH"
 #eval "$(rbenv init -)"

@@ -3,6 +3,8 @@ alias pls='sudo $(fc -ln -1)'
 alias open="xdg-open"
 alias c="clear"
 alias q="exit"
+alias man="man -P \"sh -c 'col -b | nvim -c \\\"set ft=man nomod nolist\\\" -'\""
+alias lolman="man -P 'col -b | lolcat -f | less -R'"
 
 # edit config
 alias zshalias="vim ~/.zsh_aliases"
