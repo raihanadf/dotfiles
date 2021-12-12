@@ -28,18 +28,14 @@ gaps inner $gaps
 
 # ========== Colors ==========
 
-set $cl_high #83a597
-set $cl_indi #d9d8d8
-set $cl_back #011211
-set $cl_fore #928373
-set $cl_urge #d79920
+# class                 border  bground text    indicator child_border
+client.focused          #4536FF #050877 #FFFFFF #050877   #285577
+client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
+client.unfocused        #333333 #222222 #888888 #292D2E   #222222
+client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
-#sections               border   backgr   text     indi     childborder
-client.focused          $cl_high $cl_back $cl_high $cl_high $cl_high
-client.focused_inactive $cl_back $cl_back $cl_fore $cl_back $cl_back
-client.unfocused        $cl_back $cl_back $cl_fore $cl_back $cl_back
-client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
-
+client.background       #FFFFFF
 
 # ========== Navigating ==========
 
@@ -160,7 +156,7 @@ set $ws2 "2:dev"
 set $ws3 "3:web"
 set $ws4 "4:media"
 set $ws5 "5:zoom"
-set $ws6 "6"
+set $ws6 "6:tor"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
@@ -293,7 +289,8 @@ for_window [class="discord"] move to workspace $ws5
 
 
 # ===== workspace 6 =====
-#
+for_window [class="(?i)qbittorrent"] move to workspace $ws6
+
 # ===== workspace 7 =====
 #
 # ===== workspace 8 =====
