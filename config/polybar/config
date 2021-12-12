@@ -49,7 +49,7 @@ font-3 = "unifont:fontformat=truetype:size=12:antialias=false;0"
 font-4 = "Noto Sans CJK JP:size=12;2"
 font-5 = "siji:pixelsize=12;1"
 
-modules-left = date lampp term music 
+modules-left = date 
 modules-center = i3 
 modules-right = wlan eth alsa battery powermenu 
 
@@ -266,7 +266,7 @@ interval = 5
 date = 
 date-alt = "%Y-%m-%d"
 
-time = %I:%M %p 
+time = It's %A! — %I:%M %p 
 time-alt = %H:%M:%S
 
 format-prefix = 
@@ -416,33 +416,6 @@ format-padding = 0
 label-open = 
 label-close = 
 label-separator = |
-
-[module/music]
-type = custom/script
-interval = 1
-
-label = %output:0:30:...%
-label-foreground = #1ed760
-
-exec = ~/.config/polybar/scripts/music
-
-[module/lampp]
-type = custom/script
-interval = 10
-
-label = %output:0:35:...%
-label-foreground = #ff7800
-
-exec = ~/.config/polybar/scripts/lampp
-
-[module/term]
-type = custom/script
-interval = 10
-
-label = %output:0:35:...%
-label-foreground = #753188
-
-exec = ~/.config/polybar/scripts/term
 
 [settings]
 screenchange-reload = true
