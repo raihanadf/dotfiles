@@ -14,6 +14,7 @@
     ~/.gitconfig: dots/gitconfig
     ~/.zsh_aliases: dots/zsh_aliases
     ~/.tmux.conf: dots/tmux.conf
+    ~/.config/betterlockscreenrc: config/betterlockscreenrc
 
     # i3
     ~/.config/i3:
