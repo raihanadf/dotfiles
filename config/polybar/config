@@ -42,7 +42,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = "Cascadia Code:size=12;2"
+font-0 = "Cascadia Mono:size=12;2"
 font-1 = "CaskaydiaCove NF:size=20;4"
 font-2 = "Material Icons:size=11;2"
 font-3 = "unifont:fontformat=truetype:size=12:antialias=false;0"
@@ -361,7 +361,7 @@ ramp-capacity-0 = [dying]
 ramp-capacity-0-foreground = #ff6e6e
 ramp-capacity-1 = [sick]
 ramp-capacity-1-foreground = #f1fa8c
-ramp-capacity-2 = [normal]
+ramp-capacity-2 = [symptoms]
 ramp-capacity-3 = [normal]
 ramp-capacity-4 = [FULL]
 
