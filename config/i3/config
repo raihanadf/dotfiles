@@ -10,7 +10,7 @@ exec_always --no-startup-id xinput set-prop 14 345 1
 # necessary apps
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id picom
-exec --no-startup-id redshift -P -O 6000K
+exec --no-startup-id redshift -P -O 5500K
 exec --no-startup-id dunst
 exec --no-startup-id ~/.dotfiles/scripts/udiskie.sh
 exec --no-startup-id ~/.dotfiles/scripts/batteryCheck.sh
@@ -22,20 +22,27 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # ========== Border / Gaps ==========
  
-default_border pixel 0
+# Borders
+default_border pixel 1
 set $gaps 10
-gaps inner $gaps
+#gaps inner $gaps
+gaps inner 15
+gaps outer 20
+
+# Smart Thingy
+smart_gaps on
+smart_borders no_gaps
 
 # ========== Colors ==========
 
-# class                 border  bground text    indicator child_border
-client.focused          #4536FF #050877 #FFFFFF #050877   #285577
-client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
-client.unfocused        #333333 #222222 #888888 #292D2E   #222222
-client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
-client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+# colors
+# class                  border  backgr. text    indicator child_border
+client.focused           #928373 #928373 #ebdbb2 #928373   #928373
+client.urgent            #928373 #928373 #ebdbb2 #928373   #928373
+client.focused_inactive  #928373 #272727 #ebdbb2 #272727   #272727 
+client.unfocused         #272727 #272727 #928373 #292d2e   #222222
+client.background        #272727 
 
-client.background       #FFFFFF
 
 # ========== Navigating ==========
 
@@ -78,6 +85,9 @@ bindsym $mod+n exec --no-startup-id networkmanager_dmenu
 # Screenshot
 bindsym Print exec --no-startup-id flameshot full -p ~/Pictures/Screenshots
 bindsym $mod+u --release exec --no-startup-id flameshot gui -p ~/Pictures/Screenshots
+
+# Lock Screen
+bindsym $mod+shift+x exec --no-startup-id betterlockscreen -l blur
 
 # Wallpaper
 set $wpfolder ~/Pictures/Wallpapers
