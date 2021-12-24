@@ -96,6 +96,9 @@ bindsym $mod+Shift+semicolon exec --no-startup-id nitrogen $wpfolder || notify-s
 # Kill some fuckers
 bindsym $mod+Ctrl+x --release exec --no-startup-id notify-send "IT'S XKILL BOIS!!!" "Select a dumb app to kill" -i dialog-error && xkill
 
+# Pomodoro 
+bindsym $mod+Control+p exec --no-startup-id ~/.dotfiles/scripts/pomo.sh
+
 # Floating Modifier to Move Window
 floating_modifier $mod
 
@@ -236,9 +239,10 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-bindsym $mod+g        gaps inner current plus 5
-bindsym $mod+Shift+g  gaps inner current minus 5
-bindsym $mod+Control+g  gaps inner current set $gaps
+# Control gaps
+#bindsym $mod+g        gaps inner current plus 5
+#bindsym $mod+Shift+g  gaps inner current minus 5
+#bindsym $mod+Control+g  gaps inner current set $gaps
 
 # ========== i3's Bar ==========
 
