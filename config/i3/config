@@ -46,7 +46,7 @@ client.background        #272727
 
 # ========== Navigating ==========
 
-set $mod Mod1
+set $mod Mod4
 
 set $left h
 set $down j

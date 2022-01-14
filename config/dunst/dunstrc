@@ -21,7 +21,9 @@
     origin = top-right
 
     # Offset from the origin
-    offset = 20x50
+    # if status bar on top
+    # offset = 20x50
+    offset = 20x20
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
