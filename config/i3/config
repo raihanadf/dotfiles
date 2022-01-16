@@ -24,7 +24,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
  
 # Borders
 default_border pixel 1
-set $gaps 10
+set $gaps 15
 #gaps inner $gaps
 gaps inner 15
 gaps outer 20
@@ -292,14 +292,14 @@ for_window [class="(?i)google-*"] move to workspace $ws3
 # // spotify
 for_window [class="(?i)spotify"] move to workspace $ws4
 
+# // discord
+for_window [class="discord"] move to workspace $ws4
+
 # ===== workspace 5 =====
 
 # // zoom
 for_window [class="zoom"] floating enable
 for_window [class="zoom"] move to workspace $ws5
-
-# // discord
-for_window [class="discord"] move to workspace $ws5
 
 
 # ===== workspace 6 =====
