@@ -1,3 +1,4 @@
-vim.bo.expandtab = true
-vim.bo.shiftwidth = 2
-vim.bo.softtabstop = 2
+-- required modules
+require("config")
+require("keybindings")
+require("plugins")
