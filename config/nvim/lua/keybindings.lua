@@ -1,5 +1,6 @@
 -- Quick note for myself : disable unused keybindings
 
+-------------------------General-------------------------------
 -- required/import binding
 require("keybinds.tablike")
 
@@ -17,19 +18,36 @@ end
 local function nskeymap(key, map)
         keybind('n', key, map, silent)
 end
+---- visual and silent map
+local function vskeymap(key, map)
+        keybind('v', key, map, silent)
+end
+-----------------------------------------------------------------
 
 -- general
 keybind('n', '<c-s>', ':w<CR>', {}) -- save
 keybind('i', '<c-s>', '<ESC>:w<CR>', {}) -- save (in normal mode)
 
+-----------------------------------------------------------------
+
+
+-----------------------------------------------------------------
 -- nskeymap [[ normal silent keybinds ]]
+--
 ---- buffers
 nskeymap('<S-w>', ':bd<CR>') -- close buffer
 nskeymap('<S-k>', ':bn<CR>') -- next buffer
 nskeymap('<S-j>', ':bp<CR>') -- prev buffer
+--
 ---- clear search highlight
 nskeymap('<c-l>', ':nohlsearch<CR>') -- prev buffer
 
+---- nvim commenter
+nskeymap("++", ":CommentToggle<cr>")
+vskeymap("++", ":CommentToggle<cr>")
+-----------------------------------------------------------------
+
+-----------------------------------------------------------------
 -- nkeymap [[ normal noremap keybinds ]]
 ---- move to split window (mapped to h,j,k,l)
 --nrkeymap('<c-h>', '<c-w>h')
@@ -48,5 +66,14 @@ nrkeymap('fK', ':lua vim.lsp.buf.hover()<cr>')
 nrkeymap('<c-k>', ':lua vim.lsp.buf.signature_help()<cr>')
 nrkeymap('<leader>af', ':lua vim.lsp.buf.code_action()<cr>')
 nrkeymap('<leader>rn', ':lua vim.lsp.buf.rename()<cr>')
+
 ---- update packer plugins
 nrkeymap('<c-u><c-p>', ':PackerSync<CR>')
+
+---- telescope
+nrkeymap("<leader>f", "<cmd>lua require('telescope.builtin').find_files()<cr>")
+
+---- nvim tree
+nrkeymap("<leader>b", ":NvimTreeToggle<cr>")
+-----------------------------------------------------------------
+
