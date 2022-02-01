@@ -1,5 +1,7 @@
 -- Quick note for myself : disable unused keybindings
 
+-- required/import binding
+require("keybinds.tablike")
 
 -- keybindings / keymaps
 local keybind = vim.api.nvim_set_keymap
@@ -25,13 +27,15 @@ keybind('i', '<c-s>', '<ESC>:w<CR>', {}) -- save (in normal mode)
 nskeymap('<S-w>', ':bd<CR>') -- close buffer
 nskeymap('<S-k>', ':bn<CR>') -- next buffer
 nskeymap('<S-j>', ':bp<CR>') -- prev buffer
+---- clear search highlight
+nskeymap('<c-l>', ':nohlsearch<CR>') -- prev buffer
 
 -- nkeymap [[ normal noremap keybinds ]]
 ---- move to split window (mapped to h,j,k,l)
-nrkeymap('<c-h>', '<c-w>h')
-nrkeymap('<c-j>', '<c-w>j')
-nrkeymap('<c-k>', '<c-w>k')
-nrkeymap('<c-l>', '<c-w>l')
+--nrkeymap('<c-h>', '<c-w>h')
+--nrkeymap('<c-j>', '<c-w>j')
+--nrkeymap('<c-k>', '<c-w>k')
+--nrkeymap('<c-l>', '<c-w>l')
 ---- lsp keymap
 nrkeymap('fd', ':lua vim.lsp.buf.definition()<cr>')
 nrkeymap('fD', ':lua vim.lsp.buf.declaration()<cr>')
