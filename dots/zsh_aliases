@@ -7,13 +7,14 @@ alias man="man -P \"sh -c 'col -b | nvim -c \\\"set ft=man nomod nolist\\\" -'\"
 alias lolman="man -P 'col -b | lolcat -f | less -R'"
 
 # edit config
-alias zshalias="vim ~/.zsh_aliases"
-alias zshplugin="vim ~/.dotfiles/dots/zsh_plugins"
-alias zshconfig="vim ~/.zshrc"
-alias vimconfig="vim ~/.vimrc"
+alias zshalias="vi ~/.zsh_aliases"
+alias zshplugin="vi ~/.dotfiles/dots/zsh_plugins"
+alias zshconfig="vi ~/.zshrc"
+alias vimconfig="vi ~/.vimrc"
+alias nvimconfig="vi ~/.config/nvim/init.lua"
 
 # replace with better app
-alias vim="nvim"
+alias vi="nvim"
 alias cat="bat"
 
 # moving directories

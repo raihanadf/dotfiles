@@ -7,10 +7,10 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #cc151515
+background = #cc090200
 ;background-alt = #444
 ;foreground = ${xrdb:color7:#222}
-foreground = #ebdbb2
+foreground = #a4a1a1
 ;foreground-alt = #555
 primary = #448488
 secondary = #e60053
@@ -19,13 +19,13 @@ alert = #bd2c40
 [bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 24
+height = 27
 ;offset-x = 2%
 ;offset-y = 1%
 ;override-redirect = true
 ;radius = 5.0
 fixed-center = true
-bottom = true
+;bottom = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -33,8 +33,8 @@ foreground = ${colors.foreground}
 line-size = 0
 line-color = #f00
 
-;border-size = 5
-;border-color = #00000000
+border-size = 5
+border-color = ${colors.background}
 
 padding-left = 2
 padding-right = 2
@@ -42,18 +42,18 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = "Cascadia Mono:size=11;2"
-font-1 = "CaskaydiaCove NF:size=20;3"
-font-2 = "Material Icons:size=11;2"
+font-0 = "Iosevka Term:size=11:style=Medium;2"
+font-1 = "CaskaydiaCove NF:size=18;3"
+font-2 = "feather:size=14;3"
 font-3 = "unifont:fontformat=truetype:size=12:antialias=false;0"
 font-4 = "Noto Sans CJK JP:size=12;2"
 font-5 = "siji:pixelsize=12;1"
 
-modules-left = date 
-modules-center = i3 
-modules-right = wlan eth alsa battery powermenu 
+modules-left = memory i3 xwindow
+modules-center = date 
+modules-right = wlan eth pulseaudio battery powermenu 
 
-tray-position = none
+tray-position = right
 tray-padding = 2
 
 ;wm-restack = generic
@@ -76,7 +76,7 @@ enable-ipc = true
 [module/xwindow]
 type = internal/xwindow
 label = [%title:0:30:...%]
-label-foreground = #83a597
+label-foreground = ${colors.foreground}
 
 [module/filesystem]
 type = internal/fs
@@ -106,12 +106,12 @@ label-mode-background = ${colors.primary}
 label-focused = %name%
 label-focused-background = ${colors.background-alt}
 label-focused-padding = 1
-label-focused-foreground = #ebdbb2
+label-focused-foreground = #e0af68
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
 label-unfocused-padding = 1
-label-unfocused-foreground = #a89983
+label-unfocused-foreground = ${colors.foreground}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
@@ -166,26 +166,6 @@ bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
 
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
-
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = ""
-format-prefix-foreground = ${colors.foreground-alt}
-label =  %percentage%%
-
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
-label = %percentage_used%%
-
 [module/wlan]
 type = internal/network
 interface = wlo1
@@ -233,7 +213,7 @@ label-disconnected-foreground = #66ffffff
 ;label-packetloss-foreground = #eefafafa
 
 ; Only applies if <ramp-signal> is used
-ramp-signal-0 = 
+ramp-signal-0 = 直
 
 ; Only applies if <animation-packetloss> is used
 animation-packetloss-0 = ⚠
@@ -279,9 +259,12 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume>
-label-volume =  %percentage%%
+format-volume = <ramp-volume>
+label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
 label-muted = 🔇 muted
 label-muted-foreground = #666
@@ -324,11 +307,65 @@ label-volume = %percentage%%
 label-muted = " Muted"
 label-muted-foreground = #a89983
 
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 ramp-volume-font = 2
 ramp-headphones-0 = 
+
+
+[module/volume]
+type = internal/pulseaudio
+
+use-ui-max = false
+
+; format-volume =   <bar-volume>
+format-volume = <ramp-volume> <bar-volume>
+format-volume-background = ${colors.dark0_hard}
+format-volume-foreground = ${colors.light0_soft}
+format-volume-padding = 1
+format-font = 1
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+format-muted =  <label-muted>
+; format-muted =   <bar-volume>
+format-muted-background = ${colors.dark0_hard}
+format-muted-foreground = ${colors.faded_red}
+format-muted-padding = 1
+format-muted-font = 3
+
+; label-volume = %percentage%%
+
+; bar-muted-foreground = "#aaaaaa"
+
+; label-muted = "---- muted ----"
+label-muted = "∣∣∣∣∣∣∣∣∣∣∣∣∣∣∣"
+; label-muted = 
+
+bar-volume-width = 16
+bar-volume-gradient = false
+
+bar-volume-indicator = 
+bar-volume-indicator-foreground = ${colors.light0_soft}
+bar-volume-indicator-font = 2
+
+; bar-volume-fill = ━
+bar-volume-fill = ∣
+bar-volume-foreground-0 = ${colors.faded_yellow}
+; bar-volume-foreground-0 = "#aaaaaa"
+bar-volume-fill-font = 3
+
+; bar-volume-empty = ─
+bar-volume-empty = ∣
+bar-volume-empty-foreground = ${colors.dark0_soft}
+bar-volume-empty-font = 3
+
+click-right = tilix -e "pavucontrol"
+
+;; -------------------------------------------
 
 [module/battery]
 type = internal/battery
@@ -350,20 +387,20 @@ format-discharging-foreground = ${color.modulefg}
 format-discharging-padding = 0
 
 label-charging = %percentage%%]
-label-discharging = 
+label-discharging = %percentage%%]
 
 label-full = [%{F#989719}charged%{F-}]
 label-full-background = ${color.shade5}
 label-full-foreground = $(color.modulefg)
 label-full-padding = 0
 
-ramp-capacity-0 = [dying]
+ramp-capacity-0 = [dying:
 ramp-capacity-0-foreground = #ff6e6e
-ramp-capacity-1 = [sick]
+ramp-capacity-1 = [sick:
 ramp-capacity-1-foreground = #f1fa8c
-ramp-capacity-2 = [symptoms]
-ramp-capacity-3 = [normal]
-ramp-capacity-4 = [FULL]
+ramp-capacity-2 = [symptoms:
+ramp-capacity-3 = [normal:
+ramp-capacity-4 = [FULL:
 
 animation-charging-0 = [%{F#69ff94}ch%{F-}arging:
 animation-charging-1 = [ch%{F#69ff94}ar%{F-}ging:
@@ -387,6 +424,20 @@ label = [%temperature-c%]
 label-warn = [%temperature-c%]
 label-warn-foreground = ${colors.secondary}
 
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = ""
+format-prefix-foreground = ${colors.foreground-alt}
+label =  %percentage%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #4bffdc
+label = %percentage_used%%
 
 [module/powermenu]
 type = custom/menu

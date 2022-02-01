@@ -7,8 +7,8 @@
 
 - link:
     # files 
-    ~/.vimrc: config/nvim/init.vim
     ~/.config/starship.toml: config/starship.toml
+    ~/.vimrc: dots/vimrc
     ~/.zshrc: dots/zshrc
     ~/.p10k.zsh: dots/p10k.zsh
     ~/.gitconfig: dots/gitconfig

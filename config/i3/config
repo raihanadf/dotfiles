@@ -21,9 +21,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 #set $refresh_i3status killall -SIGUSR1 i3status
 
 # ========== Border / Gaps ==========
- 
+
 # Borders
-default_border pixel 1
+default_border pixel 2
 set $gaps 15
 #gaps inner $gaps
 gaps inner 15

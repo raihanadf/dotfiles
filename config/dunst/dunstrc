@@ -2,12 +2,12 @@
 # See dunst(5) for all configuration options
 
 [global]
-    // Display 
+    # Display 
 
     monitor = 0
     follow = mouse
 
-    // Geometry 
+    # Geometry 
 
     # dynamic width from 0 to 300
     # width = (0, 300)
@@ -23,13 +23,13 @@
     # Offset from the origin
     # if status bar on top
     # offset = 20x50
-    offset = 30x50
+    offset = 20x20
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
 
     # Maximum number of notification (0 means no limit)
-    notification_limit = 0
+    notification_limit = 5
 
     ### Progress bar ###
 
@@ -76,10 +76,10 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 3
+    frame_width = 2
 
     # Defines color of the frame around the notification window.
-    frame_color = "#484848"
+    frame_color = "#050505"
 
     # Define a color for the separator.
     # possible values are:
@@ -99,7 +99,7 @@
     # section for how to disable this if necessary
     idle_threshold = 120
 
-    // Text 
+# Text 
 
     font = "CaskaydiaCove NF" 12
     line_height = 0
@@ -131,7 +131,7 @@
     # Display indicators for URLs (U) and actions (A).
     show_indicators = yes
 
-    // Icons 
+# Icons 
     icon_position = left
     min_icon_size = 64
     max_icon_size = 78
@@ -139,7 +139,7 @@
     # Paths to default icons.
     icon_path = /usr/share/icons/Papirus/16x16/status/:/usr/share/icons/Papirus/16x16/devices/
 
-    // History 
+# History 
 
     # Should a notification popped up from history be sticky or timeout
     # as if it would normally do.
@@ -148,7 +148,7 @@
     # Maximum amount of notifications kept in history
     history_length = 20
 
-    // Misc/Advanced 
+# Misc/Advanced 
 
     # dmenu path.
     dmenu = /usr/bin/dmenu -p dunst:
@@ -166,7 +166,7 @@
     class = Dunst
 
     # corner radius
-    corner_radius = 5
+    corner_radius = 2
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
@@ -176,78 +176,37 @@
 
     # your notifs stuff
     [urgency_low]
-        background = "#151515"
-        foreground = "#ebdbb2"
+        background = "#050505"
+        foreground = "#a4a1a1"
         highlight = "#50fa7b"
         timeout = 6
 
     [urgency_normal]
-        background = "#151515"
-        foreground = "#ebdbb2"
+        background = "#050505"
+        foreground = "#a4a1a1"
         highlight = "#50fa7b"
         timeout = 8
 
     [urgency_critical]
-        background = "#252525"
-        foreground = "#ebdbb2"
+        background = "#FF0000"
+        foreground = "#1a1b26"
         frame_color = "#FF0000"
         timeout = 0
 
-    // ========================================================================
-    // ========================================================================
-    // ========================================================================
-    // ========================================================================
-    // ========================================================================
-    // ========================================================================
-    // ========================================================================
-    // ========================================================================
-    // ========================================================================
-    // ========================================================================
-    // ========================================================================
-    // ========================================================================
-    // ========================================================================
-    // ========================================================================
-
-    ### Wayland ###
-
-    # Uncomment this if you want to let notications appear under fullscreen
-    # applications (default: overlay)
-    # layer = top
-
-    # Set this to true to use X11 output on Wayland.
-    force_xwayland = false
-
-    ### Legacy
-
-    # Use the Xinerama extension instead of RandR for multi-monitor support.
-    # This setting is provided for compatibility with older nVidia drivers that
-    # do not support RandR and using it on systems that support RandR is highly
-    # discouraged.
-    #
-    # By enabling this setting dunst will not be able to detect when a monitor
-    # is connected or disconnected which might break follow mode if the screen
-    # layout changes.
-    force_xinerama = false
-
-    ### mouse
-
-    # Defines list of actions for each mouse event
-    # Possible values are:
-    # * none: Don't do anything.
-    # * do_action: Invoke the action determined by the action_name rule. If there is no
-    #              such action, open the context menu.
-    # * open_url: If the notification has exactly one url, open it. If there are multiple
-    #             ones, open the context menu.
-    # * close_current: Close current notification.
-    # * close_all: Close all notifications.
-    # * context: Open context menu for the notification.
-    # * context_all: Open context menu for all notifications.
-    # These values can be strung together for each mouse event, and
-    # will be executed in sequence.
-    mouse_left_click = close_current
-    mouse_middle_click = do_action, close_current
-    mouse_right_click = close_all
-
+# ========================================================================
+# ========================================================================
+# ========================================================================
+# ========================================================================
+# ========================================================================
+# ========================================================================
+# ========================================================================
+# ========================================================================
+# ========================================================================
+# ========================================================================
+# ========================================================================
+# ========================================================================
+# ========================================================================
+# ========================================================================
 # Experimental features that may or may not work correctly. Do not expect them
 # to have a consistent behaviour across releases.
 [experimental]
@@ -374,4 +333,4 @@
 #    appname = "some_volume_notifiers"
 #    set_stack_tag = "volume"
 #
-# vim: ft=cfg
+# vim: ft=cf262626g
