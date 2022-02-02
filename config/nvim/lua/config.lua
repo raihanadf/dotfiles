@@ -7,7 +7,11 @@ vim.go.smartindent = true
 vim.go.smarttab = true
 vim.go.expandtab = true
 vim.go.cindent = true
-vim.bo.shiftwidth = 2
-vim.bo.softtabstop = 2
+vim.go.shiftwidth = 2
+vim.go.softtabstop = 2
 
 vim.cmd 'colorscheme kanagawa'
+
+-- custom for plugins
+vim.opt.list = true
+vim.opt.listchars:append("eol:↴")

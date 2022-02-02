@@ -22,6 +22,10 @@ end
 local function vskeymap(key, map)
         keybind('v', key, map, silent)
 end
+---- insert and silent map
+local function iskeymap(key, map)
+        keybind('i', key, map, silent)
+end
 -----------------------------------------------------------------
 
 -- general
@@ -45,6 +49,7 @@ nskeymap('<c-l>', ':nohlsearch<CR>') -- prev buffer
 ---- nvim commenter
 nskeymap("++", ":CommentToggle<cr>")
 vskeymap("++", ":CommentToggle<cr>")
+iskeymap("++", "<ESC>:CommentToggle<cr>")
 -----------------------------------------------------------------
 
 -----------------------------------------------------------------
@@ -55,14 +60,14 @@ vskeymap("++", ":CommentToggle<cr>")
 --nrkeymap('<c-k>', '<c-w>k')
 --nrkeymap('<c-l>', '<c-w>l')
 ---- lsp keymap
-nrkeymap('fd', ':lua vim.lsp.buf.definition()<cr>')
-nrkeymap('fD', ':lua vim.lsp.buf.declaration()<cr>')
-nrkeymap('fi', ':lua vim.lsp.buf.implementation()<cr>')
-nrkeymap('fw', ':lua vim.lsp.buf.document_symbol()<cr>')
-nrkeymap('fw', ':lua vim.lsp.buf.workspace_symbol()<cr>')
-nrkeymap('fr', ':lua vim.lsp.buf.references()<cr>')
-nrkeymap('ft', ':lua vim.lsp.buf.type_definition()<cr>')
-nrkeymap('fK', ':lua vim.lsp.buf.hover()<cr>')
+nrkeymap('gd', ':lua vim.lsp.buf.definition()<cr>')
+nrkeymap('gD', ':lua vim.lsp.buf.declaration()<cr>')
+nrkeymap('gi', ':lua vim.lsp.buf.implementation()<cr>')
+nrkeymap('gw', ':lua vim.lsp.buf.document_symbol()<cr>')
+nrkeymap('gw', ':lua vim.lsp.buf.workspace_symbol()<cr>')
+nrkeymap('gr', ':lua vim.lsp.buf.references()<cr>')
+nrkeymap('gt', ':lua vim.lsp.buf.type_definition()<cr>')
+nrkeymap('gK', ':lua vim.lsp.buf.hover()<cr>')
 nrkeymap('<c-k>', ':lua vim.lsp.buf.signature_help()<cr>')
 nrkeymap('<leader>af', ':lua vim.lsp.buf.code_action()<cr>')
 nrkeymap('<leader>rn', ':lua vim.lsp.buf.rename()<cr>')
@@ -76,4 +81,3 @@ nrkeymap("<leader>f", "<cmd>lua require('telescope.builtin').find_files()<cr>")
 ---- nvim tree
 nrkeymap("<leader>b", ":NvimTreeToggle<cr>")
 -----------------------------------------------------------------
-

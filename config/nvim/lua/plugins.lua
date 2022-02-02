@@ -65,6 +65,8 @@ require('packer').startup(function()
     }
   }
   use "terrortylor/nvim-comment"
+  use "lukas-reineke/indent-blankline.nvim"
+
 end)
 --------------------------------------------------
 
@@ -78,4 +80,6 @@ require("bufferline").setup()
 require("luasnip.loaders.from_vscode").load()
 require('nvim-autopairs').setup{}
 require('nvim_comment').setup()
+require("indent_blankline").setup { show_end_of_line = true, }
+require('telescope').setup{  defaults = { file_ignore_patterns = { "node_modules" }} }
 --------------------------------------------------
