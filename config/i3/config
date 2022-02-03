@@ -26,27 +26,27 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 default_border pixel 2
 set $gaps 15
 #gaps inner $gaps
-gaps inner 15
-gaps outer 20
+gaps inner 10
+gaps outer 15
 
 # Smart Thingy
-smart_gaps on
+# smart_gaps on
 smart_borders no_gaps
 
 # ========== Colors ==========
 
 # colors
 # class                  border  backgr. text    indicator child_border
-client.focused           #928373 #928373 #ebdbb2 #928373   #928373
+client.focused           #383838 #928373 #ebdbb2 #383838   #383838
 client.urgent            #928373 #928373 #ebdbb2 #928373   #928373
-client.focused_inactive  #928373 #272727 #ebdbb2 #272727   #272727 
+client.focused_inactive  #383838 #272727 #ebdbb2 #383838   #383838
 client.unfocused         #272727 #272727 #928373 #292d2e   #222222
 client.background        #272727 
 
 
 # ========== Navigating ==========
 
-set $mod Mod4
+set $mod Mod1
 
 set $left h
 set $down j

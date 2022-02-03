@@ -7,7 +7,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #cc090200
+background = #dd090200
 ;background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #a4a1a1
@@ -19,7 +19,7 @@ alert = #bd2c40
 [bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 27
+height = 24
 ;offset-x = 2%
 ;offset-y = 1%
 ;override-redirect = true
@@ -42,12 +42,11 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = "Iosevka Term:size=11:style=Medium;2"
-font-1 = "CaskaydiaCove NF:size=18;3"
-font-2 = "feather:size=14;3"
+font-0 = "Scientifica:size=14:style=Bold;3"
+font-1 = "CaskaydiaCove NF:size=20;4"
+font-2 = "feather:size=16;4"
 font-3 = "unifont:fontformat=truetype:size=12:antialias=false;0"
 font-4 = "Noto Sans CJK JP:size=12;2"
-font-5 = "siji:pixelsize=12;1"
 
 modules-left = memory i3 xwindow
 modules-center = date 

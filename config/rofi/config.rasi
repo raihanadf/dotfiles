@@ -1,6 +1,6 @@
 configuration {
   modi: "drun";
-  font: "Cascadia Mono 14";
+  font: "Scientifica 16";
   show-icons: true;
   display-drun: "";
   drun-display-format: "{name}";

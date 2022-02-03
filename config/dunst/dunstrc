@@ -18,12 +18,12 @@
     height = 300
 
     # Position the notification in the top right corner
-    origin = bottom-right
+    origin = top-right
 
     # Offset from the origin
     # if status bar on top
-    # offset = 20x50
-    offset = 20x20
+    offset = 20x50
+    # offset = 20x20
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -79,7 +79,7 @@
     frame_width = 2
 
     # Defines color of the frame around the notification window.
-    frame_color = "#050505"
+    frame_color = "#383838"
 
     # Define a color for the separator.
     # possible values are:
@@ -101,7 +101,7 @@
 
 # Text 
 
-    font = "CaskaydiaCove NF" 12
+    font = Scientifica 16
     line_height = 0
     markup = full
     format = "<b>%s</b>\n%b"
