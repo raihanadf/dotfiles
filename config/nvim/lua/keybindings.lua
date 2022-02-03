@@ -1,6 +1,7 @@
 -- Quick note for myself : disable unused keybindings
 
 -------------------------General-------------------------------
+
 -- required/import binding
 require("keybinds.tablike")
 
@@ -40,8 +41,12 @@ keybind('i', '<c-s>', '<ESC>:w<CR>', {}) -- save (in normal mode)
 --
 ---- buffers
 nskeymap('<S-w>', ':bd<CR>') -- close buffer
-nskeymap('<S-k>', ':bn<CR>') -- next buffer
-nskeymap('<S-j>', ':bp<CR>') -- prev buffer
+-- nskeymap('<S-k>', ':bn<CR>') -- next buffer
+-- nskeymap('<S-j>', ':bp<CR>') -- prev buffer
+nskeymap('<S-k>', ':BufferLineCycleNext<CR>') -- next buffer
+nskeymap('<S-j>', ':BufferLineCyclePrev<CR>') -- prev buffer
+nskeymap('<leader>k', ':BufferLineMoveNext<CR>') -- next buffer
+nskeymap('<leader>j', ':BufferLineMovePrev<CR>') -- prev buffer
 --
 ---- clear search highlight
 nskeymap('<c-l>', ':nohlsearch<CR>') -- prev buffer
@@ -76,7 +81,7 @@ nrkeymap('<leader>rn', ':lua vim.lsp.buf.rename()<cr>')
 nrkeymap('<c-u><c-p>', ':PackerSync<CR>')
 
 ---- telescope
-nrkeymap("<leader>f", "<cmd>lua require('telescope.builtin').find_files()<cr>")
+nrkeymap("<c-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>")
 
 ---- nvim tree
 nrkeymap("<leader>b", ":NvimTreeToggle<cr>")

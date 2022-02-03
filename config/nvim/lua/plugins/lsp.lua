@@ -66,11 +66,13 @@ end)
   -- Setup lspconfig.
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
   local servers = {
-          'sumneko_lua',
-          'html',
-          'tsserver',
-          'jsonls',
-          'intelephense',
+    'sumneko_lua',
+    'html',
+    'jsonls',
+    'tsserver',
+    'rome',
+    'intelephense',
+    'ltex',
   }
   for _, value in ipairs(servers) do
   require('lspconfig')[value].setup {

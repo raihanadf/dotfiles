@@ -9,9 +9,13 @@ vim.go.expandtab = true
 vim.go.cindent = true
 vim.go.shiftwidth = 2
 vim.go.softtabstop = 2
+vim.go.tw = 80
 
-vim.cmd 'colorscheme kanagawa'
+-- colorscheme
+-- vim.g.gruvbox_flat_style = "dark"
+vim.cmd 'colorscheme ayu-dark'
 
 -- custom for plugins
+--- indent blankline
 vim.opt.list = true
 vim.opt.listchars:append("eol:↴")
