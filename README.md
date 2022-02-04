@@ -1,4 +1,4 @@
-# install
+# Install
 
 ```shell script
 
@@ -15,11 +15,12 @@ cd ~/.dotfiles
 
 ```
 
-# setup details
+# Setup Details
 
 - arch linux
 - kitty w/ zsh
 - i3-gaps, polybar, rofi, etc
 - vscode, nvim
 
-![arch](/config/screenshot.png)
+![arch0](/config/screenshot.png)
+![arch1](/config/screenshot1.png)
