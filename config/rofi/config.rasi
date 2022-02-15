@@ -23,7 +23,6 @@ configuration {
 window {
   border:             3px 3px 3px 3px;
   border-color:                   @bga;
-  border-radius: 2px;
   width: 50%;
   padding: 10px;
 }

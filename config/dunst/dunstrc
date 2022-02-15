@@ -22,8 +22,8 @@
 
     # Offset from the origin
     # if status bar on top
-    offset = 20x50
-    # offset = 20x20
+    # offset = 20x50
+    offset = 20x20
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -166,7 +166,7 @@
     class = Dunst
 
     # corner radius
-    corner_radius = 2
+    # corner_radius = 2
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this

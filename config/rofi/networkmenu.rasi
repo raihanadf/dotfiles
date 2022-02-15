@@ -1,5 +1,5 @@
 configuration {
-	font:							"CaskaydiaCove NF 14";
+	font:					"Scientifica 16";
   show-icons:                     true;
 	icon-theme: 					"Papirus";
   display-drun: 					"";
@@ -18,7 +18,6 @@ window {
     text-color:                     @fg;
     border:             3px 3px 3px 3px;
     border-color:                   @bga;
-    border-radius:                  2px;
 	  width:							400px;
     location:                       center;
     x-offset:                       0;
