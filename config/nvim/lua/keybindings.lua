@@ -40,16 +40,16 @@ keybind('i', '<c-s>', '<ESC>:w<CR>', {}) -- save (in normal mode)
 -- nskeymap [[ normal silent keybinds ]]
 --
 ---- buffers
-nskeymap('<S-w>', ':bd<CR>') -- close buffer
+nskeymap('<leader>w', ':bd<CR>') -- close buffer
 -- nskeymap('<S-k>', ':bn<CR>') -- next buffer
 -- nskeymap('<S-j>', ':bp<CR>') -- prev buffer
-nskeymap('<S-k>', ':BufferLineCycleNext<CR>') -- next buffer
-nskeymap('<S-j>', ':BufferLineCyclePrev<CR>') -- prev buffer
-nskeymap('<leader>k', ':BufferLineMoveNext<CR>') -- next buffer
-nskeymap('<leader>j', ':BufferLineMovePrev<CR>') -- prev buffer
+nskeymap('<S-k>', ':BufferLineCycleNext<CR>')
+nskeymap('<S-j>', ':BufferLineCyclePrev<CR>')
+nskeymap("<leader>'", ':BufferLineMoveNext<CR>')
+nskeymap("<leader>;", ':BufferLineMovePrev<CR>')
 --
 ---- clear search highlight
-nskeymap('<c-l>', ':nohlsearch<CR>') -- prev buffer
+nskeymap('<leader>l', ':nohlsearch<cr>')
 
 ---- nvim commenter
 nskeymap("++", ":CommentToggle<cr>")
@@ -60,10 +60,10 @@ iskeymap("++", "<ESC>:CommentToggle<cr>")
 -----------------------------------------------------------------
 -- nkeymap [[ normal noremap keybinds ]]
 ---- move to split window (mapped to h,j,k,l)
---nrkeymap('<c-h>', '<c-w>h')
---nrkeymap('<c-j>', '<c-w>j')
---nrkeymap('<c-k>', '<c-w>k')
---nrkeymap('<c-l>', '<c-w>l')
+nrkeymap('<c-h>', '<c-w>h')
+nrkeymap('<c-j>', '<c-w>j')
+nrkeymap('<c-k>', '<c-w>k')
+nrkeymap('<c-l>', '<c-w>l')
 ---- lsp keymap
 nrkeymap('gd', ':lua vim.lsp.buf.definition()<cr>')
 nrkeymap('gD', ':lua vim.lsp.buf.declaration()<cr>')

@@ -11,10 +11,6 @@ vim.go.shiftwidth = 2
 vim.go.softtabstop = 2
 vim.go.tw = 80
 
--- colorscheme
--- vim.g.gruvbox_flat_style = "dark"
-vim.cmd 'colorscheme ayu-dark'
-
 -- custom for plugins
 --- indent blankline
 vim.opt.list = true

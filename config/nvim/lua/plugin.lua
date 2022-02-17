@@ -6,13 +6,15 @@ require('packer').startup(function()
   -- general
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
   use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
-  use 'aonemd/kuroi.vim'
-  use "rebelot/kanagawa.nvim"
-  use 'eddyekofo94/gruvbox-flat.nvim'
+  -- use 'aonemd/kuroi.vim'
+  -- use "rebelot/kanagawa.nvim"
+  -- use 'eddyekofo94/gruvbox-flat.nvim'
+  use 'pineapplegiant/spaceduck'
   use 'Shatur/neovim-ayu'
+  use 'whatsthatsmell/codesmell_dark.vim'
 
   -- lsp
-  use {'nvim-treesitter/nvim-treesitter', config = require('plugins.treesitter')}
+  use {'nvim-treesitter/nvim-treesitter', config = require('plugins.treesitter') }
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
 
@@ -29,13 +31,10 @@ require('packer').startup(function()
   use "rafamadriz/friendly-snippets"
 
   -- autopairs
-  use {'windwp/nvim-autopairs', config = require('plugins.nvimautopairs')}
+  use {'windwp/nvim-autopairs', config = require('plugins.nvimautopairs') }
+  use 'windwp/nvim-ts-autotag'
   use {'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} }}
-  use {'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icon
-    }
-  }
+  use {'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' }}
   use "terrortylor/nvim-comment"
   use "lukas-reineke/indent-blankline.nvim"
 
@@ -47,13 +46,13 @@ end)
 --imports
 require("plugins.lsp")
 require('plugins.nvimtree')
-require("plugins.evil")
+require("plugins.lua-line")
 
 --basic setup
 require("bufferline").setup()
 require("luasnip.loaders.from_vscode").load()
 require('nvim-autopairs').setup{}
 require('nvim_comment').setup()
-require("indent_blankline").setup { show_end_of_line = true, }
+require("indent_blankline").setup()
 require('telescope').setup{ defaults = { file_ignore_patterns = { "node_modules" }} }
 --------------------------------------------------
