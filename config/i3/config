@@ -2,6 +2,8 @@
 
 # ========= Initial ==========
 
+set $term kitty
+
 # mouse
 focus_follows_mouse no
 exec_always --no-startup-id xinput set-prop 14 325 1
@@ -9,21 +11,21 @@ exec_always --no-startup-id xinput set-prop 14 345 1
 
 # necessary apps
 exec_always --no-startup-id nitrogen --restore
-exec_always --no-startup-id picom
+# exec_always --no-startup-id picom
 exec --no-startup-id redshift -P -O 5500K
 exec --no-startup-id dunst
 exec --no-startup-id ~/.dotfiles/scripts/udiskie.sh
 exec --no-startup-id ~/.dotfiles/scripts/batteryCheck.sh
-#exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-#set $refresh_i3status killall -SIGUSR1 i3status
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -i $wpfolder/pixel-space.jpg
+# set $refresh_i3status killall -SIGUSR1 i3status
 
 # ========== Border / Gaps ==========
 
 # Borders
-default_border pixel 2
+default_border pixel 3
 set $gaps 15
 #gaps inner $gaps
 gaps inner 10
@@ -87,7 +89,7 @@ bindsym Print exec --no-startup-id flameshot full -p ~/Pictures/Screenshots
 bindsym $mod+u --release exec --no-startup-id flameshot gui -p ~/Pictures/Screenshots
 
 # Lock Screen
-bindsym $mod+shift+x exec --no-startup-id betterlockscreen -l blur
+bindsym $mod+shift+x exec --no-startup-id i3lock -i $wpfolder/pixel-space.jpg
 
 # Wallpaper
 set $wpfolder ~/Pictures/Wallpapers
@@ -103,7 +105,7 @@ bindsym $mod+Control+p exec --no-startup-id ~/.dotfiles/scripts/pomo.sh
 floating_modifier $mod
 
 # Terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec --no-startup-id $term
 
 # Kill Window
 bindsym $mod+Shift+q kill
@@ -246,9 +248,24 @@ bindsym $mod+r mode "resize"
 
 # ========== i3's Bar ==========
 
-#bar {
-#        status_command i3status
-#}
+# bar {
+# 	status_command i3status
+# 	font pango:CaskaydiaCove NF 11
+# 	separator_symbol |
+# 
+#   colors {
+#     background #010D1A
+#     statusline #FFFFFF
+#     separator  #FFFA55
+# 
+#     focused_workspace  #BEB093 #323364 #FFFFFF
+#     active_workspace   #333333 #222222 #FFFFFF
+#     inactive_workspace #333333 #222222 #888888
+#     urgent_workspace   #2F343A #900000 #FFFFFF
+#     binding_mode       #2F343A #900000 #FFFFFF
+#   }
+# 
+# }
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 

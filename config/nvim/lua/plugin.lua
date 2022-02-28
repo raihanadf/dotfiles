@@ -12,6 +12,7 @@ require('packer').startup(function()
   use 'pineapplegiant/spaceduck'
   use 'Shatur/neovim-ayu'
   use 'whatsthatsmell/codesmell_dark.vim'
+  use 'karb94/neoscroll.nvim'
 
   -- lsp
   use {'nvim-treesitter/nvim-treesitter', config = require('plugins.treesitter') }
@@ -50,6 +51,10 @@ require("plugins.lua-line")
 
 --basic setup
 require("bufferline").setup()
+require('neoscroll').setup({
+  mappings = {'<C-u>', '<C-d>', '<C-b>', '<C-f>',
+                '<C-y>', '<C-e>', 'zt', 'zz', 'zb', 'gg', 'G'},
+})
 require("luasnip.loaders.from_vscode").load()
 require('nvim-autopairs').setup{}
 require('nvim_comment').setup()
