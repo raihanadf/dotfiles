@@ -1,7 +1,7 @@
 # Created by raihan for 5.8
 
 #  start up
-#eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi

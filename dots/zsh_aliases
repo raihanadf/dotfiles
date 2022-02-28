@@ -1,7 +1,7 @@
 # doing something
 alias pls='sudo $(fc -ln -1)'
-alias open="xdg-open"
-alias c="clear"
+alias open="xdg-open" # works with wsl too
+alias c="clear" # bad 'clearing' habit
 alias q="exit"
 alias man="man -P \"sh -c 'col -b | nvim -c \\\"set ft=man nomod nolist\\\" -'\""
 alias lolman="man -P 'col -b | lolcat -f | less -R'"
@@ -60,6 +60,11 @@ alias opmast="optimus-manager --status"
 # bitchy turbo (good tho)
 alias onturbo="echo 0 | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
 alias offturbo="echo 1 | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
+
+# some fancy stuff that i rarely used
+alias sl="sl -a | lolcat" # gay fuckin train LMFAOO
+alias lyrics="sptlrx" # paru -S sptlrx-bin its for synced spotify lyrics in terminal
+
 
 # functions
 
