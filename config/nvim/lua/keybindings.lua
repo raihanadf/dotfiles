@@ -52,9 +52,9 @@ nskeymap("<leader>;", ':BufferLineMovePrev<CR>')
 nskeymap('<leader>l', ':nohlsearch<cr>')
 
 ---- nvim commenter
-nskeymap("++", ":CommentToggle<cr>")
-vskeymap("++", ":CommentToggle<cr>")
-iskeymap("++", "<ESC>:CommentToggle<cr>")
+nskeymap("<leader>+", ":CommentToggle<cr>")
+vskeymap("<leader>+", ":CommentToggle<cr>")
+iskeymap("<leader>+", "<ESC>:CommentToggle<cr>")
 -----------------------------------------------------------------
 
 -----------------------------------------------------------------

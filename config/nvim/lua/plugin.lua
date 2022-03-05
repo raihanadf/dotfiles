@@ -53,7 +53,7 @@ require("plugins.lua-line")
 require("bufferline").setup()
 require('neoscroll').setup({
   mappings = {'<C-u>', '<C-d>', '<C-b>', '<C-f>',
-                '<C-y>', '<C-e>', 'zt', 'zz', 'zb', 'gg', 'G'},
+                '<C-y>', '<C-e>', 'zt', 'zz', 'zb'},
 })
 require("luasnip.loaders.from_vscode").load()
 require('nvim-autopairs').setup{}
