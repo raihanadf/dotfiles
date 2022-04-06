@@ -22,7 +22,7 @@
 
     # Offset from the origin
     # if status bar on top
-    offset = 20x50
+    offset = 10x40
     # offset = 20x20
 
     # Scale factor. It is auto-detected if value is 0.
@@ -101,7 +101,7 @@
 
 # Text 
 
-    font = Scientifica 16
+    font = SF Display 14
     line_height = 0
     markup = full
     format = "<b>%s</b>\n%b"

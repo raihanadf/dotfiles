@@ -7,7 +7,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #bb090200
+background = #dd090200
 ;background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #a4a1a1
@@ -19,13 +19,13 @@ alert = #bd2c40
 [bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 24
+height = 30
 ;offset-x = 2%
 ;offset-y = 1%
 ;override-redirect = true
 ;radius = 5.0
 fixed-center = true
-bottom = true
+;bottom = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -39,10 +39,10 @@ border-color = ${colors.background}
 padding-left = 2
 padding-right = 2
 
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left = 2
+module-margin-right = 2
 
-font-0 = "Scientifica:size=14:style=Bold;3"
+font-0 = "SF Display:size=12:style=Bold;2"
 font-1 = "CaskaydiaCove NF:size=20;4"
 font-2 = "feather:size=16;4"
 font-3 = "unifont:fontformat=truetype:size=14:antialias=false;3"
@@ -408,7 +408,7 @@ animation-charging-3 = [chargi%{F#69ff94}ng%{F-}:
 animation-charging-4 = [char%{F#69ff94}gi%{F-}ng:
 animation-charging-5 = [ch%{F#69ff94}ar%{F-}ging:
 
-animation-charging-framerate = 500
+animation-charging-framerate = 300
 
 
 [module/temperature]

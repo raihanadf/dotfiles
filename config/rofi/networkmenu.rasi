@@ -1,5 +1,5 @@
 configuration {
-	font:					"Scientifica 16";
+	font:					"SF Display 14";
   show-icons:                     true;
 	icon-theme: 					"Papirus";
   display-drun: 					"";

@@ -73,6 +73,7 @@ end)
     'rome',
     'intelephense',
     'ltex',
+    'dartls',
   }
   for _, value in ipairs(servers) do
   require('lspconfig')[value].setup {
