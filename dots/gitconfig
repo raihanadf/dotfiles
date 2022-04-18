@@ -1,6 +1,7 @@
 [user]
 	name = Raihan
-	email = 12584890+17radf@users.noreply.github.com
+	email = 17radf@gmail.com
+	signingkey = CB241126AC6C6476
 [color]
 	ui = true
 [core]
@@ -12,3 +13,5 @@
 	enabled = true
 [alias]
 	change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f"
+[commit]
+	gpgsign = true
