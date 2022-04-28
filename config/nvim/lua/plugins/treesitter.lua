@@ -1,6 +1,6 @@
 local configs = require'nvim-treesitter.configs'
 configs.setup {
-ensure_installed = "maintained", -- Only use parsers that are maintained
+ensure_installed = "all", -- Only use parsers that are maintained
 sync_install = false,
 highlight = { -- enable highlighting
   enable = true,
