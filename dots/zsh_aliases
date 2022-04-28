@@ -2,7 +2,7 @@
 alias pls='sudo $(fc -ln -1)'
 alias open="xdg-open" # works with wsl too
 alias c="clear" # bad 'clearing' habit
-alias q="exit"
+alias q="exit" # bad 'quitting' habit
 alias man="man -P \"sh -c 'col -b | nvim -c \\\"set ft=man nomod nolist\\\" -'\""
 alias lolman="man -P 'col -b | lolcat -f | less -R'"
 

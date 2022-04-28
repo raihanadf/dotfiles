@@ -4,7 +4,7 @@
 
 set $term kitty
 set $wpfolder ~/Pictures/Wallpapers
-set $wp ~/Pictures/Wallpapers/alone.jpg
+set $wp ~/Pictures/Wallpapers/garden.jpg
 
 # mouse
 focus_follows_mouse no
@@ -34,8 +34,8 @@ gaps inner 10
 gaps outer 5
 
 # Smart Thingy
-# smart_gaps on
-smart_borders no_gaps
+ # smart_gaps on
+ # smart_borders no_gaps
 
 # ========== Colors ==========
 

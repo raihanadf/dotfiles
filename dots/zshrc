@@ -45,6 +45,13 @@ export PATH="$LARAVEL_HOME/bin:$PATH"
 export DENO_INSTALL="/home/raihan/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
+# dart
+export PATH="$PATH:/usr/lib/dart/bin"
+echo 'export PATH="$PATH:/usr/lib/dart/bin"' >> ~/.profile
+
+# gpg
+export GPG_TTY=$(tty)
+
 # disable the cursor style feature
 ZVM_CURSOR_STYLE_ENABLED=false
 
