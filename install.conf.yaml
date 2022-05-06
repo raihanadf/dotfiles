@@ -13,6 +13,7 @@
     ~/.p10k.zsh: dots/p10k.zsh
     ~/.gitconfig: dots/gitconfig
     ~/.zsh_aliases: dots/zsh_aliases
+    ~/.zsh_exports: dots/zsh_exports
     ~/.tmux.conf: dots/tmux.conf
 
     # i3

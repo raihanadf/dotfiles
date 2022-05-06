@@ -28,29 +28,7 @@ antibody bundle < ~/.dotfiles/dots/zsh_plugins
 # imports
 [[ ! -f ~/.dotfiles/dots/p10k.zsh ]] || source ~/.dotfiles/dots/p10k.zsh
 [ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
-
-# volta
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-
-# laravel
-export LARAVEL_HOME="$HOME/.config/composer/vendor"
-export PATH="$LARAVEL_HOME/bin:$PATH"
-
-# ruby
-#export PATH="$HOME/.rbenv/bin:$PATH"
-#eval "$(rbenv init -)"
-
-# deno
-export DENO_INSTALL="/home/raihan/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
-
-# dart
-export PATH="$PATH:/usr/lib/dart/bin"
-echo 'export PATH="$PATH:/usr/lib/dart/bin"' >> ~/.profile
-
-# gpg
-export GPG_TTY=$(tty)
+[ -f ~/.zsh_exports ] && source ~/.zsh_exports
 
 # disable the cursor style feature
 ZVM_CURSOR_STYLE_ENABLED=false
