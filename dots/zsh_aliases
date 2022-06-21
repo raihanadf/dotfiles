@@ -15,7 +15,6 @@ alias nvimconfig="vi ~/.config/nvim/init.lua"
 
 # replace with better app
 alias vi="nvim"
-alias cat="bat"
 
 # moving directories
 alias ..="cd .."
