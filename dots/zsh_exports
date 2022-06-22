@@ -19,4 +19,4 @@ export PATH="$PATH:/usr/lib/dart/bin"
 echo 'export PATH="$PATH:/usr/lib/dart/bin"' >> ~/.profile
 
 # gpg
-export GPG_TTY=$(tty)
+export GPG_TTY=$TTY
