@@ -7,7 +7,7 @@ require('packer').startup(function()
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
   use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
   -- use 'aonemd/kuroi.vim'
-  -- use "rebelot/kanagawa.nvim"
+  use "rebelot/kanagawa.nvim"
   -- use 'eddyekofo94/gruvbox-flat.nvim'
   use 'pineapplegiant/spaceduck'
   use 'Shatur/neovim-ayu'
@@ -15,7 +15,7 @@ require('packer').startup(function()
   use 'karb94/neoscroll.nvim'
 
   -- lsp
-  use {'nvim-treesitter/nvim-treesitter', config = require('plugins.treesitter') }
+  use 'nvim-treesitter/nvim-treesitter'
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
 
@@ -32,7 +32,7 @@ require('packer').startup(function()
   use "rafamadriz/friendly-snippets"
 
   -- autopairs
-  use {'windwp/nvim-autopairs', config = require('plugins.nvimautopairs') }
+  use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
   use {'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} }}
   use {'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' }}
@@ -47,6 +47,7 @@ end)
 --imports
 require("plugins.lsp")
 require('plugins.nvimtree')
+require('plugins.treesitter')
 require("plugins.lua-line")
 
 --basic setup

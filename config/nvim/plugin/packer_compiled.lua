@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/raihan/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["codesmell_dark.vim"] = {
+    loaded = true,
+    path = "/home/raihan/.local/share/nvim/site/pack/packer/start/codesmell_dark.vim",
+    url = "https://github.com/whatsthatsmell/codesmell_dark.vim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/raihan/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -114,15 +119,30 @@ _G.packer_plugins = {
     path = "/home/raihan/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
+  ["kanagawa.nvim"] = {
+    loaded = true,
+    path = "/home/raihan/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
+    url = "https://github.com/rebelot/kanagawa.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/raihan/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["neoscroll.nvim"] = {
+    loaded = true,
+    path = "/home/raihan/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
+    url = "https://github.com/karb94/neoscroll.nvim"
+  },
   ["neovim-ayu"] = {
     loaded = true,
     path = "/home/raihan/.local/share/nvim/site/pack/packer/start/neovim-ayu",
     url = "https://github.com/Shatur/neovim-ayu"
+  },
+  ["nvim-autopairs"] = {
+    loaded = true,
+    path = "/home/raihan/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -149,6 +169,16 @@ _G.packer_plugins = {
     path = "/home/raihan/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/raihan/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-ts-autotag"] = {
+    loaded = true,
+    path = "/home/raihan/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
+    url = "https://github.com/windwp/nvim-ts-autotag"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/raihan/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -163,6 +193,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/raihan/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  spaceduck = {
+    loaded = true,
+    path = "/home/raihan/.local/share/nvim/site/pack/packer/start/spaceduck",
+    url = "https://github.com/pineapplegiant/spaceduck"
   },
   ["telescope.nvim"] = {
     loaded = true,
