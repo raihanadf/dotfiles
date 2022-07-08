@@ -1,24 +1,19 @@
 #!/usr/bin/env bash
-sudo timedatectl set-local-rtp 1
 
 # initial install
-sudo pacman -Syyuu zsh neovim bat openssh base-devel pulseaudio pamixer lxappearance brightnessctl ranger intel-ucode intel-undervolt redshift flameshot alsa-utils alsa-plugins alsa-lib lxrandr-gtk3
+sudo pacman -Syyuu zsh neovim bat base-devel pulseaudio pamixer lxappearance brightnessctl ranger redshift flameshot alsa-utils alsa-plugins alsa-lib lxrandr-gtk3
 
 # install antibody 
 curl -sfL git.io/antibody | sudo sh -s - -b /usr/local/bin
 antibody bundle < ~/.dotfiles/dots/zsh_plugins
 
 # install paru (aur helper)
-git clone https://aur.archlinux.org/paru.git && cd paru
-makepkg -si
-cd .. && rm -rf paru
+# git clone https://aur.archlinux.org/paru.git && cd paru
+# makepkg -si
+# cd .. && rm -rf paru
 
-paru polybar
-paru auto-cpufreq
-
-# install nvim plugin manager
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+# paru polybar
+# paru auto-cpufreq
 
 # install tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

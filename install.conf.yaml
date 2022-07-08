@@ -8,19 +8,13 @@
 - link:
     # files 
     ~/.config/starship.toml: config/starship.toml
+    ~/.gitconfig: dots/gitconfig
     ~/.vimrc: dots/vimrc
     ~/.zshrc: dots/zshrc
     ~/.p10k.zsh: dots/p10k.zsh
-    ~/.gitconfig: dots/gitconfig
     ~/.zsh_aliases: dots/zsh_aliases
     ~/.zsh_exports: dots/zsh_exports
     ~/.tmux.conf: dots/tmux.conf
-
-    # i3
-    ~/.config/i3:
-      create: true
-      path: config/i3
-      force: true
 
     # kitty
     ~/.config/kitty:
@@ -34,21 +28,10 @@
       path: config/nvim
       force: true
 
-    # spotify-tui
-    ~/.config/spotify-tui:
-      create: true
-      path: config/spotify-tui
-
     # rofi
     ~/.config/rofi:
       create: true
       path: config/rofi
-      force: true
-
-    # picom
-    ~/.config/picom:
-      create: true
-      path: config/picom
       force: true
 
     # dunst
@@ -63,22 +46,10 @@
       path: config/zathura
       force: true
 
-    # polybar
-    ~/.config/polybar:
-      create: true
-      path: config/polybar
-      force: true
-
     # nm dmenu
     ~/.config/networkmanager-dmenu:
       create: true
       path: config/networkmanager-dmenu
-      force: true
-
-    # ranger
-    ~/.config/ranger:
-      create: true
-      path: config/ranger
       force: true
 
     #~/.vim:
