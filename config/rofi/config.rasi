@@ -1,6 +1,6 @@
 configuration {
   modi: "drun";
-  font: "SF Display 14";
+  font: "Iosevka 14";
   show-icons: true;
   display-drun: "";
   drun-display-format: "{name}";
@@ -11,8 +11,8 @@ configuration {
 
 * {
   al:   #00000000;
-  bg:   #090200ff;
-  bga:  #383838FF;
+  bg:   #05080aff;
+  bga:  #ebdbb2FF;
   fga:  #CACACAFF;
   fg:   #CACACAFF;
   al: #1f1f1f;
