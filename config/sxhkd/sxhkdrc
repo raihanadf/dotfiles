@@ -1,0 +1,30 @@
+# ----- SXHKD -----
+# making things universal..., lets start with keybindings
+
+# restart sxhkd
+alt + BackSpace
+	pkill -USR1 -x sxhkd
+
+# --- XF86 stuff ---
+
+# control audio
+XF86Audio{LowerVolume,RaiseVolume}
+	$HOME/.dotfiles/scripts/volume.sh {down,up}
+
+# control brightness
+XF86MonBrightness{Down,Up}
+	$HOME/.dotfiles/scripts/backlight.sh {down,up}
+
+# -- System Keys --
+
+# screenshot with gui
+alt + Print
+	flameshot gui -p $HOME/Pictures/Screenshots
+
+# full screenshot
+Print
+	flameshot full -p $HOME/Pictures/Screenshots || notify-send "Theres no 'Wallpapers' folder in Pictures"
+
+# open wallpaper picker, in this case nitrogen
+alt + shift + semicolon
+	nitrogen $HOME/Pictures/Wallpapers || notify-send "Theres no 'Wallpapers' folder in Pictures"

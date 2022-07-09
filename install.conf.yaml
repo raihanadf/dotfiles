@@ -16,6 +16,12 @@
     ~/.zsh_exports: dots/zsh_exports
     ~/.tmux.conf: dots/tmux.conf
 
+    # sxhkd
+    ~/.config/sxhkd:
+      create: true
+      path: config/sxhkd
+      force: true
+
     # kitty
     ~/.config/kitty:
       create: true
