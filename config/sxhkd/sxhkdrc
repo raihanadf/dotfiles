@@ -8,14 +8,22 @@ alt + BackSpace
 # --- XF86 stuff ---
 
 # control audio
-XF86Audio{LowerVolume,RaiseVolume}
-	$HOME/.dotfiles/scripts/volume.sh {down,up}
+XF86Audio{LowerVolume,RaiseVolume,Mute}
+	$HOME/.dotfiles/scripts/volume.sh {down,up,mute}
 
 # control brightness
 XF86MonBrightness{Down,Up}
 	$HOME/.dotfiles/scripts/backlight.sh {down,up}
 
 # -- System Keys --
+
+# slockkkk
+alt + Escape
+	slock
+
+# system
+super + alt + {F1,F2,F3}
+	{poweroff,reboot,xset dpms force off}
 
 # screenshot with gui
 alt + Print
