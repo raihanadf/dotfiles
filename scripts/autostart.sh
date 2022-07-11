@@ -1,5 +1,8 @@
 #!/bin/bash
 
+dunstify "Welcome!"
+xset s 900 && xss-lock --transfer-sleep-lock -- slock
+
 # colours
 black=#05080a
 pink=#ffc2d0
@@ -36,17 +39,20 @@ battery() {
 charging="$(cat /sys/class/power_supply/ADP1/online)"
 battery=$(cat /sys/class/power_supply/BAT1/capacity)
 if [[ $charging = "0" ]]; then
-	if [[ $battery > "95" ]]; then
+	if [[ $battery > "90" ]]; then
 		printf "^c$green^󰁹 $battery"
-	elif [[ $battery > "80" ]]; then
+	elif [[ $battery > "65" ]]; then
 		printf "^c$green^󰂁 $battery"
-	elif [[ $battery > "60" ]]; then
-		printf "^c$green^󰁿 $battery"
 	elif [[ $battery > "40" ]]; then
-		printf "^c$green^󰁽 $battery"
-	elif [[ $battery > "20" ]]; then
+		printf "^c$green^󰁿 $battery"
+	elif [[ $battery > "30" ]]; then
+		printf "^c$green^󰁻 $battery"
+	elif [[ $battery > "17" ]]; then
+		printf "^c$green^󰁺 $battery"
+	elif [[ $battery > "13" ]]; then
 		printf "^c$green^󱃍 $battery"
 	else
+		printf "^c$green^󱃍 $battery"
 		dunstify "I NEED TO CHARGEEEEE!!!" "IT IS NOW $battery%" -h string:fgcolor:#ff4444 -h string:frcolor:#ba0606 
 	fi
 	 else
