@@ -10,6 +10,7 @@
     ~/.config/starship.toml: config/starship.toml
     ~/.gitconfig: dots/gitconfig
     ~/.vimrc: dots/vimrc
+    ~/.ideavimrc: dots/ideavimrc
     ~/.zshrc: dots/zshrc
     ~/.p10k.zsh: dots/p10k.zsh
     ~/.zsh_aliases: dots/zsh_aliases

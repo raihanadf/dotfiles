@@ -24,6 +24,7 @@ read -p "install prerequisites? (y/N)" -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
+    ./$DWM_DIR/install.sh
     ./config/prerequisites
 fi
 
