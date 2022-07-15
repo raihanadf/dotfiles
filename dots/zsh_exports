@@ -20,3 +20,10 @@ echo 'export PATH="$PATH:/usr/lib/dart/bin"' >> ~/.profile
 
 # gpg
 export GPG_TTY=$TTY
+
+# bun completions
+[ -s "/home/raihan/.bun/_bun" ] && source "/home/raihan/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="/home/raihan/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

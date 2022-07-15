@@ -4,7 +4,6 @@ alias open="xdg-open" # works with wsl too
 alias c="clear" # bad 'clearing' habit
 alias q="exit" # bad 'quitting' habit
 alias man="man -P \"sh -c 'col -b | nvim -c \\\"set ft=man nomod nolist\\\" -'\""
-alias lolman="man -P 'col -b | lolcat -f | less -R'"
 
 # edit config
 alias zshalias="vi ~/.zsh_aliases"
@@ -13,8 +12,10 @@ alias zshconfig="vi ~/.zshrc"
 alias vimconfig="vi ~/.vimrc"
 alias nvimconfig="vi ~/.config/nvim/init.lua"
 
-# replace with better app
+# replace with better app // admin
 alias vi="nvim"
+alias isw="sudo isw"
+alias pomo="spt -e 'aplay $HOME/Music/alarm.wav'"
 
 # moving directories
 alias ..="cd .."
@@ -49,7 +50,7 @@ alias lamppstart="sudo /opt/lampp/lampp start"
 alias lamppst="sudo /opt/lampp/lampp status"
 alias lamppstop="sudo /opt/lampp/lampp stop"
 alias lampprestart="sudo /opt/lampp/lampp restart"
-alias mysql="sudo /opt/lampp/bin/mysql -u root -p"
+# alias mysql="sudo /opt/lampp/bin/mysql -u root -p"
 
 # optimus manager
 alias opma="optimus-manager"
@@ -61,7 +62,6 @@ alias onturbo="echo 0 | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
 alias offturbo="echo 1 | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
 
 # some fancy stuff that i rarely used
-alias sl="sl -a | lolcat" # gay fuckin train LMFAOO
 alias lyrics="sptlrx" # paru -S sptlrx-bin its for synced spotify lyrics in terminal
 
 

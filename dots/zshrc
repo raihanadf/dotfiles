@@ -1,19 +1,24 @@
-# Created by raihan for 5.8
+# --- Created by raihan for 5.8 ---
 
-#  start up
+# --- start up ---
+
+# --- choose one ---
+
+# starship
 eval "$(starship init zsh)"
+# p10k
 # if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 #   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 # fi
 
-# history
+# --- history ---
 HISTFILE=~/.zsh_hist
 HISTSIZE=1000
 SAVEHIST=2000
 
 unsetopt beep
 
-# compinit
+# --- compinit ---
 autoload -Uz compinit
 if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
 	compinit;
@@ -21,18 +26,15 @@ else
 	compinit -C;
 fi;
 
-# antibody
+# --- antibody ---
 source <(antibody init)
 antibody bundle < ~/.dotfiles/dots/zsh_plugins
 
-# imports
+# --- imports ---
 [[ ! -f ~/.dotfiles/dots/p10k.zsh ]] || source ~/.dotfiles/dots/p10k.zsh
 [ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
 [ -f ~/.zsh_exports ] && source ~/.zsh_exports
 
-# disable the cursor style feature
-ZVM_CURSOR_STYLE_ENABLED=false
 
-# windows title
-precmd () {print -Pn "\e]0;%~\a"}
-
+# bun completions
+[ -s "/home/raihan/.bun/_bun" ] && source "/home/raihan/.bun/_bun"

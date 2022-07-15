@@ -18,7 +18,7 @@
 <div align="center">
 
 <h3><b>Welcome!</b></h3> 
-This repo is a collection of my dotfiles. I mainly develop and study for Android <i>(Kotlin, any)</i>, or frontend with <i>(Javascript, PHP, any)</i>. These may impact how my editors are configured. NB: [ I use this setup for gaming too ]
+This repo is a collection of my dotfiles. I mainly develop/study for Android <i>(Kotlin, any)</i>, and Web with <i>(Javascript, PHP, any)</i>. These may impact how my editors are configured. NB: [ I use this setup for gaming too ]
 
 </div>
 
@@ -33,7 +33,7 @@ This repo is a collection of my dotfiles. I mainly develop and study for Android
 email="<your email>"
 ssh-keygen -t ed25519 -C "${email}"
 
-# make a new directory (for me)
+# clone and make a new directory (for me)
 git clone git@github.com:17radf/dotfiles.git ~/.dotfiles
 
 # install
@@ -46,8 +46,6 @@ cd ~/.dotfiles
 
 ## Setup Details
 
-<details>  <summary>Expand</summary>
-
 some information about my setup:
 
 - OS: [Arch Linux](https://archlinux.org/)
@@ -58,12 +56,9 @@ some information about my setup:
 - Login Manager: [ly](https://github.com/fairyglade/ly)
 - Editor: [nvim](https://github.com/neovim/neovim)
 
-</details>
 <br/>
 
 ## <b>dwm</b> Patches
-
-<details>  <summary>Expand</summary>
 
 - BAR_AWESOMEBAR_PATCH
 - BAR_STATUS_PATCH
@@ -85,14 +80,14 @@ some information about my setup:
 - ONLYQUITONEMPTY_PATCH
 - RESTARTSIG_PATCH
 - SWITCHTAG_PATCH
+- STEAM_PATCH
 - VANITYGAPS_PATCH
 - ZOOMSWAP_PATCH
 - TILE_LAYOUT
 - MONOCLE_LAYOUT
 
-</details>
 <br/>
 
 ## Little Notes
 
-this might break your own system, this is not one-click-and-done solution an installation. so pay attention to what you are going to do ;) <strong>-R</strong>
+this might break your own system, this is not a one-click-and-done installation. so pay attention to what you are going to do ;) <strong>-R</strong>

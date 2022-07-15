@@ -15,6 +15,10 @@ XF86Audio{LowerVolume,RaiseVolume,Mute}
 XF86MonBrightness{Down,Up}
 	$HOME/.dotfiles/scripts/backlight.sh {down,up}
 
+# toggle mousepad
+alt + F3
+	$HOME/.dotfiles/scripts/toggle-touchpad.sh
+
 # -- System Keys --
 
 # slockkkk
@@ -27,7 +31,7 @@ super + alt + {F1,F2,F3}
 
 # screenshot with gui
 alt + Print
-	flameshot gui -p $HOME/Pictures/Screenshots
+	flameshot gui
 
 # full screenshot
 Print
