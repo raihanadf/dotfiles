@@ -27,3 +27,14 @@ export GPG_TTY=$TTY
 # Bun
 export BUN_INSTALL="/home/raihan/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# android sdk
+export ANDROID_HOME=$HOME/.sdk_dir/Android/SDK
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools/
+export PATH=$PATH:$ANDROID_HOME/build-tools/
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+
+# flutter
+export PATH=$PATH:$HOME/.sdk_dir/flutter/bin
+export CHROME_EXECUTABLE=/usr/bin/microsoft-edge-stable
