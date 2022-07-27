@@ -4,6 +4,6 @@ require("keybindings")
 require("plugin")
 
 -- colorscheme
-vim.g.gruvbox_flat_style = "dark"
+vim.g.sonokai_style = "shusia"
 vim.cmd "set fillchars+=vert:│"
-vim.cmd 'colorscheme codesmell_dark'
+vim.cmd 'colorscheme sonokai'

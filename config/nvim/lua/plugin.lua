@@ -6,12 +6,8 @@ require('packer').startup(function()
   -- general
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
   use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
-  -- use 'aonemd/kuroi.vim'
-  use "rebelot/kanagawa.nvim"
-  -- use 'eddyekofo94/gruvbox-flat.nvim'
-  use 'pineapplegiant/spaceduck'
-  use 'Shatur/neovim-ayu'
   use 'whatsthatsmell/codesmell_dark.vim'
+  use 'sainnhe/sonokai'
   use 'karb94/neoscroll.nvim'
 
   -- lsp
@@ -25,6 +21,9 @@ require('packer').startup(function()
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
+
+  -- git
+  use 'lewis6991/gitsigns.nvim'
 
   -- luasnip
   use 'L3MON4D3/LuaSnip'
@@ -46,6 +45,11 @@ end)
 
 --imports
 require("plugins.lsp")
+require 'lspconfig'.intelephense.setup {
+      init_options = {
+          globalStoragePath = os.getenv('HOME') .. '/.local/share/intelephense'
+      }
+}
 require('plugins.nvimtree')
 require('plugins.treesitter')
 require("plugins.lua-line")
@@ -62,3 +66,4 @@ require('nvim_comment').setup()
 require("indent_blankline").setup()
 require('telescope').setup{ defaults = { file_ignore_patterns = { "node_modules" }} }
 --------------------------------------------------
+require('gitsigns').setup()

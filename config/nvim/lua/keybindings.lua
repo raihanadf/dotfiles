@@ -13,19 +13,19 @@ local silent = { silent = true }
 -- keymap functions
 ---- normal mode noremap
 local function nrkeymap(key, map)
-        keybind('n', key, map, noremap)
+  keybind('n', key, map, noremap)
 end
 ---- normal and silent map
 local function nskeymap(key, map)
-        keybind('n', key, map, silent)
+  keybind('n', key, map, silent)
 end
 ---- visual and silent map
 local function vskeymap(key, map)
-        keybind('v', key, map, silent)
+  keybind('v', key, map, silent)
 end
 ---- insert and silent map
 local function iskeymap(key, map)
-        keybind('i', key, map, silent)
+  keybind('i', key, map, silent)
 end
 -----------------------------------------------------------------
 
@@ -84,5 +84,5 @@ nrkeymap('<c-u><c-p>', ':PackerSync<CR>')
 nrkeymap("<c-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>")
 
 ---- nvim tree
-nrkeymap("<leader>b", ":NvimTreeToggle<cr>")
+nrkeymap("<leader>e", ":NvimTreeToggle<cr>")
 -----------------------------------------------------------------
