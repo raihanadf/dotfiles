@@ -5,6 +5,10 @@
 alt + BackSpace
 	pkill -USR1 -x sxhkd
 
+# force kill fuckers
+alt + shift + x
+	notify-send "IT'S XKILL BOIS!!!" "Select a dumb app to kill" -i dialog-error && xkill
+
 # --- XF86 stuff ---
 
 # control audio
@@ -26,7 +30,7 @@ alt + Escape
 	slock
 
 # system
-super + alt + {F1,F2,F3}
+super + alt + {BackSpace,F2,F3}
 	{poweroff,reboot,xset dpms force off}
 
 # screenshot with gui

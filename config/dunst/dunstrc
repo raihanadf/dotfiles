@@ -79,7 +79,7 @@
     frame_width = 3
 
     # Defines color of the frame around the notification window.
-    frame_color = "#ebdbb2"
+    frame_color = "#484848"
 
     # Define a color for the separator.
     # possible values are:
@@ -101,7 +101,7 @@
 
 # Text 
 
-    font = Iosevka 14
+    font = SF Display Pro 14
     line_height = 0
     markup = full
     format = "<b>%s</b>\n%b"
