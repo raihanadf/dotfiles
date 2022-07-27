@@ -9,12 +9,12 @@ redshift -P -O 5000K
 black=#05080a
 pink=#ffc2d0
 peach=#fad5d5
-red=#ffb7b2
-green=#b9fdcd
-yellow=#ffffc6
+red=#f92672
+green=#a6e22e
+yellow=#e6db74
 orange=#ffe1b1
 blue=#C4FFFE
-purple=#d7caed
+purple=#ae81ff
 white=#faedff
 
 spotify() {
@@ -26,12 +26,12 @@ fi
 
 # Foreground color formatting tags are optional
 if [[ $player_status = "Playing" ]]; then
-printf "^c$blue^󱩅"
+printf "^b$blue^^c$black^ 󱩅 ^b$black^"
 # printf "^c$blue^󱩅 $(playerctl metadata --format '{{ uc(title) }}' | cut -c1-20 | sed 's/%//') "
 elif [[ $player_status = "Paused" ]]; then
-printf "^c$purple^󱩅"
+printf "^b$red^^c$black^ 󱩅 ^b$black^"
 else
-    echo "^c$yellow^󱩅"
+    echo "^b$yellow^^c$black^ 󱩅 ^b$black^"
 fi
 } 
 # mem() {
@@ -39,16 +39,16 @@ fi
 # }
 
 cpu() {
-	printf "^c$orange^^b$black^󰝨 $(cat /sys/class/thermal/thermal_zone3/temp | cut -c1-2)°"
+	printf "^c$black^^b$yellow^ 󰝨 ^c$white^^b$black^  $(cat /sys/class/thermal/thermal_zone3/temp | cut -c1-2)°"
 }
 
 wifi() {
 	
 LOCAL_IP="$(ip -o -4 addr list wlo1 | awk '{print $4}' | cut -d/ -f1)"
 if [ ! -z "$LOCAL_IP" -a "$LOCAL_IP" != " " ]; then
-	printf "^c$red^$LOCAL_IP"
+	printf "^c$black^^b$red^ 󱥘 ^c$white^^b$black^  $LOCAL_IP"
 	else
-	printf "^c$red^NOT CONNECTED"
+	printf "^c$black^^b$red^ 󱥙 ^c$white^^b$black^  NOT CONNECTED"
 fi
 }
 
@@ -57,30 +57,30 @@ charging="$(cat /sys/class/power_supply/ADP1/online)"
 battery=$(cat /sys/class/power_supply/BAT1/capacity)
 if [[ $charging = "0" ]]; then
 	if [[ $battery > "90" ]]; then
-		printf "^c$green^󰁹 $battery"
+		printf "^c$black^^b$green^ 󰁹 ^c$white^^b$black^  $battery󱉸"
 	elif [[ $battery > "65" ]]; then
-		printf "^c$green^󰂁 $battery"
+		printf "^c$black^^b$green^ 󰂁 ^c$white^^b$black^  $battery󱉸"
 	elif [[ $battery > "40" ]]; then
-		printf "^c$green^󰁿 $battery"
+		printf "^c$black^^b$green^ 󰁿 ^c$white^^b$black^  $battery󱉸"
 	elif [[ $battery > "30" ]]; then
-		printf "^c$green^󰁻 $battery"
+		printf "^c$black^^b$green^ 󰁻 ^c$white^^b$black^  $battery󱉸"
 	elif [[ $battery > "17" ]]; then
-		printf "^c$green^󰁺 $battery"
+		printf "^c$black^^b$green^ 󰁺 ^c$white^^b$black^  $battery󱉸"
 	elif [[ $battery > "13" ]]; then
-		printf "^c$green^󱃍 $battery"
+		printf "^c$black^^b$green^ 󱃍 ^c$white^^b$black^  $battery󱉸"
 	else
-		printf "^c$green^󱃍 $battery"
+		printf "^c$black^^b$green^ 󱃍 ^c$white^^b$black^  $battery󱉸"
 		dunstify "I NEED TO CHARGEEEEE!!!" "IT IS NOW $battery%" -h string:fgcolor:#ff4444 -h string:frcolor:#ba0606 
 	fi
 	 else
-		printf "^c$green^くコ:彡 [$battery]"
+		printf "^c$black^^b$green^ 󰂄 ^c$white^^b$black^  $battery󱉸"
   fi
 }
 
 clock() {
-	printf "^c$white^󰅐 $(date '+%a %I:%M %p')"
+	printf "^c$black^^b$purple^ 󰅐 ^c$white^^b$black^  $(date '+%a %I:%M %p')"
 }
 
 while true; do
-	sleep 1 && xsetroot -name "$(spotify) $(wifi) $(cpu) $(battery) $(clock)"
+	sleep 1 && xsetroot -name "$(wifi)  $(cpu)  $(battery)  $(clock)"
 done
