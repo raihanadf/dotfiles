@@ -13,12 +13,14 @@
   </a>
 </div>
 
+<p></p>
+
 ![arch](config/screenshot.png)
 
 <div align="center">
 
 <h3><b>Welcome!</b></h3> 
-This repo is a collection of my dotfiles. I mainly develop/study for Android <i>(Kotlin, any)</i>, and Web with <i>(Javascript, PHP, any)</i>. These may impact how my editors are configured. NB: [ I use this setup for gaming too ]
+This repo is a collection of my dotfiles. I mainly develop/study for Android <i>(Kotlin, any)</i>, and Web with <i>(Javascript, PHP, any)</i>. These may impact how my editors are configured.
 
 </div>
 
@@ -90,4 +92,4 @@ some information about my setup:
 
 ## Little Notes
 
-this might break your own system, this is not a one-click-and-done installation. so pay attention to what you are going to do ;) <strong>-R</strong>
+This might break your own system. So pay attention to what are you going to do 
