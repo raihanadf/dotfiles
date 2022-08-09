@@ -39,16 +39,16 @@ fi
 # }
 
 cpu() {
-	printf "^c$black^^b$yellow^ 󰝨 ^c$white^^b$black^  $(cat /sys/class/thermal/thermal_zone3/temp | cut -c1-2)°"
+	printf "^c$white^^b$black^ 󰝨 ^c$white^^b$black^$(cat /sys/class/thermal/thermal_zone3/temp | cut -c1-2)°"
 }
 
 wifi() {
 	
 LOCAL_IP="$(ip -o -4 addr list wlo1 | awk '{print $4}' | cut -d/ -f1)"
 if [ ! -z "$LOCAL_IP" -a "$LOCAL_IP" != " " ]; then
-	printf "^c$black^^b$red^ 󱥘 ^c$white^^b$black^  $LOCAL_IP"
+	printf "^c$white^^b$black^󱥘 ^c$white^^b$black^ $LOCAL_IP"
 	else
-	printf "^c$black^^b$red^ 󱥙 ^c$white^^b$black^  NOT CONNECTED"
+	printf "^c$white^^b$black^ 󱥙 ^c$white^^b$black^ NOT CONNECTED"
 fi
 }
 
@@ -57,28 +57,28 @@ charging="$(cat /sys/class/power_supply/ADP1/online)"
 battery=$(cat /sys/class/power_supply/BAT1/capacity)
 if [[ $charging = "0" ]]; then
 	if [[ $battery > "90" ]]; then
-		printf "^c$black^^b$green^ 󰁹 ^c$white^^b$black^  $battery󱉸"
+		printf "^c$white^^b$black^󰁹 ^c$white^^b$black^$battery󱉸"
 	elif [[ $battery > "65" ]]; then
-		printf "^c$black^^b$green^ 󰂁 ^c$white^^b$black^  $battery󱉸"
+		printf "^c$white^^b$black^󰂁 ^c$white^^b$black^$battery󱉸"
 	elif [[ $battery > "40" ]]; then
-		printf "^c$black^^b$green^ 󰁿 ^c$white^^b$black^  $battery󱉸"
+		printf "^c$white^^b$black^󰁿 ^c$white^^b$black^$battery󱉸"
 	elif [[ $battery > "30" ]]; then
-		printf "^c$black^^b$green^ 󰁻 ^c$white^^b$black^  $battery󱉸"
+		printf "^c$white^^b$black^󰁻 ^c$white^^b$black^$battery󱉸"
 	elif [[ $battery > "17" ]]; then
-		printf "^c$black^^b$green^ 󰁺 ^c$white^^b$black^  $battery󱉸"
+		printf "^c$white^^b$black^󰁺 ^c$white^^b$black^$battery󱉸"
 	elif [[ $battery > "13" ]]; then
-		printf "^c$black^^b$green^ 󱃍 ^c$white^^b$black^  $battery󱉸"
+		printf "^c$white^^b$black^󱃍 ^c$white^^b$black^$battery󱉸"
 	else
-		printf "^c$black^^b$green^ 󱃍 ^c$white^^b$black^  $battery󱉸"
+		printf "^c$white^^b$black^󱃍 ^c$white^^b$black^$battery󱉸"
 		dunstify "I NEED TO CHARGEEEEE!!!" "IT IS NOW $battery%" -h string:fgcolor:#ff4444 -h string:frcolor:#ba0606 
 	fi
 	 else
-		printf "^c$black^^b$green^ 󰂄 ^c$white^^b$black^  $battery󱉸"
+		printf "^c$white^^b$black^󰂄 ^c$white^^b$black^$battery󱉸"
   fi
 }
 
 clock() {
-	printf "^c$black^^b$purple^ 󰅐 ^c$white^^b$black^  $(date '+%a %I:%M %p')"
+	printf "^c$white^^b$black^󰃰 ^c$white^^b$black^ $(date '+%a %I:%M %p')"
 }
 
 while true; do
