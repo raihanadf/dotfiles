@@ -8,13 +8,30 @@ msgID="100" # Arbitrary, can be anything
 iconPath="/home/raihan/.dotfiles/scripts/cat"
 message=""
 
+volume="$(pamixer --get-volume)"
+check_volume ()
+{
+# biar gak ganjil
+if [ $(($volume % 2)) != 0 ]; then
+    pactl set-sink-volume @DEFAULT_SINK@ +1%
+fi
+	
+}
+
 case "$1" in
   "up")
-    pactl set-sink-volume @DEFAULT_SINK@ +5%
+    check_volume
+    # biar max 115
+    if [ "$volume" == "110" ]; then
+        pactl set-sink-volume @DEFAULT_SINK@ 110%
+    else
+        pactl set-sink-volume @DEFAULT_SINK@ +2%
+    fi
     ;;
 
   "down")
-    pactl set-sink-volume @DEFAULT_SINK@ -5%
+    pactl set-sink-volume @DEFAULT_SINK@ -2%
+    check_volume
     ;;
 
   "mute")
@@ -24,6 +41,15 @@ esac
 
 isMuted="$(pamixer --get-mute)"
 volume="$(pamixer --get-volume)"
+
+check_volume ()
+{
+# biar gak ganjil
+if [ $(($volume % 2)) != 0 ]; then
+    pactl set-sink-volume @DEFAULT_SINK@ +1%
+fi
+	
+}
 
 if [ "$isMuted" = "false" ]; then
   if [ "$volume" -gt "100" ]; then
