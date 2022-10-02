@@ -16,6 +16,7 @@
     ~/.zsh_aliases: dots/zsh_aliases
     ~/.zsh_exports: dots/zsh_exports
     ~/.tmux.conf: dots/tmux.conf
+    ~/.Xresources: dots/Xresources
 
     # sxhkd
     ~/.config/sxhkd:
@@ -51,6 +52,12 @@
     ~/.config/zathura:
       create: true
       path: config/zathura
+      force: true
+
+    # picom
+    ~/.config/picom:
+      create: true
+      path: config/picom
       force: true
 
     # nm dmenu
