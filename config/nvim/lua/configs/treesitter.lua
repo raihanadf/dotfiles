@@ -1,15 +1,16 @@
 local configs = require'nvim-treesitter.configs'
-configs.setup {
-ensure_installed = "all", -- Only use parsers that are maintained
-sync_install = false,
-highlight = { -- enable highlighting
-  enable = true,
-},
-indent = {
-  enable = false, -- default is disabled anyways
+
+  configs.setup {
+  ensure_installed = "all", -- Only use parsers that are maintained
+  sync_install = false,
+  highlight = { -- enable highlighting
+    enable = true,
   },
-disable = { "html" },
-}
+  indent = {
+    enable = false, -- default is disabled anyways
+    },
+  disable = { "html" },
+  }
 -- folding
 --vim.opt.foldmethod = "expr"
 --vim.opt.foldexpr = "nvim_treesitter#foldexpr()"

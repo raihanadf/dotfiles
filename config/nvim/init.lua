@@ -1,9 +1,12 @@
 -- required modules
+
+-- impatient
+require('impatient')
+
 require("config")
 require("keybindings")
 require("plugin")
 
 -- colorscheme
-vim.g.sonokai_style = "shusia"
 vim.cmd "set fillchars+=vert:│"
-vim.cmd 'colorscheme sonokai'
+vim.cmd 'colorscheme codesmell_dark'

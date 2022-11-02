@@ -1,5 +1,4 @@
 -- Quick note for myself : disable unused keybindings
-
 -------------------------General-------------------------------
 
 -- required/import binding
@@ -52,9 +51,9 @@ nskeymap("<leader>;", ':BufferLineMovePrev<CR>')
 nskeymap('<leader>l', ':nohlsearch<cr>')
 
 ---- nvim commenter
-nskeymap("<leader>+", ":CommentToggle<cr>")
-vskeymap("<leader>+", ":CommentToggle<cr>")
-iskeymap("<leader>+", "<ESC>:CommentToggle<cr>")
+nskeymap("gc", ":CommentToggle<cr>")
+vskeymap("gc", ":CommentToggle<cr>")
+iskeymap("gc", "<ESC>:CommentToggle<cr>")
 -----------------------------------------------------------------
 
 -----------------------------------------------------------------
@@ -75,7 +74,7 @@ nrkeymap('gt', ':lua vim.lsp.buf.type_definition()<cr>')
 nrkeymap('gK', ':lua vim.lsp.buf.hover()<cr>')
 nrkeymap('<c-k>', ':lua vim.lsp.buf.signature_help()<cr>')
 nrkeymap('<leader>af', ':lua vim.lsp.buf.code_action()<cr>')
-nrkeymap('<leader>rn', ':lua vim.lsp.buf.rename()<cr>')
+nrkeymap('<leader>gr', ':lua vim.lsp.buf.rename()<cr>')
 
 ---- update packer plugins
 nrkeymap('<c-u><c-p>', ':PackerSync<CR>')
@@ -85,4 +84,7 @@ nrkeymap("<c-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>")
 
 ---- nvim tree
 nrkeymap("<leader>e", ":NvimTreeToggle<cr>")
+
+---- restart neovim 
+nrkeymap("<leader>sv", ":luafile ~/.config/nvim/init.lua<cr>")
 -----------------------------------------------------------------
