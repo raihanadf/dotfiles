@@ -1,9 +1,16 @@
 #!/bin/bash
 
 dunstify "Welcome!"
-# xset s 900 
-# xss-lock --transfer-sleep-lock -- slock
-redshift -P -O 5000K
+redshift -P -O 5500K
+
+# discord
+if pgrep -x "Discord" >/dev/null
+then
+    dunstify "Discord is running"
+else
+    dunstify "Starting Discord"
+    discord --start-minimized
+fi
 
 # colours
 black=#05080a
@@ -13,7 +20,7 @@ red=#f92672
 green=#a6e22e
 yellow=#e6db74
 orange=#ffe1b1
-blue=#C4FFFE
+blue=#3C50FF
 purple=#ae81ff
 white=#faedff
 
@@ -78,13 +85,13 @@ if [[ $charging = "0" ]]; then
 	# 	printf "^c$white^^b$black^󰂄 ^c$white^^b$black^$battery󱉸"
 
 	# without icons
-	if [[ $battery > "20" ]]; then
-		printf "^c$white^^b$black^ ^c$white^^b$black^$battery󱉸"
+	if [[ $battery > "15" ]]; then
+		printf "^b$blue^^c$black^ 󱀝 ^c$blue^^b#252525^  $battery󱉸 "
 	else
-		printf "^c$red^^b$black^$battery󱉸"
+		printf "^b$red^^c$black^ 󱀝 ^c$red^^b#252525^  $battery󱉸 "
 	fi
 	 else
-		printf "^c$red^^b$black^󱢠 ^c$white^^b$black^$battery󱉸"
+		printf "^b$blue^^c$black^ 󱢠 ^c$blue^^b#252525^  $battery󱉸 "
 
   fi
 }
@@ -95,5 +102,5 @@ clock() {
 }
 
 while true; do
-	sleep 1 && xsetroot -name "$(clock) $(battery)"
+	sleep 1 && xsetroot -name "$(clock)  $(battery)"
 done
