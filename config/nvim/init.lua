@@ -1,12 +1,16 @@
 -- required modules
 
 -- impatient
-require('impatient')
+vim.defer_fn(function()
+	pcall(require, "impatient")
+end, 0)
 
-require("config")
-require("keybindings")
+require("themes")
+
+require("option")
+require("keybinding")
 require("plugin")
 
 -- colorscheme
-vim.cmd "set fillchars+=vert:│"
-vim.cmd 'colorscheme codesmell_dark'
+-- vim.cmd "set fillchars+=vert:│"
+-- vim.cmd 'colorscheme codesmell_dark'
