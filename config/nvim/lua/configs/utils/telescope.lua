@@ -1,125 +1,28 @@
-local M = {}
+-- This is your opts table
+require("telescope").setup {
+  extensions = {
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown {
+        -- even more opts
+      }
 
-function M.setup()
-  local actions = require "telescope.actions"
-  local telescope = require "telescope"
-
-  -- Custom previewer
-  local previewers = require "telescope.previewers"
-  local Job = require "plenary.job"
-  local preview_maker = function(filepath, bufnr, opts)
-    filepath = vim.fn.expand(filepath)
-    Job
-      :new({
-        command = "file",
-        args = { "--mime-type", "-b", filepath },
-        on_exit = function(j)
-          local mime_type = vim.split(j:result()[1], "/")[1]
-
-          if mime_type == "text" then
-            -- Check file size
-            vim.loop.fs_stat(filepath, function(_, stat)
-              if not stat then
-                return
-              end
-              if stat.size > 500000 then
-                return
-              else
-                previewers.buffer_previewer_maker(filepath, bufnr, opts)
-              end
-            end)
-          else
-            vim.schedule(function()
-              vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, { "BINARY FILE" })
-            end)
-          end
-        end,
-      })
-      :sync()
-  end
-
-  telescope.setup {
-    defaults = {
-      prompt_prefix = icons.ui.Telescope .. " ",
-      selection_caret = " ",
-      -- path_display = { "smart" },
-      buffer_previewer_maker = preview_maker,
-      mappings = {
-        i = {
-          ["<C-j>"] = actions.move_selection_next,
-          ["<C-k>"] = actions.move_selection_previous,
-          ["<C-n>"] = actions.cycle_history_next,
-          ["<C-p>"] = actions.cycle_history_prev,
-          ["<c-z>"] = trouble.open_with_trouble,
-        },
-      },
-      history = {
-        path = vim.fn.stdpath "data" .. "/telescope_history.sqlite3",
-        limit = 100,
-      },
-    },
-    pickers = {
-      find_files = {
-        theme = "ivy",
-        mappings = {
-          n = {
-            ["y"] = nvb_actions.file_path,
-          },
-          i = {
-            ["<C-y>"] = nvb_actions.file_path,
-          },
-        },
-        hidden = true,
-      },
-      git_files = {
-        theme = "dropdown",
-        mappings = {
-          n = {
-            ["y"] = nvb_actions.file_path,
-          },
-          i = {
-            ["<C-y>"] = nvb_actions.file_path,
-          },
-        },
-      },
-    },
-    extensions = {
-      arecibo = {
-        ["selected_engine"] = "google",
-        ["url_open_command"] = "xdg-open",
-        ["show_http_headers"] = false,
-        ["show_domain_icons"] = false,
-      },
-      media_files = {
-        filetypes = { "png", "webp", "jpg", "jpeg", "pdf", "mp4", "webm" },
-        find_cmd = "fd",
-      },
-      bookmarks = {
-        selected_browser = "brave",
-        url_open_command = nil,
-        url_open_plugin = "open_browser",
-        full_path = true,
-        firefox_profile_name = nil,
-      },
-      project = {
-        hidden_files = true,
-        theme = "dropdown",
-      },
-    },
+      -- pseudo code / specification for writing custom displays, like the one
+      -- for "codeactions"
+      -- specific_opts = {
+      --   [kind] = {
+      --     make_indexed = function(items) -> indexed_items, width,
+      --     make_displayer = function(widths) -> displayer
+      --     make_display = function(displayer) -> function(e)
+      --     make_ordinal = function(e) -> string
+      --   },
+      --   -- for example to disable the custom builtin "codeactions" display
+      --      do the following
+      --   codeactions = false,
+      -- }
+    }
   }
-
-  telescope.load_extension "fzf"
-  telescope.load_extension "project" -- telescope-project.nvim
-  telescope.load_extension "repo"
-  telescope.load_extension "file_browser"
-  -- telescope.load_extension "projects" -- project.nvim
-  telescope.load_extension "dap"
-  telescope.load_extension "frecency"
-  telescope.load_extension "smart_history"
-  telescope.load_extension "arecibo"
-  telescope.load_extension "media_files"
-  telescope.load_extension "bookmarks"
-  require("telescope").load_extension "flutter" -- Flutter
-end
-
-return M
+}
+-- To get ui-select loaded and working with telescope, you need to call
+-- load_extension, somewhere after setup function:
+require("telescope").load_extension("ui-select")
+require("telescope").load_extension("flutter") -- Flutter

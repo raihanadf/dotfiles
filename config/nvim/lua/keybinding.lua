@@ -9,22 +9,22 @@ local silent = { silent = true }
 -- keymap functions
 ---- normal mode noremap
 local function nrkeymap(key, map)
-	keybind("n", key, map, noremap)
+  keybind("n", key, map, noremap)
 end
 
 ---- normal and silent map
 local function nskeymap(key, map)
-	keybind("n", key, map, silent)
+  keybind("n", key, map, silent)
 end
 
 ---- visual and silent map
 local function vskeymap(key, map)
-	keybind("v", key, map, silent)
+  keybind("v", key, map, silent)
 end
 
 ---- insert and silent map
 local function iskeymap(key, map)
-	keybind("i", key, map, silent)
+  keybind("i", key, map, silent)
 end
 
 -----------------------------------------------------------------
@@ -32,6 +32,8 @@ end
 -- general
 keybind("n", "<c-s>", ":w<CR>", {}) -- save
 keybind("i", "<c-s>", "<ESC>:w<CR>", {}) -- save (in normal mode)
+
+keybind("n", ";", "<ESC>:", {}) -- override ; to :
 
 -----------------------------------------------------------------
 
@@ -90,10 +92,24 @@ nrkeymap("<leader>fm", "<cmd>Telescope flutter commands<cr>")
 ---- nvim tree
 nrkeymap("<leader>e", ":NvimTreeToggle<cr>")
 
----- restart neovim
-nrkeymap("<leader>sv", ":luafile ~/.config/nvim/init.lua<cr>")
+---- restart neovim / source file
+nskeymap("<leader>sv", ":luafile ~/.config/nvim/init.lua<cr>")
+nskeymap("<leader>so", ":so %<CR>")
+
+---- resize column
+nskeymap("<C-Up>", ":lua require('smart-splits').resize_up() <cr>")
+nskeymap("<C-Down>", ":lua require('smart-splits').resize_down() <cr>")
+nskeymap("<C-Left>", ":lua require('smart-splits').resize_left() <cr>")
+nskeymap("<C-Right>", ":lua require('smart-splits').resize_right() <cr>")
+
+---- toggle trouble
+nskeymap("<leader>tr", ":TroubleToggle<CR>")
+
+-------------------------- Flutter ------------------------------
+nskeymap("<leader>fb", ":FlutterRun<CR>") -- Run Project
+nskeymap("<leader>fr", ":FlutterRestart<CR>") -- Restart Project
+nskeymap("<leader>fh", ":FlutterReload<CR>") -- Reload Project
 -----------------------------------------------------------------
 
 -- required/import binding
 require("keybinds.tablike")
-

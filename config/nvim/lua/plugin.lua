@@ -38,13 +38,13 @@ return packer.startup({
     use("whatsthatsmell/codesmell_dark.vim")
 
     ----------------------- general plugins ---------------------------
-    use({
-      "nvim-lualine/lualine.nvim",
-      requires = { "kyazdani42/nvim-web-devicons", opt = true },
-      config = function()
-        require("lualine").setup()
-      end,
-    })
+    -- use({
+    --   "nvim-lualine/lualine.nvim",
+    --   requires = { "kyazdani42/nvim-web-devicons", opt = true },
+    --   config = function()
+    --     require("configs.ui.lua-lin")
+    --   end,
+    -- })
     use({
       "akinsho/bufferline.nvim",
       requires = "kyazdani42/nvim-web-devicons",
@@ -53,7 +53,14 @@ return packer.startup({
       end,
     })
     use("karb94/neoscroll.nvim")
-    use({ "nvim-telescope/telescope.nvim", requires = { { "nvim-lua/plenary.nvim" } } })
+    use({
+      "nvim-telescope/telescope.nvim",
+      requires = { { "nvim-lua/plenary.nvim" } },
+      config = function()
+        require("configs.utils.telescope")
+      end,
+    })
+    use({ "nvim-telescope/telescope-ui-select.nvim" })
     use({
       "kyazdani42/nvim-tree.lua",
       requires = { "kyazdani42/nvim-web-devicons" },
@@ -113,6 +120,14 @@ return packer.startup({
         require("configs.utils.presence")
       end,
     })
+    use({
+      "folke/trouble.nvim",
+      requires = { "kyazdani42/nvim-web-devicons" },
+      config = function()
+        require("trouble").setup()
+      end,
+    })
+    use({ "mrjones2014/smart-splits.nvim" })
     use({ "moll/vim-bbye" })
     -------------------------------------------------------------------
 

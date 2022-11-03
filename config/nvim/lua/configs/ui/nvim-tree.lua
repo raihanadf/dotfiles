@@ -55,8 +55,12 @@ require 'nvim-tree'.setup {
 
         -- necessary
         { key = "a", action = "create" },
-        { key = "r", action = "rename" },
+        { key = "r", action = "full_rename" },
         { key = "d", action = "remove" },
+
+        -- move
+        { key = "m", action = "toggle_mark" },
+        { key = "mv", action = "bulk_move" },
 
         -- unnecessary
         { key = 'X', action = "xdg_open", action_cb = xdg_open }
