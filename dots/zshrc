@@ -4,12 +4,13 @@
 
 # --- choose one ---
 
-# starship
-eval "$(starship init zsh)"
-# p10k
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
+## starship
+# eval "$(starship init zsh)"
+
+## p10k
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # --- history ---
 HISTFILE=~/.zsh_hist
@@ -34,7 +35,8 @@ antibody bundle < ~/.dotfiles/dots/zsh_plugins
 [[ ! -f ~/.dotfiles/dots/p10k.zsh ]] || source ~/.dotfiles/dots/p10k.zsh
 [ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
 [ -f ~/.zsh_exports ] && source ~/.zsh_exports
-
+source "/usr/share/fzf/key-bindings.zsh"
+source "/usr/share/fzf/completion.zsh"
 
 # bun completions
 [ -s "/home/raihan/.bun/_bun" ] && source "/home/raihan/.bun/_bun"

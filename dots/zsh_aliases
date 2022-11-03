@@ -1,9 +1,16 @@
+#!/bin/bash
+# variable
+nginxdir='/usr/share/nginx/html'
+nvimdir='.config/nvim'
+
 # doing something
 alias pls='sudo $(fc -ln -1)'
-alias open="xdg-open" # works with wsl too
-alias c="clear" # bad 'clearing' habit
-alias q="exit" # bad 'quitting' habit
+alias open="xdg-open"
+alias c="clear"
+alias q="exit"
 alias man="man -P \"sh -c 'col -b | nvim -c \\\"set ft=man nomod nolist\\\" -'\""
+alias nnn='nnn -de'
+alias sizedir="du -h --max-depth=1"
 
 # edit config
 alias zshalias="vi ~/.zsh_aliases"
@@ -13,60 +20,46 @@ alias vimconfig="vi ~/.vimrc"
 alias nvimconfig="vi ~/.config/nvim/init.lua"
 
 # replace with better app // admin
-alias vi="nvim"
-alias isw="sudo isw"
-alias pomo="spt -e 'aplay $HOME/Music/alarm.wav'"
-
-# moving directories
+alias vi="nvim" # neovim
+alias isw="sudo isw" # ice sealead wyvern on github
+alias pomo="spt -e 'aplay $HOME/Music/alarm.wav'" # suckless' spt
+# directories
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-
-# listing (using k cuz better)
-# it's slower but you can always
-# disable it anyway on plugin file
-checkk() {
-  ! command -v k &> /dev/null
-}
-if checkk
-  then
-    alias ls='ls --color=auto'
-    alias la='ls -la --color=auto'
-    alias l='ls -d .* --color=auto'
-  else
-    alias ls="k --no-vcs" 
-    alias la="k -d .*" 
-    alias l="k k -A" 
-  fi
+alias ls='ls --color=auto'
+alias la='ls -la --color=auto'
+alias l='ls -d .* --color=auto'
 alias lsimg=$'for f (*.(jpeg|jpg|gif|png)) {printf $f;php -r "print_r(getimagesize(\'$f\'));" |grep -w width |sed \'s/ .3] =>//\'}'
+
+# mount android
+alias androidmount='aft-mtp-mount $HOME/MountHere' # mount android, android-file-transfer on pacman
+alias androidumount='umount $HOME/MountHere' # same as above, but unmount it
 
 # network
 alias wifi='nmtui'
-
-# some programming thingy
-alias mdb="sudo service mongodb"
-alias lamppstart="sudo /opt/lampp/lampp start"
-alias lamppst="sudo /opt/lampp/lampp status"
-alias lamppstop="sudo /opt/lampp/lampp stop"
-alias lampprestart="sudo /opt/lampp/lampp restart"
-# alias mysql="sudo /opt/lampp/bin/mysql -u root -p"
 
 # optimus manager
 alias opma="optimus-manager"
 alias opmas="optimus-manager --switch"
 alias opmast="optimus-manager --status"
 
-# bitchy turbo (good tho)
-alias onturbo="echo 0 | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-alias offturbo="echo 1 | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo"
-
-# some fancy stuff that i rarely used
-alias lyrics="sptlrx" # paru -S sptlrx-bin its for synced spotify lyrics in terminal
-
+# some fancy stuff that i rarely use
+alias lyrics="sptlrx" # sptlrx-bin
 
 # functions
 
 # make dir and then cd into it
 mkcd () { mkdir -p -- "$1" && cd -P -- "$1" }
 
+### archived
+
+# some programming thingy
+# alias mdb="sudo service mongodb"
+# alias lamppstart="sudo /opt/lampp/lampp start"
+# alias lamppst="sudo /opt/lampp/lampp status"
+# alias lamppstop="sudo /opt/lampp/lampp stop"
+# alias lampprestart="sudo /opt/lampp/lampp restart"
+# alias mysql="sudo /opt/lampp/bin/mysql -u root -p"
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'

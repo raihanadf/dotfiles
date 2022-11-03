@@ -35,6 +35,11 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools/
 export PATH=$PATH:$ANDROID_HOME/build-tools/
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 
+# use flutter sdk from their own website
+# flutter dari AUR problematic
 # flutter
 export PATH=$PATH:$HOME/.sdk_dir/flutter/bin
-export CHROME_EXECUTABLE=/usr/bin/microsoft-edge-stable
+export CHROME_EXECUTABLE=/usr/bin/chromium
+
+# pub cache
+export PATH="$PATH":"$HOME/.pub-cache/bin"
