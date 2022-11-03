@@ -12,10 +12,10 @@
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = (270,450)
+    width = (150,300)
 
     # The maximum height of a single notification, excluding the frame.
-    height = 300
+    height = 250
 
     # Position the notification in the top right corner
     origin = bottom-right
@@ -42,7 +42,7 @@
     progress_bar_height = 15
 
     # Set the frame width of the progress bar
-    progress_bar_frame_width = 3
+    progress_bar_frame_width = 2
 
     # Set the minimum width for the progress bar
     progress_bar_min_width = 150
@@ -76,10 +76,10 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 3
+    frame_width = 2
 
     # Defines color of the frame around the notification window.
-    frame_color = "#484848"
+    frame_color = "#faedff"
 
     # Define a color for the separator.
     # possible values are:
@@ -177,13 +177,13 @@
     # your notifs stuff
     [urgency_low]
         background = "#050505"
-        foreground = "#a4a1a1"
+        foreground = "#faedff"
         highlight = "#50fa7b"
         timeout = 6
 
     [urgency_normal]
         background = "#050505"
-        foreground = "#a4a1a1"
+        foreground = "#faedff"
         highlight = "#50fa7b"
         timeout = 8
 

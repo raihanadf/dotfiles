@@ -19,6 +19,14 @@ XF86Audio{LowerVolume,RaiseVolume,Mute}
 XF86MonBrightness{Down,Up}
 	$HOME/.dotfiles/scripts/backlight.sh {down,up}
 
+# control audio
+alt + control + {j,k,l}
+	$HOME/.dotfiles/scripts/volume.sh {down,up,mute}
+
+# control brightness (alt version)
+alt + shift + {j,k}
+	$HOME/.dotfiles/scripts/backlight.sh {down,up}
+
 # toggle mousepad
 alt + F3
 	$HOME/.dotfiles/scripts/toggle-touchpad.sh
@@ -31,7 +39,7 @@ alt + Escape
 
 # system
 super + alt + {BackSpace,F2,F3}
-	{poweroff,reboot,xset dpms force off}
+	{systemctl poweroff,systemctl reboot,xset dpms force off}
 
 # screenshot with gui
 alt + Print
