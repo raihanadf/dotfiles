@@ -53,5 +53,5 @@ end
 
 ----------------------- ext plugins -----------------------
 --- indent blankline
-vim.o.list = true
+-- vim.o.list = true
 

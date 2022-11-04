@@ -17,6 +17,11 @@ local function nskeymap(key, map)
   keybind("n", key, map, silent)
 end
 
+---- visual and noremap
+local function vrkeymap(key, map)
+  keybind("v", key, map, noremap)
+end
+
 ---- visual and silent map
 local function vskeymap(key, map)
   keybind("v", key, map, silent)
@@ -112,6 +117,8 @@ vskeymap("p", '"_dP')
 ---- stay in indent mode (lagi) versi mindahin text
 vskeymap("K", ":move '<-2<CR>gv-gv")
 vskeymap("J", ":move '>+1<CR>gv-gv")
+-- jadiin satu line
+vrkeymap("H", "<S-j>")
 
 ----- resize column without plugins
 -- nskeymap("<C-Up>", ":resize -2<cr>") -- idk why is this stated as "-"
