@@ -39,7 +39,9 @@ keybind("n", ";", "<ESC>:", {}) -- override ; to :
 
 -----------------------------------------------------------------
 -- nskeymap [[ normal silent keybinds ]]
---
+
+-- gantinya leader "\"
+nskeymap("<Space>", "<leader>") -- make spasi pas normal mode aja
 ---- buffers
 -- nskeymap("<leader>w", ":bd<CR>") -- close buffer
 -- nskeymap('<S-k>', ':bn<CR>') -- next buffer
@@ -112,4 +114,5 @@ nskeymap("<leader>fh", ":FlutterReload<CR>") -- Reload Project
 -----------------------------------------------------------------
 
 -- required/import binding
-require("keybinds.tablike")
+-- require("keybinds.tablike") -- deprecated maybe
+

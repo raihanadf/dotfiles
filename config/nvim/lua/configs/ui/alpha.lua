@@ -26,8 +26,8 @@ end
 
 dashboard.section.buttons.val = {
   button("Leader + e", "  Open File Explorer", ":NvimTreeToggle<cr>"),
+  button("Leader + tt", "  Open Terminal", ":ToggleTerm<cr>"),
   button("Ctrl + p", "  Find File", ":Telescope find_files <cr>"),
-  button("F7", "  Open Terminal", ":ToggleTerm<cr>"),
   button("q", "  Quit", ":qa<cr>")
 }
 local function footer()
