@@ -78,7 +78,7 @@ nrkeymap("gw", ":lua vim.lsp.buf.workspace_symbol()<cr>")
 nrkeymap("<leader>rr", ":lua vim.lsp.buf.references()<cr>")
 nrkeymap("gt", ":lua vim.lsp.buf.type_definition()<cr>")
 nrkeymap("gK", ":lua vim.lsp.buf.hover()<cr>")
-nrkeymap("<c-k>", ":lua vim.lsp.buf.signature_help()<cr>")
+-- nrkeymap("<c-k>", ":lua vim.lsp.buf.signature_help()<cr>")
 nrkeymap("gr", ":lua vim.lsp.buf.code_action()<cr>")
 nrkeymap("<leader>gr", ":lua vim.lsp.buf.rename()<cr>")
 
@@ -99,10 +99,25 @@ nskeymap("<leader>sv", ":luafile ~/.config/nvim/init.lua<cr>")
 nskeymap("<leader>so", ":so %<CR>")
 
 ---- resize column
+nskeymap("<C-Left>", ":lua require('smart-splits').resize_left() <cr>")
 nskeymap("<C-Up>", ":lua require('smart-splits').resize_up() <cr>")
 nskeymap("<C-Down>", ":lua require('smart-splits').resize_down() <cr>")
-nskeymap("<C-Left>", ":lua require('smart-splits').resize_left() <cr>")
 nskeymap("<C-Right>", ":lua require('smart-splits').resize_right() <cr>")
+
+---- stay in tab indent mode 
+vskeymap("<", "<gv")
+vskeymap(">", ">gv")
+-- override yanks to previous state, jadi ga perlu copy yg sebelumnya
+vskeymap("p", '"_dP')
+---- stay in indent mode (lagi) versi mindahin text
+vskeymap("K", ":move '<-2<CR>gv-gv")
+vskeymap("J", ":move '>+1<CR>gv-gv")
+
+----- resize column without plugins
+-- nskeymap("<C-Up>", ":resize -2<cr>") -- idk why is this stated as "-"
+-- nskeymap("<C-Down>", ":resize +2<cr>")
+-- nskeymap("<C-Left>", ":vertical resize -2<cr>")
+-- nskeymap("<C-Right>", ":vertical resize +2<cr>")
 
 ---- toggle trouble
 nskeymap("<leader>tr", ":TroubleToggle<CR>")
@@ -115,4 +130,3 @@ nskeymap("<leader>fh", ":FlutterReload<CR>") -- Reload Project
 
 -- required/import binding
 -- require("keybinds.tablike") -- deprecated maybe
-
