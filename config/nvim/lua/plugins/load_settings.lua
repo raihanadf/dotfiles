@@ -17,9 +17,10 @@ local plugins = {
 	"toggleterm",
 	------------------------
 
-	--------- lsp ----------
+	------- core? ----------
 	"treesitter",
 	"autopairs",
+	"gitsigns",
 	------------------------
 
 	--------- misc ---------
