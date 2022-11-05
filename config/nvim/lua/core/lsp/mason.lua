@@ -8,8 +8,8 @@ local server_setting = {
 }
 
 -- list server to be installed
-local servers = {
-	"sumneko_lua",
+local default_servers = {
+	"intelephense",
 }
 
 local settings = {
@@ -28,7 +28,7 @@ local settings = {
 -- make settingan di atas buat mason
 require("mason").setup(settings)
 require("mason-lspconfig").setup({
-	ensure_installed = servers,
+	ensure_installed = default_servers,
 	automatic_installation = true,
 })
 
@@ -60,27 +60,27 @@ end
 
 -- INFO: this what default setting was
 
--- local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
--- if not lspconfig_status_ok then
--- 	return
--- end
---
--- local opts = {}
---
--- for _, server in pairs(servers) do
---
--- 	opts = {
--- 		on_attach = require("core.lsp.utils").on_attach,
--- 		capabilities = require("core.lsp.utils").capabilities,
--- 	}
---
--- 	server = vim.split(server, "@")[1]
---
--- 	local require_ok, conf_opts = pcall(require, "core.lsp.settings." .. server)
--- 	if require_ok then
--- 		opts = vim.tbl_deep_extend("force", conf_opts, opts)
--- 	end
---
--- 	lspconfig[server].setup(opts)
---
--- end
+local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
+if not lspconfig_status_ok then
+	return
+end
+
+local opts = {}
+
+for _, server in pairs(default_servers) do
+
+	opts = {
+		on_attach = require("core.lsp.utils").on_attach,
+		capabilities = require("core.lsp.utils").capabilities,
+	}
+
+	server = vim.split(server, "@")[1]
+
+	local require_ok, conf_opts = pcall(require, "core.lsp.settings." .. server)
+	if require_ok then
+		opts = vim.tbl_deep_extend("force", conf_opts, opts)
+	end
+
+	lspconfig[server].setup(opts)
+
+end

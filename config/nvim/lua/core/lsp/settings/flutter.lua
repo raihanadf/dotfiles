@@ -4,15 +4,10 @@ M.setup = function(on_attach, capabilities)
   -- for full configuration check disini:
   -- https://github.com/akinsho/flutter-tools.nvim
   require("flutter-tools").setup({
-    ui = {
-      border = "rounded",
-      notification_style = "native",
+    experimental = {
+      lsp_derive_paths = true,
     },
-    closing_tags = {
-      -- highlight = "ErrorMsg", -- highlight for the closing tag
-      prefix = "> ", -- character to use for close tag e.g. > Widget
-      enabled = true, -- set to false to disable
-    },
+    flutter_lookup_cmd = nil,
     debugger = {
       enabled = true,
       run_via_dap = true,
@@ -20,7 +15,21 @@ M.setup = function(on_attach, capabilities)
     widget_guides = {
       enabled = true,
     },
-    lsp = {
+    closing_tags = {
+      -- highlight = "Special",
+      prefix = " -- ",
+    },
+    dev_log = {
+      open_cmd = "tabnew",
+    },
+    dev_tools = {
+      autostart = true,
+      auto_open_browser = true,
+    },
+    outline = {
+      open_cmd = "35vnew",
+      auto_open = false,
+    },p = {
       on_attach = on_attach,
       capabilities = capabilities,
       color = { -- show the derived colours for dart variables

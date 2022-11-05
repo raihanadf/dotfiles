@@ -89,7 +89,9 @@ return packer.startup(function(use)
   -- luasnip
   use "rafamadriz/friendly-snippets"
   use "L3MON4D3/LuaSnip"
-  use "saadparwaiz1/cmp_luasnip"
+  use ({"saadparwaiz1/cmp_luasnip", config = function ()
+    require("core.lsp.luasnip")
+  end})
 
   use "jose-elias-alvarez/null-ls.nvim"
 

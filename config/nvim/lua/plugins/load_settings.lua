@@ -8,13 +8,13 @@ local plugins = {
 	---------- ui ----------
 	"alpha",          -- returns error idk
 	"nvim-tree",      -- returns error too, TODO: fix later
-	"telescope",
 	"bufferline",
 	"cinnamon",
 	"devicons",
 	"colorizer",
 	"comment",
 	"toggleterm",
+	"telescope",
 	------------------------
 
 	------- core? ----------
