@@ -60,19 +60,33 @@ return packer.startup(function(use)
   use({ "moll/vim-bbye" }) -- bye bye buffer, biar gak ikutan keclose yg laen
   use({ "andweeb/presence.nvim", })
   use("mfussenegger/nvim-dap")
-  -- lsp installer
+
+  -- lsp
+  use({ "neovim/nvim-lspconfig", })
   use({ "williamboman/mason.nvim", })
   use({ "williamboman/mason-lspconfig.nvim", })
   
   -- cmp
   use("hrsh7th/nvim-cmp")
+  use({"hrsh7th/cmp-nvim-lsp", })
   use({"hrsh7th/cmp-buffer", })
   use({"hrsh7th/cmp-path", })
   use({"hrsh7th/cmp-cmdline", })
+
   -- luasnip
   use({ "rafamadriz/friendly-snippets", })
   use({ "L3MON4D3/LuaSnip", })
   use({ "saadparwaiz1/cmp_luasnip", })
+
+  use({ "jose-elias-alvarez/null-ls.nvim", })
+
+  use({
+    "terrortylor/nvim-comment",
+    config = function()
+      require("nvim_comment").setup()
+    end,
+  })
+  use({ "akinsho/flutter-tools.nvim", })
 
   
   -- automatis setup config abis clone packer.nvim
