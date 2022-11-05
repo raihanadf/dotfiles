@@ -17,6 +17,6 @@ null_ls.setup({
 		formatting.stylua,
 		formatting.dart_format,
 		completion.spell,
-    -- diagnostics.flake8
+		-- diagnostics.flake8
 	},
 })

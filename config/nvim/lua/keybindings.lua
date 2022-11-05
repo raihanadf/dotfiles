@@ -9,27 +9,27 @@ local silent = { silent = true }
 -- keymap functions
 ---- normal mode noremap
 local function nrkeymap(key, map)
-  keybind("n", key, map, noremap)
+	keybind("n", key, map, noremap)
 end
 
 ---- normal and silent map
 local function nskeymap(key, map)
-  keybind("n", key, map, silent)
+	keybind("n", key, map, silent)
 end
 
 ---- visual and noremap
 local function vrkeymap(key, map)
-  keybind("v", key, map, noremap)
+	keybind("v", key, map, noremap)
 end
 
 ---- visual and silent map
 local function vskeymap(key, map)
-  keybind("v", key, map, silent)
+	keybind("v", key, map, silent)
 end
 
 ---- insert and silent map
 local function iskeymap(key, map)
-  keybind("i", key, map, silent)
+	keybind("i", key, map, silent)
 end
 
 -----------------------------------------------------------------
@@ -75,7 +75,7 @@ nrkeymap("<c-k>", "<c-w>k")
 nrkeymap("<c-l>", "<c-w>l")
 ---- lsp keymap
 nskeymap("<c-S-i>", ":lua vim.lsp.buf.format { async = true }<cr>")
-nrkeymap("gd", ":lua vim.lsp.buf.definition()<cr>")
+nrkeymap("gd", "<cmd>lua require'telescope.builtin'.lsp_definitions()<CR>")
 nrkeymap("gD", ":lua vim.lsp.buf.declaration()<cr>")
 nrkeymap("gi", ":lua vim.lsp.buf.implementation()<cr>")
 nrkeymap("gw", ":lua vim.lsp.buf.document_symbol()<cr>")
@@ -83,7 +83,7 @@ nrkeymap("gw", ":lua vim.lsp.buf.workspace_symbol()<cr>")
 nrkeymap("<leader>rr", ":lua vim.lsp.buf.references()<cr>")
 nrkeymap("gt", ":lua vim.lsp.buf.type_definition()<cr>")
 nrkeymap("gK", ":lua vim.lsp.buf.hover()<cr>")
--- nrkeymap("<c-k>", ":lua vim.lsp.buf.signature_help()<cr>")
+nrkeymap("<c-k>", ":lua vim.lsp.buf.signature_help()<cr>")
 nrkeymap("gr", ":lua vim.lsp.buf.code_action()<cr>")
 nrkeymap("<leader>gr", ":lua vim.lsp.buf.rename()<cr>")
 
@@ -109,7 +109,7 @@ nskeymap("<C-Up>", ":lua require('smart-splits').resize_up() <cr>")
 nskeymap("<C-Down>", ":lua require('smart-splits').resize_down() <cr>")
 nskeymap("<C-Right>", ":lua require('smart-splits').resize_right() <cr>")
 
----- stay in tab indent mode 
+---- stay in tab indent mode
 vskeymap("<", "<gv")
 vskeymap(">", ">gv")
 -- override yanks to previous state, jadi ga perlu copy yg sebelumnya

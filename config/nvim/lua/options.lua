@@ -20,10 +20,10 @@ local options = {
   tw = 80,
   cursorline = true,
   --
-  updatetime = 300,
   clipboard = { "unnamedplus" }, -- make clipboard system
   mouse = "n", -- mouse mode??? wtff
-  ttimeoutlen = 0,
+  timeoutlen = 300,
+  updatetime = 300,
   showtabline = 2,
   laststatus = 3,
   --
