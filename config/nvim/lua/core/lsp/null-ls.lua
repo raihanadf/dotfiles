@@ -17,7 +17,7 @@ null_ls.setup({
 		formatting.stylua,
 		formatting.dart_format,
     formatting.pint,
-		completion.spell,
+		-- completion.spell, -- spelling check asu
 		-- diagnostics.flake8
 	},
 })

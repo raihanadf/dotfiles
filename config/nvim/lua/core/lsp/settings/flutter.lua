@@ -10,7 +10,7 @@ M.setup = function(on_attach, capabilities)
     flutter_lookup_cmd = nil,
     debugger = {
       enabled = true,
-      run_via_dap = true,
+      -- run_via_dap = true,
     },
     widget_guides = {
       enabled = true,

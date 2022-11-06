@@ -57,6 +57,8 @@ cmp.setup({
 	},
 	preselect = cmp.PreselectMode.None,
 	completion = {
+    workspaceWord = false,
+    showWord = "Disable",
 		autocomplete = {
 			cmp.TriggerEvent.TextChanged,
 			cmp.TriggerEvent.InsertEnter,
