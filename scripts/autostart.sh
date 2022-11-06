@@ -1,16 +1,19 @@
 #!/bin/bash
 
-dunstify "Welcome!"
-redshift -P -O 5500K
-
+# auto start apps
 # discord
 if pgrep -x "Discord" >/dev/null
 then
     dunstify "Discord is running"
 else
-    dunstify "Starting Discord"
-    discord --start-minimized
+    dunstify "Starting Discord..."
+    discord --start-minimized &
 fi
+
+redshift -P -O 5500K
+
+# send initial notifications
+dunstify "Welcome!"
 
 # colours
 black=#05080a
@@ -91,7 +94,7 @@ if [[ $charging = "0" ]]; then
 		printf "^b$red^^c$black^ 󱀝 ^c$red^^b#252525^  $battery󱉸 "
 	fi
 	 else
-		printf "^b$blue^^c$black^ 󱢠 ^c$blue^^b#252525^  $battery󱉸 "
+		printf "^b$blue^^c$black^ 󰣏 ^c$blue^^b#252525^  $battery󱉸 "
 
   fi
 }
@@ -102,5 +105,5 @@ clock() {
 }
 
 while true; do
-	sleep 1 && xsetroot -name "$(clock)  $(battery)"
+  sleep 1 && xsetroot -name "$(clock)  $(battery) "
 done

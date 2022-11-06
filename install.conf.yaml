@@ -54,12 +54,6 @@
       path: config/zathura
       force: true
 
-    # picom
-    ~/.config/picom:
-      create: true
-      path: config/picom
-      force: true
-
     # nm dmenu
     ~/.config/networkmanager-dmenu:
       create: true
@@ -71,6 +65,6 @@
     #  path: config/nvim
     #  force: true
   
-#in case if you forget, it needed 4 spaces or 2 tabs
+# in case if you forgot, it needs 4 spaces or 2 tabs
 
 

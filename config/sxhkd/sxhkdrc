@@ -37,6 +37,10 @@ alt + F3
 alt + Escape
 	slock
 
+# networkmanager_dmenu
+alt + n
+  networkmanager_dmenu
+
 # system
 super + alt + {BackSpace,F2,F3}
 	{systemctl poweroff,systemctl reboot,xset dpms force off}

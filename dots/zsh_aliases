@@ -1,7 +1,9 @@
 #!/bin/bash
-# variable
-nginxdir='/usr/share/nginx/html'
-nvimdir='.config/nvim'
+
+# variable ?
+nginxdir=$(eval echo '/usr/share/nginx/html')
+nvimdir=$(eval echo '/home/$(whoami)/.config/nvim')
+
 
 # doing something
 alias pls='sudo $(fc -ln -1)'
@@ -32,6 +34,9 @@ alias ls='ls --color=auto'
 alias la='ls -la --color=auto'
 alias l='ls -d .* --color=auto'
 alias lsimg=$'for f (*.(jpeg|jpg|gif|png)) {printf $f;php -r "print_r(getimagesize(\'$f\'));" |grep -w width |sed \'s/ .3] =>//\'}'
+
+alias nginxdir='cd /usr/share/nginx/html'
+alias nvimdir='cd ~/.config/nvim'
 
 # mount android
 alias androidmount='aft-mtp-mount $HOME/MountHere' # mount android, android-file-transfer on pacman
