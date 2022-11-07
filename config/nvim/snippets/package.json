@@ -1,0 +1,49 @@
+{
+  "name": "Custom Snippets",
+  "description": "SNIPPETSSS ARRRGHHH",
+  "contributes": {
+    "snippets": [
+
+      {
+        "language": {},
+        "path": "./all.json"
+      },
+
+      {
+        "language": [
+          "htmldjango",
+          "soy",
+          "htmljinja",
+          "xhtml",
+          "svelte",
+          "vue",
+          "php",
+          "html",
+          "eruby",
+          "eelixir"
+        ],
+        "path": "./html.json"
+      },
+      {
+        "language": [
+          "php"
+        ],
+        "path": "./blade.json"
+      },
+      {
+        "language": [
+          "php"
+        ],
+        "path": "./php.json"
+      },
+
+      {
+        "language": [
+          "zsh"
+        ],
+        "path": "./zsh.json"
+      }
+
+    ]
+  }
+}

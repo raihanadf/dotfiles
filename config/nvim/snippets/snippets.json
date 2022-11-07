@@ -1,0 +1,7 @@
+{
+  "vis": {
+    "prefix": "vis",
+    "description": "${VISUAL}",
+    "body": "\\${VISUAL${1:${2:default}${3:/transform/}}\\}"
+  }
+}

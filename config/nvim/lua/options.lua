@@ -55,3 +55,8 @@ end
 --- indent blankline
 -- vim.o.list = true
 
+-- Blade to html
+-- vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+--   pattern = "*.blade.php",
+--   command = "setlocal ft=html",
+-- })

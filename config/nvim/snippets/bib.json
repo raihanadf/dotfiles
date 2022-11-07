@@ -1,0 +1,68 @@
+{
+  "online": {
+    "prefix": "online",
+    "description": "Online resource",
+    "body": [
+      "@online{${1:name},",
+      "\tauthor={${2:author}\\},",
+      "\ttitle={${3:title}\\},",
+      "\tdate={${4:date}\\},",
+      "\turl={${5:url}\\}",
+      "\\}",
+      "$0"
+    ],
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "article": {
+    "prefix": "article",
+    "description": "Article reference",
+    "body": [
+      "@article{${1:name},",
+      "\tauthor={${2:author}\\},",
+      "\ttitle={${3:title}\\},",
+      "\tjournaltitle={${4:journal}\\},",
+      "\tvolume={${5:NN}\\},",
+      "\tnumber={${6:NN}\\},",
+      "\tyear={${7:YYYY}\\},",
+      "\tpages={${8:NN}--${9:NN}\\}",
+      "\\}",
+      "$0"
+    ]
+  },
+  "book": {
+    "prefix": "book",
+    "description": "Book reference",
+    "body": [
+      "@book{${1:name},",
+      "\tauthor={${2:author}\\},",
+      "\ttitle={${3:title}\\},",
+      "\tsubtitle={${4:subtitle}\\},",
+      "\tyear={${5:YYYY}\\},",
+      "\tlocation={${6:somewhere}\\},",
+      "\tpublisher={${7:publisher}\\},",
+      "\tpages={${8:NN}--${9:NN}\\}",
+      "\\}",
+      "$0"
+    ]
+  },
+  "inb": {
+    "prefix": "inb",
+    "description": "In Book reference",
+    "body": [
+      "@inbook{${1:name},",
+      "\tauthor={${2:author}\\},",
+      "\ttitle={${3:title}\\},",
+      "\tsubtitle={${4:subtitle}\\},",
+      "\tbooktitle={${5:book}\\},",
+      "\teditor={${6:editor}\\},",
+      "\tyear={${7:YYYY}\\},",
+      "\tlocation={${8:somewhere}\\},",
+      "\tpublisher={${9:publisher}\\},",
+      "\tpages={${10:NN}--${11:NN}\\}",
+      "\\}",
+      "$0"
+    ]
+  }
+}

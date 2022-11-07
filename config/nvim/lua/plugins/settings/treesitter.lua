@@ -8,15 +8,15 @@ M.setup = function()
 
 	configs.setup({
 		ensure_installed = "all", -- one of "all" or a list of languages
-		ignore_install = { "" }, -- List of parsers to ignore installing
+		ignore_install = { "comment" }, -- List of parsers to ignore installing
 		highlight = {
 			enable = true, -- false will disable the whole extension
-			disable = { "css" }, -- list of language that will be disabled
+			disable = { "blade" }, -- list of language that will be disabled
 		},
 		autopairs = {
 			enable = true,
 		},
-		indent = { enable = true, disable = { "python", "css" } },
+		indent = { enable = true, disable = { "python", "css", "javascriptreact" } },
 	})
 end
 return M

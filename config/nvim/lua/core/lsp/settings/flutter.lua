@@ -22,10 +22,10 @@ M.setup = function(on_attach, capabilities)
     dev_log = {
       open_cmd = "tabnew",
     },
-    dev_tools = {
-      autostart = true,
-      auto_open_browser = true,
-    },
+    -- dev_tools = {
+    --   autostart = true,
+    --   auto_open_browser = true,
+    -- },
     outline = {
       open_cmd = "35vnew",
       auto_open = false,

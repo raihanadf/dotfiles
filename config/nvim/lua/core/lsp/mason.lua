@@ -3,13 +3,23 @@
 -- ngelistnya make sumneko aja
 
 local server_setting = {
-	"sumneko",
-	"flutter",
+
+  -- spesific
+	"sumneko", -- lua
+	"flutter", -- flutter // uses flutter-tools
+
+	-- php
+	"intelephense",
+	"phpactor",
+
+	"html",
+	"tailwindcss",
 }
 
 -- list server to be installed
 local default_servers = {
 	"intelephense",
+	"sumneko_lua",
 }
 
 local settings = {
@@ -55,32 +65,5 @@ require("mason-lspconfig").setup({
 local utils = require("core.lsp.utils")
 
 for _, server in ipairs(server_setting) do
-  require("core.lsp.settings." .. server).setup(utils.on_attach, utils.capabilities)
-end
-
--- INFO: this what default setting was
-
-local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status_ok then
-	return
-end
-
-local opts = {}
-
-for _, server in pairs(default_servers) do
-
-	opts = {
-		on_attach = require("core.lsp.utils").on_attach,
-		capabilities = require("core.lsp.utils").capabilities,
-	}
-
-	server = vim.split(server, "@")[1]
-
-	local require_ok, conf_opts = pcall(require, "core.lsp.settings." .. server)
-	if require_ok then
-		opts = vim.tbl_deep_extend("force", conf_opts, opts)
-	end
-
-	lspconfig[server].setup(opts)
-
+	require("core.lsp.settings." .. server).setup(utils.on_attach, utils.capabilities)
 end
