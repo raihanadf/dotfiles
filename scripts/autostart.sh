@@ -1,13 +1,19 @@
 #!/bin/bash
 
 # auto start apps
+
 # discord
-if pgrep -x "Discord" >/dev/null
+if ! pgrep -x "Discord" >/dev/null;
 then
-    dunstify "Discord is running"
-else
     dunstify "Starting Discord..."
     discord --start-minimized &
+fi
+
+# steam
+if ! pgrep -x "steam" >/dev/null;
+then
+    dunstify "Starting Steam..."
+    steam -silent &
 fi
 
 redshift -P -O 5500K
@@ -28,22 +34,9 @@ purple=#ae81ff
 white=#faedff
 
 music() {
-
-player_status=$(playerctl status 2> /dev/null)
-if [[ $? -eq 0 ]]; then
-    metadata="$(playerctl metadata title)"
-fi
-
-# Foreground color formatting tags are optional
-if [[ $player_status = "Playing" ]]; then
-printf "^b$blue^^c$black^ 󱩅 ^b$black^"
-# printf "^c$blue^󱩅 $(playerctl metadata --format '{{ uc(title) }}' | cut -c1-20 | sed 's/%//') "
-elif [[ $player_status = "Paused" ]]; then
-printf "^b$red^^c$black^ 󱩅 ^b$black^"
-else
-    echo "^b$yellow^^c$black^ 󱩅 ^b$black^"
-fi
+  printf "^c$green^󰓇 ^c$white^ $(/home/raihan/.dotfiles/scripts/spmd.sh '%title')"
 } 
+
 # mem() {
 # 	printf "^c$yellow^󰍛 $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
 # }
@@ -53,19 +46,18 @@ cpu() {
 }
 
 wifi() {
-	
-LOCAL_IP="$(ip -o -4 addr list wlo1 | awk '{print $4}' | cut -d/ -f1)"
-if [ ! -z "$LOCAL_IP" -a "$LOCAL_IP" != " " ]; then
-	printf "^c$green^^b$black^󰣏^c$white^^b$black^ $LOCAL_IP"
-	else
-	printf "^c$white^^b$black^󱀝^c$white^^b$black^ NOT CONNECTED"
-fi
+  LOCAL_IP="$(ip -o -4 addr list wlo1 | awk '{print $4}' | cut -d/ -f1)"
+  if [ ! -z "$LOCAL_IP" -a "$LOCAL_IP" != " " ]; then
+    printf "^c$green^^b$black^󰣏^c$white^^b$black^ $LOCAL_IP"
+    else
+    printf "^c$white^^b$black^󱀝^c$white^^b$black^ NOT CONNECTED"
+  fi
 }
 
 battery() {
-charging="$(cat /sys/class/power_supply/ADP1/online)"
-battery=$(cat /sys/class/power_supply/BAT1/capacity)
-if [[ $charging = "0" ]]; then
+  charging="$(cat /sys/class/power_supply/ADP1/online)"
+  battery=$(cat /sys/class/power_supply/BAT1/capacity)
+  if [[ $charging = "0" ]]; then
 
 	# with icons
 	# if [[ $battery > "90" ]]; then
@@ -104,6 +96,26 @@ clock() {
 	printf "^c$white^^b$black^$(date '+%I:%M %p')"
 }
 
+pomo() {
+  if pgrep -x "spt" >/dev/null;
+  then
+		printf " ^c$black^^b$red^ 󰔟 ^c$red^^b#252525^  Focus  ^b$black^"
+  fi
+}
+
+
+adb() {
+  if pgrep -x "adb" >/dev/null;
+  then
+		printf " ^c$green^ 󰀲 ^b$black^ "
+  fi
+}
+
+# separator if needed
+# s(){
+#   printf " ^b$black^ "
+# }
+
 while true; do
-  sleep 1 && xsetroot -name "$(clock)  $(battery) "
+  sleep 1 && xsetroot -name "$(adb) $(clock) $(pomo) $(s) $(battery) "
 done

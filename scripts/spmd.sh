@@ -1,0 +1,97 @@
+#!/bin/sh
+
+# metadata search functions
+album() {
+	res=$(echo "$metadata" | grep -m 1 "xesam:album" -b1 | tail -n1)
+	res="${res%\"*}"
+	res="${res#*\"}"
+	echo "$res"
+}
+artist() {
+	res=$(echo "$metadata" | grep -m 1 "xesam:artist" -b2 | tail -n1)
+	res="${res%\"*}"
+	res="${res#*\"}"
+	if [ "$res" = "" ]; then
+		echo "Ad"
+	else
+		echo "$res"
+	fi
+}
+title() {
+	res=$(echo "$metadata" | grep -m 1 "xesam:title" -b1 | tail -n1)
+	res="${res%\"*}"
+	res="${res#*\"}"
+	echo "$res"
+}
+discNumber() {
+	res=$(echo "$META" | grep -m 1 "xesam:discNumber" -b1 | tail -n1)
+	res="${res#*3}"
+	res="${res#*2}"
+	echo "$res"
+}
+trackNumber() {
+	res=$(echo "$metadata" | grep -m 1 "xesam:trackNumber" -b1 | tail -n1)
+	res="${res#*3}"
+	res="${res#*2}"
+	echo "$res"
+}
+
+usage () {
+	echo "usage: spmd [-P message] [-S message] 'metadata'"
+	exit 1
+}
+
+# no arguments
+if [ $# -eq 0 ]
+then
+	usage
+fi
+
+# parse arguments
+optPaused=""
+optStopped=""
+while getopts :P:S: flag
+do
+	case "$flag" in
+		P) optPaused=${OPTARG};;
+		S) optStopped=${OPTARG};;
+		*) echo "spmd: invalid option -- '${OPTARG}'"; usage;;
+	esac
+done
+shift $((OPTIND-1))
+
+optMetadata="$1"
+
+# check if spotify is running
+if [ $(pidof spotify | wc -l) -eq 0 ]
+then
+	if [ "$optStopped" != "" ]
+	then
+		echo "$optStopped"
+	fi
+else
+	response=""
+	if [ "$optMetadata" != "" ]
+	then
+		metadata=`dbus-send --print-reply --session --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata'`
+		album=$(album)
+		artist=$(artist)
+		title=$(title)
+		discNumber=$(discNumber)
+		trackNumber=$(trackNumber)
+		response=$(echo "$optMetadata" | sed -e 's/%album/'"$album"'/g' -e 's/%artist/'"$artist"'/g' -e 's/%title/'"$title"'/g' -e 's/%discNumber/'"$discNumber"'/g' -e 's/%trackNumber/'"$trackNumber"'/g')
+	fi
+	if [ "$optPaused" != "" ]
+	then
+		playback=`dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'PlaybackStatus' | grep -o Paused`
+		if [ "$playback" = "Paused" ]
+		then
+			response="$response $optPaused"
+		fi
+	fi
+	if [ "$response" != "" ]
+	then
+		echo "$response"
+	fi
+	exit 0
+fi
