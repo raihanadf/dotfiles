@@ -53,10 +53,6 @@ local kind_icons = {
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
 cmp.setup({
-	performance = {
-		-- debounce = 300,
-		-- throttle = 300,
-	},
 	preselect = cmp.PreselectMode.None,
 	completion = {
     workspaceWord = false,
