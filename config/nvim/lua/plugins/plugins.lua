@@ -96,7 +96,7 @@ return packer.startup(function(use)
   }) -- git signs
   -- ui ^
 
-  use({ "andweeb/presence.nvim", event = { "UIEnter" }, config = "require('plugins.settings.gitsigns')" }) -- pamer neovim di discord
+  use({ "andweeb/presence.nvim", event = { "UIEnter" }, config = "require('plugins.settings.presence')" }) -- pamer neovim di discord
   -- misc ^
   -------------------------------------------------------------------
 
