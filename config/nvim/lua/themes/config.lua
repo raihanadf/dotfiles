@@ -1,6 +1,7 @@
 local M = {}
 
 M.highlights_base = function(colors)
+
   return {
     Normal = { fg = colors.foreground, bg = colors.background },
     SignColumn = { bg = colors.background, fg = colors.background },
@@ -183,7 +184,6 @@ M.highlights_base = function(colors)
     GitSignsDelete = { fg = colors.color1 }, -- diff mode: Deleted line |diff.txt|
 
     -- Telescope
-
     TelescopeBorder = {
       fg = colors.cursorline,
       bg = colors.cursorline,
@@ -304,10 +304,10 @@ M.highlights_base = function(colors)
     StalineDiffChange = { bg = colors.background, fg = colors.color11 },
     StalineDiffRemove = { bg = colors.background, fg = colors.color9 },
     -- Alpha
-    AlphaHeader = { fg = colors.color12 },
-    AlphaButton = { fg = colors.color12 },
-    AlphaFooter = { fg = colors.color12 },
-    AlphaComment = { fg = colors.color12 },
+    AlphaHeader = { fg = colors.a_color1 },
+    AlphaButton = { fg = colors.a_color1 },
+    AlphaFooter = { fg = colors.a_color1 },
+    AlphaComment = { fg = colors.a_color1 },
 
     Blue = { fg = colors.color12 },
     Cyan = { fg = colors.color14 },

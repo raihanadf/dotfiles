@@ -39,6 +39,13 @@
 
       {
         "language": [
+          "bib"
+        ],
+        "path": "./bib.json"
+      },
+
+      {
+        "language": [
           "zsh"
         ],
         "path": "./zsh.json"
