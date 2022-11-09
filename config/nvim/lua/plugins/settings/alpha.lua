@@ -12,14 +12,18 @@ end
 math.randomseed(os.time())
 
 local logo = {
-	" __________________",
-	"< shut the fuck up >",
-	" ------------------",
-	"        \\   ^__^",
-	"         \\  (oo)\\_______",
-	"            (__)\\       )\\/\\",
-	"                ||----w |",
-	"                ||     ||",
+" __________________ ",
+"< shut the fuck up >",
+" ------------------ ",
+"   \\",
+"    \\",
+"        .--.",
+"       |o_o |",
+"       |:_/ |",
+"      //   \\ \\",
+"     (|     | )",
+"    /'\\_   _/`\\",
+"    \\___)=(___/",
 }
 
 dashboard.section.header.val = logo
@@ -55,11 +59,11 @@ dashboard.section.footer.val = footer()
 dashboard.section.footer.opts.hl = "AlphaFooter"
 local opts = {
 	layout = {
-		{ type = "padding", val = 5 },
-		dashboard.section.header,
-		{ type = "padding", val = 3 },
-		heading,
 		{ type = "padding", val = 2 },
+		dashboard.section.header,
+		-- { type = "padding", val = 2 },
+		-- heading,
+		{ type = "padding", val = 4 },
 		dashboard.section.buttons,
 		{ type = "padding", val = 1 },
 		dashboard.section.footer,
