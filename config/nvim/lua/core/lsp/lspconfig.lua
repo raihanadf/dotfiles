@@ -81,16 +81,22 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
 
 local server_setting = {
 
-  -- spesific
+  -- specific
   "sumneko", -- lua
   "flutter", -- flutter // uses flutter-tools
+
+  -- web
+  -- "html",
+  -- "tailwindcss",
+  -- "tsserver",
+  -- "rome",
 
   -- php
   "intelephense",
   "phpactor",
 
-  "html",
-  "tailwindcss",
+  -- markdown
+  "texlab",
 }
 
 for _, server in ipairs(server_setting) do
