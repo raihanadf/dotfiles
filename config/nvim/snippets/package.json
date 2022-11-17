@@ -49,6 +49,13 @@
           "zsh"
         ],
         "path": "./zsh.json"
+      },
+
+      {
+        "language": [
+          "dart"
+        ],
+        "path": "./flutter.json"
       }
 
     ]
