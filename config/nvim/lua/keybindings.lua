@@ -35,8 +35,8 @@ end
 -----------------------------------------------------------------
 
 -- general
-keybind("n", "<c-s>", ":w<CR>", {}) -- save
-keybind("i", "<c-s>", "<ESC>:w<CR>", {}) -- save (in normal mode)
+-- keybind("n", "<c-s>", ":w<CR>", {}) -- save
+-- keybind("i", "<c-s>", "<ESC>:w<CR>", {}) -- save (in normal mode)
 
 keybind("n", ";", "<ESC>:", {}) -- override ; to :
 
@@ -84,7 +84,7 @@ nrkeymap("gw", ":lua vim.lsp.buf.workspace_symbol()<cr>")
 nrkeymap("<leader>rr", ":lua vim.lsp.buf.references()<cr>")
 nrkeymap("gt", ":lua vim.lsp.buf.type_definition()<cr>")
 nrkeymap("gk", ":lua vim.lsp.buf.hover()<cr>")
-nrkeymap("<c-k>", ":lua vim.lsp.buf.signature_help()<cr>")
+nrkeymap("<c-s>", ":lua vim.lsp.buf.signature_help()<cr>")
 nrkeymap("gr", ":lua vim.lsp.buf.code_action()<cr>")
 nrkeymap("<leader>gr", ":lua vim.lsp.buf.rename()<cr>")
 
@@ -94,8 +94,9 @@ nrkeymap("<c-u>cp", ":PackerCompile<CR>")
 
 ---- telescope
 nrkeymap("<c-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>")
-nrkeymap("<leader>ff", "<cmd>Telescope<cr>")
-nrkeymap("<leader>fm", "<cmd>Telescope flutter commands<cr>")
+nrkeymap("<leader>bf", "<cmd>lua require('telescope.builtin').buffers()<cr>")
+nrkeymap("<leader>mp", "<cmd>lua require('telescope.builtin').man_pages()<cr>")
+nrkeymap("<leader>fm", "<cmd>lua require('telescope').extensions.flutter.commands()<cr>")
 
 ---- nvim tree
 nrkeymap("<leader>e", ":NvimTreeToggle<cr>")

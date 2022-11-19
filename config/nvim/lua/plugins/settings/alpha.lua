@@ -52,7 +52,9 @@ local heading = {
 }
 
 local function footer()
-	return "You should try to hate yourself more ;) "
+  local total_plugins = #vim.tbl_keys(packer_plugins)
+
+  return total_plugins .. " plugins loaded  "
 end
 
 dashboard.section.footer.val = footer()

@@ -20,7 +20,7 @@ M.setup = function(on_attach, capabilities)
       prefix = " -- ",
     },
     dev_log = {
-      open_cmd = "tabnew",
+      open_cmd = "edit",
     },
     -- dev_tools = {
     --   autostart = true,

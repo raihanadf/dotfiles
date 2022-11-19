@@ -17,7 +17,6 @@ local options = {
   splitbelow = true,
   splitright = true,
   joinspaces = true,
-  tw = 80,
   cursorline = true,
   --
   clipboard = { "unnamedplus" }, -- make clipboard system
@@ -31,6 +30,7 @@ local options = {
   undofile = true,
   signcolumn = "yes" ,
   numberwidth = 2,
+  -- tw = 80,
   wrap = true,
   linebreak = true,
   breakindent = true,
@@ -39,7 +39,7 @@ local options = {
     min = 40,
     sbr = true,
   },
-  --
+
   backup = false,
   swapfile = false,
   writebackup = false,

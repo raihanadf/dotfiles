@@ -9,9 +9,9 @@ M.on_attach = function(client, _)
   client.server_capabilities.documentFormattingProvider = true
   client.server_capabilities.documentRangeFormattingProvider = true
 
-if client.name == "phpactor" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
+  if client.name == "phpactor" then
+    client.server_capabilities.documentFormattingProvider = false
+  end
 
   local status_ok, illuminate = pcall(require, "illuminate")
   if not status_ok then
@@ -86,10 +86,10 @@ local server_setting = {
   "flutter", -- flutter // uses flutter-tools
 
   -- web
-  -- "html",
-  -- "tailwindcss",
-  -- "tsserver",
-  -- "rome",
+  "html",
+  "tailwindcss",
+  "tsserver",
+  "rome",
 
   -- php
   "intelephense",
@@ -106,8 +106,8 @@ for _, server in ipairs(server_setting) do
       on_attach = M.on_attach,
       capabilities = M.capabilities,
     })
-    return
+  else
+    require("core.lsp.settings." .. server).setup(M.on_attach, M.capabilities)
+    vim.notify(server)
   end
-  require("core.lsp.settings." .. server).setup(M.on_attach, M.capabilities)
-  vim.notify(server)
 end

@@ -8,7 +8,7 @@ configs.setup({
 	ignore_install = { "comment" }, -- List of parsers to ignore installing
 	highlight = {
 		enable = true, -- false will disable the whole extension
-		disable = { "blade" }, -- list of language that will be disabled
+		disable = { "blade", "latex" }, -- list of language that will be disabled
 	},
 	autopairs = {
 		enable = true,

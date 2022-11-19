@@ -1,36 +1,36 @@
 {
   "Cubit Block": {
-    "prefix": "c:block",
+    "prefix": "cubit:block",
     "body": [
       "import 'package:bloc/bloc.dart';",
       "import 'package:meta/meta.dart';\n",
       "part 'example_state.dart';\n",
-      "class ExampleCubit extends Cubit<ExampleState> {",
-      "\tExampleCubit() : super(ExampleInitial());",
+      "class $1Cubit extends Cubit<$1State> {",
+      "\t$1Cubit() : super($1Initial());",
       "}"
     ],
     "description": "Cubit - Defines a template for a cubit block"
   },
   "Cubit State": {
-    "prefix": "c:state",
+    "prefix": "cubit:state",
     "body": [
       "part of 'example_cubit.dart';\n",
       "@immutable",
-      "abstract class ExampleState {}\n",
-      "class ExampleInitial extends ExampleState {}"
+      "abstract class $1State {}\n",
+      "class $1Initial extends $1State {}"
     ],
     "description": "Cubit - Defines a template for a cubit state"
   },
   "Bloc Block": {
-    "prefix": "b:block",
+    "prefix": "bloc:block",
     "body": [
       "import 'package:bloc/bloc.dart';",
       "import 'package:meta/meta.dart';\n",
       "part 'example_event.dart';",
       "part 'example_state.dart';\n",
-      "class ExampleBloc extends Bloc<ExampleEvent, ExampleState> {",
-      "\tExampleBloc() : super(ExampleInitial()) {",
-      "\t\ton<ExampleEvent>((event, emit) {",
+      "class $1Bloc extends Bloc<$1Event, $1State> {",
+      "\t$1Bloc() : super($1Initial()) {",
+      "\t\ton<$1Event>((event, emit) {",
       "\t\t\t// TODO: implement event handler",
       "\t\t});",
       "\t}",
@@ -39,21 +39,21 @@
     "description": "Bloc - Defines a template for a bloc code block"
   },
   "Bloc State": {
-    "prefix": "b:state",
+    "prefix": "bloc:state",
     "body": [
       "part of 'example_bloc.dart';\n",
       "@immutable",
-      "abstract class ExampleState {}\n",
-      "class ExampleInitial extends ExampleState {}"
+      "abstract class $1State {}\n",
+      "class $1Initial extends $1State {}"
     ],
     "description": "Bloc - Defines a template for a bloc state"
   },
   "Bloc Event": {
-    "prefix": "b:event",
+    "prefix": "bloc:event",
     "body": [
       "part of 'example_bloc.dart';\n",
       "@immutable",
-      "abstract class ExampleEvent {}\n"
+      "abstract class $1Event {}\n"
     ],
     "description": "Bloc - Defines a template for a bloc event"
   }

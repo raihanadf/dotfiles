@@ -26,7 +26,7 @@ function M.get_colors()
     color14 = "#6bd1e0",
     color15 = "#ccc9c3",
 
-    a_color1 = "#3c50ff",
+    a_color1 = "#c585cf",
   }
 end
 

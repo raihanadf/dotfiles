@@ -96,7 +96,8 @@ return packer.startup(function(use)
   }) -- git signs
   -- ui ^
 
-  use({ "andweeb/presence.nvim", event = { "UIEnter" }, config = "require('plugins.settings.presence')" }) -- pamer neovim di discord
+  -- use({ "andweeb/presence.nvim", event = { "UIEnter" }, config = "require('plugins.settings.presence')" }) -- pamer neovim di discord
+
   -- misc ^
   -------------------------------------------------------------------
 
@@ -136,6 +137,7 @@ return packer.startup(function(use)
 
   -- external language specific lsp
   use({ "akinsho/flutter-tools.nvim" })
+  use({ "lervag/vimtex", event = "BufWinEnter" })
   -------------------------------------------------------------------
 
   -- automatis setup config abis clone packer.nvim
