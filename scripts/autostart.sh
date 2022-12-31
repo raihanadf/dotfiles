@@ -2,19 +2,19 @@
 
 # auto start apps
 
-# discord
-if ! pgrep -x "Discord" >/dev/null;
-then
-    dunstify "Starting Discord..."
-    discord --start-minimized &
-fi
+### discord
+# if ! pgrep -x "Discord" >/dev/null;
+# then
+#     dunstify "Starting Discord..."
+#     discord --start-minimized &
+# fi
 
-# steam
-if ! pgrep -x "steam" >/dev/null;
-then
-    dunstify "Starting Steam..."
-    steam -silent &
-fi
+### steam
+# if ! pgrep -x "steam" >/dev/null;
+# then
+#     dunstify "Starting Steam..."
+#     steam -silent &
+# fi
 
 redshift -P -O 5500K
 
@@ -34,7 +34,7 @@ purple=#ae81ff
 white=#faedff
 
 music() {
-  printf "^c$green^󰓇 ^c$white^ $(/home/raihan/.dotfiles/scripts/spmd.sh '%title')"
+  printf "$(/home/raihan/.dotfiles/scripts/spotify.py)  "
 } 
 
 # mem() {
@@ -81,13 +81,14 @@ battery() {
 
 	# without icons
 	if [[ $battery > "15" ]]; then
-		printf "^b$blue^^c$black^ 󱀝 ^c$blue^^b#252525^  $battery󱉸 "
+		printf "^c$blue^󱀝 ^c$white^ $battery󱉸"
+		# printf "^c$red^ 󱢠  ^c$black^ $battery󱉸 "
 	else
-		printf "^b$red^^c$black^ 󱀝 ^c$red^^b#252525^  $battery󱉸 "
+    printf "^c$red^󱀝 ^c$white^ $battery󱉸"
 	fi
 	 else
-		printf "^b$blue^^c$black^ 󰣏 ^c$blue^^b#252525^  $battery󱉸 "
-
+		# printf "^b$blue^^c$black^ 󰣏 ^c$blue^^b#252525^  $battery󱉸 "
+		printf "^c$red^󱢠 ^c$white^ $battery󱉸"
   fi
 }
 
@@ -99,7 +100,7 @@ clock() {
 pomo() {
   if pgrep -x "spt" >/dev/null;
   then
-		printf " ^c$black^^b$red^ 󰔟 ^c$red^^b#252525^  Focus  ^b$black^"
+		printf " ^c$black^^b$red^ 󰔟 ^c$red^^b#252525^  POMO  ^b$black^"
   fi
 }
 
@@ -107,7 +108,7 @@ pomo() {
 adb() {
   if pgrep -x "adb" >/dev/null;
   then
-		printf " ^c$green^ 󰀲 ^b$black^ "
+		printf " ^c$white^ 󰀲 ^b$black^ "
   fi
 }
 
@@ -117,5 +118,5 @@ adb() {
 # }
 
 while true; do
-  sleep 1 && xsetroot -name "$(adb) $(clock) $(pomo) $(s) $(battery) "
+  sleep 1 && xsetroot -name "$(adb)$(clock) $(pomo) $(battery)"
 done

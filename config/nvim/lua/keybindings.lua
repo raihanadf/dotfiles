@@ -61,9 +61,8 @@ nskeymap("<leader>;", ":BufferLineMovePrev<CR>")
 nskeymap("<leader>l", ":nohlsearch<cr>")
 
 ---- nvim commenter
-nskeymap("gc", ":CommentToggle<cr>")
 vskeymap("gc", ":CommentToggle<cr>")
-iskeymap("gc", "<ESC>:CommentToggle<cr>")
+-- iskeymap("gc", "<ESC>:CommentToggle<cr>")
 -----------------------------------------------------------------
 
 -----------------------------------------------------------------
@@ -75,7 +74,7 @@ nrkeymap("<c-k>", "<c-w>k")
 nrkeymap("<c-l>", "<c-w>l")
 ---- lsp keymap
 nskeymap("<c-S-i>", ":lua vim.lsp.buf.format { async = true }<cr>")
-nskeymap("gd", "<cmd>lua vim.lsp.buf.definition<CR>")
+nskeymap("gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
 nrkeymap("gD", ":lua vim.lsp.buf.declaration()<cr>")
 nrkeymap("gi", ":lua vim.lsp.buf.implementation()<cr>")
 nrkeymap("gl", "<cmd>lua vim.diagnostic.open_float()<CR>")

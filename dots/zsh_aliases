@@ -68,3 +68,5 @@ mkcd () { mkdir -p -- "$1" && cd -P -- "$1" }
 # alias lampprestart="sudo /opt/lampp/lampp restart"
 # alias mysql="sudo /opt/lampp/bin/mysql -u root -p"
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+
+alias emulator='$ANDROID_HOME/emulator/emulator'

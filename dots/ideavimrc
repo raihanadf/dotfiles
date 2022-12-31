@@ -1,1 +1,19 @@
 source ~/.vimrc
+
+nmap ; :
+nmap <Space> <Leader>
+nmap <Leader>fb :action RecentFiles<CR>
+nmap <Leader>ff :action GotoFile<CR>
+nmap <Leader>fg :action SearchEverywhere<CR>
+
+vnoremap gc :action CommentByLineComment<CR>
+nnoremap <c-S-i> :action ReformatCode<CR>
+nnoremap <leader>o :action OptimizeImports<CR>
+nnoremap gd :action GoToDeclaration<CR>
+nnoremap <leader>gr :action Refactorings.QuickListPopupAction<CR>
+nnoremap gr :action ShowIntentionActions<CR>
+
+vnoremap < <gv
+vnoremap > >gv
+
+nnoremap <leader>r :action IdeaVim.ReloadVimRc.reload<CR>

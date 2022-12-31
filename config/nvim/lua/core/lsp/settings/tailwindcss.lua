@@ -6,7 +6,7 @@ M.setup = function(on_attach, capabilities)
         "aspnetcorerazor",
         "astro",
         "astro-markdown",
-        "blade",
+        "blade.php",
         "django-html",
         "htmldjango",
         "edge",

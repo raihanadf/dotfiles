@@ -28,11 +28,11 @@ alt + shift + {j,k}
 	$HOME/.dotfiles/scripts/backlight.sh {down,up}
 
 # pomo
-alt + control + shift + F8
+alt + shift + F8
   spt -e 'aplay $HOME/Music/alarm.wav'
 
 # stop pomo
-alt + control + shift + F9
+alt + shift + F9
   killall spt && dunstify -u critical "POMO KILLED" "SEE YA" 
 
 # toggle mousepad

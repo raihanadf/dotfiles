@@ -55,7 +55,14 @@ return packer.startup(function(use)
     config = "require('plugins.settings.treesitter')",
   }) -- syntax highlighting
   use({ "declancm/cinnamon.nvim", event = "BufWinEnter", config = "require('plugins.settings.cinnamon')" }) -- smooth scrolling cuy
-  use({ "terrortylor/nvim-comment", event = "BufWinEnter", config = "require('plugins.settings.comment')" }) -- nvim comment
+  -- use({ "terrortylor/nvim-comment", event = "BufWinEnter", config = "require('plugins.settings.comment')" }) -- nvim comment
+  use({
+    "numToStr/Comment.nvim",
+    event = "BufWinEnter",
+    config = function()
+      require("Comment").setup()
+    end,
+  })
   use({ "windwp/nvim-autopairs", config = "require('plugins.settings.autopairs')", after = "nvim-cmp" }) -- autopairs
   use({ "norcalli/nvim-colorizer.lua", config = "require('plugins.settings.colorizer')", event = { "UIEnter" } }) -- colorizer
   use({ "stevearc/dressing.nvim", event = "UIEnter" })
@@ -96,7 +103,7 @@ return packer.startup(function(use)
   }) -- git signs
   -- ui ^
 
-  -- use({ "andweeb/presence.nvim", event = { "UIEnter" }, config = "require('plugins.settings.presence')" }) -- pamer neovim di discord
+  use({ "andweeb/presence.nvim", event = { "UIEnter" }, config = "require('plugins.settings.presence')" }) -- pamer neovim di discord
 
   -- misc ^
   -------------------------------------------------------------------
@@ -134,6 +141,18 @@ return packer.startup(function(use)
     config = "require('core.lsp.null-ls')",
   })
   use({ "RRethy/vim-illuminate", event = "BufWinEnter", after = "nvim-lspconfig" })
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    event = "BufWinEnter",
+    setup = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  })
+
+  -- color schemes
+  use({ "Mofiqul/vscode.nvim" })
 
   -- external language specific lsp
   use({ "akinsho/flutter-tools.nvim" })
