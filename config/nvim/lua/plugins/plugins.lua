@@ -101,6 +101,12 @@ return packer.startup(function(use)
     ft = "gitcommit",
     config = "require('plugins.settings.gitsigns')",
   }) -- git signs
+  use({
+    "nvim-lualine/lualine.nvim",
+    event = "BufWinEnter",
+    config = "require('plugins.settings.lualine')",
+    requires = { "kyazdani42/nvim-web-devicons", opt = true },
+  })
   -- ui ^
 
   use({ "andweeb/presence.nvim", event = { "UIEnter" }, config = "require('plugins.settings.presence')" }) -- pamer neovim di discord
@@ -140,7 +146,6 @@ return packer.startup(function(use)
     after = "nvim-lspconfig",
     config = "require('core.lsp.null-ls')",
   })
-  use({ "RRethy/vim-illuminate", event = "BufWinEnter", after = "nvim-lspconfig" })
   use({
     "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
@@ -152,7 +157,16 @@ return packer.startup(function(use)
   })
 
   -- color schemes
-  use({ "Mofiqul/vscode.nvim" })
+  use({
+    "olivercederborg/poimandres.nvim",
+    config = function()
+      require("poimandres").setup({
+        -- leave this setup function empty for default config
+        -- or refer to the configuration section
+        -- for configuration options
+      })
+    end,
+  })
 
   -- external language specific lsp
   use({ "akinsho/flutter-tools.nvim" })

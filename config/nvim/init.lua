@@ -8,4 +8,3 @@ require("colorschemes") -- colorscheme
 
 require("plugins") -- init plugins
 
-vim.opt.statusline = "%!v:lua.require('staline').run()"
