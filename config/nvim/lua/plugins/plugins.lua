@@ -157,16 +157,7 @@ return packer.startup(function(use)
   })
 
   -- color schemes
-  use({
-    "olivercederborg/poimandres.nvim",
-    config = function()
-      require("poimandres").setup({
-        -- leave this setup function empty for default config
-        -- or refer to the configuration section
-        -- for configuration options
-      })
-    end,
-  })
+  use({ "nyoom-engineering/oxocarbon.nvim" })
 
   -- external language specific lsp
   use({ "akinsho/flutter-tools.nvim" })

@@ -3,7 +3,7 @@
 
 -- pake salah satu aja
 local local_colorscheme = ""
-local default_colorscheme = "poimandres"
+local default_colorscheme = "oxocarbon"
 
 local highlights = require("colorschemes.highlights")
 local core_ok, color = pcall(require, "colorschemes.colors." .. local_colorscheme)
@@ -11,7 +11,8 @@ local core_ok, color = pcall(require, "colorschemes.colors." .. local_colorschem
 if not core_ok then
 
   vim.cmd("colorscheme " .. default_colorscheme)
-  vim.notify("colorscheme: " .. local_colorscheme .. " gak ketemu!")
+  -- additional config
+  vim.opt.background = "dark"
   return
 
 else
