@@ -94,7 +94,7 @@ battery() {
 
 clock() {
 	# printf "^c$white^^b$black^󰃰 ^c$white^^b$black^ $(date '+%a %I:%M %p')"
-	printf "^c$white^^b$black^$(date '+%I:%M %p')"
+	printf "^c$white^^b$black^$(date '+%A %I:%M %p')"
 }
 
 pomo() {

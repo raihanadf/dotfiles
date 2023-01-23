@@ -53,6 +53,9 @@ alias opmast="optimus-manager --status"
 # some fancy stuff that i rarely use
 alias lyrics="sptlrx" # sptlrx-bin
 
+# record (use dgpu to work)
+alias record="gpu-screen-recorder -w screen -c mp4 -f 60 -a "$(pactl get-default-sink).monitor" -q high -o ~/Videos/now-recorded.mp4"
+
 # functions
 
 # make dir and then cd into it
