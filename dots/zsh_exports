@@ -43,3 +43,6 @@ export CHROME_EXECUTABLE=/usr/bin/chromium
 
 # pub cache
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+# python bin
+export PATH="$PATH":"$HOME/.local/bin"

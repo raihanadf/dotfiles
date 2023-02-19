@@ -22,7 +22,7 @@ redshift -P -O 5500K
 dunstify "Welcome!"
 
 # colours
-black=#05080a
+black=#1a1a1a
 pink=#ffc2d0
 peach=#fad5d5
 red=#f92672
@@ -46,11 +46,11 @@ cpu() {
 }
 
 wifi() {
-  LOCAL_IP="$(ip -o -4 addr list wlo1 | awk '{print $4}' | cut -d/ -f1)"
+  LOCAL_IP="$(ip -o -4 addr list wlan0 | awk '{print $4}' | cut -d/ -f1)"
   if [ ! -z "$LOCAL_IP" -a "$LOCAL_IP" != " " ]; then
-    printf "^c$green^^b$black^󰣏^c$white^^b$black^ $LOCAL_IP"
+    printf "^c$white^^b$black^󰽢^c$white^^b$black^ "
     else
-    printf "^c$white^^b$black^󱀝^c$white^^b$black^ NOT CONNECTED"
+    printf "^c$white^^b$black^󰄰^c$white^^b$black^ "
   fi
 }
 
@@ -118,5 +118,5 @@ adb() {
 # }
 
 while true; do
-  sleep 1 && xsetroot -name "$(adb)$(clock) $(pomo) $(battery)"
+  sleep 1 && xsetroot -name "$(adb)$(wifi) $(clock) $(pomo) $(battery)"
 done

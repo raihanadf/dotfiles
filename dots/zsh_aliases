@@ -73,3 +73,6 @@ mkcd () { mkdir -p -- "$1" && cd -P -- "$1" }
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 
 alias emulator='$ANDROID_HOME/emulator/emulator'
+
+# fun stuff
+alias chat="sgpt"
