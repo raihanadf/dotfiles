@@ -42,10 +42,10 @@ packer.init({
 -- plugins disini
 return packer.startup(function(use)
   ----------------------- general plugins ---------------------------
-  use("wbthomason/packer.nvim") -- packer itself
+  use("wbthomason/packer.nvim")                           -- packer itself
   use("lewis6991/impatient.nvim")
   use({ "nvim-lua/plenary.nvim", event = "BufWinEnter" }) -- stdlib
-  use("nvim-lua/popup.nvim") -- popup api
+  use("nvim-lua/popup.nvim")                              -- popup api
   use({
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
@@ -53,7 +53,7 @@ return packer.startup(function(use)
     event = "BufRead",
     cmd = 'require("plugins.commands").treesitter',
     config = "require('plugins.settings.treesitter')",
-  }) -- syntax highlighting
+  })                                                                                                        -- syntax highlighting
   use({ "declancm/cinnamon.nvim", event = "BufWinEnter", config = "require('plugins.settings.cinnamon')" }) -- smooth scrolling cuy
   -- use({ "terrortylor/nvim-comment", event = "BufWinEnter", config = "require('plugins.settings.comment')" }) -- nvim comment
   use({
@@ -63,7 +63,7 @@ return packer.startup(function(use)
       require("Comment").setup()
     end,
   })
-  use({ "windwp/nvim-autopairs", config = "require('plugins.settings.autopairs')", after = "nvim-cmp" }) -- autopairs
+  use({ "windwp/nvim-autopairs", config = "require('plugins.settings.autopairs')", after = "nvim-cmp" })          -- autopairs
   use({ "norcalli/nvim-colorizer.lua", config = "require('plugins.settings.colorizer')", event = { "UIEnter" } }) -- colorizer
   use({ "stevearc/dressing.nvim", event = "UIEnter" })
   -- core ^
@@ -76,7 +76,7 @@ return packer.startup(function(use)
     config = "require('plugins.settings.bufferline')",
   })
   use({ "mrjones2014/smart-splits.nvim", event = "UIEnter" }) -- buat ngesplit sama resize mantap
-  use({ "moll/vim-bbye", event = "UIEnter" }) -- bye bye buffer, biar gak ikutan keclose yg laen
+  use({ "moll/vim-bbye", event = "UIEnter" })                 -- bye bye buffer, biar gak ikutan keclose yg laen
   use({
     "goolord/alpha-nvim",
     requires = { "kyazdani42/nvim-web-devicons" },
@@ -86,14 +86,14 @@ return packer.startup(function(use)
     },
     event = "BufWinEnter",
     config = "require('plugins.settings.alpha')",
-  }) -- fancy startup
+  })                                                                                                           -- fancy startup
   use({ "nvim-tree/nvim-tree.lua", cmd = "NvimTreeToggle", config = "require('plugins.settings.nvim-tree')" }) -- nvim treeee
   use({ "akinsho/toggleterm.nvim", config = "require('plugins.settings.toggleterm')", event = "BufWinEnter" }) -- toggle term
   use({
     "nvim-telescope/telescope.nvim",
     config = "require('plugins.settings.telescope')",
     module = "telescope",
-  }) -- telescopeeeee
+  })                                                                    -- telescopeeeee
   use({ "lukas-reineke/indent-blankline.nvim", event = "BufWinEnter" }) -- indenting line
   use({
     "lewis6991/gitsigns.nvim",

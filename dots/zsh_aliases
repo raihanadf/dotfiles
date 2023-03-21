@@ -61,6 +61,9 @@ alias record="gpu-screen-recorder -w screen -c mp4 -f 60 -a "$(pactl get-default
 # make dir and then cd into it
 mkcd () { mkdir -p -- "$1" && cd -P -- "$1" }
 
+# git zip
+alias gitzip="git archive HEAD -o ${PWD##*/}.zip"
+
 ### archived
 
 # some programming thingy

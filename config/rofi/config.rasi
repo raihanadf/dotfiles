@@ -1,6 +1,6 @@
 configuration {
   modi: "drun";
-  font: "SF Display Pro Medium 16";
+  font: "SF Display Pro Bold 10";
   show-icons: true;
   display-drun: "";
   drun-display-format: "{name}";
@@ -23,7 +23,7 @@ configuration {
 window {
   border:             3px 3px 3px 3px;
   border-color:                   @bga;
-  width: 50%;
+  width: 30%;
   padding: 10px;
 }
 
@@ -73,7 +73,7 @@ element {
 }
 
 element-icon {
-  size: 58px;
+  size: 42px;
   border: 0px;
   horizontal-align: 0.5;
 }

@@ -39,7 +39,7 @@ export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 # flutter dari AUR problematic
 # flutter
 export PATH=$PATH:$HOME/.sdk_dir/flutter/bin
-export CHROME_EXECUTABLE=/usr/bin/chromium
+export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 
 # pub cache
 export PATH="$PATH":"$HOME/.pub-cache/bin"

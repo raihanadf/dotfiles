@@ -70,7 +70,6 @@ nvim_tree.setup({
 			},
 		},
 	},
-	open_on_setup = true,
 })
 
 vim.cmd([[

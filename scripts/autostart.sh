@@ -46,7 +46,7 @@ cpu() {
 }
 
 wifi() {
-  LOCAL_IP="$(ip -o -4 addr list wlan0 | awk '{print $4}' | cut -d/ -f1)"
+  LOCAL_IP="$(ip -o -4 addr list wlo1 | awk '{print $4}' | cut -d/ -f1)"
   if [ ! -z "$LOCAL_IP" -a "$LOCAL_IP" != " " ]; then
     printf "^c$white^^b$black^󰽢^c$white^^b$black^ "
     else
@@ -118,5 +118,5 @@ adb() {
 # }
 
 while true; do
-  sleep 1 && xsetroot -name "$(adb)$(wifi) $(clock) $(pomo) $(battery)"
+  sleep 1 && xsetroot -name "$(adb) $(wifi) $(clock) $(pomo) $(battery)"
 done
