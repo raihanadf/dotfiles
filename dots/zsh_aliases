@@ -25,6 +25,7 @@ alias nvimconfig="vi ~/.config/nvim/init.lua"
 alias vi="nvim" # neovim
 alias isw="sudo isw" # ice sealead wyvern on github
 alias pomo="spt -e 'aplay $HOME/Music/alarm.wav'" # suckless' spt
+
 # directories
 alias ..="cd .."
 alias ...="cd ../.."
@@ -46,9 +47,14 @@ alias androidumount='umount $HOME/MountHere' # same as above, but unmount it
 alias wifi='nmtui'
 
 # optimus manager
-alias opma="optimus-manager"
-alias opmas="optimus-manager --switch"
-alias opmast="optimus-manager --status"
+alias om="optimus-manager"
+alias omswitch="optimus-manager --switch"
+alias omstatus="optimus-manager --status"
+alias omhybrid="optimus-manager --switch hybrid && killmyself"
+alias omnvidia="optimus-manager --switch nvidia && killmyself"
+
+# kill all session
+alias killmyself="pkill -KILL -u $USER"
 
 # some fancy stuff that i rarely use
 alias lyrics="sptlrx" # sptlrx-bin
@@ -74,8 +80,8 @@ alias gitzip="git archive HEAD -o ${PWD##*/}.zip"
 # alias lampprestart="sudo /opt/lampp/lampp restart"
 # alias mysql="sudo /opt/lampp/bin/mysql -u root -p"
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
-
 alias emulator='$ANDROID_HOME/emulator/emulator'
 
 # fun stuff
 alias chat="sgpt"
+alias minecraft="prime-run gamemoderun java -jar $HOME/Documents/Minecraft.jar"

@@ -1,5 +1,5 @@
 configuration {
-	font:					"SF Display 16";
+	font:					"SF Pro Display 12";
   show-icons:                     true;
 	icon-theme: 					"Papirus";
   display-drun: 					"";
@@ -18,7 +18,7 @@ window {
     text-color:                     @fg;
     border:             3px 3px 3px 3px;
     border-color:                   @bga;
-	  width:							500px;
+	  width:							300px;
     location:                       center;
     x-offset:                       0;
     y-offset:                       0;

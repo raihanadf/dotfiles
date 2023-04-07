@@ -1,10 +1,17 @@
 source ~/.vimrc
 
+set clipboard+=unnamed
+set clipboard+=ideaput
+set commentary
+
 nmap ; :
 nmap <Space> <Leader>
 nmap <Leader>fb :action RecentFiles<CR>
 nmap <Leader>ff :action GotoFile<CR>
 nmap <Leader>fg :action SearchEverywhere<CR>
+
+nnoremap <TAB> :action PreviousTab<CR>
+nnoremap <s-TAB> :action NextTab<CR>
 
 vnoremap gc :action CommentByLineComment<CR>
 nnoremap <c-S-i> :action ReformatCode<CR>
@@ -16,4 +23,8 @@ nnoremap gr :action ShowIntentionActions<CR>
 vnoremap < <gv
 vnoremap > >gv
 
+nnoremap [[ :action MethodUp<CR>
+nnoremap ]] :action MethodDown<CR>
+
 nnoremap <leader>r :action IdeaVim.ReloadVimRc.reload<CR>
+nnoremap \e :e ~/.ideavimrc<CR>
