@@ -92,7 +92,7 @@ local server_setting = {
   "rome",
 
   -- php
-  "intelephense",
+  -- "intelephense",
   "phpactor",
 
   -- markdown
