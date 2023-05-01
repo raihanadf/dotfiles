@@ -22,7 +22,7 @@
 
     # Offset from the origin
     # if status bar on top
-    offset = 40x20
+    offset = 30x25
     # offset = 20x20
 
     # Scale factor. It is auto-detected if value is 0.

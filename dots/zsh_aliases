@@ -52,6 +52,7 @@ alias omswitch="optimus-manager --switch"
 alias omstatus="optimus-manager --status"
 alias omhybrid="optimus-manager --switch hybrid && killmyself"
 alias omnvidia="optimus-manager --switch nvidia && killmyself"
+alias omintel="optimus-manager --switch integrated && killmyself"
 
 # kill all session
 alias killmyself="pkill -KILL -u $USER"

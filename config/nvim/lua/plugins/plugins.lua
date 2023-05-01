@@ -103,7 +103,7 @@ return packer.startup(function(use)
   }) -- git signs
   use({
     "nvim-lualine/lualine.nvim",
-    event = "BufWinEnter",
+    event = "UIEnter",
     config = "require('plugins.settings.lualine')",
     requires = { "kyazdani42/nvim-web-devicons", opt = true },
   })
