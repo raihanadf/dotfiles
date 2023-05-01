@@ -35,10 +35,10 @@ This repo is a collection of my dotfiles. I mainly develop/study for Android <i>
 email="<your email>"
 ssh-keygen -t ed25519 -C "${email}"
 
-# clone and make a new directory (for me)
+# clone and make a new directory
 git clone git@github.com:17radf/dotfiles.git ~/.dotfiles
 
-# install
+# install ()
 cd ~/.dotfiles
 ./install
 
@@ -57,38 +57,6 @@ some information about my setup:
 - WM: [dwm](https://dwm.suckless.org/)
 - Login Manager: [ly](https://github.com/fairyglade/ly)
 - Editor: [nvim](https://github.com/neovim/neovim)
-
-<br/>
-
-## <b>dwm</b> Patches
-
-- BAR_AWESOMEBAR_PATCH
-- BAR_STATUS_PATCH
-- BAR_STATUSBUTTON_PATCH
-- BAR_STATUS2D_PATCH
-- BAR_SYSTRAY_PATCH
-- BAR_UNDERLINETAGS_PATCH
-- BAR_TITLE_LEFT_PAD_PATCH
-- BAR_BORDER_PATCH
-- BAR_CENTEREDWINDOWNAME_PATCH
-- BAR_IGNORE_XFT_ERRORS_WHEN_DRAWING_TEXT_PATCH
-- BAR_PADDING_VANITYGAPS_PATCH
-- ATTACHBOTTOM_PATCH
-- CENTER_PATCH
-- COMBO_PATCH
-- COOL_AUTOSTART_PATCH
-- CYCLELAYOUTS_PATCH
-- FOCUSONNETACTIVE_PATCH
-- ONLYQUITONEMPTY_PATCH
-- RESTARTSIG_PATCH
-- SEAMLESSRESTART_PATCH
-- SWITCHTAG_PATCH
-- STEAM_PATCH
-- VANITYGAPS_PATCH
-- PERTAGS_PATCH
-- ZOOMSWAP_PATCH
-- TILE_LAYOUT
-- MONOCLE_LAYOUT
 
 <br/>
 
