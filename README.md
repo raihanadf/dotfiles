@@ -2,9 +2,6 @@
 
 <!-- BADGES -->
    <p></p>
-   <a href="">
-      <img src="https://img.shields.io/github/issues/raihanadf/dotfiles?color=181926&labelColor=0A0D0F&style=for-the-badge">
-   </a>
    <a href="https://github.com/raihanadf/dotfiles/stargazers">
       <img src="https://img.shields.io/github/stars/raihanadf/dotfiles?color=181926&labelColor=0A0D0F&style=for-the-badge">
    </a>
