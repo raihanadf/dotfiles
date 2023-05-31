@@ -9,10 +9,6 @@ M.on_attach = function(client, _)
   client.server_capabilities.documentFormattingProvider = true
   client.server_capabilities.documentRangeFormattingProvider = true
 
-  if client.name == "phpactor" then
-    client.server_capabilities.documentFormattingProvider = false
-  end
-
   local status_ok, illuminate = pcall(require, "illuminate")
   if not status_ok then
     return
@@ -41,10 +37,10 @@ M.capabilities.textDocument.completion.completionItem = {
 
 local signs = {
 
-  { name = "DiagnosticSignError", text = "" },
-  { name = "DiagnosticSignWarn", text = "" },
-  { name = "DiagnosticSignHint", text = "" },
-  { name = "DiagnosticSignInfo", text = "" },
+  { name = "DiagnosticSignError", text = "" },
+  { name = "DiagnosticSignWarn", text = "" },
+  { name = "DiagnosticSignHint", text = "" },
+  { name = "DiagnosticSignInfo", text = "" },
 }
 
 for _, sign in ipairs(signs) do
@@ -79,6 +75,8 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
   border = "rounded",
 })
 
+---------------------------- custom server setting -----------------------------
+
 local server_setting = {
 
   -- specific
@@ -92,8 +90,7 @@ local server_setting = {
   "rome",
 
   -- php
-  -- "intelephense",
-  "phpactor",
+  "intelephense",
 
   -- markdown
   "texlab",
@@ -101,7 +98,7 @@ local server_setting = {
 }
 
 for _, server in ipairs(server_setting) do
-  local okay, bro = pcall(require, "core.lsp.settings." .. server)
+  local okay, _ = pcall(require, "core.lsp.settings." .. server)
   if not okay then
     lspconfig[server].setup({
       on_attach = M.on_attach,
@@ -112,3 +109,5 @@ for _, server in ipairs(server_setting) do
     vim.notify(server)
   end
 end
+
+--------------------------------------------------------------------------------

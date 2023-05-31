@@ -66,7 +66,7 @@ return packer.startup(function(use)
   use({ "windwp/nvim-autopairs", config = "require('plugins.settings.autopairs')", after = "nvim-cmp" })          -- autopairs
   use({ "norcalli/nvim-colorizer.lua", config = "require('plugins.settings.colorizer')", event = { "UIEnter" } }) -- colorizer
   use({ "stevearc/dressing.nvim", event = "UIEnter" })
-  -- core ^
+  ------------------------------- ^core ------------------------------
 
   use({ "kyazdani42/nvim-web-devicons", event = "UIEnter", config = "require('plugins.settings.devicons')" })
   use({
@@ -107,11 +107,32 @@ return packer.startup(function(use)
     config = "require('plugins.settings.lualine')",
     requires = { "kyazdani42/nvim-web-devicons", opt = true },
   })
-  -- ui ^
+  use({
+    'samodostal/image.nvim',
+    event = "UIEnter",
+    config = "require('plugins.settings.image')",
+    requires = {
+      'nvim-lua/plenary.nvim', 'm00qek/baleia.nvim'
+    },
+  })
+  use({
+    "utilyre/barbecue.nvim",
+    tag = "*",
+    requires = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+    config = function()
+      require("barbecue").setup()
+    end,
+  })
+  use({ 'Bekaboo/deadcolumn.nvim', event = { "UIEnter" } })
+  -------------------------------- ^ui ------------------------------
 
   use({ "andweeb/presence.nvim", event = { "UIEnter" }, config = "require('plugins.settings.presence')" }) -- pamer neovim di discord
+  use({ "Darazaki/indent-o-matic", event = { "UIEnter" } })                                                -- pamer neovim di discord
 
-  -- misc ^
+  ------------------------------- ^misc ------------------------------
   -------------------------------------------------------------------
 
   ------------------------ lsp and something ------------------------
@@ -156,12 +177,34 @@ return packer.startup(function(use)
     ft = { "markdown" },
   })
 
+  -------------------------------------------------------------------
   -- color schemes
   use({ "nyoom-engineering/oxocarbon.nvim" })
+  use({ "rebelot/kanagawa.nvim" })
 
   -- external language specific lsp
   use({ "akinsho/flutter-tools.nvim" })
   use({ "lervag/vimtex", event = "BufWinEnter" })
+
+  -- session and project
+  use({
+    "aaditeynair/conduct.nvim",
+    dependencies = "nvim-lua/plenary.nvim",
+    cmd = {
+      "ConductNewProject",
+      "ConductLoadProject",
+      "ConductLoadLastProject",
+      "ConductLoadProjectConfig",
+      "ConductReloadProjectConfig",
+      "ConductDeleteProject",
+      "ConductRenameProject",
+      "ConductProjectNewSession",
+      "ConductProjectLoadSession",
+      "ConductProjectDeleteSession",
+      "ConductProjectRenameSession",
+    },
+  })
+
   -------------------------------------------------------------------
 
   -- automatis setup config abis clone packer.nvim

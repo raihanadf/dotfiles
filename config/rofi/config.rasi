@@ -1,6 +1,6 @@
 configuration {
   modi: "run,drun,window";
-  font: "SF Display Pro Bold 10";
+  font: "SF Display Bold 12";
   show-icons: true;
   display-drun: "";
   drun-display-format: "{name}";
@@ -76,7 +76,7 @@ element {
 }
 
 element-icon {
-  size: 42px;
+  size: 5%;
   border: 0px;
   horizontal-align: 0.5;
 }

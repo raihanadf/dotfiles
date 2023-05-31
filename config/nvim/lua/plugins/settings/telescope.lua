@@ -12,7 +12,9 @@ telescope.setup({
 		mappings = {
 			i = {
 				["<c-t>"] = trouble.open_with_trouble,
-			},
+        ["<c-j>"] = actions.move_selection_next,
+        ["<c-k>"] = actions.move_selection_previous,
+      },
 			n = {
 				["<c-t>"] = trouble.open_with_trouble,
 			},

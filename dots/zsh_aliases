@@ -82,6 +82,7 @@ alias gitzip="git archive HEAD -o ${PWD##*/}.zip"
 # alias mysql="sudo /opt/lampp/bin/mysql -u root -p"
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 alias emulator='$ANDROID_HOME/emulator/emulator'
+alias myip="ip -o -4 addr list wlo1 | awk '{print $4}' | cut -d/ -f1"
 
 # fun stuff
 alias chat="sgpt"

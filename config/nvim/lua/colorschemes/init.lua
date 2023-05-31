@@ -12,7 +12,7 @@ if not core_ok then
 
   vim.cmd("colorscheme " .. default_colorscheme)
   -- additional config
-  vim.opt.background = "dark"
+  -- vim.opt.background = "dark"
   return
 
 else

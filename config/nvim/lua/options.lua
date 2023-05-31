@@ -14,13 +14,14 @@ local options = {
   shiftwidth = 2,
   softtabstop = 2,
   tabstop = 2,
+  colorcolumn = "80",
   splitbelow = true,
   splitright = true,
   joinspaces = true,
   cursorline = true,
   --
   clipboard = { "unnamedplus" }, -- make clipboard system
-  mouse = "n", -- mouse mode??? wtff
+  mouse = "n",                   -- mouse mode??? wtff
   timeoutlen = 300,
   updatetime = 300,
   showtabline = 2,
@@ -28,7 +29,7 @@ local options = {
   --
   showmode = false,
   undofile = true,
-  signcolumn = "yes" ,
+  signcolumn = "yes",
   numberwidth = 2,
   -- tw = 80,
   wrap = true,
@@ -39,7 +40,6 @@ local options = {
     min = 40,
     sbr = true,
   },
-
   backup = false,
   swapfile = false,
   writebackup = false,

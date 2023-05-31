@@ -11,7 +11,7 @@ local diagnostics = {
   "diagnostics",
   sources = { "nvim_diagnostic" },
   sections = { "error", "warn" },
-  symbols = { error = " ", warn = " " },
+  symbols = { error = " ", warn = " " },
   colored = false,
   update_in_insert = false,
   always_visible = true,
@@ -27,7 +27,10 @@ local diff = {
 local mode = {
   "mode",
   fmt = function(str)
-    return "-- " .. str .. " --"
+    -- if(str == "INSERT") then
+    --   return ">> INSERT MY DICK IN YO MOF <<"
+    -- end
+    return ">> " .. str .. " <<"
   end,
 }
 

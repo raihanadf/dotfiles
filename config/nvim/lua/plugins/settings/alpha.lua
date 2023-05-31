@@ -13,7 +13,7 @@ math.randomseed(os.time())
 
 local logo = {
 " __________________ ",
-"< shut the fuck up >",
+"< hayo mau ngapain >",
 " ------------------ ",
 "   \\",
 "    \\",
