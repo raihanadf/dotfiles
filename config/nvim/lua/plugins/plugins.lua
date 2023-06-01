@@ -181,6 +181,8 @@ return packer.startup(function(use)
   -- color schemes
   use({ "nyoom-engineering/oxocarbon.nvim" })
   use({ "rebelot/kanagawa.nvim" })
+  use({ "olimorris/onedarkpro.nvim" })
+  use({ "rockyzhang24/arctic.nvim", branch = 'v2', requires = { 'rktjmp/lush.nvim' } })
 
   -- external language specific lsp
   use({ "akinsho/flutter-tools.nvim" })
