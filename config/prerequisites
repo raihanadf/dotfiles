@@ -3,6 +3,9 @@
 # initial install
 sudo pacman -Syyuu zsh neovim bat base-devel pulseaudio pamixer lxappearance brightnessctl ranger redshift flameshot alsa-utils alsa-plugins alsa-lib lxrandr-gtk3
 
+# switch to zsh
+chsh -s $(which zsh)
+
 # install antibody 
 curl -sfL git.io/antibody | sudo sh -s - -b /usr/local/bin
 antibody bundle < ~/.dotfiles/dots/zsh_plugins
@@ -12,8 +15,7 @@ antibody bundle < ~/.dotfiles/dots/zsh_plugins
 # makepkg -si
 # cd .. && rm -rf paru
 
-# paru polybar
-# paru auto-cpufreq
+# paru auto-cpufreq optimus-manager
 
 # install tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -40,4 +42,5 @@ volta install node@latest
 # afterthought
 clear
 printf '========== The installation is done ==========\n'
+printf "\n - You should change the .gitconfig by your own"
 printf "\n - Please quit the terminal by typing 'exit'"

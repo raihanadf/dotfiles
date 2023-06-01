@@ -38,5 +38,3 @@ antibody bundle < ~/.dotfiles/dots/zsh_plugins
 source "/usr/share/fzf/key-bindings.zsh"
 source "/usr/share/fzf/completion.zsh"
 
-# bun completions
-[ -s "/home/raihan/.bun/_bun" ] && source "/home/raihan/.bun/_bun"

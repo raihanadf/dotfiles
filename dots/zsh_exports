@@ -11,7 +11,7 @@ export PATH="$LARAVEL_HOME/bin:$PATH"
 #eval "$(rbenv init -)"
 
 # deno
-export DENO_INSTALL="/home/raihan/.deno"
+export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
 # dart
@@ -22,10 +22,10 @@ echo 'export PATH="$PATH:/usr/lib/dart/bin"' >> ~/.profile
 export GPG_TTY=$TTY
 
 # bun completions
-[ -s "/home/raihan/.bun/_bun" ] && source "/home/raihan/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # Bun
-export BUN_INSTALL="/home/raihan/.bun"
+export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # android sdk

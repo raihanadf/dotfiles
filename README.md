@@ -24,18 +24,18 @@ This repo is a collection of my dotfiles. I mainly develop/study for Android <i>
 <br/>
 <br/>
 
-<h2>Install</h2>
+## Init
 
 ```shell script
 
-# first setup the ssh key for github
+# setup the ssh key for git
 email="<your email>"
 ssh-keygen -t ed25519 -C "${email}"
 
 # clone and make a new directory
-git clone git@github.com:17radf/dotfiles.git ~/.dotfiles
+git clone git@github.com:raihanadf/dotfiles.git ~/.dotfiles
 
-# install ()
+# install
 cd ~/.dotfiles
 ./install
 
@@ -43,20 +43,19 @@ cd ~/.dotfiles
 
 <br/>
 
-## Setup Details
+## Details
 
 some information about my setup:
 
 - OS: [Arch Linux](https://archlinux.org/)
-- Terminal: [Kitty](https://github.com/kovidgoyal/kitty)
+- Terminal: [kitty](https://github.com/kovidgoyal/kitty)
 - Shell: [zsh](https://www.zsh.org/)
-- Prompt: [Starship](https://starship.rs/)
-- WM: [dwm](https://dwm.suckless.org/)
-- Login Manager: [ly](https://github.com/fairyglade/ly)
+- WM: [dwm](https://github.com/raihanadf/dwm)
+- Login Manager: [sddm](https://wiki.archlinux.org/title/SDDM)
 - Editor: [nvim](https://github.com/neovim/neovim)
 
 <br/>
 
 ## Little Notes
 
-This might break your own system. So pay attention to what are you going to do 
+might break your own system, pay attention to what youre going to do 

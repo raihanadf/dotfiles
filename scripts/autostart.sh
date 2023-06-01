@@ -34,7 +34,7 @@ purple=#ae81ff
 white=#faedff
 
 music() {
-  printf "$(/home/raihan/.dotfiles/scripts/spotify.py)  "
+  printf "$($HOME/.dotfiles/scripts/spotify.py)" 
 } 
 
 # mem() {

@@ -5,7 +5,7 @@
 # - pactl
 
 msgID="100" # Arbitrary, can be anything
-iconPath="/home/raihan/.dotfiles/scripts/cat"
+iconPath="$HOME/.dotfiles/scripts/cat"
 message=""
 
 volume="$(pamixer --get-volume)"
