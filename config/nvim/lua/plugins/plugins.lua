@@ -42,10 +42,10 @@ packer.init({
 -- plugins disini
 return packer.startup(function(use)
   ----------------------- general plugins ---------------------------
-  use("wbthomason/packer.nvim")                           -- packer itself
+  use("wbthomason/packer.nvim")    -- packer itself
   use("lewis6991/impatient.nvim")
-  use({ "nvim-lua/plenary.nvim", event = "BufWinEnter" }) -- stdlib
-  use("nvim-lua/popup.nvim")                              -- popup api
+  use({ "nvim-lua/plenary.nvim" }) -- stdlib
+  use("nvim-lua/popup.nvim")       -- popup api
   use({
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
@@ -189,24 +189,15 @@ return packer.startup(function(use)
   use({ "lervag/vimtex", event = "BufWinEnter" })
 
   -- session and project
-  use({
-    "aaditeynair/conduct.nvim",
-    dependencies = "nvim-lua/plenary.nvim",
-    cmd = {
-      "ConductNewProject",
-      "ConductLoadProject",
-      "ConductLoadLastProject",
-      "ConductLoadProjectConfig",
-      "ConductReloadProjectConfig",
-      "ConductDeleteProject",
-      "ConductRenameProject",
-      "ConductProjectNewSession",
-      "ConductProjectLoadSession",
-      "ConductProjectDeleteSession",
-      "ConductProjectRenameSession",
-    },
-  })
-
+  use {
+    'rmagatti/auto-session',
+    config = function()
+      require("auto-session").setup {
+        log_level = "error",
+        auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+      }
+    end
+  }
   -------------------------------------------------------------------
 
   -- automatis setup config abis clone packer.nvim

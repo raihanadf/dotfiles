@@ -2,7 +2,7 @@
 -- built in colorscheme -- DIY
 
 -- pake salah satu aja
-local colorscheme = "kanagawa-dragon"
+local colorscheme = "oxocarbon"
 
 local highlights = require("colorschemes.highlights")
 local core_ok, color = pcall(require, "colorschemes.colors." .. colorscheme)

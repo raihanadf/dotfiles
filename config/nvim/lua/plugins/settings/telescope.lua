@@ -5,19 +5,14 @@ if not ok then
 end
 
 local actions = require("telescope.actions")
-local trouble = require("trouble.providers.telescope")
 
 telescope.setup({
 	defaults = {
 		mappings = {
 			i = {
-				["<c-t>"] = trouble.open_with_trouble,
         ["<c-j>"] = actions.move_selection_next,
         ["<c-k>"] = actions.move_selection_previous,
       },
-			n = {
-				["<c-t>"] = trouble.open_with_trouble,
-			},
 		},
 	},
 })

@@ -8,6 +8,7 @@
         "after_each",
         "setup",
         "teardown",
-        "open_nvim_tree"
+        "open_nvim_tree",
+        "Path"
     ]
 }
