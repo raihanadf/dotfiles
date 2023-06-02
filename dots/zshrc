@@ -1,11 +1,12 @@
 # --- Created by raihan for 5.8 ---
 
 # --- start up ---
-
-# --- choose one ---
-
-## starship
-# eval "$(starship init zsh)"
+bindkey -v
+# --- auto-start tmux ---
+if [ -z "$TMUX" ]
+then
+    tmux attach -t home || tmux new -s home
+fi
 
 ## p10k
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then

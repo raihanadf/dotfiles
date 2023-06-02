@@ -1,15 +1,12 @@
 # theme
 romkatv/powerlevel10k
 
-# vim bindkey (better than default)
-jeffreytse/zsh-vi-mode
-
-# plugins
+# git aliases
 robbyrussell/oh-my-zsh path:lib/git.zsh
 robbyrussell/oh-my-zsh path:plugins/git
 
+# etc
 zsh-users/zsh-autosuggestions
 qoomon/zsh-lazyload
 zdharma-continuum/fast-syntax-highlighting
-
-# supercrabtree/k
+kutsan/zsh-system-clipboard
