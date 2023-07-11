@@ -35,9 +35,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools/
 export PATH=$PATH:$ANDROID_HOME/build-tools/
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 
-# use flutter sdk from their own website
-# flutter dari AUR problematic
-# flutter
+# use flutter sdk from their own website (AUR one is problematic)
 export PATH=$PATH:$HOME/.sdk_dir/flutter/bin
 export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 
@@ -46,3 +44,11 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # python bin
 export PATH="$PATH":"$HOME/.local/bin"
+
+# pnpm
+export PNPM_HOME="/home/raihan/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

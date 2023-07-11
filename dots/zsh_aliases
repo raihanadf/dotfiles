@@ -13,6 +13,7 @@ alias q="exit"
 alias man="man -P \"sh -c 'col -b | nvim -c \\\"set ft=man nomod nolist\\\" -'\""
 alias nnn='nnn -de'
 alias sizedir="du -h --max-depth=1"
+alias npm="pnpm"
 
 # edit config
 alias zshalias="vi ~/.zsh_aliases"
@@ -25,6 +26,7 @@ alias nvimconfig="vi ~/.config/nvim/init.lua"
 alias vi="nvim" # neovim
 alias isw="sudo isw" # ice sealead wyvern on github
 alias pomo="spt -e 'aplay $HOME/Music/alarm.wav'" # suckless' spt
+alias cat="batcat"
 
 # directories
 alias ..="cd .."
@@ -67,6 +69,7 @@ alias record="gpu-screen-recorder -w screen -c mp4 -f 60 -a "$(pactl get-default
 
 # make dir and then cd into it
 mkcd () { mkdir -p -- "$1" && cd -P -- "$1" }
+batcat () { if command -v bat >/dev/null 2>&1; then bat "$@"; else cat "$@"; fi }
 
 # git zip
 alias gitzip="git archive HEAD -o ${PWD##*/}.zip"

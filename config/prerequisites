@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 # initial install
-sudo pacman -Syyuu zsh neovim bat base-devel pulseaudio pamixer lxappearance brightnessctl ranger redshift flameshot alsa-utils alsa-plugins alsa-lib lxrandr-gtk3
+sudo pacman -Syyuu zsh neovim bat base-devel pulseaudio pamixer lxappearance brightnessctl ranger redshift flameshot alsa-utils alsa-plugins alsa-lib lxrandr-gtk3 dunst xsel unzip unrar libnotify rofi dmenu
+
 
 # switch to zsh
 chsh -s $(which zsh)

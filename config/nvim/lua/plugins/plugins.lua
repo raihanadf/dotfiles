@@ -54,8 +54,8 @@ return packer.startup(function(use)
     cmd = 'require("plugins.commands").treesitter',
     config = "require('plugins.settings.treesitter')",
   })                                                                                                        -- syntax highlighting
-  use({ "declancm/cinnamon.nvim", event = "BufWinEnter", config = "require('plugins.settings.cinnamon')" }) -- smooth scrolling cuy
-  -- use({ "terrortylor/nvim-comment", event = "BufWinEnter", config = "require('plugins.settings.comment')" }) -- nvim comment
+  -- use({ "declancm/cinnamon.nvim", event = "BufWinEnter", config = "require('plugins.settings.cinnamon')" }) -- smooth scrolling cuy
+  use({ "terrortylor/nvim-comment", event = "BufWinEnter", config = "require('plugins.settings.comment')" }) -- nvim comment
   use({
     "numToStr/Comment.nvim",
     event = "BufWinEnter",
@@ -180,9 +180,6 @@ return packer.startup(function(use)
   -------------------------------------------------------------------
   -- color schemes
   use({ "nyoom-engineering/oxocarbon.nvim" })
-  use({ "rebelot/kanagawa.nvim" })
-  use({ "olimorris/onedarkpro.nvim" })
-  use({ "rockyzhang24/arctic.nvim", branch = 'v2', requires = { 'rktjmp/lush.nvim' } })
 
   -- external language specific lsp
   use({ "akinsho/flutter-tools.nvim" })

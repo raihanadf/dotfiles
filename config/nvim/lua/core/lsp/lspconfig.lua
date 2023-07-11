@@ -48,7 +48,7 @@ for _, sign in ipairs(signs) do
 end
 
 local config = {
-  virtual_text = false, -- disable virtual text
+  virtual_text = true, -- disable virtual text
   signs = {
     active = signs, -- show signs
   },
@@ -70,7 +70,6 @@ vim.diagnostic.config(config)
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
   border = "rounded",
 })
-
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
   border = "rounded",
 })
@@ -94,6 +93,9 @@ local server_setting = {
 
   -- markdown
   "texlab",
+
+  -- python
+  "pyright"
 
 }
 

@@ -67,6 +67,8 @@ vskeymap("gc", ":CommentToggle<cr>")
 
 -----------------------------------------------------------------
 -- nkeymap [[ normal noremap keybinds ]]
+nrkeymap(",s", ":split<CR>")
+nrkeymap(",v", ":vsplit<CR>")
 ---- move to split window (mapped to h,j,k,l)
 nrkeymap("<c-h>", "<c-w>h")
 nrkeymap("<c-j>", "<c-w>j")
