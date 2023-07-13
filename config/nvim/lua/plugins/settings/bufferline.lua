@@ -6,7 +6,7 @@ end
 
 bufferline.setup({
 	options = {
-		buffer_close_icon = "",
+		buffer_close_icon = "",
 		modified_icon = "",
 		show_close_icon = false,
 		left_trunc_marker = "",
