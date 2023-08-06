@@ -29,7 +29,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # android sdk
-export ANDROID_HOME=$HOME/.sdk_dir/Android/SDK
+export ANDROID_HOME=$HOME/.sdk_dir/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools/
 export PATH=$PATH:$ANDROID_HOME/build-tools/
@@ -42,7 +42,7 @@ export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 # pub cache
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
-# python bin
+# everything-i-guess bin
 export PATH="$PATH":"$HOME/.local/bin"
 
 # pnpm

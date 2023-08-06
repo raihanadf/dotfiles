@@ -9,4 +9,5 @@ robbyrussell/oh-my-zsh path:plugins/git
 zsh-users/zsh-autosuggestions
 qoomon/zsh-lazyload
 zdharma-continuum/fast-syntax-highlighting
-kutsan/zsh-system-clipboard
+# kutsan/zsh-system-clipboard
+jeffreytse/zsh-vi-mode

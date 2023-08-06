@@ -1,14 +1,6 @@
 #!/bin/bash
 
-# kill all udiskie instances
-if pgrep -x "udiskie" >/dev/null;
-then
-    killall -q udiskie
-fi
-
 redshift -P -O 5500K
-dunst &
-udiskie &
 
 dunstify "Welcome!"
 
