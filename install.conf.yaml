@@ -17,6 +17,7 @@
     ~/.zsh_exports: dots/zsh_exports
     ~/.tmux.conf: dots/tmux.conf
     ~/.Xresources: dots/Xresources
+    ~/.xinitrc: dots/xinitrc
 
     # sxhkd
     ~/.config/sxhkd:

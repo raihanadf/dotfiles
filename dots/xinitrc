@@ -1,0 +1,22 @@
+#!/bin/sh
+
+prime-offload &
+
+session=${1:-dwm}
+
+xrdb -load ~/.Xresources
+flameshot &
+dunst &
+
+$HOME/.dotfiles/scripts/autostart.sh &
+$HOME/.dotfiles/scripts/batteryCheck.sh &
+$HOME/.dotfiles/scripts/udiskie.sh.sh &
+$HOME/.dotfiles/scripts/toggle-touchpad.sh &
+
+case $session in
+    dwm               ) exec dwm;;
+    # No known session, try to run it as command
+    *                 ) exec $1;;
+esac
+
+sudo prime-switch
