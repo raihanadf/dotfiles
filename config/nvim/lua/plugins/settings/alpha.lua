@@ -36,10 +36,10 @@ local function button(sc, txt, keybind, keybind_opts)
 end
 
 dashboard.section.buttons.val = {
-	button("Leader + e", "  Open File Explorer", ":NvimTreeToggle<cr>"),
+	button("Leader + e", "󰱼  Open File Explorer", ":NvimTreeToggle<cr>"),
 	button("Leader + tt", "  Open Terminal", ":ToggleTerm<cr>"),
 	button("Ctrl + p", "  Find File", ":Telescope find_files <cr>"),
-	button("q", "  Quit", ":qa<cr>"),
+	button("q", "  Quit", ":qa<cr>"),
 }
 
 local heading = {
