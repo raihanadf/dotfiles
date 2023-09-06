@@ -24,7 +24,7 @@ This repo is a collection of my dotfiles. I mainly develop/study for Android <i>
 <br/>
 <br/>
 
-## Init
+## Initial Setup
 
 ```shell script
 
@@ -32,10 +32,10 @@ This repo is a collection of my dotfiles. I mainly develop/study for Android <i>
 email="<your email>"
 ssh-keygen -t ed25519 -C "${email}"
 
-# clone and make a new directory
+# clone and make a new directory (for me)
 git clone git@github.com:raihanadf/dotfiles.git ~/.dotfiles
 
-# install
+# install (you better not do this)
 cd ~/.dotfiles
 ./install
 
@@ -54,8 +54,19 @@ some information about my setup:
 - Login Manager: [sddm](https://wiki.archlinux.org/title/SDDM)
 - Editor: [nvim](https://github.com/neovim/neovim)
 
+## Issues on my main machine
+
+- June 20ish 2023
+  - adb starts freaking out gpu (turning on off, back and forth)
+    - (was) fixed by an update around april and came back after i reset my laptop setup
+    - (is happening) from around 2022
+    - strace indicates nothing wrong
+    - journalctl and dmesg only shows xhci_hcd as the main reason why it causes it
+  - dwm cool_autostart patch *SIGTERM signal doesn't kill all running bash scripts for some reason
+    - maybe systemd causes it
+  - possible solution:
+    - downgrade all packages to specific date (05/06/2023 or 20/06/2023)
+    - ^might break the setup
+
+
 <br/>
-
-## Little Notes
-
-might break your own system, pay attention to what youre going to do 

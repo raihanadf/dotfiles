@@ -2,10 +2,11 @@
 
 redshift -P -O 5500K
 
+dunst & 
 dunstify "Welcome!"
 
 # colours
-black=#1a1a1a
+black=#161616
 pink=#ffc2d0
 peach=#fad5d5
 red=#f92672
@@ -55,10 +56,9 @@ clock() {
 pomo() {
   if pgrep -x "spt" >/dev/null;
   then
-		printf " ^c$white^ POMO ^b$black^"
+		printf " ^c$white^  ^b$black^ "
   fi
 }
-
 
 adb() {
   if pgrep -x "adb" >/dev/null;

@@ -86,7 +86,7 @@ local server_setting = {
   "html",
   -- "tailwindcss",
   "tsserver",
-  "rome",
+  -- "rome",
 
   -- php
   "intelephense",

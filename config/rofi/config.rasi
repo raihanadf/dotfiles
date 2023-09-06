@@ -7,8 +7,8 @@ configuration {
   display-run: "   Run ";
   display-drun: " 󰀻   Apps ";
   display-window: "      Window";
-  display-filebrowser: " 󰱼   File Browser";
-  modes: [ drun, window, filebrowser ];
+  display-filebrowser: " 󰱼   File";
+  modes: [ drun, filebrowser ];
   sidebar-mode: true;
 }
 
