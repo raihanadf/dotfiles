@@ -17,7 +17,7 @@ M.setup = function(on_attach, capabilities)
     },
     closing_tags = {
       -- highlight = "Special",
-      prefix = " -- ",
+      prefix = " -- /",
     },
     dev_log = {
       open_cmd = "tabnew",

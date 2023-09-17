@@ -53,7 +53,7 @@ return packer.startup(function(use)
     event = "BufRead",
     cmd = 'require("plugins.commands").treesitter',
     config = "require('plugins.settings.treesitter')",
-  })                                                                                                        -- syntax highlighting
+  }) -- syntax highlighting
   -- use({ "declancm/cinnamon.nvim", event = "BufWinEnter", config = "require('plugins.settings.cinnamon')" }) -- smooth scrolling cuy
   use({ "terrortylor/nvim-comment", event = "BufWinEnter", config = "require('plugins.settings.comment')" }) -- nvim comment
   use({
@@ -180,6 +180,7 @@ return packer.startup(function(use)
   -------------------------------------------------------------------
   -- color schemes
   use({ "nyoom-engineering/oxocarbon.nvim" })
+  use({ "Mofiqul/vscode.nvim" })
 
   -- external language specific lsp
   use({ "akinsho/flutter-tools.nvim" })

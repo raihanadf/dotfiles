@@ -95,9 +95,15 @@ nrkeymap("<c-u>cp", ":PackerCompile<CR>")
 
 ---- telescope
 nrkeymap("<c-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>")
-nrkeymap("<leader>bf", "<cmd>lua require('telescope.builtin').buffers()<cr>")
-nrkeymap("<leader>mp", "<cmd>lua require('telescope.builtin').man_pages()<cr>")
-nrkeymap("<leader>fm", "<cmd>lua require('telescope').extensions.flutter.commands()<cr>")
+nrkeymap("<leader>p", "<cmd>lua require('telescope.builtin').buffers()<cr>")
+nskeymap("<leader>s", "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>") -- live grep
+nskeymap("<leader>ss", "<cmd>lua require('telescope.builtin').live_grep()<cr>") -- live grep
+nrkeymap("<leader>fmp", "<cmd>lua require('telescope.builtin').man_pages()<cr>")
+nrkeymap("<leader>ffm", "<cmd>lua require('telescope').extensions.flutter.commands()<cr>")
+nskeymap("<leader>ffb", ":FlutterRun<CR>") -- Run Project
+nskeymap("<leader>ffr", ":FlutterRestart<CR>") -- Restart Project
+nskeymap("<leader>ffh", ":FlutterReload<CR>") -- Reload Project
+-----------------------------------------------------------------
 
 ---- nvim tree
 nrkeymap("<leader>e", ":NvimTreeToggle<cr>")
@@ -132,11 +138,6 @@ vrkeymap("H", "<S-j>")
 ---- toggle trouble
 nskeymap("<leader>tr", ":TroubleToggle<CR>")
 
--------------------------- Flutter ------------------------------
-nskeymap("<leader>fb", ":FlutterRun<CR>") -- Run Project
-nskeymap("<leader>fr", ":FlutterRestart<CR>") -- Restart Project
-nskeymap("<leader>fh", ":FlutterReload<CR>") -- Reload Project
------------------------------------------------------------------
 
 -- required/import binding
 -- require("keybinds.tablike") -- deprecated maybe
