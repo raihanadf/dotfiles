@@ -1,6 +1,6 @@
 #!/bin/bash
 
-redshift -P -O 5500K
+redshift -P -O 4500K
 
 dunst & 
 dunstify "Welcome!"
@@ -67,6 +67,13 @@ adb() {
   fi
 }
 
+bluetooth() {
+  mouse="$(upower -i $(upower -e | grep -E 'mouse|pointer' | head -n 1) | awk -F': ' '/percentage:/ {print $2}' | tr -d '%' | grep -o '[0-9]*' | sed '/^$/d')"
+  if [ -n "$mouse" ]; then
+    printf "[$mouse] "
+  fi
+}
+
 while true; do
-  sleep 1 && xsetroot -name "$(adb) $(wifi) $(clock) $(pomo) $(battery)"
+  sleep 1 && xsetroot -name "$(bluetooth)$(adb) $(wifi) $(clock) $(pomo) $(battery)"
 done
