@@ -10,5 +10,8 @@
         "teardown",
         "open_nvim_tree",
         "Path"
+    ],
+    "diagnostics.disable": [
+        "missing-fields"
     ]
 }

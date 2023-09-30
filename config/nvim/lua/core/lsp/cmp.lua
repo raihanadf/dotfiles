@@ -62,7 +62,7 @@ cmp.setup({
 			cmp.TriggerEvent.InsertEnter,
 		},
 		completeopt = "noinsert,noselect,menuone",
-		keyword_length = 3,
+		keyword_length = 2,
 	},
 	duplicates = {
 		nvim_lsp = 1,

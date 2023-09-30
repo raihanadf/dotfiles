@@ -54,8 +54,8 @@ return packer.startup(function(use)
     cmd = 'require("plugins.commands").treesitter',
     config = "require('plugins.settings.treesitter')",
   }) -- syntax highlighting
-  -- use({ "declancm/cinnamon.nvim", event = "BufWinEnter", config = "require('plugins.settings.cinnamon')" }) -- smooth scrolling cuy
   use({ "terrortylor/nvim-comment", event = "BufWinEnter", config = "require('plugins.settings.comment')" }) -- nvim comment
+  use({ "echasnovski/mini.animate", event = "BufWinEnter", config = "require('plugins.settings.mini-animate')" })
   use({
     "numToStr/Comment.nvim",
     event = "BufWinEnter",
@@ -180,6 +180,7 @@ return packer.startup(function(use)
   -------------------------------------------------------------------
   -- color schemes
   use({ "nyoom-engineering/oxocarbon.nvim" })
+  use({ "cpea2506/one_monokai.nvim" })
   use({ "Mofiqul/vscode.nvim" })
 
   -- external language specific lsp
