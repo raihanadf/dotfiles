@@ -29,23 +29,7 @@ antibody bundle < ~/.dotfiles/dots/zsh_plugins
 [[ ! -f ~/.dotfiles/dots/p10k.zsh ]] || source ~/.dotfiles/dots/p10k.zsh
 [ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
 [ -f ~/.zsh_exports ] && source ~/.zsh_exports
-source "/usr/share/fzf/key-bindings.zsh"
-source "/usr/share/fzf/completion.zsh"
-
-# pnpm
-export PNPM_HOME="/home/raihan/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
-# bun completions
-[ -s "/home/raihan/.bun/_bun" ] && source "/home/raihan/.bun/_bun"
 
 # end
-fortune | cowsay
+fortune -s | cowsay -f dragon-and-cow
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
