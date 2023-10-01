@@ -10,7 +10,7 @@ alias pls='sudo $(fc -ln -1)'
 alias open="xdg-open"
 alias c="clear"
 alias q="exit"
-alias man="man -P \"sh -c 'col -b | nvim -c \\\"set ft=man nomod nolist\\\" -'\""
+# alias man="man -P \"sh -c 'col -b | nvim -c \\\"set ft=man nomod nolist\\\" -'\""
 alias nnn='nnn -de'
 alias sizedir="du -h --max-depth=1"
 alias npm="pnpm"

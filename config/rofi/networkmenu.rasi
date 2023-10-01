@@ -1,5 +1,5 @@
 configuration {
-	font:					"SF Pro Display Medium 14";
+	font:					"SF Display Bold 10";
   show-icons:                     true;
 	icon-theme: 					"Papirus";
   display-drun: 					"";

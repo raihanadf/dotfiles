@@ -1,6 +1,6 @@
 configuration {
   modi: "run,drun,window";
-  font: "SF Display Bold 12";
+  font: "SF Display Bold 10";
   show-icons: true;
   display-drun: "";
   drun-display-format: "{name}";
@@ -28,7 +28,7 @@ configuration {
 window {
   border:             3px 3px 3px 3px;
   border-color:                   @bga;
-  width: 30%;
+  width: 40%;
   padding: 10px;
 }
 
@@ -54,10 +54,10 @@ inputbar {
 }
 
 listview {
-  columns: 4;
+  columns: 6;
   lines: 3;
   spacing: 0%;
-  cycle: false;
+  cycle: true;
   dynamic: true;
   layout: vertical;
 }
@@ -76,7 +76,7 @@ element {
 }
 
 element-icon {
-  size: 5%;
+  size: 4%;
   border: 0px;
   horizontal-align: 0.5;
 }
