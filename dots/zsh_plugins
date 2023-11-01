@@ -1,5 +1,5 @@
 # theme
-romkatv/powerlevel10k
+# romkatv/powerlevel10k
 
 # git aliases
 robbyrussell/oh-my-zsh path:lib/git.zsh

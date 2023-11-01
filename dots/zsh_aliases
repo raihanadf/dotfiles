@@ -90,3 +90,4 @@ alias myip="ip -o -4 addr list wlo1 | awk '{print $4}' | cut -d/ -f1"
 # fun stuff
 alias chat="sgpt"
 alias minecraft="prime-run gamemoderun java -jar $HOME/Documents/Minecraft.jar"
+alias words="fortune -s | cowsay -f tux"

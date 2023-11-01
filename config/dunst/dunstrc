@@ -63,7 +63,7 @@
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 0
+    separator_height = 3
 
     # Padding between text and separator.
     padding = 15
@@ -87,7 +87,7 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = frame
+    separator_color = "#1c1c1c"
 
     # Sort messages by urgency.
     sort = yes
@@ -101,7 +101,7 @@
 
 # Text 
 
-    font = SF Display Pro 12
+    font = Scientifica 14
     line_height = 0
     markup = full
     format = "<b>%s</b>\n%b"

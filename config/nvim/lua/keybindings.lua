@@ -69,11 +69,13 @@ vskeymap("gc", ":CommentToggle<cr>")
 -- nkeymap [[ normal noremap keybinds ]]
 nrkeymap(",s", ":split<CR>")
 nrkeymap(",v", ":vsplit<CR>")
+
 ---- move to split window (mapped to h,j,k,l)
 nrkeymap("<c-h>", "<c-w>h")
 nrkeymap("<c-j>", "<c-w>j")
 nrkeymap("<c-k>", "<c-w>k")
 nrkeymap("<c-l>", "<c-w>l")
+
 ---- lsp keymap
 nskeymap("<c-S-i>", ":lua vim.lsp.buf.format { async = true }<cr>")
 nskeymap("gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
@@ -88,6 +90,9 @@ nrkeymap("gk", ":lua vim.lsp.buf.hover()<cr>")
 nrkeymap("<c-s>", ":lua vim.lsp.buf.signature_help()<cr>")
 nrkeymap("gr", ":lua vim.lsp.buf.code_action()<cr>")
 nrkeymap("<leader>gr", ":lua vim.lsp.buf.rename()<cr>")
+
+---- git keymap --> highlight
+nrkeymap("<leader>hb", ":Gitsigns blame_line<cr>")
 
 ---- update packer plugins
 nrkeymap("<c-u><c-p>", ":PackerSync<CR>")

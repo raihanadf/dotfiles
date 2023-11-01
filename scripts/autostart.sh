@@ -63,7 +63,7 @@ pomo() {
 adb() {
   if pgrep -x "adb" >/dev/null;
   then
-		printf " ^c$white^ 󰀲 ^b$black^ "
+		printf " ^c$white^󰀲^b$black^ "
   fi
 }
 

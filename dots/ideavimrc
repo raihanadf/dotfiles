@@ -27,4 +27,5 @@ nnoremap [[ :action MethodUp<CR>
 nnoremap ]] :action MethodDown<CR>
 
 nnoremap <leader>r :action IdeaVim.ReloadVimRc.reload<CR>
+nnoremap \w :wq<CR>
 nnoremap \e :e ~/.ideavimrc<CR>

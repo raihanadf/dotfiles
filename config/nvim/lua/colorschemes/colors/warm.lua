@@ -4,10 +4,10 @@ function M.get_colors()
   return {
     comment = "#606372",
     contrast = "#1a1a1a",
-    background = "#121212",
-    bgfixed = "#121212",
+    background = "#050505",
+    bgfixed = "#050505",
     foreground = "#dfdee0",
-    cursorline = "#18181a",
+    cursorline = "#101010",
     cursor = "#dfdee0",
     color0 = "#212126",
     color1 = "#da696d",

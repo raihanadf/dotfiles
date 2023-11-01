@@ -1,13 +1,11 @@
+format = '''
+\[$username$hostname $directory$git_branch$git_commit$git_state$git_status\]\$ '''
+
+scan_timeout = 10
 add_newline = false
 
 [line_break]
 disabled = true
-
-[character]
-# this is kinda edgy ig
-#success_symbol = "[](bold green)"
-#error_symbol = "[](bold red)"
-#vicmd_symbol = "[](bold blue)"
 
 [username]
 style_user = "yellow bold"
@@ -18,8 +16,12 @@ show_always = true
 [package]
 disabled = false
 
+[hostname]
+ssh_only = false
+format = '@ [$hostname](bold red) '
+
 [directory]
-read_only = "  "
+read_only = " "
 style = "bold blue"
 truncation_length = 2
 truncation_symbol = "./"

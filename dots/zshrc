@@ -2,9 +2,9 @@
 # --- start up ---
 
 ## p10k
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # --- history ---
 HISTFILE=~/.zsh_hist
@@ -31,5 +31,4 @@ antibody bundle < ~/.dotfiles/dots/zsh_plugins
 [ -f ~/.zsh_exports ] && source ~/.zsh_exports
 
 # end
-fortune -s | cowsay -f dragon-and-cow
-
+eval "$(starship init zsh)"

@@ -65,6 +65,22 @@ local spaces = function()
   return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
 
+local lsp_progress = function()
+	if #vim.lsp.buf_get_clients() == 0 then
+		return ""
+	end
+
+	local lsp = vim.lsp.util.get_progress_messages()[1]
+	if lsp then
+		local name = lsp.name or ""
+		local msg = lsp.message or ""
+		local percentage = lsp.percentage or 0
+		local title = lsp.title or ""
+		return string.format(" %%<%s: %s %s (%s%%%%) ", name, title, msg, percentage)
+	end
+	return ""
+end
+
 lualine.setup({
   options = {
     icons_enabled = true,
@@ -77,7 +93,7 @@ lualine.setup({
   sections = {
     lualine_a = { branch, diagnostics },
     lualine_b = { mode },
-    lualine_c = { "searchcount" },
+    lualine_c = { "searchcount", lsp_progress },
     -- lualine_x = { "encoding", "fileformat", "filetype" },
     lualine_x = { diff, spaces, "encoding", filetype },
     lualine_y = { location },
