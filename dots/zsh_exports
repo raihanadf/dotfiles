@@ -19,7 +19,6 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 
 # dart
 export PATH="$PATH:/usr/lib/dart/bin"
-echo 'export PATH="$PATH:/usr/lib/dart/bin"' >> ~/.profile
 
 # gpg
 export GPG_TTY=$TTY
@@ -63,3 +62,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # bun completions
 [ -s "/home/raihan/.bun/_bun" ] && source "/home/raihan/.bun/_bun"
 
+# nnn
+export NNN_PLUG='f:finder;o:fzopen;p:mocq;d:diffs;t:nmount;v:imgview'

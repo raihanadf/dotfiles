@@ -1,13 +1,15 @@
 # theme
-# romkatv/powerlevel10k
+romkatv/powerlevel10k
 
 # git aliases
-robbyrussell/oh-my-zsh path:lib/git.zsh
-robbyrussell/oh-my-zsh path:plugins/git
+robbyrussell/oh-my-zsh path:lib/git.zsh kind:defer
+robbyrussell/oh-my-zsh path:plugins/git kind:defer
 
 # etc
-zsh-users/zsh-autosuggestions
-qoomon/zsh-lazyload
-zdharma-continuum/fast-syntax-highlighting
+zsh-users/zsh-autosuggestions kind:defer
+zdharma-continuum/fast-syntax-highlighting kind:defer
+zsh-users/zsh-history-substring-search kind:defer
+
 # kutsan/zsh-system-clipboard
-jeffreytse/zsh-vi-mode
+jeffreytse/zsh-vi-mode kind:defer
+

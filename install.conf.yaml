@@ -15,6 +15,7 @@
     ~/.p10k.zsh: dots/p10k.zsh
     ~/.zsh_aliases: dots/zsh_aliases
     ~/.zsh_exports: dots/zsh_exports
+    ~/.zsh_plugins.txt: dots/zsh_plugins
     ~/.tmux.conf: dots/tmux.conf
     ~/.Xresources: dots/Xresources
     ~/.xinitrc: dots/xinitrc

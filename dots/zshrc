@@ -1,10 +1,10 @@
 # --- Created by raihan for 5.8 ---
 # --- start up ---
 
-## p10k
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
+# p10k
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # --- history ---
 HISTFILE=~/.zsh_hist
@@ -21,9 +21,9 @@ else
 	compinit -C;
 fi;
 
-# --- antibody ---
-source <(antibody init)
-antibody bundle < ~/.dotfiles/dots/zsh_plugins
+# --- antidote ---
+source $HOME/.antidote/antidote.zsh
+antidote load
 
 # --- imports ---
 [[ ! -f ~/.dotfiles/dots/p10k.zsh ]] || source ~/.dotfiles/dots/p10k.zsh
@@ -31,4 +31,4 @@ antibody bundle < ~/.dotfiles/dots/zsh_plugins
 [ -f ~/.zsh_exports ] && source ~/.zsh_exports
 
 # end
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
