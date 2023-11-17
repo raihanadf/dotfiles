@@ -56,6 +56,7 @@ return packer.startup(function(use)
   }) -- syntax highlighting
   use({ "terrortylor/nvim-comment", event = "BufWinEnter", config = "require('plugins.settings.comment')" }) -- nvim comment
   use({ "echasnovski/mini.animate", event = "BufWinEnter", config = "require('plugins.settings.mini-animate')" })
+  use { 'echasnovski/mini.map', branch = 'stable', event = "BufWinEnter", config = "require('plugins.settings.mini-map')" }
   use({
     "numToStr/Comment.nvim",
     event = "BufWinEnter",

@@ -113,6 +113,9 @@ nskeymap("<leader>ffh", ":FlutterReload<CR>") -- Reload Project
 ---- nvim tree
 nrkeymap("<leader>e", ":NvimTreeToggle<cr>")
 
+---- mini map
+nrkeymap("<leader>m", ":lua MiniMap.toggle()<cr>")
+
 ---- restart neovim / source file
 nskeymap("<leader>sv", ":luafile ~/.config/nvim/init.lua<cr>")
 nskeymap("<leader>so", ":so %<CR>")
