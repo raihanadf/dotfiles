@@ -40,17 +40,17 @@ battery() {
   if [[ $charging = "0" ]]; then
 
 	if [[ $battery > "15" ]]; then
-		printf "^c$blue^󱀝 ^c$white^ $battery󱉸"
+		printf "^c$blue^󱀝^c$white^ $battery󱉸"
 	else
-    printf "^c$red^󱀝 ^c$white^ $battery󱉸"
+    printf "^c$red^󱀝^c$white^ $battery󱉸"
 	fi
 	 else
-		printf "^c$red^󱢠 ^c$white^ $battery󱉸"
+		printf "^c$red^󱢠^c$white^ $battery󱉸"
   fi
 }
 
 clock() {
-	printf "^c$white^^b$black^$(date '+%A %I:%M %p')"
+	printf "^c$white^^b$black^$(date '+%A %I:%M %p') "
 }
 
 pomo() {
@@ -75,5 +75,5 @@ bluetooth() {
 }
 
 while true; do
-  sleep 1 && xsetroot -name "$(bluetooth)$(adb) $(wifi) $(clock) $(pomo) $(battery)"
+  sleep 1 && xsetroot -name "$(bluetooth)$(adb)$(wifi)$(clock)$(pomo)$(battery)"
 done
