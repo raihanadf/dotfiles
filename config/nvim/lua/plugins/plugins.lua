@@ -42,10 +42,10 @@ packer.init({
 -- plugins disini
 return packer.startup(function(use)
   ----------------------- general plugins ---------------------------
-  use("wbthomason/packer.nvim")    -- packer itself
+  use("wbthomason/packer.nvim")   -- packer itself
   use("lewis6991/impatient.nvim")
   use({ "nvim-lua/plenary.nvim" }) -- stdlib
-  use("nvim-lua/popup.nvim")       -- popup api
+  use("nvim-lua/popup.nvim")      -- popup api
   use({
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
@@ -53,10 +53,15 @@ return packer.startup(function(use)
     event = "BufRead",
     cmd = 'require("plugins.commands").treesitter',
     config = "require('plugins.settings.treesitter')",
-  }) -- syntax highlighting
+  })                                                                                                        -- syntax highlighting
   use({ "terrortylor/nvim-comment", event = "BufWinEnter", config = "require('plugins.settings.comment')" }) -- nvim comment
   use({ "echasnovski/mini.animate", event = "BufWinEnter", config = "require('plugins.settings.mini-animate')" })
-  use { 'echasnovski/mini.map', branch = 'stable', event = "BufWinEnter", config = "require('plugins.settings.mini-map')" }
+  use({
+    "echasnovski/mini.map",
+    branch = "stable",
+    event = "BufWinEnter",
+    config = "require('plugins.settings.mini-map')",
+  })
   use({
     "numToStr/Comment.nvim",
     event = "BufWinEnter",
@@ -64,7 +69,7 @@ return packer.startup(function(use)
       require("Comment").setup()
     end,
   })
-  use({ "windwp/nvim-autopairs", config = "require('plugins.settings.autopairs')", after = "nvim-cmp" })          -- autopairs
+  use({ "windwp/nvim-autopairs", config = "require('plugins.settings.autopairs')", after = "nvim-cmp" })         -- autopairs
   use({ "norcalli/nvim-colorizer.lua", config = "require('plugins.settings.colorizer')", event = { "UIEnter" } }) -- colorizer
   use({ "stevearc/dressing.nvim", event = "UIEnter" })
   ------------------------------- ^core ------------------------------
@@ -77,7 +82,7 @@ return packer.startup(function(use)
     config = "require('plugins.settings.bufferline')",
   })
   use({ "mrjones2014/smart-splits.nvim", event = "UIEnter" }) -- buat ngesplit sama resize mantap
-  use({ "moll/vim-bbye", event = "UIEnter" })                 -- bye bye buffer, biar gak ikutan keclose yg laen
+  use({ "moll/vim-bbye", event = "UIEnter" })                -- bye bye buffer, biar gak ikutan keclose yg laen
   use({
     "goolord/alpha-nvim",
     requires = { "kyazdani42/nvim-web-devicons" },
@@ -87,14 +92,14 @@ return packer.startup(function(use)
     },
     event = "BufWinEnter",
     config = "require('plugins.settings.alpha')",
-  })                                                                                                           -- fancy startup
+  })                                                                                                          -- fancy startup
   use({ "nvim-tree/nvim-tree.lua", cmd = "NvimTreeToggle", config = "require('plugins.settings.nvim-tree')" }) -- nvim treeee
   use({ "akinsho/toggleterm.nvim", config = "require('plugins.settings.toggleterm')", event = "BufWinEnter" }) -- toggle term
   use({
     "nvim-telescope/telescope.nvim",
     config = "require('plugins.settings.telescope')",
     module = "telescope",
-  })                                                                    -- telescopeeeee
+  })                                                                   -- telescopeeeee
   use({ "lukas-reineke/indent-blankline.nvim", event = "BufWinEnter" }) -- indenting line
   use({
     "lewis6991/gitsigns.nvim",
@@ -109,11 +114,12 @@ return packer.startup(function(use)
     requires = { "kyazdani42/nvim-web-devicons", opt = true },
   })
   use({
-    'samodostal/image.nvim',
+    "samodostal/image.nvim",
     event = "UIEnter",
     config = "require('plugins.settings.image')",
     requires = {
-      'nvim-lua/plenary.nvim', 'm00qek/baleia.nvim'
+      "nvim-lua/plenary.nvim",
+      "m00qek/baleia.nvim",
     },
   })
   use({
@@ -127,11 +133,11 @@ return packer.startup(function(use)
       require("barbecue").setup()
     end,
   })
-  use({ 'Bekaboo/deadcolumn.nvim', event = { "UIEnter" } })
+  use({ "Bekaboo/deadcolumn.nvim", event = { "UIEnter" } })
   -------------------------------- ^ui ------------------------------
 
   use({ "andweeb/presence.nvim", event = { "UIEnter" }, config = "require('plugins.settings.presence')" }) -- pamer neovim di discord
-  use({ "Darazaki/indent-o-matic", event = { "UIEnter" } })                                                -- pamer neovim di discord
+  use({ "Darazaki/indent-o-matic", event = { "UIEnter" } })                                               -- pamer neovim di discord
 
   ------------------------------- ^misc ------------------------------
   -------------------------------------------------------------------
@@ -163,12 +169,6 @@ return packer.startup(function(use)
 
   -- something
   use({
-    "jose-elias-alvarez/null-ls.nvim",
-    event = "BufWinEnter",
-    after = "nvim-lspconfig",
-    config = "require('core.lsp.null-ls')",
-  })
-  use({
     "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
     event = "BufWinEnter",
@@ -189,15 +189,15 @@ return packer.startup(function(use)
   use({ "lervag/vimtex", event = "BufWinEnter" })
 
   -- session and project
-  use {
-    'rmagatti/auto-session',
+  use({
+    "rmagatti/auto-session",
     config = function()
-      require("auto-session").setup {
+      require("auto-session").setup({
         log_level = "error",
         auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
-      }
-    end
-  }
+      })
+    end,
+  })
   -------------------------------------------------------------------
 
   -- automatis setup config abis clone packer.nvim

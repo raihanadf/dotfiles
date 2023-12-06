@@ -9,27 +9,27 @@ local silent = { silent = true }
 -- keymap functions
 ---- normal mode noremap
 local function nrkeymap(key, map)
-	keybind("n", key, map, noremap)
+  keybind("n", key, map, noremap)
 end
 
 ---- normal and silent map
 local function nskeymap(key, map)
-	keybind("n", key, map, silent)
+  keybind("n", key, map, silent)
 end
 
 ---- visual and noremap
 local function vrkeymap(key, map)
-	keybind("v", key, map, noremap)
+  keybind("v", key, map, noremap)
 end
 
 ---- visual and silent map
 local function vskeymap(key, map)
-	keybind("v", key, map, silent)
+  keybind("v", key, map, silent)
 end
 
 ---- insert and silent map
 local function iskeymap(key, map)
-	keybind("i", key, map, silent)
+  keybind("i", key, map, silent)
 end
 
 -----------------------------------------------------------------
@@ -63,12 +63,13 @@ nskeymap("<leader>l", ":nohlsearch<cr>")
 ---- nvim commenter
 vskeymap("gc", ":CommentToggle<cr>")
 -- iskeymap("gc", "<ESC>:CommentToggle<cr>")
+
+nskeymap("<leader>\"", ":split<CR>")
+nskeymap("<leader>%", ":vsplit<CR>")
 -----------------------------------------------------------------
 
 -----------------------------------------------------------------
 -- nkeymap [[ normal noremap keybinds ]]
-nrkeymap(",s", ":split<CR>")
-nrkeymap(",v", ":vsplit<CR>")
 
 ---- move to split window (mapped to h,j,k,l)
 nrkeymap("<c-h>", "<c-w>h")
@@ -77,12 +78,12 @@ nrkeymap("<c-k>", "<c-w>k")
 nrkeymap("<c-l>", "<c-w>l")
 
 ---- lsp keymap
-nskeymap("<c-S-i>", ":lua vim.lsp.buf.format { async = true }<cr>")
+nskeymap("<c-i>", ":lua vim.lsp.buf.format({ async = true })<cr>")
 nskeymap("gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
 nrkeymap("gD", ":lua vim.lsp.buf.declaration()<cr>")
 nrkeymap("gi", ":lua vim.lsp.buf.implementation()<cr>")
 nrkeymap("gl", "<cmd>lua vim.diagnostic.open_float()<CR>")
-nrkeymap("gw", ":lua vim.lsp.buf.document_symbol()<cr>")
+nrkeymap("ge", ":lua vim.lsp.buf.document_symbol()<cr>")
 nrkeymap("gw", ":lua vim.lsp.buf.workspace_symbol()<cr>")
 nrkeymap("<leader>rr", ":lua vim.lsp.buf.references()<cr>")
 nrkeymap("gt", ":lua vim.lsp.buf.type_definition()<cr>")
@@ -102,12 +103,12 @@ nrkeymap("<c-u>cp", ":PackerCompile<CR>")
 nrkeymap("<c-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>")
 nrkeymap("<leader>p", "<cmd>lua require('telescope.builtin').buffers()<cr>")
 nskeymap("<leader>s", "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>") -- live grep
-nskeymap("<leader>ss", "<cmd>lua require('telescope.builtin').live_grep()<cr>") -- live grep
+nskeymap("<leader>ss", "<cmd>lua require('telescope.builtin').live_grep()<cr>")                -- live grep
 nrkeymap("<leader>fmp", "<cmd>lua require('telescope.builtin').man_pages()<cr>")
 nrkeymap("<leader>ffm", "<cmd>lua require('telescope').extensions.flutter.commands()<cr>")
-nskeymap("<leader>ffb", ":FlutterRun<CR>") -- Run Project
+nskeymap("<leader>ffb", ":FlutterRun<CR>")     -- Run Project
 nskeymap("<leader>ffr", ":FlutterRestart<CR>") -- Restart Project
-nskeymap("<leader>ffh", ":FlutterReload<CR>") -- Reload Project
+nskeymap("<leader>ffh", ":FlutterReload<CR>")  -- Reload Project
 -----------------------------------------------------------------
 
 ---- nvim tree
@@ -145,7 +146,6 @@ vrkeymap("H", "<S-j>")
 
 ---- toggle trouble
 nskeymap("<leader>tr", ":TroubleToggle<CR>")
-
 
 -- required/import binding
 -- require("keybinds.tablike") -- deprecated maybe

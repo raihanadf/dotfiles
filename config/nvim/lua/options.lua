@@ -1,5 +1,16 @@
 local o = vim.opt
 local g = vim.g
+-- colorscheme
+local colorscheme = "oxocarbon"
+if not core_ok then
+  local ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+  if not ok then
+    vim.cmd("colorscheme desert")
+  end
+  -- additional config
+  -- vim.opt.background = "dark"
+  return
+end
 
 -- settings
 local options = {
