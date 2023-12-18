@@ -7,6 +7,10 @@ end
 bufferline.setup({
 	options = {
 		buffer_close_icon = "",
+		themable = true,
+		indicator = {
+				style = 'icon',
+		},
 		modified_icon = "",
 		show_close_icon = false,
 		left_trunc_marker = "",
@@ -15,7 +19,7 @@ bufferline.setup({
 		offsets = {
 			{
 				filetype = "NvimTree",
-				text = "File Explorer",
+				text = "Explorer",
 				text_align = "center",
 				separator = false,
 			},

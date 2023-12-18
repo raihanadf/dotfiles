@@ -130,7 +130,7 @@ nvim_tree.setup({
 	update_focused_file = { enable = true },
 	hijack_directories = { enable = true },
 	view = {
-		width = 20,
+		width = 25,
 	},
 })
 

@@ -28,6 +28,7 @@ local logo = {
 
 dashboard.section.header.val = logo
 dashboard.section.header.opts.hl = "AlphaHeader"
+
 local function button(sc, txt, keybind, keybind_opts)
 	local b = dashboard.button(sc, txt, keybind, keybind_opts)
 	b.opts.hl = "AlphaButton"
@@ -63,7 +64,7 @@ local opts = {
 	layout = {
 		{ type = "padding", val = 2 },
 		dashboard.section.header,
-		-- { type = "padding", val = 2 },
+		{ type = "padding", val = 2 },
 		-- heading,
 		{ type = "padding", val = 4 },
 		dashboard.section.buttons,

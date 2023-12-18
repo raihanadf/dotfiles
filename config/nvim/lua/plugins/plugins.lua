@@ -42,10 +42,10 @@ packer.init({
 -- plugins disini
 return packer.startup(function(use)
   ----------------------- general plugins ---------------------------
-  use("wbthomason/packer.nvim")   -- packer itself
+  use("wbthomason/packer.nvim")    -- packer itself
   use("lewis6991/impatient.nvim")
   use({ "nvim-lua/plenary.nvim" }) -- stdlib
-  use("nvim-lua/popup.nvim")      -- popup api
+  use("nvim-lua/popup.nvim")       -- popup api
   use({
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
@@ -53,7 +53,7 @@ return packer.startup(function(use)
     event = "BufRead",
     cmd = 'require("plugins.commands").treesitter',
     config = "require('plugins.settings.treesitter')",
-  })                                                                                                        -- syntax highlighting
+  })                                                                                                         -- syntax highlighting
   use({ "terrortylor/nvim-comment", event = "BufWinEnter", config = "require('plugins.settings.comment')" }) -- nvim comment
   use({ "echasnovski/mini.animate", event = "BufWinEnter", config = "require('plugins.settings.mini-animate')" })
   use({
@@ -69,7 +69,7 @@ return packer.startup(function(use)
       require("Comment").setup()
     end,
   })
-  use({ "windwp/nvim-autopairs", config = "require('plugins.settings.autopairs')", after = "nvim-cmp" })         -- autopairs
+  use({ "windwp/nvim-autopairs", config = "require('plugins.settings.autopairs')", after = "nvim-cmp" })          -- autopairs
   use({ "norcalli/nvim-colorizer.lua", config = "require('plugins.settings.colorizer')", event = { "UIEnter" } }) -- colorizer
   use({ "stevearc/dressing.nvim", event = "UIEnter" })
   ------------------------------- ^core ------------------------------
@@ -82,7 +82,7 @@ return packer.startup(function(use)
     config = "require('plugins.settings.bufferline')",
   })
   use({ "mrjones2014/smart-splits.nvim", event = "UIEnter" }) -- buat ngesplit sama resize mantap
-  use({ "moll/vim-bbye", event = "UIEnter" })                -- bye bye buffer, biar gak ikutan keclose yg laen
+  use({ "moll/vim-bbye", event = "UIEnter" })                 -- bye bye buffer, biar gak ikutan keclose yg laen
   use({
     "goolord/alpha-nvim",
     requires = { "kyazdani42/nvim-web-devicons" },
@@ -92,14 +92,14 @@ return packer.startup(function(use)
     },
     event = "BufWinEnter",
     config = "require('plugins.settings.alpha')",
-  })                                                                                                          -- fancy startup
+  })                                                                                                           -- fancy startup
   use({ "nvim-tree/nvim-tree.lua", cmd = "NvimTreeToggle", config = "require('plugins.settings.nvim-tree')" }) -- nvim treeee
   use({ "akinsho/toggleterm.nvim", config = "require('plugins.settings.toggleterm')", event = "BufWinEnter" }) -- toggle term
   use({
     "nvim-telescope/telescope.nvim",
     config = "require('plugins.settings.telescope')",
     module = "telescope",
-  })                                                                   -- telescopeeeee
+  })                                                                    -- telescopeeeee
   use({ "lukas-reineke/indent-blankline.nvim", event = "BufWinEnter" }) -- indenting line
   use({
     "lewis6991/gitsigns.nvim",
@@ -137,7 +137,7 @@ return packer.startup(function(use)
   -------------------------------- ^ui ------------------------------
 
   use({ "andweeb/presence.nvim", event = { "UIEnter" }, config = "require('plugins.settings.presence')" }) -- pamer neovim di discord
-  use({ "Darazaki/indent-o-matic", event = { "UIEnter" } })                                               -- pamer neovim di discord
+  use({ "Darazaki/indent-o-matic", event = { "UIEnter" } })                                                -- pamer neovim di discord
 
   ------------------------------- ^misc ------------------------------
   -------------------------------------------------------------------
@@ -181,6 +181,7 @@ return packer.startup(function(use)
   -------------------------------------------------------------------
   -- color schemes
   use({ "nyoom-engineering/oxocarbon.nvim" })
+  use({ 'olivercederborg/poimandres.nvim' })
   use({ "cpea2506/one_monokai.nvim" })
   use({ "Mofiqul/vscode.nvim" })
 
