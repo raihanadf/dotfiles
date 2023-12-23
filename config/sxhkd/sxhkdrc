@@ -53,6 +53,10 @@ alt + n
 super + alt + {BackSpace,F2,F3}
 	{systemctl poweroff,systemctl reboot,xset dpms force off}
 
+# file manager (using thunar here)
+super + alt + f
+	thunar
+
 # screenshot with gui
 alt + Print
 	flameshot gui
