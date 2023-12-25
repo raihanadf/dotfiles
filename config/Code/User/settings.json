@@ -1,0 +1,127 @@
+{
+    "workbench.startupEditor": "none",
+    "window.menuBarVisibility": "hidden",
+    "editor.smoothScrolling": true,
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.fontFamily": "IosevkaTerm NF",
+    "editor.fontSize": 16,
+    "editor.fontLigatures": true,
+    "editor.tabCompletion": "off",
+    "workbench.activityBar.location": "hidden",
+    "editor.cursorBlinking": "solid",
+    "workbench.productIconTheme": "icons-carbon",
+    "editor.tabSize": 2,
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "none",
+    "editor.minimap.renderCharacters": false,
+    "workbench.editor.tabSizingFixedMaxWidth": 120,
+    "workbench.editor.wrapTabs": true,
+    "workbench.editor.tabSizing": "fixed",
+    "workbench.editor.tabSizingFixedMinWidth": 40,
+    "editor.formatOnSave": false,
+    "dart.previewFlutterUiGuides": true,
+    "dart.hotReloadOnSave": "manual",
+    "editor.wordWrap": "on",
+    "zenMode.centerLayout": true,
+    "vim.smartRelativeLine": true,
+    "[json][jsonc]": {
+        "editor.formatOnSave": false
+    },
+    "[dart]": {
+        "editor.formatOnSave": true
+    },
+
+    // dart
+    "explorer.confirmDelete": false,
+    "task.verboseLogging": true,
+    "dart.debugExternalPackageLibraries": true,
+    "dart.debugSdkLibraries": true,
+    "dart.hotReloadProgress": "statusBar",
+    "dart.previewHotReloadOnSaveWatcher": true,
+    "dart.flutterAdditionalArgs": [
+        "-v"
+    ],
+    "dart.flutterShowEmulators": "always",
+    "dart.previewFlutterUiGuidesCustomTracking": true,
+    "dart.includeDependenciesInWorkspaceSymbols": false,
+
+    // vscode vim
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+    // "vim.leader": "<space>",
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false,
+        "<C-k>": false
+    },
+
+    // vim -- normal
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [ " " ],
+            "after": [ "<leader>" ],
+        },
+        {
+            "before": [ "g", "r" ],
+            "commands": [ "editor.action.quickFix" ]
+        },
+        {
+            "before": [ "g", "K" ],
+            "commands": [ "editor.action.showHover" ]
+        },
+        {
+            "before": [ "leader","f", "h" ],
+            "commands": [ "flutter.hotReload" ]
+        },
+        {
+            "before": [ "leader","f", "r" ],
+            "commands": [ "flutter.hotRestart" ]
+        },
+    ],
+
+    // vim -- normal non recursive
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [ ";" ], "after": [ ":" ]
+        },
+        {
+            "before": [ "K" ], "after": [ "g", "t" ]
+        },
+        {
+            "before": [ "J" ], "after": [ "g", "T" ]
+        },
+        {
+            "before": [ "<leader>", "\"" ],
+            "commands": [ ":vsplit" ]
+        },
+        {
+            "before": [ "<leader>", "b" ],
+            "commands": [ "workbench.action.toggleSidebarVisibility" ]
+        },
+        {
+            "before": [ "<leader>", "e" ],
+            "commands": [ "revealInExplorer" ],
+        },
+        {
+            "before": [ "<C-p>" ],
+            "commands": [ "workbench.action.quickOpen" ],
+        },
+    ],
+
+    // vim -- visual
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [ ">" ],
+            "commands": [ "editor.action.indentLines" ]
+        },
+        {
+            "before": [ "<" ],
+            "commands": [ "editor.action.outdentLines" ]
+        },
+    ],
+    "workbench.iconTheme": "eq-material-theme-icons-light"
+}
