@@ -62,6 +62,10 @@
       path: config/networkmanager-dmenu
       force: true
 
+    # vscode
+    ~/.config/Code/User/keybindings.json: config/Code/User/keybindings.json/
+    ~/.config/Code/User/settings.json: config/Code/User/settings.json/
+
     #~/.vim:
     #  create: true
     #  path: config/nvim

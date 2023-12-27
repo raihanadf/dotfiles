@@ -1,12 +1,11 @@
 {
     "workbench.startupEditor": "none",
+    "workbench.colorTheme": "Noir Panda",
     "window.menuBarVisibility": "hidden",
-    "editor.smoothScrolling": true,
     "editor.cursorSmoothCaretAnimation": "on",
-    "editor.fontFamily": "IosevkaTerm NF",
-    "editor.fontSize": 16,
+    "editor.fontFamily": "JetBrainsMono Nerd Font",
     "editor.fontLigatures": true,
-    "editor.tabCompletion": "off",
+    "editor.tabCompletion": "on",
     "workbench.activityBar.location": "hidden",
     "editor.cursorBlinking": "solid",
     "workbench.productIconTheme": "icons-carbon",
@@ -24,6 +23,7 @@
     "editor.wordWrap": "on",
     "zenMode.centerLayout": true,
     "vim.smartRelativeLine": true,
+    "workbench.iconTheme": "vscode-icons",
     "[json][jsonc]": {
         "editor.formatOnSave": false
     },
@@ -96,6 +96,10 @@
         },
         {
             "before": [ "<leader>", "\"" ],
+            "commands": [ ":split" ]
+        },
+        {
+            "before": [ "<leader>", "%" ],
             "commands": [ ":vsplit" ]
         },
         {
@@ -105,6 +109,10 @@
         {
             "before": [ "<leader>", "e" ],
             "commands": [ "revealInExplorer" ],
+        },
+        {
+            "before": [ "<leader>", "w" ],
+            "commands": [ ":bdelete" ],
         },
         {
             "before": [ "<C-p>" ],
@@ -122,6 +130,21 @@
             "before": [ "<" ],
             "commands": [ "editor.action.outdentLines" ]
         },
+        {
+            "before": [ "K" ],
+            "commands": [ "editor.action.moveLinesUpAction"]
+        },
+        {
+            "before": [ "J" ],
+            "commands": [ "editor.action.moveLinesDownAction"]
+        },
     ],
-    "workbench.iconTheme": "eq-material-theme-icons-light"
+    
+    // vim -- visual non recursive
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [ "p" ],
+            "after": ["P"]
+        }
+    ],
 }
