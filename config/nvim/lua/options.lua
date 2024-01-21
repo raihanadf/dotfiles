@@ -1,7 +1,7 @@
 local o = vim.opt
 local g = vim.g
 
-vim.cmd("colorscheme poimandres")
+vim.cmd("colorscheme oxocarbon")
 
 -- settings
 local options = {

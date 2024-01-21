@@ -4,7 +4,6 @@
 nginxdir=$(eval echo '/usr/share/nginx/html')
 nvimdir=$(eval echo '/home/$(whoami)/.config/nvim')
 
-
 # doing something
 alias pls='sudo $(fc -ln -1)'
 alias open="xdg-open"
@@ -12,6 +11,7 @@ alias c="clear"
 alias q="exit"
 # alias man="man -P \"sh -c 'col -b | nvim -c \\\"set ft=man nomod nolist\\\" -'\""
 alias nnn='nnn -de'
+alias sl='sl -a -w -l'
 alias sizedir="du -h --max-depth=1"
 alias npm="pnpm"
 
@@ -91,3 +91,4 @@ alias myip="ip -o -4 addr list wlo1 | awk '{print $4}' | cut -d/ -f1"
 alias chat="sgpt"
 alias minecraft="prime-run gamemoderun java -jar $HOME/Documents/Minecraft.jar"
 alias words="fortune -s | cowsay -f tux"
+alias habit="dijo"

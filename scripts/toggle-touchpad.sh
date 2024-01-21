@@ -6,3 +6,4 @@ device="$(xinput list | grep -P '(?<= )[\w\s:]*Touchpad(?!.*Synaptics)(?i)(?-i).
 [[ "$(xinput list-props "$device" | grep -P ".*Device Enabled.*\K.(?=$)" -o)" == "1" ]] &&
     xinput disable "$device" ||
     xinput enable "$device"
+

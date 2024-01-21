@@ -53,8 +53,12 @@ alt + n
 super + alt + {BackSpace,F2,F3}
 	{systemctl poweroff,systemctl reboot,xset dpms force off}
 
+# command palette
+alt + shift + p
+	$HOME/Documents/Tools/rofi-command-palette/command-palette.sh
+
 # file manager (using thunar here)
-alt + control + shift + f
+alt + control + f
 	thunar
 
 # screenshot with gui

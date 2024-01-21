@@ -1,12 +1,13 @@
 {
+    "editor.lineNumbers": "relative",
     "workbench.startupEditor": "none",
-    "workbench.colorTheme": "Noir Panda",
+    "workbench.statusBar.visible": true,
     "window.menuBarVisibility": "hidden",
+    "workbench.activityBar.location": "hidden",
     "editor.cursorSmoothCaretAnimation": "on",
     "editor.fontFamily": "JetBrainsMono Nerd Font",
     "editor.fontLigatures": true,
     "editor.tabCompletion": "on",
-    "workbench.activityBar.location": "hidden",
     "editor.cursorBlinking": "solid",
     "workbench.productIconTheme": "icons-carbon",
     "editor.tabSize": 2,
@@ -22,15 +23,17 @@
     "dart.hotReloadOnSave": "manual",
     "editor.wordWrap": "on",
     "zenMode.centerLayout": true,
-    "vim.smartRelativeLine": true,
     "workbench.iconTheme": "vscode-icons",
+
+    "[blade]": {
+        "editor.defaultFormatter": "shufo.vscode-blade-formatter"
+    },
     "[json][jsonc]": {
         "editor.formatOnSave": false
     },
     "[dart]": {
         "editor.formatOnSave": true
     },
-
     // dart
     "explorer.confirmDelete": false,
     "task.verboseLogging": true,
@@ -45,11 +48,13 @@
     "dart.previewFlutterUiGuidesCustomTracking": true,
     "dart.includeDependenciesInWorkspaceSymbols": false,
 
-    // vscode vim
+    // // vscode vim
     "extensions.experimental.affinity": {
-        "vscodevim.vim": 1
+        "vscodevim.vim": 1,
+        "asvetliakov.vscode-neovim": 1
     },
-    // "vim.leader": "<space>",
+    // "vscode-neovim.neovimExecutablePaths.linux" : "/usr/bin/nvim",
+    // "vscode-neovim.neovimInitVimPaths.linux" : "$HOME/.config/nvim/init.lua",
     "vim.useSystemClipboard": true,
     "vim.useCtrlKeys": true,
     "vim.hlsearch": true,
@@ -95,19 +100,25 @@
             "before": [ "J" ], "after": [ "g", "T" ]
         },
         {
+            "before": [ "<leader>", "%" ],
+            "commands": [ "editor.emmet.action.matchTag" ]
+        },
+
+        // split, korbanin % -> | buat matchtag (web element hadeh)
+        {
             "before": [ "<leader>", "\"" ],
             "commands": [ ":split" ]
         },
         {
-            "before": [ "<leader>", "%" ],
+            "before": [ "<leader>", "|" ],
             "commands": [ ":vsplit" ]
         },
         {
-            "before": [ "<leader>", "b" ],
+            "before": [ "<leader>", "e" ],
             "commands": [ "workbench.action.toggleSidebarVisibility" ]
         },
         {
-            "before": [ "<leader>", "e" ],
+            "before": [ "<leader>", "f" ],
             "commands": [ "revealInExplorer" ],
         },
         {
@@ -122,6 +133,10 @@
 
     // vim -- visual
     "vim.visualModeKeyBindings": [
+        {
+            "before": [ " " ],
+            "after": [ "<leader>" ],
+        },
         {
             "before": [ ">" ],
             "commands": [ "editor.action.indentLines" ]
@@ -138,6 +153,10 @@
             "before": [ "J" ],
             "commands": [ "editor.action.moveLinesDownAction"]
         },
+        {
+            "before": [ "<leader>", "%" ],
+            "commands": [ "editor.emmet.action.matchTag" ]
+        },
     ],
     
     // vim -- visual non recursive
@@ -145,6 +164,8 @@
         {
             "before": [ "p" ],
             "after": ["P"]
-        }
+        },
     ],
+    "workbench.colorTheme": "One Dark Pro Monokai Darker",
+
 }

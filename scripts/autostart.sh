@@ -1,12 +1,12 @@
 #!/bin/bash
 
-redshift -P -O 4500K
+redshift -P -O 5000K
 
 dunst & 
 dunstify "Welcome!"
 
 # colours
-black=#161616
+black=#000000
 pink=#ffc2d0
 peach=#fad5d5
 red=#f92672
@@ -16,10 +16,6 @@ orange=#ffe1b1
 blue=#3C50FF
 purple=#ae81ff
 white=#faedff
-
-music() {
-  printf "$($HOME/.dotfiles/scripts/spotify.py)" 
-} 
 
 cpu() {
 	printf "^c$white^^b$black^ 󰝨 ^c$white^^b$black^$(cat /sys/class/thermal/thermal_zone3/temp | cut -c1-2)°"
@@ -63,17 +59,17 @@ pomo() {
 adb() {
   if pgrep -x "adb" >/dev/null;
   then
-		printf " ^c$white^󰀲^b$black^ "
+		printf "^c$white^󰀲^b$black^ "
   fi
 }
 
 bluetooth() {
   mouse="$(upower -i $(upower -e | grep -E 'mouse|pointer' | head -n 1) | awk -F': ' '/percentage:/ {print $2}' | tr -d '%' | grep -o '[0-9]*' | sed '/^$/d')"
   if [ -n "$mouse" ]; then
-    printf "[$mouse] "
+    printf "󰂯[$mouse] "
   fi
 }
 
 while true; do
-  sleep 1 && xsetroot -name "$(bluetooth)$(adb)$(wifi)$(clock)$(pomo)$(battery)"
+  sleep 1 && xsetroot -name "$(adb)$(wifi)$(clock)$(pomo)$(bluetooth)$(battery)"
 done

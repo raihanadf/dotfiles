@@ -1,116 +1,119 @@
 configuration {
-  modi: "run,drun,window";
-  font: "Scientifica Medium 14";
   show-icons: true;
+  font: "Scientifica Bold 14";
   display-drun: "";
   drun-display-format: "{name}";
   display-run: "   Run ";
   display-drun: " 󰀻   Apps ";
   display-window: "      Window";
   display-filebrowser: " 󰱼   File";
-  modes: [ drun, filebrowser ];
+  modes: [ drun, filebrowser, window ];
   sidebar-mode: true;
 }
 
 @theme "/dev/null"
 
 * {
-  al:   #00000000;
-  bg:   #05080aff;
-  bga:  #484848FF;
-  fga:  #CACACAFF;
-  fg:   #CACACAFF;
-  al: #1f1f1f;
-  background-color: @bg;
-  text-color: @fg;
+
+
+    bg0:     #000000;
+    bg1:     #404040;
+    fg0:     #eeffff;
+
+    accent-color:     #faedff;
+    urgent-color:     #ffcb6b;
+
+    background-color:   transparent;
+    text-color:         @fg0;
+
+    margin:     0;
+    padding:    0;
+    spacing:    0;
 }
 
 window {
-  border:             3px 3px 3px 3px;
-  border-color:                   @bga;
-  width: 40%;
-  padding: 10px;
-}
+    location:   center;
+    width:      480;
+    padding:    20px;
+	border:             1px 1px 1px 1px;
+	border-color:                   #faedff;
 
-prompt {
-  background-color: @al;
-  enabled: true;
-}
-
-entry {
-  background-color: @al;
-  placeholder-color: @fg;
-  expand: true;
-  horizontal-align: 0;
-  padding: 0% 0% 0% 0%;
+    background-color:   @bg0;
 }
 
 inputbar {
-  children: [ entry ];
-  spacing: 10px;
-  background-color: @al;
-  border-radius: 5px;
-  padding: 10px;
+    spacing:    8px; 
+    padding:    8px;
+
+    background-color:   @bg1;
+}
+
+prompt, entry, element-icon, element-text {
+    vertical-align: 0.5;
+}
+
+prompt {
+    text-color: @accent-color;
+}
+
+textbox {
+    padding:            8px;
+    background-color:   @bg1;
 }
 
 listview {
-  columns: 6;
-  lines: 3;
-  spacing: 0%;
-  cycle: true;
-  dynamic: true;
-  layout: vertical;
-}
+    padding:    4px 0;
+    lines:      10;
+    columns:    1;
 
-mainbox {
-  children: [ inputbar, listview, mode-switcher ];
-  border-radius: 0%;
-  spacing: 2%;
-  padding: 2% 1% 2% 1%;
+    fixed-height:   false;
 }
 
 element {
-  orientation: vertical;
-  border-radius: 0%;
-  padding: 2% 0% 2% 0%;
+    padding:    8px;
+    spacing:    8px;
 }
 
-element-icon {
-  size: 4%;
-  border: 0px;
-  horizontal-align: 0.5;
+element normal normal {
+    text-color: @fg0;
 }
 
-element-text {
-  expand: true;
-  horizontal-align: 0.5;
-  vertical-align: 0.5;
-  margin: 0.5% 0.5% -0.5% 0.5%;
+element normal urgent {
+    text-color: @urgent-color;
 }
 
-element-text, element-icon {
-  background-color: inherit;
-  text-color: inherit;
+element normal active {
+    text-color: @accent-color;
 }
 
 element selected {
-  background-color: @al;
-  border-radius: 5px;
+    text-color: @bg0;
 }
 
-mode-switcher {
-  spacing: 0;
-  border-radius: 5px;
+element selected normal, element selected active {
+    background-color:   @accent-color;
+}
+
+element selected urgent {
+    background-color:   @urgent-color;
+}
+
+element-icon {
+    size:   0.8em;
+}
+
+element-text {
+    text-color: inherit;
 }
 
 button {
   padding: 10px;
-  background-color: @al;
-  text-color: @bga;
+  background-color: @bg0;
+  text-color: @bg1;
   vertical-align: 0.5; 
   horizontal-align: 0.5;
 }
 
 button selected {
-  text-color: @fg;
+  text-color: @fg0;
 }

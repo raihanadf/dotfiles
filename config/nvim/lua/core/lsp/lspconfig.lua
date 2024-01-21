@@ -90,6 +90,7 @@ local server_setting = {
 
   -- php
   "intelephense",
+  -- "phpactor",
 
   -- markdown
   "texlab",
