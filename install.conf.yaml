@@ -19,6 +19,7 @@
     ~/.tmux.conf: dots/tmux.conf
     ~/.Xresources: dots/Xresources
     ~/.xinitrc: dots/xinitrc
+    ~/.rofi-commands.yaml: dots/rofi-commands.yaml
 
     # sxhkd
     ~/.config/sxhkd:
