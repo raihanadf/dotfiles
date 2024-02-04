@@ -13,18 +13,21 @@
 - name: "Dunst: Reload"
   command: pkill dunst && dunst & sleep 1; notify-send 'Dunst reloaded'
 
-- name: Power off
+- name: "System: Shut Down"
   confirm: true
   command: systemctl poweroff
 
-- name: Reboot
+- name: "System: Reboot"
   confirm: true
   command: systemctl reboot
 
-- name: Sleep
+- name: "System: Sleep"
   confirm: true
   command: systemctl suspend
 
 - name: Toggle MariaDB
   run_as_sudo: true
   command: if systemctl is-active --quiet mariadb; then systemctl stop mariadb; else systemctl start mariadb; fi
+
+- name: "Open File Manager"
+  command: thunar
