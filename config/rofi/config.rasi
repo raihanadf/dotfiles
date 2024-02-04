@@ -1,6 +1,6 @@
 configuration {
   show-icons: true;
-  font: "Scientifica Bold 14";
+  font: "Scientifica Bold 18";
   display-drun: "";
   drun-display-format: "{name}";
   display-run: "   Run ";
@@ -14,8 +14,6 @@ configuration {
 @theme "/dev/null"
 
 * {
-
-
     bg0:     #000000;
     bg1:     #404040;
     fg0:     #eeffff;
@@ -35,8 +33,8 @@ window {
     location:   center;
     width:      480;
     padding:    20px;
-	border:             1px 1px 1px 1px;
-	border-color:                   #faedff;
+    border:             1px 1px 1px 1px;
+    border-color:                   #faedff;
 
     background-color:   @bg0;
 }

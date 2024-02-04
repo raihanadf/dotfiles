@@ -12,7 +12,7 @@
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = (150,300)
+    width = (150,400)
 
     # The maximum height of a single notification, excluding the frame.
     height = 250
@@ -101,7 +101,7 @@
 
 # Text 
 
-    font = Scientifica 14
+    font = Scientifica 16
     line_height = 0
     markup = full
     format = "<b>%s</b>\n%b"
