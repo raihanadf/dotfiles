@@ -22,9 +22,7 @@ return {
       -- NOTE: Remember that lua is a real programming language, and as such it is possible
       -- to define small helper and utility functions so you don't have to repeat yourself
       -- many times.
-      --
-      -- In this case, we create a function that lets us more easily define mappings specific
-      -- for LSP related items. It sets the mode, buffer and description for us each time.
+
       -- Create a command `:Format` local to the LSP buffer
       vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
         vim.lsp.buf.format()
@@ -47,10 +45,10 @@ return {
     local servers = {
       -- clangd = {},
       -- gopls = {},
-      -- pyright = {},
+      pyright = {},
       -- rust_analyzer = {},
-      -- tsserver = {},
-      -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+      tsserver = {},
+      html = { filetypes = { 'html', 'twig', 'hbs'} },
 
       lua_ls = {
         Lua = {
@@ -70,6 +68,7 @@ return {
     capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
     -- Ensure the servers above are installed
+    local lspconfig = require 'lspconfig'
     local mason_lspconfig = require 'mason-lspconfig'
 
     mason_lspconfig.setup {
@@ -86,5 +85,11 @@ return {
         }
       end,
     }
+
+    lspconfig.intelephense.setup {
+      init_options = {
+          globalStoragePath = os.getenv('HOME') .. '/.local/share/intelephense'
+      }
+}
   end
 }
