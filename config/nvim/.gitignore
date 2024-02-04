@@ -1,2 +1,4 @@
-plugin/
-sessions/
+tags
+test.sh
+.luarc.json
+nvim
