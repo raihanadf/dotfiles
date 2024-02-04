@@ -57,11 +57,6 @@ some information about my setup:
 ## Issues on my main machine
 
 - June 20ish 2023
-  - adb starts freaking out gpu (turning on off, back and forth)
-    - (was) fixed by an update around april and came back after i reset my laptop setup
-    - (is happening) from around 2022
-    - strace indicates nothing wrong
-    - journalctl and dmesg only shows xhci_hcd as the main reason why it causes it
   - dwm cool_autostart patch *SIGTERM signal doesn't kill all running bash scripts for some reason
     - maybe systemd causes it
   - possible solution:
