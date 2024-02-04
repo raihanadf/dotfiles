@@ -1,1 +1,0 @@
-ACTION=="add", KERNEL=="0000:01:00.2", SUBSYSTEM=="pci", RUN+="/bin/sh -c 'echo 1 > /sys/bus/pci/devices/0000:01:00.2/remove'"
