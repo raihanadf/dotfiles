@@ -16,12 +16,11 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 
   {
-    'nyoom-engineering/oxocarbon.nvim',
-    priority = 1000,
+    "askfiy/visual_studio_code",
+    priority = 100,
     lazy = false,
     config = function()
-      vim.opt.background = "dark" -- set this to dark or light
-      vim.cmd.colorscheme "oxocarbon"
+      vim.cmd.colorscheme "visual_studio_code"
     end,
   },
 
