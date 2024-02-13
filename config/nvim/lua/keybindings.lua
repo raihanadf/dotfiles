@@ -70,43 +70,39 @@ nrkeymap("<c-l>", "<c-w>l")
 
 ---- lsp keymap
 nskeymap("<c-i>", ":lua vim.lsp.buf.format({ async = true })<cr>")
-nskeymap("gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
-nrkeymap("gD", ":lua vim.lsp.buf.declaration()<cr>")
-nrkeymap("gi", ":lua vim.lsp.buf.implementation()<cr>")
-nrkeymap("gl", "<cmd>lua vim.diagnostic.open_float()<CR>")
-nrkeymap("ge", ":lua vim.lsp.buf.document_symbol()<cr>")
-nrkeymap("gw", ":lua vim.lsp.buf.workspace_symbol()<cr>")
-nrkeymap("<leader>rr", ":lua vim.lsp.buf.references()<cr>")
-nrkeymap("gt", ":lua vim.lsp.buf.type_definition()<cr>")
-nrkeymap("gk", ":lua vim.lsp.buf.hover()<cr>")
-nrkeymap("<c-s>", ":lua vim.lsp.buf.signature_help()<cr>")
-nrkeymap("gr", ":lua vim.lsp.buf.code_action()<cr>")
-nrkeymap("<leader>gr", ":lua vim.lsp.buf.rename()<cr>")
+nskeymap("gd", ":lua require('telescope.builtin').lsp_definitions()<cr>")
+nskeymap("gD", ":lua vim.lsp.buf.declaration()<cr>")
+nskeymap("gi", ":lua vim.lsp.buf.implementation()<cr>")
+nskeymap("gl", "<cmd>lua vim.diagnostic.open_float()<CR>")
+nskeymap("ge", ":lua vim.lsp.buf.document_symbol()<cr>")
+nskeymap("gw", ":lua vim.lsp.buf.workspace_symbol()<cr>")
+nskeymap("<leader>rr", ":lua vim.lsp.buf.references()<cr>")
+nskeymap("gt", ":lua vim.lsp.buf.type_definition()<cr>")
+nskeymap("gk", ":lua vim.lsp.buf.hover()<cr>")
+nskeymap("<c-s>", ":lua vim.lsp.buf.signature_help()<cr>")
+nskeymap("gr", ":lua vim.lsp.buf.code_action()<cr>")
+nskeymap("<leader>gr", ":lua vim.lsp.buf.rename()<cr>")
 
 ---- git keymap --> highlight
-nrkeymap("<leader>hb", ":Gitsigns blame_line<cr>")
-
----- update packer plugins
-nrkeymap("<c-u><c-p>", ":PackerSync<CR>")
-nrkeymap("<c-u>cp", ":PackerCompile<CR>")
+nskeymap("<leader>hb", ":Gitsigns blame_line<cr>")
 
 ---- telescope
-nrkeymap("<c-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>")
-nrkeymap("<leader>p", "<cmd>lua require('telescope.builtin').buffers()<cr>")
+nskeymap("<c-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>")
+nskeymap("<leader>p", "<cmd>lua require('telescope.builtin').buffers()<cr>")
 nskeymap("<leader>s", "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>") -- live grep
 nskeymap("<leader>ss", "<cmd>lua require('telescope.builtin').live_grep()<cr>")                -- live grep
-nrkeymap("<leader>fmp", "<cmd>lua require('telescope.builtin').man_pages()<cr>")
-nrkeymap("<leader>ffm", "<cmd>lua require('telescope').extensions.flutter.commands()<cr>")
+nskeymap("<leader>fmp", "<cmd>lua require('telescope.builtin').man_pages()<cr>")
+nskeymap("<leader>ffm", "<cmd>lua require('telescope').extensions.flutter.commands()<cr>")
 nskeymap("<leader>ffb", ":FlutterRun<CR>")     -- Run Project
 nskeymap("<leader>ffr", ":FlutterRestart<CR>") -- Restart Project
 nskeymap("<leader>ffh", ":FlutterReload<CR>")  -- Reload Project
 -----------------------------------------------------------------
 
 ---- nvim tree
-nrkeymap("<leader>e", ":NvimTreeToggle<cr>")
+nskeymap("<leader>e", ":NvimTreeToggle<cr>")
 
 ---- mini map
-nrkeymap("<leader>m", ":lua MiniMap.toggle()<cr>")
+nskeymap("<leader>m", ":lua MiniMap.toggle()<cr>")
 
 ---- restart neovim / source file
 nskeymap("<leader>sv", ":luafile ~/.config/nvim/init.lua<cr>")
@@ -131,10 +127,6 @@ vrkeymap("H", "<S-j>")
 
 ---- toggle trouble
 nskeymap("<leader>tr", ":TroubleToggle<CR>")
-
--- required/import binding
--- require("keybinds.tablike") -- deprecated maybe
-
 
 -- -- [[ Basic Keymaps ]]
 --

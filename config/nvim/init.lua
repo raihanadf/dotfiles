@@ -17,10 +17,19 @@ require('lazy').setup({
 
   {
     "askfiy/visual_studio_code",
-    priority = 100,
+    -- priority = 100,
+    -- lazy = false,
+    -- config = function()
+    --   vim.cmd.colorscheme "visual_studio_code"
+    -- end,
+  },
+
+  {
+    "nyoom-engineering/oxocarbon.nvim",
+    priority = 1000,
     lazy = false,
     config = function()
-      vim.cmd.colorscheme "visual_studio_code"
+      vim.cmd.colorscheme "oxocarbon"
     end,
   },
 

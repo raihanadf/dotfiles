@@ -1,5 +1,6 @@
 return {
   'akinsho/bufferline.nvim',
+  event = "VeryLazy",
   version = "*",
   dependencies = 'nvim-tree/nvim-web-devicons',
   config = function()
@@ -7,6 +8,8 @@ return {
 
     bufferline.setup({
       options = {
+        separator_style = "thick",
+        diagnostics = "nvim_lsp",
         buffer_close_icon = "",
         themable = true,
         indicator = {

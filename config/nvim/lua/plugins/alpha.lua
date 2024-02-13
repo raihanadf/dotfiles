@@ -45,20 +45,19 @@ return {
       button("q", "  Quit", ":qa<cr>"),
     }
 
-    local heading = {
-      type = "text",
-      val = "~ brain.exists() == null; ~",
-      opts = {
-        position = "center",
-        hl = "AlphaComment",
-      },
-    }
+    -- local heading = {
+    --   type = "text",
+    --   val = "~ brain.exists() == null; ~",
+    --   opts = {
+    --     position = "center",
+    --     hl = "AlphaComment",
+    --   },
+    -- }
 
     local function footer()
       local stats = require("lazy").stats()
-      local ms = math.floor(stats.startuptime * 100) / 100
 
-      return "󱐌 Lazy-loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms .. "ms"
+      return "󱐌 Lazy-loaded " .. stats.loaded .. "/" .. stats.count .. " plugins"
     end
 
     dashboard.section.footer.val = footer()

@@ -1,6 +1,7 @@
 return {
     'akinsho/flutter-tools.nvim',
-    lazy = false,
+    event = "VeryLazy",
+    lazy = true,
     dependencies = {
         'nvim-lua/plenary.nvim',
         'stevearc/dressing.nvim', -- optional for vim.ui.select
@@ -19,8 +20,8 @@ return {
                 open_cmd = "tabnew",
             },
             dev_tools = {
-              autostart = true,
-              auto_open_browser = true,
+                autostart = true,
+                auto_open_browser = true,
             },
         })
     end,

@@ -1,6 +1,7 @@
 -- toggle term
 return {
   'akinsho/toggleterm.nvim',
+  event = "VeryLazy",
   version = "*",
   opts = {
     size = 7,

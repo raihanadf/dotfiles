@@ -3,6 +3,7 @@
 return {
   -- LSP Configuration & Plugins
   'neovim/nvim-lspconfig',
+  event = "VeryLazy",
   dependencies = {
     -- Automatically install LSPs to stdpath for neovim
     { 'williamboman/mason.nvim', config = true },
@@ -48,7 +49,7 @@ return {
       pyright = {},
       -- rust_analyzer = {},
       tsserver = {},
-      html = { filetypes = { 'html', 'twig', 'hbs'} },
+      html = { filetypes = { 'html', 'twig', 'hbs' } },
 
       lua_ls = {
         Lua = {
@@ -88,8 +89,8 @@ return {
 
     lspconfig.intelephense.setup {
       init_options = {
-          globalStoragePath = os.getenv('HOME') .. '/.local/share/intelephense'
+        globalStoragePath = os.getenv('HOME') .. '/.local/share/intelephense'
       }
-}
+    }
   end
 }

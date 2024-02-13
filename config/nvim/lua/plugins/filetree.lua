@@ -1,7 +1,8 @@
 return {
   "nvim-tree/nvim-tree.lua",
   version = "*",
-  lazy = false,
+  lazy = true,
+  event = "VeryLazy",
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
@@ -93,6 +94,16 @@ return {
 
     nvim_tree.setup({
       on_attach = on_attach,
+      diagnostics = {
+        enable = true,
+        show_on_dirs = true,
+        icons = {
+          hint = "",
+          info = "",
+          warning = "",
+          error = "",
+        },
+      },
       renderer = {
         root_folder_label = false,
         indent_markers = {

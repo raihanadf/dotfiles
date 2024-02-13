@@ -1,6 +1,7 @@
 return {
   -- Autocompletion
   'hrsh7th/nvim-cmp',
+  event = "InsertEnter",
   dependencies = {
     -- Snippet Engine & its associated nvim-cmp source
     'L3MON4D3/LuaSnip',
@@ -17,6 +18,7 @@ return {
     -- [[ Configure nvim-cmp ]]
     -- See `:help cmp`
     local cmp = require 'cmp'
+    local cmp_autopairs = require('nvim-autopairs.completion.cmp')
     local luasnip = require 'luasnip'
     require('luasnip.loaders.from_vscode').lazy_load()
     luasnip.config.setup {}
@@ -65,5 +67,11 @@ return {
         { name = 'path' },
       },
     }
+
+    -- If you want insert `(` after select function or method item || [[ this is for autopairs ]]
+    cmp.event:on(
+      'confirm_done',
+      cmp_autopairs.on_confirm_done()
+    )
   end
 }
