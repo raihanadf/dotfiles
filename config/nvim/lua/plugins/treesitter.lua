@@ -12,14 +12,15 @@ return {
     vim.defer_fn(function()
       require('nvim-treesitter.configs').setup {
         -- Add languages to be installed here that you want installed for treesitter
-        ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash', 'php' },
+        -- ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash', 'php' },
+        ensure_installed = "all",
 
         -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
         auto_install = true,
         -- Install languages synchronously (only applied to `ensure_installed`)
         sync_install = false,
         -- List of parsers to ignore installing
-        ignore_install = { 'dart' },
+        ignore_install = { 'dart', 'latex' },
         -- You can specify additional Treesitter modules here: -- For example: -- playground = {--enable = true,-- },
         modules = {},
         highlight = { enable = true },
@@ -89,16 +90,11 @@ return {
         filetype = "blade"
       }
 
-      vim.api.nvim_create_autocmd(
-        {
-          "BufNewFile",
-          "BufRead",
+      vim.filetype.add({
+        pattern = {
+          ['.*%.blade%.php'] = 'blade',
         },
-        {
-          pattern = "*.blade.php",
-          command = "set filetype=blade"
-        }
-      )
+      })
     end, 0)
   end
 }

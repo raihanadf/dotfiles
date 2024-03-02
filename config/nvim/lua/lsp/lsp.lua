@@ -49,7 +49,8 @@ return {
       pyright = {},
       -- rust_analyzer = {},
       tsserver = {},
-      html = { filetypes = { 'html', 'twig', 'hbs' } },
+      html = { filetypes = { 'html', 'twig', 'hbs', 'blade' } },
+      tailwindcss = { filetypes = { 'html', 'twig', 'hbs', 'blade' } },
 
       lua_ls = {
         Lua = {

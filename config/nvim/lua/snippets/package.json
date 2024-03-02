@@ -1,0 +1,63 @@
+{
+  "name": "Custom Snippets",
+  "description": "SNIPPETSSS ARRRGHHH",
+  "contributes": {
+    "snippets": [
+
+      {
+        "language": {},
+        "path": "./all.json"
+      },
+
+      {
+        "language": [
+          "htmldjango",
+          "soy",
+          "htmljinja",
+          "xhtml",
+          "svelte",
+          "vue",
+          "html",
+          "blade",
+          "eruby",
+          "eelixir"
+        ],
+        "path": "./html.json"
+      },
+      {
+        "language": [
+          "blade"
+        ],
+        "path": "./blade.json"
+      },
+      {
+        "language": [
+          "php"
+        ],
+        "path": "./php.json"
+      },
+
+      {
+        "language": [
+          "bib"
+        ],
+        "path": "./bib.json"
+      },
+
+      {
+        "language": [
+          "zsh"
+        ],
+        "path": "./zsh.json"
+      },
+
+      {
+        "language": [
+          "dart"
+        ],
+        "path": "./flutter.json"
+      }
+
+    ]
+  }
+}  

@@ -5,6 +5,9 @@
 -- Set highlight on search
 vim.o.hlsearch = false
 
+-- Disable swap file
+vim.opt.swapfile = false
+
 vim.o.relativenumber = true
 vim.o.shiftwidth = 2
 vim.o.softtabstop = 2
