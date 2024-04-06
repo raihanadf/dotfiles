@@ -46,6 +46,7 @@ return {
     local servers = {
       -- clangd = {},
       -- gopls = {},
+      texlab = {},
       pyright = {},
       -- rust_analyzer = {},
       tsserver = {},

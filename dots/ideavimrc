@@ -3,29 +3,35 @@ source ~/.vimrc
 set clipboard+=unnamed
 set clipboard+=ideaput
 set commentary
+set ignorecase
+set smartcase
+set NERDTree
 
 nmap ; :
 nmap <Space> <Leader>
-nmap <Leader>fb :action RecentFiles<CR>
-nmap <Leader>ff :action GotoFile<CR>
-nmap <Leader>fg :action SearchEverywhere<CR>
 
-nnoremap <TAB> :action PreviousTab<CR>
-nnoremap <s-TAB> :action NextTab<CR>
+// GoTo Somewhere Else
+nnoremap <c-p> :action GotoFile<CR>
+nnoremap <c-S-p> :action GotoAction<CR>
+nnoremap <leader>s :action TextSearchAction<CR>
 
+// Actions on Code
 vnoremap gc :action CommentByLineComment<CR>
 nnoremap <c-S-i> :action ReformatCode<CR>
 nnoremap <leader>o :action OptimizeImports<CR>
 nnoremap gd :action GoToDeclaration<CR>
 nnoremap <leader>gr :action Refactorings.QuickListPopupAction<CR>
 nnoremap gr :action ShowIntentionActions<CR>
+vnoremap p P
 
+// Tab
 vnoremap < <gv
 vnoremap > >gv
 
 nnoremap [[ :action MethodUp<CR>
 nnoremap ]] :action MethodDown<CR>
 
+// Ideavimrc
 nnoremap <leader>r :action IdeaVim.ReloadVimRc.reload<CR>
 nnoremap \w :wq<CR>
 nnoremap \e :e ~/.ideavimrc<CR>

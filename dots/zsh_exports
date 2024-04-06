@@ -31,7 +31,8 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # android sdk
-export ANDROID_HOME=$HOME/.sdk_dir/Android/Sdk
+export ANDROID_HOME=$HOME/.sdk_dir/Android
+export ANDROID_SDK_ROOT=$HOME/.sdk_dir/Android
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools/
 export PATH=$PATH:$ANDROID_HOME/build-tools/
@@ -67,3 +68,8 @@ export NNN_PLUG='f:finder;o:fzopen;p:mocq;d:diffs;t:nmount;v:imgview'
 
 # spicetify
 export PATH=$PATH:/home/raihan/.spicetify
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

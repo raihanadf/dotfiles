@@ -101,7 +101,7 @@
 
 # Text 
 
-    font = Scientifica 16
+    font = Scientifica 14
     line_height = 0
     markup = full
     format = "<b>%s</b>\n%b"

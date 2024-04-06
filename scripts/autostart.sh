@@ -50,9 +50,9 @@ clock() {
 }
 
 pomo() {
-  if pgrep -x "spt" >/dev/null;
+  if pgrep -x "potd" > /dev/null;
   then
-		printf " ^c$white^  ^b$black^ "
+    printf "^c$white^ $(potctl | awk 'NR==2 {print $3}') ^b$black^"
   fi
 }
 
@@ -71,5 +71,5 @@ bluetooth() {
 }
 
 while true; do
-  sleep 1 && xsetroot -name "$(adb)$(wifi)$(clock)$(pomo)$(bluetooth)$(battery)"
+  sleep 1 && xsetroot -name "$(wifi)$(clock)$(bluetooth)$(battery)"
 done

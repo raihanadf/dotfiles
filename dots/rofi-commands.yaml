@@ -17,7 +17,7 @@
   confirm: true
   command: systemctl poweroff
 
-- name: "System: Reboot"
+- name: "System: Restart"
   confirm: true
   command: systemctl reboot
 
@@ -25,9 +25,21 @@
   confirm: true
   command: systemctl suspend
 
+- name: "System: Turn Off Display"
+  command: xset dpms force off 
+
 - name: Toggle MariaDB
   run_as_sudo: true
   command: if systemctl is-active --quiet mariadb; then systemctl stop mariadb; else systemctl start mariadb; fi
 
 - name: "Open File Manager"
   command: thunar
+
+- name: "Volume Control"
+  command: pavucontrol
+
+- name: "Bluetooth Manager"
+  command: $HOME/.dotfiles/scripts/rofi-bluetooth.sh
+
+- name: "Show Current Date"
+  command: dunstify -u critical "Current Date" "$(date)"

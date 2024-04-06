@@ -99,6 +99,9 @@ nskeymap("<leader>ffh", ":FlutterReload<CR>")  -- Reload Project
 -----------------------------------------------------------------
 
 ---- nvim tree
+nskeymap("<leader>gl", ":Glow<cr>")
+
+---- nvim tree
 nskeymap("<leader>e", ":NvimTreeToggle<cr>")
 
 ---- mini map
@@ -127,6 +130,10 @@ vrkeymap("H", "<S-j>")
 
 ---- toggle trouble
 nskeymap("<leader>tr", ":TroubleToggle<CR>")
+
+---- vimtex
+nskeymap("<leader>vc", ":VimtexCompile<CR>")
+nskeymap("<leader>vv", ":VimtexView<CR>")
 
 -- -- [[ Basic Keymaps ]]
 --

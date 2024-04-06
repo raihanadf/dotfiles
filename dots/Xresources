@@ -1,4 +1,4 @@
-Xft.dpi: 120
+Xft.dpi: 110
 
 Xft.autohint: 0
 Xft.antialias: true
@@ -6,3 +6,5 @@ Xft.rgba: rgb
 Xft.hinting: true
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcdlight
+
+Xcursor.size: 32

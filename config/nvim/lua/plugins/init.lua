@@ -42,5 +42,9 @@ return {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
     opts = {} -- this is equalent to setup({}) function
-  }
+  },
+
+  -- markdown preview
+  -- install with yarn or npm
+	{"ellisonleao/glow.nvim", config = true, cmd = "Glow"}
 }

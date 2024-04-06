@@ -1,6 +1,6 @@
 configuration {
   show-icons: true;
-  font: "Scientifica Bold 18";
+  font: "Scientifica Bold 16";
   display-drun: "";
   drun-display-format: "{name}";
   display-run: "   Run ";

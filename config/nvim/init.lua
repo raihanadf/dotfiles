@@ -25,11 +25,11 @@ require('lazy').setup({
   },
 
   {
-    "nyoom-engineering/oxocarbon.nvim",
+    'dasupradyumna/midnight.nvim',
     priority = 1000,
     lazy = false,
     config = function()
-      vim.cmd.colorscheme "oxocarbon"
+      vim.cmd.colorscheme "midnight"
     end,
   },
 
