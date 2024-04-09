@@ -41,5 +41,8 @@
 - name: "Bluetooth Manager"
   command: $HOME/.dotfiles/scripts/rofi-bluetooth.sh
 
+- name: "Wallpaper Selector"
+  command: sxiv $HOME/Pictures/Wallpapers
+
 - name: "Show Current Date"
   command: dunstify -u critical "Current Date" "$(date)"

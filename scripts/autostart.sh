@@ -1,6 +1,6 @@
 #!/bin/bash
 
-redshift -P -O 5000K
+# redshift -P -O 5000K
 
 dunst & 
 dunstify "Welcome!"
@@ -18,15 +18,15 @@ purple=#ae81ff
 white=#faedff
 
 cpu() {
-	printf "^c$white^^b$black^ 󰝨 ^c$white^^b$black^$(cat /sys/class/thermal/thermal_zone3/temp | cut -c1-2)°"
+	printf "^c$white^ 󰝨 ^c$white^$(cat /sys/class/thermal/thermal_zone3/temp | cut -c1-2)°"
 }
 
 wifi() {
   LOCAL_IP="$(ip -o -4 addr list wlo1 | awk '{print $4}' | cut -d/ -f1)"
   if [ ! -z "$LOCAL_IP" -a "$LOCAL_IP" != " " ]; then
-    printf "^c$white^^b$black^󰽢^c$white^^b$black^ "
+    printf "󰽢 "
     else
-    printf "^c$white^^b$black^󰄰^c$white^^b$black^ "
+    printf "󰄰 "
   fi
 }
 
@@ -36,30 +36,30 @@ battery() {
   if [[ $charging = "0" ]]; then
 
 	if [[ $battery > "15" ]]; then
-		printf "^c$blue^󱀝^c$white^ $battery󱉸"
+		printf "󱀝 $battery󱉸"
 	else
-    printf "^c$red^󱀝^c$white^ $battery󱉸"
+    printf "󱀝 $battery󱉸"
 	fi
 	 else
-		printf "^c$red^󱢠^c$white^ $battery󱉸"
+		printf "󱢠 $battery󱉸"
   fi
 }
 
 clock() {
-	printf "^c$white^^b$black^$(date '+%A %I:%M %p') "
+	printf "$(date '+%A %I:%M %p') "
 }
 
 pomo() {
   if pgrep -x "potd" > /dev/null;
   then
-    printf "^c$white^ $(potctl | awk 'NR==2 {print $3}') ^b$black^"
+    printf " $(potctl | awk 'NR==2 {print $3}') "
   fi
 }
 
 adb() {
   if pgrep -x "adb" >/dev/null;
   then
-		printf "^c$white^󰀲^b$black^ "
+		printf "󰀲 "
   fi
 }
 

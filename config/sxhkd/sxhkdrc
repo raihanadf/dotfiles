@@ -41,9 +41,9 @@ alt + F3
 
 # -- System Keys --
 
-# slockkkk
+# lock screen
 alt + Escape
-	slock
+    betterlockscreen -l dim
 
 # networkmanager_dmenu
 alt + n
@@ -71,4 +71,4 @@ Print
 
 # open wallpaper picker, in this case nitrogen
 alt + shift + semicolon
-	nitrogen $HOME/Pictures/Wallpapers || notify-send "Theres no 'Wallpapers' folder in Pictures"
+	sxiv -t $HOME/Pictures/Wallpapers || notify-send "Theres no 'Wallpapers' folder in Pictures"

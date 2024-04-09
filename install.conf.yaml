@@ -67,10 +67,11 @@
     ~/.config/Code/User/keybindings.json: config/Code/User/keybindings.json/
     ~/.config/Code/User/settings.json: config/Code/User/settings.json/
 
-    #~/.vim:
-    #  create: true
-    #  path: config/nvim
-    #  force: true
+    # sxiv key handler
+    ~/.config/sxiv:
+     create: true
+     path: config/sxiv
+     force: true
   
 # in case if you forgot, it needs 4 spaces or 2 tabs
 
