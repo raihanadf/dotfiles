@@ -41,7 +41,7 @@ battery() {
     printf "󱀝 $battery󱉸"
 	fi
 	 else
-		printf "󱢠 $battery󱉸"
+		printf "󰣏 $battery󱉸"
   fi
 }
 
