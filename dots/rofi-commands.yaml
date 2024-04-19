@@ -17,7 +17,7 @@
   confirm: true
   command: systemctl poweroff
 
-- name: "System: Restart"
+- name: "System: Reboot"
   confirm: true
   command: systemctl reboot
 

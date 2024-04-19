@@ -3,7 +3,7 @@
 if [ $# -eq 1 ]
 then
 	# set wallpaper and sync color
-	wal -i "$1"
+	wal -i "$1" -s -t
 
 	# set display manager wallpaper
 	cp $1 /usr/share/sddm/themes/dimana-tema-sddm-aku/background.jpg
@@ -12,8 +12,8 @@ then
 	betterlockscreen -u "$1" --fx dim &
 	dunstify "Wallpaper Synced"
 else
-	wal -R
+	wal -R -s -t
 	dunstify "Wallpaper Restored"
 fi
 
-sleep 0.7 && xdotool key super+F5
+sleep 1.2 && xdotool key super+F5
