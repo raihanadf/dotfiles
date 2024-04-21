@@ -9,7 +9,7 @@ then
 	cp $1 /usr/share/sddm/themes/dimana-tema-sddm-aku/background.jpg
 
 	# update betterlockscreen // async
-	betterlockscreen -u "$1" --fx dim &
+	# betterlockscreen -u "$1" --fx dim &
 	dunstify "Wallpaper Synced"
 else
 	wal -R -s -t

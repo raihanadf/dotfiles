@@ -33,7 +33,7 @@ window {
     location:   center;
     width:      480;
     padding:    20px;
-    border:             1px 1px 1px 1px;
+    border:             2px;
     border-color:                   #faedff;
 
     background-color:   @bg0;
