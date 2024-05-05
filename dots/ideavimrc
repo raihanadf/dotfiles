@@ -19,7 +19,7 @@ nnoremap <leader>s :action TextSearchAction<CR>
 vnoremap gc :action CommentByLineComment<CR>
 nnoremap <c-S-i> :action ReformatCode<CR>
 nnoremap <leader>o :action OptimizeImports<CR>
-nnoremap gd :action GoToDeclaration<CR>
+nnoremap gd :action GotoImplementation<CR>
 nnoremap <leader>gr :action Refactorings.QuickListPopupAction<CR>
 nnoremap gr :action ShowIntentionActions<CR>
 vnoremap p P
@@ -34,4 +34,4 @@ nnoremap ]] :action MethodDown<CR>
 // Ideavimrc
 nnoremap <leader>r :action IdeaVim.ReloadVimRc.reload<CR>
 nnoremap \w :wq<CR>
-nnoremap \e :e ~/.ideavimrc<CR>
+nnoremap \c :e ~/.ideavimrc<CR>

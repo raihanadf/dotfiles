@@ -25,7 +25,7 @@ alias nvimconfig="vi ~/.config/nvim/init.lua"
 # replace with better app // admin
 alias vi="nvim" # neovim
 alias isw="sudo isw" # ice sealead wyvern on github
-alias pomo="spt -e 'aplay $HOME/Music/alarm.wav'" # suckless' spt
+alias py="python" # just python
 # alias cat="batcat"
 
 # directories

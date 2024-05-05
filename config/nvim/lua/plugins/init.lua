@@ -46,5 +46,18 @@ return {
 
   -- markdown preview
   -- install with yarn or npm
-	{"ellisonleao/glow.nvim", config = true, cmd = "Glow"}
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && yarn install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  },
+
+  -- trouble is a friend
+  "folke/trouble.nvim",
+  dependencies = { "nvim-tree/nvim-web-devicons" },
+  opts = {},
 }

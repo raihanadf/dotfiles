@@ -319,5 +319,63 @@
   "New freezed event": {
     "prefix": "fevent",
     "body": "const factory ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}.${1:eventName}($2) = _${1/(.*)/${1:/capitalize}/};\n$3"
-  }  
+  },
+  "Cubit Block": {
+    "prefix": "cubit:block",
+    "body": [
+      "import 'package:bloc/bloc.dart';",
+      "import 'package:meta/meta.dart';\n",
+      "part 'example_state.dart';\n",
+      "class $1Cubit extends Cubit<$1State> {",
+      "\t$1Cubit() : super($1Initial());",
+      "}"
+    ],
+    "description": "Cubit - Defines a template for a cubit block"
+  },
+  "Cubit State": {
+    "prefix": "cubit:state",
+    "body": [
+      "part of 'example_cubit.dart';\n",
+      "@immutable",
+      "abstract class $1State {}\n",
+      "class $1Initial extends $1State {}"
+    ],
+    "description": "Cubit - Defines a template for a cubit state"
+  },
+  "Bloc Block": {
+    "prefix": "bloc:block",
+    "body": [
+      "import 'package:bloc/bloc.dart';",
+      "import 'package:meta/meta.dart';\n",
+      "part 'example_event.dart';",
+      "part 'example_state.dart';\n",
+      "class $1Bloc extends Bloc<$1Event, $1State> {",
+      "\t$1Bloc() : super($1Initial()) {",
+      "\t\ton<$1Event>((event, emit) {",
+      "\t\t\t// TODO: implement event handler",
+      "\t\t});",
+      "\t}",
+      "}"
+    ],
+    "description": "Bloc - Defines a template for a bloc code block"
+  },
+  "Bloc State": {
+    "prefix": "bloc:state",
+    "body": [
+      "part of 'example_bloc.dart';\n",
+      "@immutable",
+      "abstract class $1State {}\n",
+      "class $1Initial extends $1State {}"
+    ],
+    "description": "Bloc - Defines a template for a bloc state"
+  },
+  "Bloc Event": {
+    "prefix": "bloc:event",
+    "body": [
+      "part of 'example_bloc.dart';\n",
+      "@immutable",
+      "abstract class $1Event {}\n"
+    ],
+    "description": "Bloc - Defines a template for a bloc event"
+  }
 }

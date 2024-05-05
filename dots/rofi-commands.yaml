@@ -46,3 +46,6 @@
 
 - name: "Show Current Date"
   command: dunstify -u critical "Current Date" "$(date)"
+
+- name: "Kill Android Studio"
+  command: pkill -f /opt/android-studio

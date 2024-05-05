@@ -70,7 +70,7 @@ nrkeymap("<c-l>", "<c-w>l")
 
 ---- lsp keymap
 nskeymap("<c-i>", ":lua vim.lsp.buf.format({ async = true })<cr>")
-nskeymap("gd", ":lua require('telescope.builtin').lsp_definitions()<cr>")
+nskeymap("gd", ":lua vim.lsp.buf.definition()<cr>")
 nskeymap("gD", ":lua vim.lsp.buf.declaration()<cr>")
 nskeymap("gi", ":lua vim.lsp.buf.implementation()<cr>")
 nskeymap("gl", "<cmd>lua vim.diagnostic.open_float()<CR>")
@@ -91,11 +91,11 @@ nskeymap("<c-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>")
 nskeymap("<leader>p", "<cmd>lua require('telescope.builtin').buffers()<cr>")
 nskeymap("<leader>s", "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>") -- live grep
 nskeymap("<leader>ss", "<cmd>lua require('telescope.builtin').live_grep()<cr>")                -- live grep
-nskeymap("<leader>fmp", "<cmd>lua require('telescope.builtin').man_pages()<cr>")
-nskeymap("<leader>ffm", "<cmd>lua require('telescope').extensions.flutter.commands()<cr>")
-nskeymap("<leader>ffb", ":FlutterRun<CR>")     -- Run Project
-nskeymap("<leader>ffr", ":FlutterRestart<CR>") -- Restart Project
-nskeymap("<leader>ffh", ":FlutterReload<CR>")  -- Reload Project
+nskeymap("<leader>mp", "<cmd>lua require('telescope.builtin').man_pages()<cr>")
+nskeymap("<leader>fm", "<cmd>lua require('telescope').extensions.flutter.commands()<cr>")
+nskeymap("<leader>fb", ":FlutterRun -v<CR>")     -- Run Project
+nskeymap("<leader>fr", ":FlutterRestart<CR>") -- Restart Project
+nskeymap("<leader>fh", ":FlutterReload<CR>")  -- Reload Project
 -----------------------------------------------------------------
 
 ---- nvim tree

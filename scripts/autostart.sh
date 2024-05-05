@@ -46,7 +46,7 @@ battery() {
 }
 
 clock() {
-	printf "$(date '+%A %I:%M %p') "
+	printf "$(date '+%A %R on %d/%m/%y') "
 }
 
 pomo() {
