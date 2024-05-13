@@ -130,7 +130,7 @@ return {
 					"decorate",
 					fmt = function(content, context)
 						-- 
-						return "   "
+						return " "
 					end,
 				},
 			},
