@@ -13,7 +13,7 @@ alias q="exit"
 alias nnn='nnn -de'
 alias sl='sl -a -w -l'
 alias sizedir="du -h --max-depth=1"
-alias npm="pnpm"
+# alias npm="pnpm"
 
 # edit config
 alias zshalias="vi ~/.zsh_aliases"

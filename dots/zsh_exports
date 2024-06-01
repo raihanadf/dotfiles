@@ -48,14 +48,6 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 # everything-i-guess bin
 export PATH="$PATH":"$HOME/.local/bin"
 
-# pnpm
-export PNPM_HOME="/home/raihan/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
@@ -73,3 +65,12 @@ export PATH=$PATH:/home/raihan/.spicetify
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# zsh-autocomplete
+zstyle ':autocomplete:*' delay 0.1  # seconds (float)
+zstyle ':autocomplete:recent-paths:*' list-lines 10
+zstyle ':autocomplete:history-incremental-search-backward:*' list-lines 8
+zstyle ':autocomplete:history-search-backward:*' list-lines 2000
+zstyle ':autocomplete:*' min-input 3
+bindkey -M menuselect              '^I'         menu-complete
+bindkey -M menuselect "$terminfo[kcbt]" reverse-menu-complete

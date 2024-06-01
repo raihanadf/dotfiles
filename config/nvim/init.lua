@@ -26,10 +26,20 @@ require('lazy').setup({
 
   {
     "nyoom-engineering/oxocarbon.nvim",
-    priority = 1000,
+    -- priority = 1000,
+    -- lazy = false,
+    -- config = function()
+    --   vim.cmd.colorscheme "oxocarbon"
+    -- end,
+  },
+
+  {
+    "navarasu/onedark.nvim",
     lazy = false,
-    config = function()
-      vim.cmd.colorscheme "oxocarbon"
+    priority = 1000,
+    config = function(plugin)
+      vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
+      vim.cmd([[colorscheme onedark]])
     end,
   },
 

@@ -105,7 +105,7 @@ nskeymap("<leader>gl", ":Glow<cr>")
 nskeymap("<leader>e", ":NvimTreeToggle<cr>")
 
 ---- mini map
-nskeymap("<leader>m", ":lua MiniMap.toggle()<cr>")
+nskeymap("<leader>mm", ":lua MiniMap.toggle()<cr>")
 
 ---- restart neovim / source file
 nskeymap("<leader>sv", ":luafile ~/.config/nvim/init.lua<cr>")

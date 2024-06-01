@@ -25,7 +25,6 @@
     # if status bar on top
     # offset = 10x35
     offset = 20x20
-    # offset = 20x20
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -81,7 +80,7 @@
     frame_width = 2
 
     # Defines color of the frame around the notification window.
-    frame_color = "#faedff"
+    frame_color = "#606060"
 
     # Define a color for the separator.
     # possible values are:
