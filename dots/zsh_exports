@@ -67,10 +67,10 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
 
 # zsh-autocomplete
-zstyle ':autocomplete:*' delay 0.1  # seconds (float)
-zstyle ':autocomplete:recent-paths:*' list-lines 10
-zstyle ':autocomplete:history-incremental-search-backward:*' list-lines 8
-zstyle ':autocomplete:history-search-backward:*' list-lines 2000
-zstyle ':autocomplete:*' min-input 3
-bindkey -M menuselect              '^I'         menu-complete
-bindkey -M menuselect "$terminfo[kcbt]" reverse-menu-complete
+# zstyle ':autocomplete:*' delay 0.1  # seconds (float)
+# zstyle ':autocomplete:recent-paths:*' list-lines 10
+# zstyle ':autocomplete:history-incremental-search-backward:*' list-lines 8
+# zstyle ':autocomplete:history-search-backward:*' list-lines 2000
+# zstyle ':autocomplete:*' min-input 3
+# bindkey -M menuselect              '^I'         menu-complete
+# bindkey -M menuselect "$terminfo[kcbt]" reverse-menu-complete

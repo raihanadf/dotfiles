@@ -9,7 +9,7 @@ robbyrussell/oh-my-zsh path:plugins/git kind:defer
 zsh-users/zsh-autosuggestions kind:defer
 zdharma-continuum/fast-syntax-highlighting kind:defer
 zsh-users/zsh-history-substring-search kind:defer
-marlonrichert/zsh-autocomplete
+# marlonrichert/zsh-autocomplete
 
 # kutsan/zsh-system-clipboard
 jeffreytse/zsh-vi-mode kind:defer
