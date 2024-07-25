@@ -14,13 +14,13 @@ configuration {
 @theme "/dev/null"
 
 * {
-    bg0:     #151515;
+    bg0:     #010101;
     bg1:     #404040;
     fg0:     #eeffff;
 
     accent-color:     #bdbdbd;
     urgent-color:     #ffcb6b;
-    border-color:     #606060;
+    border-color:     #787878;
 
     background-color:   transparent;
     text-color:         @fg0;

@@ -55,7 +55,7 @@ super + alt + {BackSpace,F2,F3}
 
 # command palette
 alt + shift + p
-	$HOME/Documents/Tools/rofi-command-palette/command-palette.sh
+	$HOME/.dotfiles/scripts/rofi-command-palette/command-palette.sh
 
 # file manager (using thunar here)
 alt + control + f

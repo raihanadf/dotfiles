@@ -2,3 +2,6 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "scripts/rofi-command-palette"]
+	path = scripts/rofi-command-palette
+	url = git@github.com:raihanadf/rofi-command-palette.git

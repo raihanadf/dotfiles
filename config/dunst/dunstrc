@@ -177,13 +177,13 @@
 
     # your notifs stuff
     [urgency_low]
-        background = "#151515"
+        background = "#010101"
         foreground = "#faedff"
         highlight = "#50fa7b"
         timeout = 6
 
     [urgency_normal]
-        background = "#151515"
+        background = "#010101"
         foreground = "#faedff"
         highlight = "#50fa7b"
         timeout = 8
