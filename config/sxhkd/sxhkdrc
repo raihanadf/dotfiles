@@ -59,7 +59,7 @@ alt + shift + p
 
 # file manager (using thunar here)
 alt + control + f
-	thunar
+	nautilus
 
 # screenshot with gui
 alt + Print
