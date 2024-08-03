@@ -27,6 +27,14 @@ return {
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim',  event = "VeryLazy", opts = {} },
 
+  -- leap, leap, leappp!!!
+  {
+    'ggandor/leap.nvim',
+    config = function()
+      require('leap').create_default_mappings()
+    end
+  },
+
   {
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
