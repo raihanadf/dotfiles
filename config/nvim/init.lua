@@ -38,6 +38,9 @@ require('lazy').setup({
     lazy = false,
     priority = 1000,
     config = function(plugin)
+      require('onedark').setup {
+          style = 'deep'
+      }
       vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
       vim.cmd([[colorscheme onedark]])
     end,

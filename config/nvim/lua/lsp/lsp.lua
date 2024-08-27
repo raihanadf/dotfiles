@@ -60,6 +60,8 @@ return {
           -- diagnostics = { disable = { 'missing-fields' } },
         },
       },
+
+      phpactor = {},
     }
 
     -- Setup neovim lua configuration
