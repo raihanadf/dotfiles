@@ -3,7 +3,8 @@
 if [ $# -eq 1 ]
 then
 	# set wallpaper and sync color
-	wal -i "$1" -s -t --saturate 0.07
+	wal -i "$1" -s -t --saturate 0.07 -n
+	nitrogen --set-zoom-fill "$1" --save
 
 	# set display manager wallpaper
 	cp $1 /usr/share/sddm/themes/dimana-tema-sddm-aku/background.jpg
@@ -12,7 +13,8 @@ then
 	# betterlockscreen -u "$1" --fx dim &
 	dunstify "Wallpaper Synced"
 else
-	wal -R -s -t --saturate 0.07
+	wal -R -s -t --saturate 0.07 -n
+	nitrogen --restore
 	dunstify "Wallpaper Restored"
 fi
 
