@@ -53,13 +53,13 @@ fi
 
 if [ "$isMuted" = "false" ]; then
   if [ "$volume" -gt "100" ]; then
-    dunstify "Sound" "Volume: [ $volume%]" -h int:value:"$volume" -h string:fgcolor:#ff4444 -h string:frcolor:#ba0606 -i $iconPath/audio-volume-overamplified-symbolic.svg -r $msgID
+    dunstify "Sound" "Volume: [$volume%]" -h int:value:"$volume" -h string:fgcolor:#ff4444 -h string:frcolor:#ba0606 -i $iconPath/audio-volume-overamplified-symbolic.svg -r $msgID
   elif [ "$volume" -gt "75" ]; then
-    dunstify "Sound" "Volume: [ $volume%]" -h int:value:"$volume" -h string: -i $iconPath/audio-volume-high-symbolic.svg -r $msgID
+    dunstify "Sound" "Volume: [$volume%]" -h int:value:"$volume" -h string: -i $iconPath/audio-volume-high-symbolic.svg -r $msgID
   elif [ "$volume" -gt "40" ]; then
-    dunstify "Sound" "Volume: [ $volume%]" -h int:value:"$volume" -h string: -i $iconPath/audio-volume-medium-symbolic.svg -r $msgID
+    dunstify "Sound" "Volume: [$volume%]" -h int:value:"$volume" -h string: -i $iconPath/audio-volume-medium-symbolic.svg -r $msgID
   elif [ "$volume" -gt "0" ]; then
-    dunstify "Sound" "Volume: [ $volume%]" -h int:value:"$volume" -h string: -i $iconPath/audio-volume-low-symbolic.svg -r $msgID
+    dunstify "Sound" "Volume: [$volume%]" -h int:value:"$volume" -h string: -i $iconPath/audio-volume-low-symbolic.svg -r $msgID
   elif [ "$volume" == "0" ]; then
     dunstify "Volume Muted" -h string: -i $iconPath/audio-volume-muted-symbolic.svg -r $msgID
   fi

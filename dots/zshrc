@@ -32,3 +32,5 @@ antidote load
 
 # end
 # eval "$(starship init zsh)"
+
+export PATH=$PATH:/home/raihan/.spicetify
