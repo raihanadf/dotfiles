@@ -1,5 +1,9 @@
 #!/bin/bash
 
+refresh_dwm () {
+	sleep 1.2 && xdotool key super+F5
+}
+
 if [ $# -eq 1 ]
 then
 	# set wallpaper and sync color
@@ -11,11 +15,11 @@ then
 
 	# update betterlockscreen // async
 	# betterlockscreen -u "$1" --fx dim &
+	refresh_dwm
 	dunstify "Wallpaper Synced"
 else
 	wal -R -s -t --saturate 0.07 -n
 	nitrogen --restore
+	refresh_dwm
 	dunstify "Wallpaper Restored"
 fi
-
-sleep 1.2 && xdotool key super+F5
