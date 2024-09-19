@@ -15,20 +15,21 @@ vim.opt.rtp:prepend(lazypath)
 -- [[ Configure plugins ]]
 require('lazy').setup({
 
-  {
-    "askfiy/visual_studio_code",
-    -- priority = 100,
-    -- lazy = false,
-    -- config = function()
-    --   vim.cmd.colorscheme "visual_studio_code"
-    -- end,
-  },
+  -- {
+  --   "askfiy/visual_studio_code",
+  --   priority = 100,
+  --   lazy = false,
+  --   config = function()
+  --     vim.cmd.colorscheme "visual_studio_code"
+  --   end,
+  -- },
 
   -- {
   --   "nyoom-engineering/oxocarbon.nvim",
   --   priority = 1000,
   --   lazy = false,
   --   config = function()
+  --     vim.opt.background = "dark" -- set this to dark or light
   --     vim.cmd.colorscheme "oxocarbon"
   --   end,
   -- },
@@ -39,7 +40,7 @@ require('lazy').setup({
     priority = 1000,
     config = function(plugin)
       require('onedark').setup {
-          style = 'deep'
+          style = 'darker'
       }
       vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
       vim.cmd([[colorscheme onedark]])

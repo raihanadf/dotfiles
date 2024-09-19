@@ -18,8 +18,8 @@ then
 	refresh_dwm
 	dunstify "Wallpaper Synced"
 else
-	wal -R -s -t --saturate 0.07 -n
 	nitrogen --restore
+	wal -R -s -t --saturate 0.07 -n
 	refresh_dwm
 	dunstify "Wallpaper Restored"
 fi

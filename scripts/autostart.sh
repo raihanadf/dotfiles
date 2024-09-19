@@ -24,9 +24,9 @@ cpu() {
 wifi() {
   LOCAL_IP="$(ip -o -4 addr list wlo1 | awk '{print $4}' | cut -d/ -f1)"
   if [ ! -z "$LOCAL_IP" -a "$LOCAL_IP" != " " ]; then
-    printf "󰽢 "
+    printf "󰽢  "
     else
-    printf "󰄰 "
+    printf "󰄰  "
   fi
 }
 

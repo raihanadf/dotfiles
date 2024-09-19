@@ -166,6 +166,8 @@
             "after": ["P"]
         },
     ],
-    "workbench.colorTheme": "One Dark Pro Monokai Darker",
+    "workbench.colorTheme": "Ayu Mirage",
+    "terminal.integrated.fontFamily": "monospace",
+    "errorLens.enabled": false,
 
 }

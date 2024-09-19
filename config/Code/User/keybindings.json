@@ -1,97 +1,55 @@
 [
-    // ctrl j + k for selection
-    {
-        "key": "ctrl+k",
-        "when": "codeActionMenuVisible",
-        "command": "selectPrevCodeAction"
-    },
-    {
-        "key": "ctrl+j",
-        "when": "codeActionMenuVisible",
-        "command": "selectNextCodeAction"
-    },
-    {
-        "key": "ctrl+j",
-        "command": "selectNextSuggestion",
-        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
-    },
-    {
-        "key": "ctrl+k",
-        "command": "selectPrevSuggestion",
-        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
-    },
-    
-    // command palette
-    {
-        "key": "ctrl+j",
-        "command": "workbench.action.quickOpenSelectNext",
-        "when": "inQuickOpen"
-    },
-    {
-        "key": "ctrl+k",
-        "command": "workbench.action.quickOpenSelectPrevious",
-        "when": "inQuickOpen"
-    },
-
-    { 
-    "key": "ctrl+h",
-    "command": "list.collapse",
-    "when": "listFocus && !inputFocus"
-    },
-    { 
-    "key": "ctrl+l",
-    "command": "list.expand",
-    "when": "listFocus && !inputFocus"
-    },
-    { 
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "f3",
+    "command": "workbench.action.debug.continue",
+    "when": "inDebugMode"
+  },
+  {
+    "key": "f3",
+    "command": "workbench.action.debug.start",
+    "when": "!inDebugMode"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "workbench.action.focusFirstEditorGroup"
+  },
+  {
+    "key": "tab",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "down",
+    "command": "-selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "shift+tab",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "up",
+    "command": "-selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "shift+tab",
+    "command": "selectPrevCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  {
     "key": "ctrl+k",
-    "command": "list.focusUp",
-    "when": "listFocus && !inputFocus"
-    },
-    { 
+    "command": "selectNextCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  {
     "key": "ctrl+j",
-    "command": "list.focusDown",
-    "when": "listFocus && !inputFocus"
-    },
-
-    // sidebar 
-    {
-        "key": ", e",
-        "command": "workbench.action.toggleSidebarVisibility",
-        "when": "!editorTextFocus"
-    },
-
-    // explorer
-    {
-    "key": "ctrl+enter",
-    "command": "renameFile",
-    "when": "explorerViewletVisible && filesExplorerFocus"
-    },
-    {
-    "key": "enter",
-    "command": "-renameFile",
-    "when": "explorerViewletVisible && filesExplorerFocus"
-    },
-    {
-    "key": "enter",
-    "command": "list.select",
-    "when": "listFocus && !inputFocus"
-    },
-
-    // terminal
-    {
-        "key": "ctrl+t",
-        "command": "workbench.action.terminal.toggleTerminal"
-    },
-
-    {
-        "key": "f3",
-        "command": "workbench.action.debug.continue",
-        "when": "inDebugMode"
-    },
-    {
-        "key": "f3",
-        "command": "workbench.action.debug.start",
-        "when": "!inDebugMode"
-    },
-    ]
+    "command": "selectPrevCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+]

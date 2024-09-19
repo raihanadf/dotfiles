@@ -8,7 +8,7 @@ return {
 
     bufferline.setup({
       options = {
-        separator_style = "thick",
+        separator_style = "slant",
         diagnostics = "nvim_lsp",
         buffer_close_icon = "",
         themable = true,

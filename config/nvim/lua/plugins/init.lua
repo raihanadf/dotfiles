@@ -25,7 +25,7 @@ return {
   { 'tpope/vim-sleuth',       event = "VeryLazy" },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim',  event = "VeryLazy", opts = {} },
+  -- { 'numToStr/Comment.nvim',  event = "VeryLazy", opts = {} },
 
   -- leap, leap, leappp!!!
   {
@@ -75,5 +75,4 @@ return {
     event = "VeryLazy",
     enabled = vim.fn.has("nvim-0.10.0") == 1,
   },
-
 }
