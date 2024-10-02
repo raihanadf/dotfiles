@@ -34,16 +34,34 @@ require('lazy').setup({
   --   end,
   -- },
 
+  -- {
+  --   "navarasu/onedark.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function(plugin)
+  --     require('onedark').setup {
+  --         style = 'darker'
+  --     }
+  --     vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
+  --     vim.cmd([[colorscheme onedark]])
+  --   end,
+  -- },
+
   {
-    "navarasu/onedark.nvim",
+    "EdenEast/nightfox.nvim",
     lazy = false,
     priority = 1000,
     config = function(plugin)
-      require('onedark').setup {
-          style = 'darker'
-      }
-      vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
-      vim.cmd([[colorscheme onedark]])
+      require('nightfox').setup({
+        options = {
+          styles = {
+            comments = "italic",
+            keywords = "bold",
+            types = "italic,bold",
+          }
+        }
+      })
+      vim.cmd("colorscheme terafox")
     end,
   },
 

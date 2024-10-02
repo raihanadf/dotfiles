@@ -166,7 +166,7 @@
             "after": ["P"]
         },
     ],
-    "workbench.colorTheme": "Ayu Mirage",
+    "workbench.colorTheme": "Default Dark+",
     "terminal.integrated.fontFamily": "monospace",
     "errorLens.enabled": false,
 

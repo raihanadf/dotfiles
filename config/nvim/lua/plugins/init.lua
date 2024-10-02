@@ -69,6 +69,8 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons" },
   opts = {},
 
+  { 'akinsho/git-conflict.nvim', version = "*", config = true },
+
   {
     "folke/ts-comments.nvim",
     opts = {},

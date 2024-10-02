@@ -34,3 +34,11 @@ antidote load
 # eval "$(starship init zsh)"
 
 export PATH=$PATH:/home/raihan/.spicetify
+
+# pnpm
+export PNPM_HOME="/home/raihan/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
