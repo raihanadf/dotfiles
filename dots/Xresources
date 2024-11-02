@@ -7,4 +7,4 @@ Xft.hinting: true
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcdlight
 
-Xcursor.size: 32
+Xcursor.size: 24

@@ -1,6 +1,6 @@
 configuration {
   show-icons: true;
-  font: "Iosevka Nerd Font Bold 14";
+  font: "Iosevka Nerd Font Bold 12";
   display-drun: "";
   drun-display-format: "{name}";
   display-run: "   Run ";

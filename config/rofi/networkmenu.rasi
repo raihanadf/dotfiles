@@ -1,5 +1,5 @@
 configuration {
-	font:					"Scientifica Bold 16";
+	font:					"Iosevka Nerd Font Bold 12";
   show-icons:                     true;
 	icon-theme: 					"Papirus";
   display-drun: 					"";
