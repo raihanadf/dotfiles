@@ -123,6 +123,13 @@ return {
 			},
 			lualine_z = {
 				{
+					function()
+						local reg = vim.fn.reg_recording():upper()
+						if reg == "" then return "" end -- not recording
+						return "Recording Key: " .. reg
+					end,
+				},
+				{
 					"filetype",
 					icons_enabled = false,
 				},
