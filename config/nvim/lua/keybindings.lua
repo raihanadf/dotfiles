@@ -135,6 +135,12 @@ nskeymap("<leader>tr", ":TroubleToggle<CR>")
 nskeymap("<leader>vc", ":VimtexCompile<CR>")
 nskeymap("<leader>vv", ":VimtexView<CR>")
 
+-- toggle inline diagnostics (ii)
+nskeymap("<Leader>ii", ":lua vim.cmd(\"DiagnosticsToggleVirtualText\")<CR>")
+-- toggle diagnostics (id)
+nskeymap("<Leader>id", ":lua vim.cmd(\"DiagnosticsToggle\")<CR>")
+
+
 -- -- [[ Basic Keymaps ]]
 --
 -- -- Keymaps for better default experience
@@ -177,3 +183,31 @@ nskeymap("<leader>vv", ":VimtexView<CR>")
 -- nmap('<leader>wl', function()
 --   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 -- end, '[W]orkspace [L]ist Folders')
+
+-- Command to toggle inline diagnostics
+vim.api.nvim_create_user_command(
+  'DiagnosticsToggleVirtualText',
+  function()
+    local current_value = vim.diagnostic.config().virtual_text
+    if current_value then
+      vim.diagnostic.config({virtual_text = false})
+    else
+      vim.diagnostic.config({virtual_text = true})
+    end
+  end,
+  {}
+)
+
+-- Command to toggle diagnostics
+vim.api.nvim_create_user_command(
+  'DiagnosticsToggle',
+  function()
+    local current_value = vim.diagnostic.is_disabled()
+    if current_value then
+      vim.diagnostic.enable()
+    else
+      vim.diagnostic.disable()
+    end
+  end,
+  {}
+)

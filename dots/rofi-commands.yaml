@@ -49,3 +49,6 @@
 
 - name: "Kill Android Studio"
   command: pkill -f /opt/android-studio
+
+- name: "Get XProp Class Name"
+  command: dunstify "Class name is \"$(xprop | grep CLASS | awk -F'"' '{print $2}')"\"

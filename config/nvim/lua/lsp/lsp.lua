@@ -95,5 +95,7 @@ return {
         globalStoragePath = os.getenv('HOME') .. '/.local/share/intelephense'
       }
     }
+
+    vim.diagnostic.config({ virtual_text = false })
   end
 }

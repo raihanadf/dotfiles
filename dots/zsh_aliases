@@ -77,12 +77,6 @@ alias gitzip="git archive HEAD -o ${PWD##*/}.zip"
 ### archived
 
 # some programming thingy
-# alias mdb="sudo service mongodb"
-# alias lamppstart="sudo /opt/lampp/lampp start"
-# alias lamppst="sudo /opt/lampp/lampp status"
-# alias lamppstop="sudo /opt/lampp/lampp stop"
-# alias lampprestart="sudo /opt/lampp/lampp restart"
-# alias mysql="sudo /opt/lampp/bin/mysql -u root -p"
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 alias emulator='$ANDROID_HOME/emulator/emulator'
 alias myip="ip -o -4 addr list wlo1 | awk '{print $4}' | cut -d/ -f1"
@@ -93,3 +87,5 @@ alias minecraft="prime-run gamemoderun java -jar $HOME/Documents/Minecraft.jar"
 alias words="fortune -s | cowsay -f tux"
 alias habit="dijo"
 alias vencord='sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"'
+
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
