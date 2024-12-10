@@ -41,3 +41,7 @@ nnoremap ]] :action MethodDown<CR>
 nnoremap <leader>r :action IdeaVim.ReloadVimRc.reload<CR>
 nnoremap \w :wq<CR>
 nnoremap \c :e ~/.ideavimrc<CR>
+
+// For selecting up and down when inserting
+inoremap <c-k> <Up>
+inoremap <c-j> <Down>
