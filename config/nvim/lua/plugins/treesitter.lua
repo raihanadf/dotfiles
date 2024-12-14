@@ -16,9 +16,9 @@ return {
         ensure_installed = "all",
 
         -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-        auto_install = true,
+        auto_install = false,
         -- Install languages synchronously (only applied to `ensure_installed`)
-        sync_install = false,
+        sync_install = true,
         -- List of parsers to ignore installing
         ignore_install = { 'dart', 'latex', 'systemverilog' },
         -- You can specify additional Treesitter modules here: -- For example: -- playground = {--enable = true,-- },
