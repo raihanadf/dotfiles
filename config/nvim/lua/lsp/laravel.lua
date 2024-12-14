@@ -1,22 +1,11 @@
 -- lazy.nvim
 return {
-  {
-    'ccaglak/larago.nvim',
-    dependencies = {
-      "nvim-lua/plenary.nvim"
-    }
-  },
-  { -- lazy
-    ft = { 'php' },
-    'ccaglak/namespace.nvim',
-    keys = {
-      { '<leader>lc', '<cmd>lua require("namespace.getClass").get()<cr>',   { desc = 'GetClass' } },
-      { '<leader>la', '<cmd>lua require("namespace.getClasses").get()<cr>', { desc = 'GetClasses' } },
-      { "<leader>ls", '<cmd>lua require("namespace.classAs").open()<cr>',   { desc = 'ClassAs' } },
-      { "<leader>ln", '<cmd>lua require("namespace.namespace").gen()<cr>',  { desc = 'Generate Namespace' } },
+    'ricardoramirezr/blade-nav.nvim',
+    dependencies = { -- totally optional
+        'hrsh7th/nvim-cmp', -- if using nvim-cmp
     },
-    dependencies = {
-      "nvim-lua/plenary.nvim"
-    }
-  }
-};
+    ft = {'blade', 'php'}, -- optional, improves startup time
+    opts = {
+        close_tag_on_complete = true, -- default: true
+    },
+}

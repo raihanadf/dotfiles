@@ -61,7 +61,7 @@ return {
         },
       },
 
-      phpactor = {},
+      -- phpactor = {},
     }
 
     -- Setup neovim lua configuration
