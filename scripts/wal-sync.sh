@@ -1,5 +1,7 @@
 #!/bin/bash
 
+SATURATION=0.017
+
 refresh_dwm () {
 	sleep 1.2 && xdotool key super+F5
 }
@@ -7,7 +9,7 @@ refresh_dwm () {
 if [ $# -eq 1 ]
 then
 	# set wallpaper and sync color
-	wal -i "$1" -s -t --saturate 0.2 -n
+	wal -i "$1" -s -t --saturate $SATURATION -n
 	nitrogen --set-zoom-fill "$1" --save
 
 	# set display manager wallpaper
@@ -19,7 +21,7 @@ then
 	dunstify "Wallpaper Synced"
 else
 	nitrogen --restore
-	wal -R -s -t --saturate 0.2 -n
+	wal -R -s -t --saturate $SATURATION -n
 	refresh_dwm
 	dunstify "Wallpaper Restored"
 fi
