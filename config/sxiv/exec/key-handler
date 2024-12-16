@@ -8,7 +8,7 @@ do
         "C-r")
                 convert -rotate 90 "$file" "$file" ;;
         "C-c")
-                echo -n "$file" | xclip -selection clipboard ;;
+                echo -n "$file copied" | xclip -selection clipboard "$file" -t image/png ;;
         "C-w")
                 $HOME/.dotfiles/scripts/wal-sync.sh $file ;;
         esac
