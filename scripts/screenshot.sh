@@ -1,24 +1,27 @@
 #!/bin/bash
-
 SCREENSHOT_DIR="$HOME/Pictures/Screenshots"
 mkdir -p "$SCREENSHOT_DIR"
 
-active_screenshot() {
+countdown_notify() {
+    local message="$1"
     for i in {3..1}; do
-        dunstify -r 9999 "Screenshot" "Taking shot in $i seconds..."
+        dunstify -r 9999 "Screenshot" "$message in $i seconds..."
         sleep 1
+        if [ $i -eq 1 ]; then
+            dunstify -C 9999
+            sleep 0.2
+        fi
     done
+}
 
+active_screenshot() {
+    countdown_notify "Taking shot"
     FILENAME="$SCREENSHOT_DIR/active_$(date +%Y%m%d_%H%M%S).png"
     scrot -u "$FILENAME" && dunstify "Screenshot" "Screenshot saved to $FILENAME"
 }
 
 full_screenshot() {
-    for i in {3..1}; do
-        dunstify -r 9999 "Screenshot" "Taking full screenshot in $i seconds..."
-        sleep 1
-    done
-
+    countdown_notify "Taking full screenshot"
     FILENAME="$SCREENSHOT_DIR/full_$(date +%Y%m%d_%H%M%S).png"
     scrot "$FILENAME" && dunstify "Screenshot" "Screenshot saved to $FILENAME"
 }

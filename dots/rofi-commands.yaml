@@ -53,10 +53,10 @@
 - name: "Get XProp Class Name"
   command: dunstify "Class name is \"$(xprop | grep CLASS | awk -F'"' '{print $2}')"\"
 
-- name: "Screenshot: Active Window"
+- name: "Screenshot: Active Region"
   command: $HOME/.dotfiles/scripts/screenshot.sh --active
 
-- name: "Screenshot: Whole Screen"
+- name: "Screenshot: Full Screen"
   command: $HOME/.dotfiles/scripts --full
 
 - name: "Open Last Screenshot"
