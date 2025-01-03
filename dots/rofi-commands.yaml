@@ -57,7 +57,4 @@
   command: $HOME/.dotfiles/scripts/screenshot.sh --active
 
 - name: "Screenshot: Full Screen"
-  command: $HOME/.dotfiles/scripts --full
-
-- name: "Open Last Screenshot"
-  command: sxiv "$(realpath ~/Pictures/Screenshots/$(ls -t ~/Pictures/Screenshots | head -n 1))"
+  command: $HOME/.dotfiles/scripts/screenshot.sh --full

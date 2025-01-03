@@ -4,7 +4,7 @@ mkdir -p "$SCREENSHOT_DIR"
 
 countdown_notify() {
     local message="$1"
-    for i in {3..1}; do
+    for i in {2..1}; do
         dunstify -r 9999 "Screenshot" "$message in $i seconds..."
         sleep 1
         if [ $i -eq 1 ]; then
@@ -16,14 +16,12 @@ countdown_notify() {
 
 active_screenshot() {
     countdown_notify "Taking shot"
-    FILENAME="$SCREENSHOT_DIR/active_$(date +%Y%m%d_%H%M%S).png"
-    scrot -u "$FILENAME" && dunstify "Screenshot" "Screenshot saved to $FILENAME"
+    scrot -u - | xclip -selection clipboard -t image/png && dunstify "Screenshot" "Screenshot copied to clipboard"
 }
 
 full_screenshot() {
     countdown_notify "Taking full screenshot"
-    FILENAME="$SCREENSHOT_DIR/full_$(date +%Y%m%d_%H%M%S).png"
-    scrot "$FILENAME" && dunstify "Screenshot" "Screenshot saved to $FILENAME"
+    scrot - | xclip -selection clipboard -t image/png && dunstify "Screenshot" "Screenshot copied to clipboard"
 }
 
 while [[ $# -gt 0 ]]; do

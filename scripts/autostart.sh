@@ -22,11 +22,12 @@ cpu() {
 }
 
 wifi() {
+	color=$blue
   LOCAL_IP="$(ip -o -4 addr list wlo1 | awk '{print $4}' | cut -d/ -f1)"
   if [ ! -z "$LOCAL_IP" -a "$LOCAL_IP" != " " ]; then
-    printf "󰽢  "
+    printf "^c$color^󰣏 ^c$white^"
     else
-    printf "󰄰  "
+    printf "^c$color^󱀝 ^c$white^"
   fi
 }
 
@@ -36,12 +37,12 @@ battery() {
   if [[ $charging = "0" ]]; then
 
 	if [[ $battery > "15" ]]; then
-		printf "󱀝 $battery󱉸"
+		printf "^c$blue^󱢠 ^c$white^$battery󱉸"
 	else
-    printf "󱀝 $battery󱉸"
+		printf "^c$red^󱢠 $battery󱉸"
 	fi
 	 else
-		printf "󰣏 $battery󱉸"
+		printf "^c$red^󱢠 ^c$white^$battery󱉸"
   fi
 }
 
@@ -70,6 +71,15 @@ bluetooth() {
   fi
 }
 
+reload_color() {
+    white=$(xrdb -query | grep color7 | sed 's/.*\t//' | head -n 1)
+    if [ -z "$white" ]; then
+				# if color7 doesn't exist
+        white="#ffffff"  
+    fi
+}
+
 while true; do
+	reload_color
   sleep 1 && xsetroot -name "$(wifi)$(clock)$(bluetooth)$(battery)"
 done
