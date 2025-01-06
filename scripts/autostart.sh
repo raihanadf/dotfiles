@@ -31,6 +31,13 @@ wifi() {
   fi
 }
 
+dnd() {
+  # im using dunst btw
+  if [ "$(dunstctl is-paused)" = "true" ]; then
+      printf "^c$yellow^󰽧 "
+  fi
+}
+
 battery() {
   charging="$(cat /sys/class/power_supply/ADP1/online)"
   battery=$(cat /sys/class/power_supply/BAT1/capacity)
@@ -81,5 +88,5 @@ reload_color() {
 
 while true; do
 	reload_color
-  sleep 1 && xsetroot -name "$(wifi)$(clock)$(bluetooth)$(battery)"
+	sleep 1 && xsetroot -name "$(dnd)$(wifi)$(clock)$(bluetooth)$(battery)"
 done

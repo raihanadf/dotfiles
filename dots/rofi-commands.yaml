@@ -10,6 +10,9 @@
 - name: "System: Toggle Mic"
   command: amixer set Capture toggle && notify-send "Microphone $(amixer get Capture | grep -m 1 -oE '\[on\]|\[off\]')"
 
+- name: "Dunst: Toggle DND"
+  command: dunstctl set-paused toggle
+
 - name: "Dunst: Reload"
   command: pkill dunst && dunst & sleep 1; notify-send 'Dunst reloaded'
 
