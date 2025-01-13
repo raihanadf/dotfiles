@@ -1,5 +1,6 @@
 -- lazy.nvim
 return {
+		-- this uses 'gf' as command for navigation
     'ricardoramirezr/blade-nav.nvim',
     dependencies = { -- totally optional
         'hrsh7th/nvim-cmp', -- if using nvim-cmp

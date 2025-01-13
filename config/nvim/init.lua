@@ -15,38 +15,6 @@ vim.opt.rtp:prepend(lazypath)
 -- [[ Configure plugins ]]
 require('lazy').setup({
 
-  -- {
-  --   "askfiy/visual_studio_code",
-  --   priority = 100,
-  --   lazy = false,
-  --   config = function()
-  --     vim.cmd.colorscheme "visual_studio_code"
-  --   end,
-  -- },
-
-  -- {
-  --   "nyoom-engineering/oxocarbon.nvim",
-  --   priority = 1000,
-  --   lazy = false,
-  --   config = function()
-  --     vim.opt.background = "dark" -- set this to dark or light
-  --     vim.cmd.colorscheme "oxocarbon"
-  --   end,
-  -- },
-
-  -- {
-  --   "navarasu/onedark.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function(plugin)
-  --     require('onedark').setup {
-  --         style = 'darker'
-  --     }
-  --     vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
-  --     vim.cmd([[colorscheme onedark]])
-  --   end,
-  -- },
-
   {
     "EdenEast/nightfox.nvim",
     lazy = false,
@@ -67,10 +35,12 @@ require('lazy').setup({
 
   { import = 'plugins' },
   { import = 'lsp' },
+
 }, {})
 
-require 'keybindings'
-require 'options'
+require('config.options')
+require('config.keybindings')
+require('config.autocmds')
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

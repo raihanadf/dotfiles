@@ -2,6 +2,16 @@ return {
   -- Highlight, edit, and navigate code
   'nvim-treesitter/nvim-treesitter',
   dependencies = {
+    {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+      opts = {
+        custom_calculation = function(_, language_tree)
+          if vim.bo.filetype == "blade" and language_tree._lang ~= "javascript" and language_tree._lang ~= "php" then
+            return "{{-- %s --}}"
+          end
+        end,
+      },
+    },
     'nvim-treesitter/nvim-treesitter-textobjects',
   },
   build = ':TSUpdate',
@@ -86,6 +96,8 @@ return {
           url = "https://github.com/EmranMR/tree-sitter-blade",
           files = { "src/parser.c" },
           branch = "main",
+          generate_requires_npm = true,
+          requires_generate_from_grammar = true,
         },
         filetype = "blade"
       }
