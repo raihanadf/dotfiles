@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SATURATION=0.017
+SATURATION=0.2
 
 refresh_dwm () {
 	sleep 1.2 && xdotool key super+F5
@@ -10,7 +10,7 @@ if [ $# -eq 1 ]
 then
 	# set wallpaper and sync color
 	wal -i "$1" -s -t --saturate $SATURATION -n
-	nitrogen --set-zoom-fill "$1" --save
+	nitrogen --set-scaled "$1" --save
 
 	# set display manager wallpaper
 	cp "$1" /usr/share/sddm/themes/dimana-tema-sddm-aku/background.jpg
