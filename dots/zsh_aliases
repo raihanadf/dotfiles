@@ -63,7 +63,7 @@ alias killmyself="pkill -KILL -u $USER"
 alias lyrics="sptlrx" # sptlrx-bin
 
 # record (use dgpu to work)
-alias record="gpu-screen-recorder -w screen -c mp4 -f 60 -a "$(pactl get-default-sink).monitor" -q high -o ~/Videos/now-recorded.mp4"
+# alias record="gpu-screen-recorder -w screen -c mp4 -f 60 -a "$(pactl get-default-sink).monitor" -q high -o ~/Videos/now-recorded.mp4"
 
 # functions
 
