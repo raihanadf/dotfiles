@@ -17,6 +17,9 @@ blue=#3C50FF
 purple=#ae81ff
 white=#faedff
 
+# variables
+blink=0
+
 cpu() {
 	printf "^c$white^ 󰝨 ^c$white^$(cat /sys/class/thermal/thermal_zone3/temp | cut -c1-2)°"
 }
@@ -41,20 +44,25 @@ dnd() {
 battery() {
   charging="$(cat /sys/class/power_supply/ADP1/online)"
   battery=$(cat /sys/class/power_supply/BAT1/capacity)
-  if [[ $charging = "0" ]]; then
 
-	if [[ $battery > "15" ]]; then
-		printf "^c$blue^󱢠 ^c$white^$battery󱉸"
-	else
-		printf "^c$red^󱢠 $battery󱉸"
-	fi
-	 else
-		printf "^c$red^󱢠 ^c$white^$battery󱉸"
+  if [[ $charging = "1" ]]; then
+    if [[ $blink = "1" ]]; then
+      printf "^c$red^󱢠 ^c$white^$battery󱉸"  # Show icon when blink=1
+    else
+      printf "^c$red^󰣐 ^c$white^$battery󱉸"  # Hide icon when blink=1
+    fi
+  else
+    if [[ $battery -gt 15 ]]; then
+      printf "^c$blue^󱢠 ^c$white^$battery󱉸"
+    else
+      printf "^c$red^󱢠 $battery󱉸"
+    fi
   fi
+
 }
 
 clock() {
-	printf "$(date '+%A %R on %d/%m/%y') "
+	printf "^c$white^$(date '+%I:%M %p') "
 }
 
 pomo() {
@@ -88,5 +96,6 @@ reload_color() {
 
 while true; do
 	reload_color
-	sleep 1 && xsetroot -name "$(dnd)$(wifi)$(clock)$(bluetooth)$(battery)"
+	sleep 1 && xsetroot -name "$(dnd)$(clock)$(bluetooth)$(battery)"
+	blink=$((1 - blink)) 
 done
