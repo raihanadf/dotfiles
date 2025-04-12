@@ -25,7 +25,6 @@
   command: systemctl reboot
 
 - name: "System: Sleep"
-  confirm: true
   command: systemctl suspend
 
 - name: "System: Turn Off Display"
