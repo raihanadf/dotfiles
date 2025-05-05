@@ -11,7 +11,7 @@ git clone https://aur.archlinux.org/paru.git && cd paru
 makepkg -si
 cd .. && rm -rf paru
 
-paru auto-cpufreq
+# paru auto-cpufreq
 
 # install tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

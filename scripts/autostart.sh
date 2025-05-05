@@ -25,12 +25,10 @@ cpu() {
 }
 
 wifi() {
-	color=$blue
+	color=$green
   LOCAL_IP="$(ip -o -4 addr list wlan0 | awk '{print $4}' | cut -d/ -f1)"
   if [ ! -z "$LOCAL_IP" -a "$LOCAL_IP" != " " ]; then
-    printf "^c$color^󰣏 ^c$white^"
-    else
-    printf "^c$color^󱀝 ^c$white^"
+    printf "^c$color^󰧟 ^c$white^"
   fi
 }
 
@@ -96,6 +94,6 @@ reload_color() {
 
 while true; do
 	reload_color
-	sleep 1 && xsetroot -name "$(dnd)$(clock)$(bluetooth)$(battery)"
+	sleep 1 && xsetroot -name "$(wifi)$(dnd)$(clock)$(bluetooth)$(battery)"
 	blink=$((1 - blink)) 
 done
