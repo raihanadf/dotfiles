@@ -12,6 +12,7 @@ HISTSIZE=1000
 SAVEHIST=2000
 
 unsetopt beep
+setopt auto_cd
 
 # --- compinit ---
 autoload -Uz compinit
@@ -20,6 +21,8 @@ if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
 else
 	compinit -C;
 fi;
+
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # --- antidote ---
 source $HOME/.antidote/antidote.zsh

@@ -1,6 +1,6 @@
 # theme
 romkatv/powerlevel10k
-marlonrichert/zsh-autocomplete
+# marlonrichert/zsh-autocomplete
 
 # git aliases
 robbyrussell/oh-my-zsh path:lib/git.zsh kind:defer
