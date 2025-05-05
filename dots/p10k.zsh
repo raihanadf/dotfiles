@@ -1653,8 +1653,7 @@
   }
 
 	function prompt_userhost() {
-		# Always show user@host, username in green
-		p10k segment -f green -t '%F{green}%n%f@%m'
+		p10k segment -t '%B%F{green}%n%f%b@%m'
 	}
 
   # User-defined prompt segments may optionally provide an instant_prompt_* function. Its job
