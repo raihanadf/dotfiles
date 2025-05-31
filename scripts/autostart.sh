@@ -5,6 +5,9 @@ redshift -P -O 4600K
 dunst & 
 dunstify "Welcome!"
 
+# no acceleration please
+xinput list --short | awk '/slave.*pointer/ {print $0}' | while read line; do id=$(echo "$line" | grep -o 'id=[0-9]*' | cut -d= -f2); xinput set-prop "$id" "libinput Accel Profile Enabled" 0 1 0 2>/dev/null || true; done
+
 # colours
 black=#000000
 pink=#ffc2d0
