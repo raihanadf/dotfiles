@@ -26,26 +26,18 @@ This repo is a collection of my dotfiles. I mainly develop/study for Android <i>
 
 ## Initial Setup
 
-```shell script
+```bash script
+# clone repo
+git clone https://github.com/raihanadf/dotfiles.git --depth 1 ~/.dotfiles
 
-# setup the ssh key for git
-email="<your email>"
-ssh-keygen -t ed25519 -C "${email}"
-
-# clone and make a new directory (for me)
-git clone git@github.com:raihanadf/dotfiles.git ~/.dotfiles
-
-# install (you better not do this)
+# install (better check the dots first)
 cd ~/.dotfiles
 ./install
-
 ```
 
 <br/>
 
 ## Details
-
-some information about my setup:
 
 - OS: [Arch Linux](https://archlinux.org/)
 - Terminal: [kitty](https://github.com/kovidgoyal/kitty)
@@ -62,6 +54,5 @@ some information about my setup:
   - possible solution:
     - downgrade all packages to specific date (05/06/2023 or 20/06/2023)
     - ^might break the setup
-
-
+    - set systemd default stop timeout to 5 secs
 <br/>
