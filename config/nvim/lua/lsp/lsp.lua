@@ -78,6 +78,8 @@ return {
 				},
 			},
 
+			vue_ls = {},
+
 			-- phpactor = {},
 		}
 

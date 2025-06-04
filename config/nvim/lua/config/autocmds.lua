@@ -20,7 +20,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     vim.schedule(function()
       -- Check if the attached client is 'intelephense'
-      for _, client in ipairs(vim.lsp.get_active_clients()) do
+      for _, client in ipairs(vim.lsp.get_clients()) do
         if client.name == "intelephense" and client.attached_buffers[args.buf] then
           vim.api.nvim_buf_set_option(args.buf, "filetype", "blade")
           -- update treesitter parser to blade
