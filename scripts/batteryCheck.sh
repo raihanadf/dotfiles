@@ -32,7 +32,7 @@ do
   if [[ $charging = "0" ]]; then
     # this one checks the capacity of the battery
     battery="$(cat /sys/class/power_supply/BAT1/capacity)"
-    if [[ $battery -ge "10" && $battery -le "25" ]]; then
+    if [[ $battery -ge "10" && $battery -le "15" ]]; then
         dunstify "I NEED TO CHARGEEE!!" "IT IS NOW $battery% MANNN" -h string:fgcolor:#ff4444 -h string:frcolor:#ba0606 
     elif [[ $battery -le "8" ]]; then
         perform_low_battery_action
