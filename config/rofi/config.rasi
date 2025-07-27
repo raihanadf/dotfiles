@@ -32,7 +32,7 @@ configuration {
 
 window {
     location:   center;
-    width:      480;
+    width:      400;
     padding:    20px;
     border:             3px;
     border-color:                   @border-color;

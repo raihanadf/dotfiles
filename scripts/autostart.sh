@@ -84,8 +84,11 @@ adb() {
 
 bluetooth() {
   mouse="$(upower -i $(upower -e | grep -E 'mouse|pointer' | head -n 1) | awk -F': ' '/percentage:/ {print $2}' | tr -d '%' | grep -o '[0-9]*' | sed '/^$/d')"
+	mouse_name="$(upower -i $(upower -e | grep -E 'mouse|pointer' | head -n 1) | awk -F': ' '/model/ {print $2}' | awk '{for(i=1;i<=NF;i++){if(i==1){printf "%s", toupper(substr($i,1,1));} else {printf ".%s", $i}} printf "\n"}')"
+
+
   if [ -n "$mouse" ]; then
-    printf "󰂯[$mouse] "
+    printf "󰂯[$mouse_name:$mouse] "
   fi
 }
 

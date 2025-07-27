@@ -24,7 +24,7 @@ return {
 	{ 'tpope/vim-sleuth',       event = "VeryLazy" },
 
 	-- "gc" to comment visual regions/lines
-	{ 'numToStr/Comment.nvim',  event = "VeryLazy", opts = {} },
+	{ 'numToStr/Comment.nvim',  opts = {} },
 
 	-- leap, leap, leappp!!!
 	{
@@ -60,10 +60,9 @@ return {
 
 	{ 'akinsho/git-conflict.nvim', version = "*", config = true },
 
-	-- {
-	--   "folke/ts-comments.nvim",
-	--   opts = {},
-	--   event = "VeryLazy",
-	--   enabled = vim.fn.has("nvim-0.10.0") == 1,
-	-- },
+	{
+	  "nvim-treesitter/nvim-treesitter-context",
+	  opts = {},
+	  event = "VeryLazy",
+	},
 }

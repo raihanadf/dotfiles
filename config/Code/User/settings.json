@@ -2,28 +2,26 @@
     "editor.lineNumbers": "relative",
     "workbench.startupEditor": "none",
     "workbench.statusBar.visible": true,
-    "window.menuBarVisibility": "hidden",
     "workbench.activityBar.location": "hidden",
     "editor.cursorSmoothCaretAnimation": "on",
-    "editor.fontFamily": "JetBrainsMono Nerd Font",
+    "editor.fontFamily": "Iosevka Nerd Font",
     "editor.fontLigatures": true,
     "editor.tabCompletion": "on",
     "editor.cursorBlinking": "solid",
-    "workbench.productIconTheme": "icons-carbon",
+    "workbench.productIconTheme": "fluent-icons",
     "editor.tabSize": 2,
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "none",
     "editor.minimap.renderCharacters": false,
-    "workbench.editor.tabSizingFixedMaxWidth": 120,
+    "workbench.editor.tabSizingFixedMaxWidth": 100,
     "workbench.editor.wrapTabs": true,
     "workbench.editor.tabSizing": "fixed",
     "workbench.editor.tabSizingFixedMinWidth": 40,
-    "editor.formatOnSave": false,
     "dart.previewFlutterUiGuides": true,
     "dart.hotReloadOnSave": "manual",
-    "editor.wordWrap": "on",
+    "editor.wordWrap": "bounded",
     "zenMode.centerLayout": true,
-    "workbench.iconTheme": "vscode-icons",
+    "workbench.iconTheme": "ayu",
 
     "[blade]": {
         "editor.defaultFormatter": "shufo.vscode-blade-formatter"
@@ -104,6 +102,13 @@
             "commands": [ "editor.emmet.action.matchTag" ]
         },
 
+        {
+            "before": [ "<leader>", "t" ],
+            "command": "workbench.action.terminal",
+            "when": "editorTextFocus || terminalFocus || vim.active && !inDebugRepl"
+        },
+
+
         // split, korbanin % -> | buat matchtag (web element hadeh)
         {
             "before": [ "<leader>", "\"" ],
@@ -118,6 +123,11 @@
             "commands": [ "workbench.action.toggleSidebarVisibility" ]
         },
         {
+            "before": ["<leader>", "c"],
+            "commands": ["workbench.action.toggleAuxiliaryBar"]
+        },
+
+        {
             "before": [ "<leader>", "f" ],
             "commands": [ "revealInExplorer" ],
         },
@@ -130,7 +140,7 @@
             "commands": [ "workbench.action.quickOpen" ],
         },
     ],
-
+    
     // vim -- visual
     "vim.visualModeKeyBindings": [
         {
@@ -157,6 +167,11 @@
             "before": [ "<leader>", "%" ],
             "commands": [ "editor.emmet.action.matchTag" ]
         },
+        {
+        // Rename symbol with leader+r+e
+        "before": ["<leader>", "r", "e"],
+        "commands": ["editor.action.rename"]
+        },
     ],
     
     // vim -- visual non recursive
@@ -166,8 +181,26 @@
             "after": ["P"]
         },
     ],
-    "workbench.colorTheme": "Default Dark+",
-    "terminal.integrated.fontFamily": "monospace",
+    "workbench.colorTheme": "Moonlight Italic",
+    "terminal.integrated.fontFamily": "Iosevka Nerd Font",
     "errorLens.enabled": false,
-
+    "security.allowedUNCHosts": [
+        "wsl.localhost"
+    ],
+    "window.titleBarStyle": "native",
+    "window.menuBarVisibility": "hidden",
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "emmet.includeLanguages": {
+    "blade": "html"
+    },
+    "vscode-pets.petSize": "medium",
+    "vscode-pets.petColor": "warrior",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "window.commandCenter": false,
+    "workbench.layoutControl.enabled": false,
+    "workbench.sideBar.location": "right",
+    "editor.fontSize": 15,
+    "editor.stickyScroll.maxLineCount": 2,
+    "window.density.editorTabHeight": "compact",
 }
