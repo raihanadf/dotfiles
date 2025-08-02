@@ -19,7 +19,7 @@
     "workbench.editor.tabSizingFixedMinWidth": 40,
     "dart.previewFlutterUiGuides": true,
     "dart.hotReloadOnSave": "manual",
-    "editor.wordWrap": "bounded",
+    "editor.wordWrap": "on",
     "zenMode.centerLayout": true,
     "workbench.iconTheme": "ayu",
 
@@ -181,7 +181,7 @@
             "after": ["P"]
         },
     ],
-    "workbench.colorTheme": "Moonlight Italic",
+    "workbench.colorTheme": "oxocarbon",
     "terminal.integrated.fontFamily": "Iosevka Nerd Font",
     "errorLens.enabled": false,
     "security.allowedUNCHosts": [
@@ -200,7 +200,8 @@
     "window.commandCenter": false,
     "workbench.layoutControl.enabled": false,
     "workbench.sideBar.location": "right",
-    "editor.fontSize": 15,
+    "editor.fontSize": 17,
     "editor.stickyScroll.maxLineCount": 2,
     "window.density.editorTabHeight": "compact",
+    "phpParameterHint.onChange": false,
 }
