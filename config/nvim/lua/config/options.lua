@@ -61,3 +61,15 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+vim.api.nvim_create_autocmd('ColorScheme', {
+  callback = function()
+    -- Set barbar.nvim highlights based on current colorscheme
+    vim.api.nvim_set_hl(0, 'BufferCurrent', { link = 'TabLineSel' })  -- Active buffer
+    vim.api.nvim_set_hl(0, 'BufferVisible', { link = 'TabLine' })      -- Visible but inactive
+    vim.api.nvim_set_hl(0, 'BufferInactive', { link = 'TabLineFill' }) -- Hidden buffers
+
+    -- Optional: Override with specific colors (if linking isn't enough)
+    -- vim.api.nvim_set_hl(0, 'BufferCurrent', { fg = '#ffffff', bg = '#3b4261', bold = true })
+  end,
+  group = vim.api.nvim_create_augroup('BarbarColors', { clear = true }),
+})

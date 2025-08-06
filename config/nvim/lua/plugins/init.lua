@@ -61,8 +61,26 @@ return {
 	{ 'akinsho/git-conflict.nvim', version = "*", config = true },
 
 	{
-	  "nvim-treesitter/nvim-treesitter-context",
-	  opts = {},
-	  event = "VeryLazy",
+		"nvim-treesitter/nvim-treesitter-context",
+		opts = {
+			enable = true,      -- Enable this plugin
+			multiwindow = false, -- Enable multiwindow support
+			max_lines = 2,      -- No limit
+			min_window_height = 0, -- No limit
+			line_numbers = true,
+			multiline_threshold = 20,
+			trim_scope = 'outer', -- 'inner' or 'outer'
+			mode = 'cursor',   -- 'cursor' or 'topline'
+			separator = nil,   -- Can set '-' or any char
+			zindex = 20,
+			on_attach = nil,   -- function(buf) return false end to disable for buffer
+		},
+		event = "VeryLazy",
+
 	},
+	-- Lightweight yet powerful formatter plugin for Neovim
+	{
+		'stevearc/conform.nvim',
+		opts = {},
+	}
 }
