@@ -181,7 +181,7 @@
             "after": ["P"]
         },
     ],
-    "workbench.colorTheme": "oxocarbon",
+    "workbench.colorTheme": "Serendipity Midnight Electric",
     "terminal.integrated.fontFamily": "Iosevka Nerd Font",
     "errorLens.enabled": false,
     "security.allowedUNCHosts": [

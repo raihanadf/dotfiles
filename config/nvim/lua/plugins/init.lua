@@ -78,9 +78,4 @@ return {
 		event = "VeryLazy",
 
 	},
-	-- Lightweight yet powerful formatter plugin for Neovim
-	{
-		'stevearc/conform.nvim',
-		opts = {},
-	}
 }

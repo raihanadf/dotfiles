@@ -24,9 +24,17 @@ return {
 			-- many times.
 
 			-- Create a command `:Format` local to the LSP buffer
-			vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-				vim.lsp.buf.format()
-			end, { desc = 'Format current buffer with LSP' })
+			vim.api.nvim_create_user_command("Format", function(args)
+				local range = nil
+				if args.count ~= -1 then
+					local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
+					range = {
+						start = { args.line1, 0 },
+						["end"] = { args.line2, end_line:len() },
+					}
+				end
+				require("conform").format({ async = true, lsp_format = "fallback", range = range })
+			end, { range = true })
 		end
 
 		-- mason-lspconfig requires that these setup functions are called in this order
@@ -66,12 +74,21 @@ return {
 			dockerls = {},
 			docker_compose_language_service = {},
 			texlab = {},
-			texlab = {},
 			eslint = {},
 			pyright = {},
 			-- rust_analyzer = {},
 			html = { filetypes = { 'html', 'twig', 'hbs', 'blade' } },
-			tailwindcss = { filetypes = { 'html', 'twig', 'hbs', 'blade' } },
+			-- tailwindcss = {
+			-- 	settings = {
+			-- 		editor = {
+			-- 			tabSize = 2, -- Change this value to your preferred size (e.g., 2, 4, etc.)
+			-- 		},
+			-- 	},
+			-- 	filetypes = { 'html', 'twig', 'hbs', 'blade' },
+			-- 	init_options = {
+			-- 		provideFormatter = false,
+			-- 	},
+			-- },
 
 			lua_ls = {
 				Lua = {
@@ -81,8 +98,6 @@ return {
 					-- diagnostics = { disable = { 'missing-fields' } },
 				},
 			},
-
-			vue_ls = {},
 
 			-- phpactor = {},
 		}
@@ -116,6 +131,13 @@ return {
 			init_options = {
 				globalStoragePath = os.getenv('HOME') .. '/.local/share/intelephense'
 			}
+		}
+
+		lspconfig.ts_ls.setup {
+			on_init = function(client)
+				client.server_capabilities.documentFormattingProvider = false
+				client.server_capabilities.documentFormattingRangeProvider = false
+			end
 		}
 
 		vim.diagnostic.config({ virtual_text = false })
