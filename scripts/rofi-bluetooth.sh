@@ -1,24 +1,12 @@
-#!/usr/bin/env bash
-#             __ _       _     _            _              _   _
-#  _ __ ___  / _(_)     | |__ | |_   _  ___| |_ ___   ___ | |_| |__
-# | '__/ _ \| |_| |_____| '_ \| | | | |/ _ \ __/ _ \ / _ \| __| '_ \
-# | | | (_) |  _| |_____| |_) | | |_| |  __/ || (_) | (_) | |_| | | |
-# |_|  \___/|_| |_|     |_.__/|_|\__,_|\___|\__\___/ \___/ \__|_| |_|
-#
-# Author: Nick Clyde (clydedroid)
-#
-# A script that generates a rofi menu that uses bluetoothctl to
-# connect to bluetooth devices and display status info.
-#
-# Inspired by networkmanager-dmenu (https://github.com/firecat53/networkmanager-dmenu)
-# Thanks to x70b1 (https://github.com/polybar/polybar-scripts/tree/master/polybar-scripts/system-bluetooth-bluetoothctl)
-#
-# Depends on:
-#   Arch repositories: rofi, bluez-utils (contains bluetoothctl)
+#!/bin/bash
 
-# Constants
 divider="---------"
 goback="Back"
+
+# Rofi command to pipe into, can add any options here
+rofi_command="rofi -dmenu $* -p"
+# Larger input command for renaming
+rofi_input_command="rofi -dmenu -lines 1 -width 50 -p"
 
 # Checks if bluetooth controller is powered on
 power_on() {
@@ -179,6 +167,64 @@ toggle_trust() {
     fi
 }
 
+# Function to get Bluetooth devices with MAC addresses using bt-device
+get_bt_devices() {
+    bt-device -l | grep -E '^.* \(.*\)$' | while read -r line; do
+        # Extract device name (remove MAC part in parentheses)
+        device_name=$(echo "$line" | sed 's/ (.*)//')
+        # Extract MAC address
+        mac=$(echo "$line" | grep -oE '([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}')
+        echo -e "$device_name\t$mac"
+    done
+}
+
+# Function to rename a device
+rename_device() {
+    local mac="$1"
+    local current_name="$2"
+    
+    # Show input dialog for new name with larger size
+    new_name=$(echo "" | $rofi_input_command "New name for '$current_name':")
+    
+    if [ -n "$new_name" ]; then
+        # Execute the rename command
+        result=$(bt-device --set "$mac" Alias "$new_name" 2>&1)
+        
+        # Show result notification
+        if echo "$result" | grep -q "Alias:"; then
+            notify-send "Bluetooth Rename" "Successfully renamed '$current_name' to '$new_name'"
+        else
+            notify-send "Bluetooth Rename" "Error: $result" -u critical
+        fi
+    fi
+}
+
+# Function to show rename device menu
+show_rename_menu() {
+    # Get list of devices using bt-device
+    devices=$(get_bt_devices)
+    
+    if [ -z "$devices" ]; then
+        notify-send "Bluetooth Rename" "No Bluetooth devices found" -u critical
+        show_menu
+        return
+    fi
+    
+    # Show device selection menu
+    selected=$(echo -e "$devices" | $rofi_command "Select device to rename")
+    
+    if [ -n "$selected" ]; then
+        # Extract device name and MAC from selection
+        device_name=$(echo "$selected" | cut -f1)
+        mac=$(echo "$selected" | cut -f2)
+        
+        # Call rename function
+        rename_device "$mac" "$device_name"
+    fi
+    
+    show_menu
+}
+
 # Prints a short string with the current bluetooth status
 # Useful for status bars like polybar, etc.
 print_status() {
@@ -229,7 +275,7 @@ device_menu() {
     fi
     paired=$(device_paired "$mac")
     trusted=$(device_trusted "$mac")
-    options="$connected\n$paired\n$trusted\n$divider\n$goback\nExit"
+    options="$connected\n$paired\n$trusted\nRename Device\n$divider\n$goback\nExit"
 
     # Open rofi menu, read chosen option
     chosen="$(echo -e "$options" | $rofi_command "$device_name")"
@@ -247,6 +293,10 @@ device_menu() {
             ;;
         "$trusted")
             toggle_trust "$mac"
+            ;;
+        "Rename Device")
+            rename_device "$mac" "$device_name"
+            device_menu "$device"
             ;;
         "$goback")
             show_menu
@@ -270,7 +320,7 @@ show_menu() {
         discoverable=$(discoverable_on)
 
         # Options passed to rofi
-        options="$devices\n$divider\n$power\n$scan\n$pairable\n$discoverable\nExit"
+        options="$devices\n$divider\n$power\n$scan\n$pairable\n$discoverable\nRename Device\nExit"
     else
         power="Power: off"
         options="$power\nExit"
@@ -296,6 +346,9 @@ show_menu() {
         "$pairable")
             toggle_pairable
             ;;
+        "Rename Device")
+            show_rename_menu
+            ;;
         *)
             device=$(bluetoothctl devices | grep "$chosen")
             # Open a submenu if a device is selected
@@ -303,9 +356,6 @@ show_menu() {
             ;;
     esac
 }
-
-# Rofi command to pipe into, can add any options here
-rofi_command="rofi -dmenu $* -p"
 
 case "$1" in
     --status)
