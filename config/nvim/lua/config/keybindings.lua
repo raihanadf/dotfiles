@@ -98,6 +98,9 @@ nskeymap("<leader>fr", ":FlutterRestart<CR>") -- Restart Project
 nskeymap("<leader>fh", ":FlutterReload<CR>")  -- Reload Project
 -----------------------------------------------------------------
 
+---- auto session
+nskeymap("<leader>sa", ":Autosession search<CR>")     -- Run Project
+
 ---- nvim tree
 nskeymap("<leader>gl", ":Glow<cr>")
 

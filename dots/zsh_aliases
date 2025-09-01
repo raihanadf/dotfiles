@@ -88,5 +88,6 @@ alias minecraft="prime-run gamemoderun java -jar $HOME/Documents/Minecraft.jar"
 alias words="fortune -s | cowsay -f tux"
 alias habit="dijo"
 alias vencord='sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"'
+alias untgz='f() { mkdir "${1%.tgz}" && tar -xvzf "$1" -C "${1%.tgz}"; }; f'
 
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"

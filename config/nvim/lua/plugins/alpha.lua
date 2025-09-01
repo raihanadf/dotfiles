@@ -25,6 +25,7 @@ return {
 		end
 
 		dashboard.section.buttons.val = {
+			button("Leader + sa", "󰱼  Select Session", ":Autosession search<cr>"),
 			button("Leader + e", "󰱼  Open File Explorer", ":NvimTreeToggle<cr>"),
 			button("Leader + tt", "  Open Terminal", ":ToggleTerm<cr>"),
 			button("Ctrl + p", "  Find File", ":Telescope find_files <cr>"),

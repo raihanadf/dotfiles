@@ -43,7 +43,7 @@ export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 
 # use flutter sdk from their own website (AUR one is problematic)
 export PATH=$PATH:$HOME/.sdk_dir/flutter/bin
-export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
+export CHROME_EXECUTABLE=/usr/bin/zen-browser
 
 # pub cache
 export PATH="$PATH":"$HOME/.pub-cache/bin"

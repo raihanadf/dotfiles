@@ -57,6 +57,12 @@
       path: config/zathura
       force: true
 
+    # fish
+    ~/.config/fish:
+      create: true
+      path: config/fish
+      force: true
+
     # nm dmenu
     ~/.config/networkmanager-dmenu:
       create: true

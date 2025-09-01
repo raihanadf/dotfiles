@@ -1,6 +1,6 @@
 #!/bin/bash
 
-redshift -P -O 4600K
+redshift -P -O 6000K
 
 dunst & 
 dunstify "Welcome!"
