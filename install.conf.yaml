@@ -63,6 +63,12 @@
       path: config/fish
       force: true
 
+    # bin
+    ~/.bin:
+      create: true
+      path: .bin
+      force: true
+
     # nm dmenu
     ~/.config/networkmanager-dmenu:
       create: true

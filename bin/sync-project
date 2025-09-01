@@ -1,0 +1,46 @@
+#!/bin/bash
+# sync-project - rsync wrapper for syncing two directories
+# Usage:
+#   sync-project <source_dir> <destination_dir> [extra --exclude args...]
+#
+# Example:
+#   sync-project ~/Documents/Projects/main-project ~/Documents/Projects/mirror-project --exclude=".env"
+
+set -euo pipefail
+
+if [ "$#" -lt 2 ]; then
+    echo "Usage: $0 <source_dir> <destination_dir> [extra --exclude args...]"
+    exit 1
+fi
+
+SOURCE="$1/"
+DEST="$2/"
+shift 2
+
+# Default excludes
+EXCLUDES=(
+    "--exclude=.git"
+    "--exclude=vendor"
+    "--exclude=storage"
+    "--exclude=storage/framework"
+    "--exclude=storage/logs"
+    "--exclude=bootstrap/cache"
+    "--exclude=.env"
+    "--exclude=.env.*"
+    "--exclude=*.log"
+    "--exclude=node_modules"
+    "--exclude=public/build"
+    "--exclude=dist"
+    "--exclude=.vite"
+    "--exclude=.idea"
+    "--exclude=.vscode"
+    "--exclude=.DS_Store"
+    "--exclude=Thumbs.db"
+    "--exclude=*.swp"
+)
+
+# Add extra excludes from remaining arguments
+EXCLUDES+=("$@")
+
+# Run rsync
+rsync -av --delete "${EXCLUDES[@]}" "$SOURCE" "$DEST"
