@@ -62,4 +62,4 @@ end
 status is-interactive; and source (pyenv init -|psub)
 
 # xcursor
-set -gx XCURSOR_PATH $RUNTIME/usr/share/icons
+# set -gx XCURSOR_PATH $RUNTIME/usr/share/icons
