@@ -2,7 +2,7 @@
 local colors = {}
 
 colors.foreground = "#FFFFFF"
-colors.background = "#007ACC"
+colors.background = "#424466"
 colors.header_background = "#2C896B"
 
 local component_colors = {
@@ -20,6 +20,12 @@ return {
 	'nvim-lualine/lualine.nvim',
 	-- See `:help lualine.txt`
 	event = "VeryLazy",
+	-- opts = {}
+	-- opts = {
+	-- 	options = {
+	-- 		theme = "pywal"
+	-- 	}
+	-- }
 	opts = {
 		options = {
 			theme = {
@@ -137,7 +143,7 @@ return {
 					"decorate",
 					fmt = function(content, context)
 						-- 
-						return " "
+						return " "
 					end,
 				},
 			},

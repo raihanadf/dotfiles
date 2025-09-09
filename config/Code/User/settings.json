@@ -225,5 +225,6 @@
     "vscode_custom_css.imports": [
         ""
     ],
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "vsicons.dontShowNewVersionMessage": true
 }

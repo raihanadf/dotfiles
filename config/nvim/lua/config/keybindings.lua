@@ -90,7 +90,7 @@ nskeymap("<leader>hb", ":Gitsigns blame_line<cr>")
 nskeymap("<c-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>")
 nskeymap("<leader>p", "<cmd>lua require('telescope.builtin').buffers()<cr>")
 nskeymap("<leader>s", "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>") -- live grep
-nskeymap("<leader>ss", "<cmd>lua require('telescope.builtin').live_grep()<cr>")                -- live grep
+nskeymap("<leader>ss", ":lua require('telescope.builtin').live_grep()<cr>")                -- live grep
 nskeymap("<leader>mp", "<cmd>lua require('telescope.builtin').man_pages()<cr>")
 nskeymap("<leader>fm", "<cmd>lua require('telescope').extensions.flutter.commands()<cr>")
 nskeymap("<leader>fb", ":FlutterRun -v<CR>")     -- Run Project
