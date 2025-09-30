@@ -30,8 +30,21 @@ log() {
     esac
 }
 
+notify() {
+    local title=$1
+    local message=$2
+    local urgency=${3:-normal}
+    
+    # Send notification as the real user, not root
+    if [ -n "$SUDO_USER" ]; then
+        sudo -u "$SUDO_USER" DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u "$SUDO_USER")/bus \
+            notify-send -u "$urgency" "$title" "$message" 2>/dev/null || true
+    fi
+}
+
 die() {
     log error "$@"
+    notify "GPU Mode Switcher" "Error: $*" critical
     exit 1
 }
 
@@ -98,6 +111,7 @@ switch_mode() {
     require_root "$mode"
     file_exists "$conf_file"
     
+    notify "GPU Mode Switcher" "Switching to $mode mode..."
     log info "Switching to $mode mode..."
     
     if [ "$mode" = "nvidia" ]; then
@@ -116,6 +130,7 @@ switch_mode() {
     rebuild_initramfs
     
     log info "Done! Reboot to apply changes."
+    notify "GPU Mode Switcher" "Switched to $mode mode. Please reboot." normal
 }
 
 show_status() {

@@ -60,3 +60,11 @@
 
 - name: "Screenshot: Full Screen"
   command: $HOME/.dotfiles/scripts/screenshot.sh --full
+
+- name: "NVIDIA: Use dedicated GPU + Support Extended Displays"
+  command: $HOME/.dotfiles/scripts/gpu-mode-switcher.sh nvidia
+  run_as_sudo: true
+
+- name: "NVIDIA: Use hybrid mode"
+  command: $HOME/.dotfiles/scripts/gpu-mode-switcher.sh hybrid
+  run_as_sudo: true
