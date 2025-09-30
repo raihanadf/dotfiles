@@ -20,12 +20,15 @@ shift 2
 # Default excludes
 EXCLUDES=(
     "--exclude=.git"
+    "--exclude=.github"
     "--exclude=vendor"
     "--exclude=storage"
     "--exclude=storage/framework"
     "--exclude=storage/logs"
     "--exclude=bootstrap/cache"
     "--exclude=.env"
+    "--exclude=package-lock.json"
+    "--exclude=package.json"
     "--exclude=.env.*"
     "--exclude=*.log"
     "--exclude=node_modules"

@@ -187,7 +187,7 @@
             "after": ["P"]
         },
     ],
-    "workbench.colorTheme": "Moonlight II Italic",
+    "workbench.colorTheme": "Night Owl",
     "terminal.integrated.fontFamily": "Iosevka Nerd Font",
     "errorLens.enabled": false,
     "window.menuBarVisibility": "hidden",
@@ -226,5 +226,19 @@
         ""
     ],
     "editor.minimap.enabled": false,
-    "vsicons.dontShowNewVersionMessage": true
+    "vsicons.dontShowNewVersionMessage": true,
+    "chat.mcp.autostart": "newAndOutdated",
+    "makefile.configureOnOpen": true,
+    "glassit.alpha": 220,
+    "[instructions]": {
+        "editor.unicodeHighlight.ambiguousCharacters": false,
+        "editor.unicodeHighlight.invisibleCharacters": false,
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "off"
+        }
+    }
 }

@@ -65,7 +65,7 @@ battery() {
 }
 
 clock() {
-	printf "^c$white^$(date '+%I:%M %p') "
+	printf "^c$white^$(date '+%-d %b %I:%M %p') "
 }
 
 pomo() {

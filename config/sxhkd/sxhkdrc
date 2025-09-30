@@ -63,11 +63,11 @@ alt + control + f
 
 # screenshot with gui
 alt + Print
-	flameshot gui
+	spectacle	
 
 # full screenshot
 Print
-	flameshot full -p $HOME/Pictures/Screenshots || notify-send "Theres no 'Wallpapers' folder in Pictures"
+	spectacle -f -n -o "$HOME/Pictures/Screenshots" || notify-send "Theres no 'Wallpapers' folder in Pictures"
 
 # open wallpaper picker, in this case nitrogen
 alt + shift + semicolon
