@@ -240,5 +240,6 @@
             "strings": "off",
             "other": "off"
         }
-    }
+    },
+    "sonarlint.focusOnNewCode": false
 }

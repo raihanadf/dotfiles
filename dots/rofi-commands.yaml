@@ -1,5 +1,5 @@
 - name: "System: Screenshot"
-  command: spectacle
+  command: flameshot gui
 
 - name: "System: Force Kill"
   command: notify-send 'ITS XKILL BOIS!!!' 'Select a dumb app to kill' -i dialog-error && xkill
