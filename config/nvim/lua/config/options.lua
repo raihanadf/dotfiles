@@ -74,3 +74,4 @@ vim.api.nvim_create_autocmd('ColorScheme', {
   group = vim.api.nvim_create_augroup('BarbarColors', { clear = true }),
 })
 
+vim.opt.laststatus = 3

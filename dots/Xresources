@@ -1,4 +1,4 @@
-Xft.dpi: 120
+Xft.dpi: 100
 
 Xft.autohint: 0
 Xft.antialias: true
@@ -8,4 +8,4 @@ Xft.hintstyle: hintslight
 Xft.lcdfilter: lcdlight
 
 Xcursor.theme: Posy_Cursor_Black
-Xcursor.size: 48
+Xcursor.size: 32

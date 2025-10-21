@@ -59,11 +59,11 @@ alt + shift + p
 
 # file manager (using thunar here)
 alt + control + f
-	thunar
+	dolphin
 
 # screenshot with gui
 alt + Print
-	spectacle	
+	flameshot
 
 # full screenshot
 Print

@@ -13,18 +13,57 @@ fi
 
 CURRENT=$(grep "^KWIN_DRM_DEVICES=" "$ENV_FILE" 2>/dev/null | cut -d= -f2 | tr -d '"' || echo "")
 
-if [[ -z "$CURRENT" ]]; then
-    echo "KWIN_DRM_DEVICES not set, defaulting to Intel"
-    NEXT="$INTEL:$NVIDIA"
-elif [[ "$CURRENT" == "$INTEL:$NVIDIA" ]]; then
-    echo "Currently using Intel → switching to NVIDIA"
-    NEXT="$NVIDIA:$INTEL"
-elif [[ "$CURRENT" == "$NVIDIA:$INTEL" ]]; then
-    echo "Currently using NVIDIA → switching to Intel"
-    NEXT="$INTEL:$NVIDIA"
+# Parse parameters
+NO_LOGOUT=false
+GPU_PARAM=""
+
+for arg in "$@"; do
+    case "${arg,,}" in
+        --no-logout)
+            NO_LOGOUT=true
+            ;;
+        intel|nvidia)
+            GPU_PARAM="${arg,,}"
+            ;;
+        *)
+            echo "Error: Invalid parameter '$arg'"
+            echo "Usage: $0 [intel|nvidia] [--no-logout]"
+            echo "  No parameter: toggle between GPUs"
+            echo "  intel: force Intel GPU"
+            echo "  nvidia: force NVIDIA GPU"
+            echo "  --no-logout: don't log out automatically"
+            exit 1
+            ;;
+    esac
+done
+
+# Determine next GPU configuration
+if [[ -n "$GPU_PARAM" ]]; then
+    case "$GPU_PARAM" in
+        intel)
+            echo "Forcing Intel GPU"
+            NEXT="$INTEL:$NVIDIA"
+            ;;
+        nvidia)
+            echo "Forcing NVIDIA GPU"
+            NEXT="$NVIDIA:$INTEL"
+            ;;
+    esac
 else
-    echo "Unknown config ($CURRENT), resetting to Intel first"
-    NEXT="$INTEL:$NVIDIA"
+    # Default toggle behavior
+    if [[ -z "$CURRENT" ]]; then
+        echo "KWIN_DRM_DEVICES not set, defaulting to Intel"
+        NEXT="$INTEL:$NVIDIA"
+    elif [[ "$CURRENT" == "$INTEL:$NVIDIA" ]]; then
+        echo "Currently using Intel → switching to NVIDIA"
+        NEXT="$NVIDIA:$INTEL"
+    elif [[ "$CURRENT" == "$NVIDIA:$INTEL" ]]; then
+        echo "Currently using NVIDIA → switching to Intel"
+        NEXT="$INTEL:$NVIDIA"
+    else
+        echo "Unknown config ($CURRENT), resetting to Intel first"
+        NEXT="$INTEL:$NVIDIA"
+    fi
 fi
 
 # Replace or append - escape the backslashes for sed (single \ becomes \\)
@@ -38,6 +77,13 @@ else
 fi
 
 echo "✔ Switched to: $NEXT"
+
+# Check if we should skip logout
+if [[ "$NO_LOGOUT" == true ]]; then
+    echo "→ Configuration saved. Please log out manually to apply changes."
+    exit 0
+fi
+
 echo "→ Logging out in 3 seconds to apply changes..."
 
 # Countdown with timeout notification

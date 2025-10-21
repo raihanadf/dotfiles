@@ -187,7 +187,7 @@
             "after": ["P"]
         },
     ],
-    "workbench.colorTheme": "Night Owl",
+    "workbench.colorTheme": "Moonlight II Italic",
     "terminal.integrated.fontFamily": "Iosevka Nerd Font",
     "errorLens.enabled": false,
     "window.menuBarVisibility": "hidden",
@@ -212,7 +212,6 @@
     "workbench.tree.indent": 16,
     "explorer.decorations.badges": false,
     "git.decorations.enabled": false,
-    "window.titleBarStyle": "native",
     "laravel-pint.enable": true,
     "editor.formatOnSave": true,
     "[javascriptreact]": {
@@ -227,19 +226,7 @@
     ],
     "editor.minimap.enabled": false,
     "vsicons.dontShowNewVersionMessage": true,
-    "chat.mcp.autostart": "newAndOutdated",
-    "makefile.configureOnOpen": true,
-    "glassit.alpha": 220,
-    "[instructions]": {
-        "editor.unicodeHighlight.ambiguousCharacters": false,
-        "editor.unicodeHighlight.invisibleCharacters": false,
-        "diffEditor.ignoreTrimWhitespace": false,
-        "editor.wordWrap": "on",
-        "editor.quickSuggestions": {
-            "comments": "off",
-            "strings": "off",
-            "other": "off"
-        }
-    },
-    "sonarlint.focusOnNewCode": false
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+    "window.controlsStyle": "custom"
 }

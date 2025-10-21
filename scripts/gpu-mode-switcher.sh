@@ -118,10 +118,12 @@ switch_mode() {
         remove_file "$SYSTEM_UDEV/$PM_RULES"
         file_exists "$xorg_file"
         install_file "$xorg_file" "$SYSTEM_X11/$XORG_CONF"
+        $HOME/.dotfiles/scripts/kwin-gpu-switcher.sh nvidia --no-logout
     else
         file_exists "$udev_rule"
         install_file "$udev_rule" "$SYSTEM_UDEV/$PM_RULES"
         remove_file "$SYSTEM_X11/$XORG_CONF"
+        $HOME/.dotfiles/scripts/kwin-gpu-switcher.sh intel --no-logout
     fi
     
     install_file "$conf_file" "$SYSTEM_MODPROBE/$TARGET_CONF"
@@ -131,6 +133,20 @@ switch_mode() {
     
     log info "Done! Reboot to apply changes."
     notify "GPU Mode Switcher" "Switched to $mode mode. Please reboot." normal
+
+    if command -v rofi &>/dev/null; then
+        choice=$(echo -e "Yes\nNo" | rofi -dmenu -p "Reboot now?" -theme-str 'window {width: 200px;}')
+        if [ "$choice" = "Yes" ]; then
+            log info "Rebooting..."
+            notify "GPU Mode Switcher" "Rebooting now..." normal
+            systemctl reboot
+        else
+            log info "Reboot skipped."
+            notify "GPU Mode Switcher" "Reboot skipped." low
+        fi
+    else
+        log warn "Rofi not found, skipping confirmation prompt."
+    fi
 }
 
 show_status() {

@@ -34,4 +34,4 @@ SETUVAR fish_pager_color_description:yellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/home/raihan/\x2econfig/composer/vendor/bin\x1e/home/raihan/\x2elocal/bin\x1e/home/raihan/\x2ebin\x1e/home/raihan/\x2espicetify\x1e/home/raihan/\x2esdk_dir/flutter/bin\x1e/home/raihan/\x2esdk_dir/Android/Sdk/cmdline\x2dtools/latest/bin\x1e/home/raihan/\x2esdk_dir/Android/Sdk/build\x2dtools\x1e/home/raihan/\x2esdk_dir/Android/Sdk/platform\x2dtools\x1e/home/raihan/\x2esdk_dir/Android/Sdk/emulator\x1e/home/raihan/\x2evolta/bin
+SETUVAR fish_user_paths:/home/raihan/\x2econfig/composer/vendor/bin\x1e/home/raihan/\x2elocal/bin\x1e/home/raihan/\x2ebin\x1e/home/raihan/\x2espicetify\x1e/home/raihan/\x2esdk_dir/flutter/bin\x1e/home/raihan/\x2esdk_dir/Android/Sdk/cmdline\x2dtools/latest/bin\x1e/home/raihan/\x2esdk_dir/Android/Sdk/build\x2dtools\x1e/home/raihan/\x2esdk_dir/Android/Sdk/platform\x2dtools\x1e/home/raihan/\x2esdk_dir/Android/Sdk/emulator\x1e/home/raihan/\x2evolta/bin\x1e/usr/bin

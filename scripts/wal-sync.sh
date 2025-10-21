@@ -3,7 +3,7 @@
 SATURATION=0.2
 
 refresh_dwm() {
-    sleep 1.2 && xdotool key super+F5
+    sleep 1.2 && xdotool key alt+F5
 }
 
 apply_wallpaper() {

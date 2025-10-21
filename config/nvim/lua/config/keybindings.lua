@@ -107,8 +107,8 @@ nskeymap("<leader>gl", ":Glow<cr>")
 ---- nvim tree
 nskeymap("<leader>e", ":NvimTreeToggle<cr>")
 
----- copilot chat toggle
-nskeymap("<leader>c", ":CopilotChatToggle<cr>")
+---- avante toggle
+nskeymap("<leader>c", ":AvanteToggle<cr>")
 
 ---- mini map
 nskeymap("<leader>mm", ":lua MiniMap.toggle()<cr>")

@@ -1,6 +1,6 @@
 configuration {
   show-icons: true;
-  font: "Iosevka Nerd Font Bold 12";
+  font: "Iosevka Nerd Font Bold 10";
   display-drun: "";
   drun-display-format: "{name}";
   display-run: "   Run ";
@@ -32,9 +32,9 @@ configuration {
 
 window {
     location:   center;
-    width:      400;
+    width:      350;
     padding:    20px;
-    border:             3px;
+    border:             2px;
     border-color:                   @border-color;
 
     background-color:   @bg0;
