@@ -127,19 +127,6 @@ return {
 			}
 		}
 
-		lspconfig.intelephense.setup {
-			init_options = {
-				globalStoragePath = os.getenv('HOME') .. '/.local/share/intelephense'
-			}
-		}
-
-		lspconfig.ts_ls.setup {
-			on_init = function(client)
-				client.server_capabilities.documentFormattingProvider = false
-				client.server_capabilities.documentFormattingRangeProvider = false
-			end
-		}
-
 		vim.diagnostic.config({ virtual_text = false })
 	end
 }
