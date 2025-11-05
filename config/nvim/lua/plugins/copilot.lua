@@ -1,7 +1,6 @@
 return {
 	{
-		'github/copilot.vim',
-		event = 'BufEnter',
+		'zbirenbaum/copilot.lua',
 	},
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
@@ -24,13 +23,32 @@ return {
 		---@module 'avante'
 		---@type avante.Config
 		opts = {
-			-- add any opts here
 			provider = "copilot",
+			windows = {
+				position = "left",
+
+				-- disable automatic Insert mode for all chat-related windows
+				input = {
+					prefix = "> ",
+					height = 8,
+					start_insert = false,
+				},
+				edit = {
+					border = "rounded",
+					start_insert = false,
+				},
+				ask = {
+					floating = false,
+					border = "rounded",
+					start_insert = false,
+					focus_on_apply = "ours",
+				},
+			},
 		},
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"MunifTanjim/nui.nvim",
-			"zbirenbaum/copilot.lua",      -- for providers='copilot'
+			"zbirenbaum/copilot.lua", -- for providers='copilot'
 		},
 	}
 }

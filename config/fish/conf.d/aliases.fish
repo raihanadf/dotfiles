@@ -1,53 +1,52 @@
-# ~/.config/fish/conf.d/aliases.fish
+# ===== Variables =====
+set -gx nginxdir /usr/local/var/www   # default macOS nginx dir (brew)
+set -gx nvimdir $HOME/.config/nvim
 
-# variables
-set -gx nginxdir /usr/share/nginx/html
-set -gx nvimdir ~/.config/nvim
-
-# simple aliases
+# ===== Simple aliases =====
 alias pls='sudo (history | tail -n1)'
-alias open="xdg-open"
+alias open="open"  # macOS uses `open`
 alias c="clear"
 alias q="exit"
 alias cq="clear && exit"
 alias nnn='nnn -de'
 alias sl='sl -a -w -l'
-alias sizedir="du -h --max-depth=1"
-alias ls='ls --color=auto'
-alias la='ls -la --color=auto'
-alias l='ls -d .* --color=auto'
+alias sizedir="du -h -d 1"
+alias ls='ls -G'  # macOS uses -G for color
+alias la='ls -laG'
+alias l='ls -d .* -G'
 
-# edit configs
-alias zshalias="nvim ~/.zsh_aliases"
-alias zshplugin="nvim ~/.dotfiles/dots/zsh_plugins"
-alias zshconfig="nvim ~/.zshrc"
-alias vimconfig="nvim ~/.vimrc"
-alias nvimconfig="nvim ~/.config/nvim/init.lua"
+# ===== Edit configs =====
+alias zshalias="nvim $HOME/.zsh_aliases"
+alias zshplugin="nvim $HOME/.dotfiles/dots/zsh_plugins"
+alias zshconfig="nvim $HOME/.zshrc"
+alias vimconfig="nvim $HOME/.vimrc"
+alias nvimconfig="nvim $HOME/.config/nvim/init.lua"
 
-# replace with better app
+# ===== Replace with better app =====
 alias vi="nvim"
-alias isw="sudo isw"
-alias py="python"
+alias py="python3"
 # alias cat="batcat"
 
-# directories
-alias nginxdir="cd /usr/share/nginx/html"
-alias nvimdir="cd ~/.config/nvim"
+# ===== Directories =====
+alias nginxdir="cd $nginxdir"
+alias nvimdir="cd $nvimdir"
 
-# android mount
+# ===== Android mount =====
 alias androidmount="aft-mtp-mount $HOME/MountHere"
 alias androidumount="umount $HOME/MountHere"
 
-# network
-alias wifi='nmtui'
+# ===== Network =====
+# macOS uses `networksetup` or `airport` instead of nmtui
+alias wifi="networksetup -listallhardwareports"
 
-# kill all session
-alias killmyself="pkill -KILL -u $USER"
+# ===== Kill all session =====
+alias killmyself="pkill -KILL -u (whoami)"
 
-# record
-alias record='gpu-screen-recorder -w screen -c mp4 -f 60 -a (pactl get-default-sink).monitor -q high -o ~/Videos/now-recorded.mp4'
+# ===== Record =====
+# gpu-screen-recorder isn't available on macOS — replace with QuickTime or ffmpeg
+alias record='ffmpeg -f avfoundation -framerate 60 -i "1" $HOME/Videos/now-recorded.mp4'
 
-# functions
+# ===== Functions =====
 function mkcd
     mkdir -p -- $argv[1]; and cd $argv[1]
 end
@@ -60,17 +59,19 @@ function batcat
     end
 end
 
-# git zip
+# ===== Git zip =====
 alias gitzip="git archive HEAD -o (basename $PWD).zip"
 
-# archived
+# ===== Archived =====
 alias sail='[ -f sail ]; and sh sail; or sh vendor/bin/sail'
 alias emulator='$ANDROID_HOME/emulator/emulator'
-alias myip="ip -o -4 addr list wlo1 | awk '{print \$4}' | cut -d/ -f1"
+# macOS uses `ipconfig getifaddr en0` instead of ip/awk combo
+alias myip="ipconfig getifaddr en0"
 
-# ssh with kitty
+# ===== SSH with kitty =====
 if test "$TERM" = "xterm-kitty"
     alias ssh="kitty +kitten ssh"
 end
 
+# ===== Abbreviations =====
 abbr --add !! 'sudo $history[1]'

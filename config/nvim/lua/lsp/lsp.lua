@@ -71,6 +71,16 @@ return {
 					"vue",
 				},
 			},
+			intelephense = {
+				init_options = {
+					globalStoragePath = vim.fn.stdpath("cache") .. "/intelephense",
+				},
+				settings = {
+					intelephense = {
+						files = { maxSize = 1000000 },
+					},
+				},
+			},
 			dockerls = {},
 			docker_compose_language_service = {},
 			texlab = {},
