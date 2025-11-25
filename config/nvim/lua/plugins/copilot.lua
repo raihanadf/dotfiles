@@ -25,7 +25,7 @@ return {
 		opts = {
 			provider = "copilot",
 			windows = {
-				position = "left",
+				-- position = "right",
 
 				-- disable automatic Insert mode for all chat-related windows
 				input = {

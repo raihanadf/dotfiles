@@ -71,16 +71,7 @@ return {
 					"vue",
 				},
 			},
-			intelephense = {
-				init_options = {
-					globalStoragePath = vim.fn.stdpath("cache") .. "/intelephense",
-				},
-				settings = {
-					intelephense = {
-						files = { maxSize = 1000000 },
-					},
-				},
-			},
+			intelephense = {},
 			dockerls = {},
 			docker_compose_language_service = {},
 			texlab = {},
@@ -127,12 +118,25 @@ return {
 			ensure_installed = vim.tbl_keys(servers),
 			handlers = {
 				function(server_name)
-					require('lspconfig')[server_name].setup {
+					local server_config = {
 						capabilities = capabilities,
 						on_attach = on_attach,
 						settings = servers[server_name],
 						filetypes = (servers[server_name] or {}).filetypes,
 					}
+					
+					if server_name == "intelephense" then
+						server_config.init_options = {
+							globalStoragePath = os.getenv('HOME') .. '/.local/share/intelephense',
+						}
+						server_config.settings = {
+							intelephense = {
+								files = { maxSize = 1000000 },
+							},
+						}
+					end
+					
+					require('lspconfig')[server_name].setup(server_config)
 				end,
 			}
 		}

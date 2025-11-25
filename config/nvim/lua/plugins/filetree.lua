@@ -145,7 +145,7 @@ return {
       hijack_directories = { enable = true },
       view = {
         width = 25,
-        side = "right",
+        -- side = "right",
       },
     })
 
