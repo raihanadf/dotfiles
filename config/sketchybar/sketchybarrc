@@ -1,0 +1,170 @@
+#!/bin/bash
+
+# =============================================================================
+# DWM-STYLE SKETCHYBAR - FLOATING ISLANDS (FAST)
+# =============================================================================
+
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+
+# -----------------------------------------------------------------------------
+# COLORS
+# -----------------------------------------------------------------------------
+BAR_BG=0x00000000
+ISLAND_BG=0xff1a1a1a
+TEXT_PRIMARY=0xffbbbbbb
+TEXT_DIM=0xff666666
+TEXT_ACCENT=0xff98c379
+SEPARATOR=0xff444444
+
+# -----------------------------------------------------------------------------
+# TYPOGRAPHY
+# -----------------------------------------------------------------------------
+FONT="SF Mono"
+FONT_ALT="Hack Nerd Font"
+FONT_SIZE=13
+
+# -----------------------------------------------------------------------------
+# BAR
+# -----------------------------------------------------------------------------
+sketchybar --bar \
+  height=38 \
+  position=top \
+  sticky=on \
+  color=$BAR_BG \
+  shadow=off \
+  padding_left=10 \
+  padding_right=10
+
+# -----------------------------------------------------------------------------
+# DEFAULTS
+# -----------------------------------------------------------------------------
+sketchybar --default \
+  icon.font="$FONT_ALT:Regular:14" \
+  icon.color=$TEXT_PRIMARY \
+  label.font="$FONT:Medium:$FONT_SIZE" \
+  label.color=$TEXT_PRIMARY \
+  padding_left=4 \
+  padding_right=4 \
+  background.drawing=off
+
+# -----------------------------------------------------------------------------
+# LEFT ISLAND
+# -----------------------------------------------------------------------------
+sketchybar --add event aerospace_workspace_change
+
+# Spacer for padding
+sketchybar --add item left_pad left \
+  --set left_pad icon.drawing=off label.drawing=off padding_left=4 padding_right=0
+
+# Bracket open
+sketchybar --add item bracket_open left \
+  --set bracket_open \
+    icon="[" icon.font="$FONT:Regular:$FONT_SIZE" icon.color=$TEXT_DIM \
+    label.drawing=off padding_left=0 padding_right=0
+
+# Workspaces (static items, updated by single script)
+for sid in {1..9}; do
+  sketchybar --add item space.$sid left \
+    --set space.$sid \
+      label="$sid" \
+      label.font="$FONT:Medium:$FONT_SIZE" \
+      label.color=$TEXT_DIM \
+      padding_left=5 \
+      padding_right=5 \
+      click_script="aerospace workspace $sid"
+done
+
+# Bracket close
+sketchybar --add item bracket_close left \
+  --set bracket_close \
+    icon="]" icon.font="$FONT:Regular:$FONT_SIZE" icon.color=$TEXT_DIM \
+    label.drawing=off padding_left=0 padding_right=8
+
+# Separator
+sketchybar --add item sep_left left \
+  --set sep_left \
+    icon="|" icon.font="$FONT:Regular:$FONT_SIZE" icon.color=$SEPARATOR \
+    label.drawing=off padding_left=0 padding_right=8
+
+# Current app
+sketchybar --add item front_app left \
+  --subscribe front_app front_app_switched \
+  --set front_app \
+    label.font="$FONT:Medium:$FONT_SIZE" \
+    label.color=$TEXT_PRIMARY \
+    icon.drawing=off \
+    padding_right=8 \
+    script="$PLUGIN_DIR/front_app.sh"
+
+# Workspace updater - single script handles all workspaces
+sketchybar --add item workspace_updater left \
+  --subscribe workspace_updater aerospace_workspace_change front_app_switched space_change \
+  --set workspace_updater \
+    drawing=off \
+    update_freq=10 \
+    script="$PLUGIN_DIR/aerospace.sh"
+
+# Left island bracket
+sketchybar --add bracket left_island left_pad bracket_open \
+  space.1 space.2 space.3 space.4 space.5 space.6 space.7 space.8 space.9 \
+  bracket_close sep_left front_app \
+  --set left_island \
+    background.color=$ISLAND_BG \
+    background.corner_radius=8 \
+    background.height=29 \
+    background.drawing=on
+
+# -----------------------------------------------------------------------------
+# RIGHT ISLAND
+# -----------------------------------------------------------------------------
+sketchybar --add item right_pad right \
+  --set right_pad icon.drawing=off label.drawing=off padding_left=0 padding_right=4
+
+sketchybar --add item clock right \
+  --set clock \
+    label.font="$FONT:Medium:$FONT_SIZE" \
+    label.color=$TEXT_PRIMARY \
+    icon.drawing=off \
+    padding_left=8 \
+    update_freq=30 \
+    script="$PLUGIN_DIR/clock.sh"
+
+sketchybar --add item sep_r1 right \
+  --set sep_r1 \
+    icon="|" icon.font="$FONT:Regular:$FONT_SIZE" icon.color=$SEPARATOR \
+    label.drawing=off padding_left=6 padding_right=6
+
+sketchybar --add item battery right \
+  --subscribe battery system_woke power_source_change \
+  --set battery \
+    label.font="$FONT:Medium:$FONT_SIZE" \
+    label.color=$TEXT_PRIMARY \
+    icon.drawing=off \
+    update_freq=120 \
+    script="$PLUGIN_DIR/battery.sh"
+
+sketchybar --add item sep_r2 right \
+  --set sep_r2 \
+    icon="|" icon.font="$FONT:Regular:$FONT_SIZE" icon.color=$SEPARATOR \
+    label.drawing=off padding_left=6 padding_right=6
+
+sketchybar --add item volume right \
+  --subscribe volume volume_change \
+  --set volume \
+    label.font="$FONT:Medium:$FONT_SIZE" \
+    label.color=$TEXT_PRIMARY \
+    icon.drawing=off \
+    padding_right=8 \
+    script="$PLUGIN_DIR/volume.sh"
+
+sketchybar --add bracket right_island volume sep_r2 battery sep_r1 clock right_pad \
+  --set right_island \
+    background.color=$ISLAND_BG \
+    background.corner_radius=8 \
+    background.height=29 \
+    background.drawing=on
+
+# -----------------------------------------------------------------------------
+# INIT
+# -----------------------------------------------------------------------------
+sketchybar --update

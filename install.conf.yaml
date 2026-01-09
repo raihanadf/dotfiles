@@ -20,6 +20,7 @@
     ~/.Xresources: dots/Xresources
     ~/.xinitrc: dots/xinitrc
     ~/.rofi-commands.yaml: dots/rofi-commands.yaml
+    ~/.aerospace.toml: dots/aerospace.toml
 
     # sxhkd
     ~/.config/sxhkd:
