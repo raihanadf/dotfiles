@@ -76,6 +76,12 @@
       path: config/networkmanager-dmenu
       force: true
 
+    # sketchybar
+    ~/.config/sketchybar:
+      create: true
+      path: config/sketchybar
+      force: true
+
     # vscode
     ~/.config/Code/User/keybindings.json: config/Code/User/keybindings.json/
     ~/.config/Code/User/settings.json: config/Code/User/settings.json/
