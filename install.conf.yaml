@@ -91,6 +91,12 @@
      create: true
      path: config/sxiv
      force: true
+
+    # niri
+    ~/.config/niri:
+      create: true
+      path: config/niri
+      force: true
   
 # in case if you forgot, it needs 4 spaces or 2 tabs
 

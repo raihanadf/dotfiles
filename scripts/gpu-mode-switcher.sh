@@ -8,6 +8,11 @@ DOTFILES="$USER_HOME/.dotfiles/system/etc"
 SYSTEM_MODPROBE="/etc/modprobe.d"
 SYSTEM_UDEV="/etc/udev/rules.d"
 SYSTEM_X11="/etc/X11"
+NIRI_CONFIG="$USER_HOME/.config/niri/config.kdl"
+
+# Render nodes
+RENDER_NVIDIA="/dev/dri/renderD129"
+RENDER_INTEL="/dev/dri/renderD128"
 
 # File names
 PM_RULES="80-nvidia-pm.rules"
@@ -101,6 +106,18 @@ manage_nvidia_services() {
     done
 }
 
+update_niri_render_device() {
+    local device=$1
+    [ -f "$NIRI_CONFIG" ] || { log warn "Niri config not found, skipping niri update"; return; }
+
+    if grep -q 'render-drm-device' "$NIRI_CONFIG"; then
+        sed -i "s|render-drm-device \".*\"|render-drm-device \"$device\"|" "$NIRI_CONFIG"
+    else
+        printf '\ndebug {\n    render-drm-device "%s"\n    wait-for-frame-completion-before-queueing\n}\n' "$device" >> "$NIRI_CONFIG"
+    fi
+    log info "Niri render device → $device"
+}
+
 switch_mode() {
     local mode=$1
     local source_conf="${MODE_FILES[$mode]}"
@@ -118,12 +135,16 @@ switch_mode() {
         remove_file "$SYSTEM_UDEV/$PM_RULES"
         file_exists "$xorg_file"
         install_file "$xorg_file" "$SYSTEM_X11/$XORG_CONF"
-        $HOME/.dotfiles/scripts/kwin-gpu-switcher.sh nvidia --no-logout
+        $USER_HOME/.dotfiles/scripts/kwin-gpu-switcher.sh nvidia --no-logout
+        update_niri_render_device "$RENDER_NVIDIA"
     else
         file_exists "$udev_rule"
         install_file "$udev_rule" "$SYSTEM_UDEV/$PM_RULES"
         remove_file "$SYSTEM_X11/$XORG_CONF"
-        $HOME/.dotfiles/scripts/kwin-gpu-switcher.sh intel --no-logout
+        $USER_HOME/.dotfiles/scripts/kwin-gpu-switcher.sh intel --no-logout
+        # HDMI is physically wired to Nvidia, so niri must render on Nvidia
+        # regardless of hybrid mode to avoid cross-GPU copy lag on external monitor
+        update_niri_render_device "$RENDER_NVIDIA"
     fi
     
     install_file "$conf_file" "$SYSTEM_MODPROBE/$TARGET_CONF"
