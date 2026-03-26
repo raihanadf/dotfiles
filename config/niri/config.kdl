@@ -80,10 +80,18 @@ input {
 output "HDMI-A-1" {
     mode "2560x1440@144.002"
     position x=0 y=0
+		focus-at-startup
+	  scale 1
+    hot-corners {
+        off
+    }
 }
 
 output "eDP-1" {
     position x=2560 y=0
+    hot-corners {
+        off
+    }
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -91,7 +99,7 @@ output "eDP-1" {
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 8
+    gaps 16
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -178,7 +186,7 @@ focus-ring {
 				top -6
         // left 8
         // right 8
-        // bottom 10
+        bottom -6
     }
 }
 
@@ -568,6 +576,5 @@ layer-rule {
 
 debug {
     render-drm-device "/dev/dri/renderD129"
-    wait-for-frame-completion-before-queueing
 		honor-xdg-activation-with-invalid-serial
 }
