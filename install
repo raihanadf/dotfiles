@@ -13,6 +13,9 @@ cd "${BASEDIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
+# every other submodule (was previously left uninitialized on fresh clones)
+git submodule update --init --recursive
+
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
 
 read -p "install prerequisites? (y/N)" -n 1 -r

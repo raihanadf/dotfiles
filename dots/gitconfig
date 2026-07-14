@@ -46,6 +46,8 @@
 	program = gpg
 [pull]
 	rebase = false
+[submodule]
+	recurse = true
 ; [rerere]
 ; 	enabled = true
 [filter "lfs"]

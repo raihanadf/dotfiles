@@ -2,6 +2,8 @@
 
 WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
 
+[ -d "$WALLPAPER_DIR" ] || mkdir -p "$WALLPAPER_DIR"
+
 pick_wallpaper() {
     # List filenames only for display, but store full paths
     declare -A files
