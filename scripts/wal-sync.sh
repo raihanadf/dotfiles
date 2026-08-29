@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 SATURATION=0.2
 
 refresh_dwm() {
